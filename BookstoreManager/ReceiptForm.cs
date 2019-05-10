@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace BookstoreManager
 {
-    public partial class Form1 : Form
+    public partial class ReceiptForm : Form
     {
-        public Form1()
+        public ReceiptForm()
         {
             InitializeComponent();
         }
