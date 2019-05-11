@@ -92,11 +92,12 @@ namespace BookstoreManager
         }
         private void BT_AnHienMenu_Click(object sender, EventArgs e)
         {
+            const int _distance = 60;
             if(_anThanhMenu == false)
             {
-                MainSplitContainer.SplitterDistance = 60;
+                MainSplitContainer.SplitterDistance = _distance;
                 BT_AnHienMenu.Text = "Hiện";
-                PN_BanQuyen.Size = new Size(60, 26);
+                PN_BanQuyen.Size = new Size(_distance, 26);
                 _anThanhMenu = true;
             }
             else
