@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.BookstoreName = new System.Windows.Forms.Label();
             this.BT_Login = new System.Windows.Forms.Button();
             this.TB_TenDangNhap = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TB_MatKhau = new System.Windows.Forms.TextBox();
             this.Link_QuenMatKhau = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 62);
             this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(123, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(37, 31);
+            this.panel2.TabIndex = 8;
             // 
             // BookstoreName
             // 
@@ -95,9 +104,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(25, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 23);
+            this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Tên đăng nhập:";
+            this.label1.Text = "Mã nhân viên:";
             // 
             // label2
             // 
@@ -130,15 +139,6 @@
             this.Link_QuenMatKhau.TabIndex = 7;
             this.Link_QuenMatKhau.TabStop = true;
             this.Link_QuenMatKhau.Text = "Quên mật khẩu đăng nhập";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px1;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(123, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(37, 31);
-            this.panel2.TabIndex = 8;
             // 
             // LoginForm
             // 

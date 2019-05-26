@@ -13,7 +13,6 @@ namespace BookstoreManager
     {
         //field
         bool _anThanhMenu;
-
         public MainForm()
         {
             InitializeComponent();
@@ -118,9 +117,7 @@ namespace BookstoreManager
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
-            if(loginForm.ShowDialog() == DialogResult.OK)
-                return;
-            else
+            if(loginForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
     }

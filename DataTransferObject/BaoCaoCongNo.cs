@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class BaoCaoCongNo
+    public class BaoCaoCongNo
     {
         public string MaChiTietCongNo { get; set; }
         public int Thang { get; set; }
         public int Nam { get; set; }
         public string MaKhachHang { get; set; }
-        public float NoDau { get; set; }
-        public float NoPhatSinh { get; set; }
-        public float NoCuoi { get; set; }
+        public decimal NoDau { get; set; }
+        public decimal NoPhatSinh { get; set; }
+        public decimal NoCuoi { get; set; }
         public BaoCaoCongNo() { }
-        public BaoCaoCongNo(string maCTCongNo,int thang,int nam,string maKH, float noDau, float noPS, float noCuoi)
+        public BaoCaoCongNo(string maCTCongNo,int thang,int nam,string maKH, decimal noDau, decimal noPS, decimal noCuoi)
         {
             MaChiTietCongNo = maCTCongNo;
             Thang = thang;

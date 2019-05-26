@@ -137,7 +137,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.TP_TraCuuSach = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.DGV_DSSach = new System.Windows.Forms.DataGridView();
             this.C_KhoSach_MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_KhoSach_TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_KhoSach_TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -376,7 +376,7 @@
             this.panel25.SuspendLayout();
             this.panel24.SuspendLayout();
             this.TP_TraCuuSach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_DSSach)).BeginInit();
             this.panel29.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.panel30.SuspendLayout();
@@ -1235,7 +1235,7 @@
             this.TP_TaoHoaDon.Location = new System.Drawing.Point(4, 24);
             this.TP_TaoHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.TP_TaoHoaDon.Name = "TP_TaoHoaDon";
-            this.TP_TaoHoaDon.Size = new System.Drawing.Size(1116, 571);
+            this.TP_TaoHoaDon.Size = new System.Drawing.Size(1181, 572);
             this.TP_TaoHoaDon.TabIndex = 2;
             this.TP_TaoHoaDon.Text = "Tạo Hóa Đơn";
             this.TP_TaoHoaDon.UseVisualStyleBackColor = true;
@@ -1257,7 +1257,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1116, 385);
+            this.dataGridView2.Size = new System.Drawing.Size(1181, 386);
             this.dataGridView2.TabIndex = 2;
             // 
             // C_HoaDon_MaSach
@@ -1295,10 +1295,10 @@
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel22.Controls.Add(this.flowLayoutPanel4);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel22.Location = new System.Drawing.Point(0, 539);
+            this.panel22.Location = new System.Drawing.Point(0, 540);
             this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1116, 32);
+            this.panel22.Size = new System.Drawing.Size(1181, 32);
             this.panel22.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -1315,14 +1315,14 @@
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1046, 4);
+            this.label21.Location = new System.Drawing.Point(1111, 4);
             this.label21.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(64, 20);
@@ -1333,7 +1333,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(979, 4);
+            this.label20.Location = new System.Drawing.Point(1044, 4);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(67, 20);
@@ -1344,7 +1344,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(911, 4);
+            this.label19.Location = new System.Drawing.Point(976, 4);
             this.label19.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(64, 20);
@@ -1355,7 +1355,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(789, 4);
+            this.label18.Location = new System.Drawing.Point(854, 4);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(122, 20);
@@ -1367,7 +1367,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(721, 4);
+            this.label17.Location = new System.Drawing.Point(786, 4);
             this.label17.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(64, 20);
@@ -1378,7 +1378,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(638, 4);
+            this.label16.Location = new System.Drawing.Point(703, 4);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 20);
@@ -1394,7 +1394,7 @@
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1116, 154);
+            this.panel23.Size = new System.Drawing.Size(1181, 154);
             this.panel23.TabIndex = 0;
             // 
             // panel28
@@ -1403,7 +1403,7 @@
             this.panel28.Controls.Add(this.button3);
             this.panel28.Controls.Add(this.button2);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel28.Location = new System.Drawing.Point(1008, 0);
+            this.panel28.Location = new System.Drawing.Point(1073, 0);
             this.panel28.Margin = new System.Windows.Forms.Padding(2);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(108, 154);
@@ -1465,7 +1465,7 @@
             this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(1116, 154);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1181, 154);
             this.flowLayoutPanel5.TabIndex = 3;
             // 
             // panel26
@@ -1682,36 +1682,36 @@
             // 
             // TP_TraCuuSach
             // 
-            this.TP_TraCuuSach.Controls.Add(this.dataGridView3);
+            this.TP_TraCuuSach.Controls.Add(this.DGV_DSSach);
             this.TP_TraCuuSach.Controls.Add(this.panel29);
             this.TP_TraCuuSach.Controls.Add(this.panel30);
             this.TP_TraCuuSach.Location = new System.Drawing.Point(4, 24);
             this.TP_TraCuuSach.Margin = new System.Windows.Forms.Padding(2);
             this.TP_TraCuuSach.Name = "TP_TraCuuSach";
-            this.TP_TraCuuSach.Size = new System.Drawing.Size(1116, 571);
+            this.TP_TraCuuSach.Size = new System.Drawing.Size(1181, 572);
             this.TP_TraCuuSach.TabIndex = 4;
             this.TP_TraCuuSach.Text = "Tra cứu sách";
             this.TP_TraCuuSach.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // DGV_DSSach
             // 
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGV_DSSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_DSSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_DSSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C_KhoSach_MaSach,
             this.C_KhoSach_TenSach,
             this.C_KhoSach_TacGia,
             this.C_KhoSach_TheLoai,
             this.C_KhoSach_SoLuong,
             this.C_KhoSach_TinhTrang});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 72);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1116, 467);
-            this.dataGridView3.TabIndex = 2;
+            this.DGV_DSSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_DSSach.Location = new System.Drawing.Point(0, 72);
+            this.DGV_DSSach.Margin = new System.Windows.Forms.Padding(2);
+            this.DGV_DSSach.Name = "DGV_DSSach";
+            this.DGV_DSSach.RowTemplate.Height = 24;
+            this.DGV_DSSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_DSSach.Size = new System.Drawing.Size(1181, 468);
+            this.DGV_DSSach.TabIndex = 2;
             // 
             // C_KhoSach_MaSach
             // 
@@ -1748,10 +1748,10 @@
             this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel29.Controls.Add(this.flowLayoutPanel6);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel29.Location = new System.Drawing.Point(0, 539);
+            this.panel29.Location = new System.Drawing.Point(0, 540);
             this.panel29.Margin = new System.Windows.Forms.Padding(2);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1116, 32);
+            this.panel29.Size = new System.Drawing.Size(1181, 32);
             this.panel29.TabIndex = 1;
             // 
             // flowLayoutPanel6
@@ -1765,7 +1765,7 @@
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // label30
@@ -1821,14 +1821,14 @@
             this.panel30.Location = new System.Drawing.Point(0, 0);
             this.panel30.Margin = new System.Windows.Forms.Padding(2);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(1116, 72);
+            this.panel30.Size = new System.Drawing.Size(1181, 72);
             this.panel30.TabIndex = 0;
             // 
             // panel31
             // 
             this.panel31.Controls.Add(this.BT_KhoSach_ThemSach);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel31.Location = new System.Drawing.Point(951, 0);
+            this.panel31.Location = new System.Drawing.Point(1016, 0);
             this.panel31.Margin = new System.Windows.Forms.Padding(2);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(165, 72);
@@ -1860,7 +1860,7 @@
             this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel7.TabIndex = 3;
             // 
             // panel32
@@ -1992,7 +1992,7 @@
             this.TP_DSPhieuNhap.Location = new System.Drawing.Point(4, 24);
             this.TP_DSPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSPhieuNhap.Name = "TP_DSPhieuNhap";
-            this.TP_DSPhieuNhap.Size = new System.Drawing.Size(1116, 571);
+            this.TP_DSPhieuNhap.Size = new System.Drawing.Size(1181, 572);
             this.TP_DSPhieuNhap.TabIndex = 6;
             this.TP_DSPhieuNhap.Text = "DS Phiếu Nhập Sách";
             this.TP_DSPhieuNhap.UseVisualStyleBackColor = true;
@@ -2013,7 +2013,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 24;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(1116, 467);
+            this.dataGridView4.Size = new System.Drawing.Size(1181, 468);
             this.dataGridView4.TabIndex = 2;
             // 
             // C_DSPhieuNhapSach_MaPhieu
@@ -2046,10 +2046,10 @@
             this.panel36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel36.Controls.Add(this.flowLayoutPanel8);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel36.Location = new System.Drawing.Point(0, 539);
+            this.panel36.Location = new System.Drawing.Point(0, 540);
             this.panel36.Margin = new System.Windows.Forms.Padding(2);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(1116, 32);
+            this.panel36.Size = new System.Drawing.Size(1181, 32);
             this.panel36.TabIndex = 1;
             // 
             // flowLayoutPanel8
@@ -2065,7 +2065,7 @@
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel8.TabIndex = 0;
             // 
             // label34
@@ -2143,14 +2143,14 @@
             this.panel37.Location = new System.Drawing.Point(0, 0);
             this.panel37.Margin = new System.Windows.Forms.Padding(2);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(1116, 72);
+            this.panel37.Size = new System.Drawing.Size(1181, 72);
             this.panel37.TabIndex = 0;
             // 
             // panel38
             // 
             this.panel38.Controls.Add(this.BT_DSPhieuNhap_TaoPhieuNhap);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel38.Location = new System.Drawing.Point(951, 0);
+            this.panel38.Location = new System.Drawing.Point(1016, 0);
             this.panel38.Margin = new System.Windows.Forms.Padding(2);
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(165, 72);
@@ -2181,7 +2181,7 @@
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel9.TabIndex = 3;
             // 
             // panel39
@@ -2286,7 +2286,7 @@
             this.TP_TaoPhieuNhapSach.Location = new System.Drawing.Point(4, 24);
             this.TP_TaoPhieuNhapSach.Margin = new System.Windows.Forms.Padding(2);
             this.TP_TaoPhieuNhapSach.Name = "TP_TaoPhieuNhapSach";
-            this.TP_TaoPhieuNhapSach.Size = new System.Drawing.Size(1116, 571);
+            this.TP_TaoPhieuNhapSach.Size = new System.Drawing.Size(1181, 572);
             this.TP_TaoPhieuNhapSach.TabIndex = 7;
             this.TP_TaoPhieuNhapSach.Text = "Phiếu Nhập Sách";
             this.TP_TaoPhieuNhapSach.UseVisualStyleBackColor = true;
@@ -2308,7 +2308,7 @@
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 24;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView5.Size = new System.Drawing.Size(1116, 385);
+            this.dataGridView5.Size = new System.Drawing.Size(1181, 386);
             this.dataGridView5.TabIndex = 2;
             // 
             // C_PhieuNhapSach_MaSach
@@ -2346,10 +2346,10 @@
             this.panel42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel42.Controls.Add(this.flowLayoutPanel10);
             this.panel42.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel42.Location = new System.Drawing.Point(0, 539);
+            this.panel42.Location = new System.Drawing.Point(0, 540);
             this.panel42.Margin = new System.Windows.Forms.Padding(2);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(1116, 32);
+            this.panel42.Size = new System.Drawing.Size(1181, 32);
             this.panel42.TabIndex = 1;
             // 
             // flowLayoutPanel10
@@ -2364,7 +2364,7 @@
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel10.TabIndex = 0;
             // 
             // label51
@@ -2372,7 +2372,7 @@
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Location = new System.Drawing.Point(1046, 4);
+            this.label51.Location = new System.Drawing.Point(1111, 4);
             this.label51.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(64, 20);
@@ -2383,7 +2383,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(963, 4);
+            this.label52.Location = new System.Drawing.Point(1028, 4);
             this.label52.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(83, 20);
@@ -2394,7 +2394,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(940, 4);
+            this.label49.Location = new System.Drawing.Point(1005, 4);
             this.label49.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(19, 20);
@@ -2405,7 +2405,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(825, 4);
+            this.label50.Location = new System.Drawing.Point(890, 4);
             this.label50.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(115, 20);
@@ -2421,7 +2421,7 @@
             this.panel43.Location = new System.Drawing.Point(0, 0);
             this.panel43.Margin = new System.Windows.Forms.Padding(2);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(1116, 154);
+            this.panel43.Size = new System.Drawing.Size(1181, 154);
             this.panel43.TabIndex = 0;
             // 
             // panel44
@@ -2430,7 +2430,7 @@
             this.panel44.Controls.Add(this.button7);
             this.panel44.Controls.Add(this.button8);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel44.Location = new System.Drawing.Point(1008, 0);
+            this.panel44.Location = new System.Drawing.Point(1073, 0);
             this.panel44.Margin = new System.Windows.Forms.Padding(2);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(108, 154);
@@ -2491,7 +2491,7 @@
             this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(1116, 154);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(1181, 154);
             this.flowLayoutPanel11.TabIndex = 3;
             // 
             // panel45
@@ -2662,7 +2662,7 @@
             this.TP_DSKhachHang.Location = new System.Drawing.Point(4, 24);
             this.TP_DSKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSKhachHang.Name = "TP_DSKhachHang";
-            this.TP_DSKhachHang.Size = new System.Drawing.Size(1116, 571);
+            this.TP_DSKhachHang.Size = new System.Drawing.Size(1181, 572);
             this.TP_DSKhachHang.TabIndex = 8;
             this.TP_DSKhachHang.Text = "Khách Hàng";
             this.TP_DSKhachHang.UseVisualStyleBackColor = true;
@@ -2686,7 +2686,7 @@
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.RowTemplate.Height = 24;
             this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView6.Size = new System.Drawing.Size(1116, 467);
+            this.dataGridView6.Size = new System.Drawing.Size(1181, 468);
             this.dataGridView6.TabIndex = 2;
             // 
             // C_DSKhachHang_MaKhachHang
@@ -2734,10 +2734,10 @@
             this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel48.Controls.Add(this.flowLayoutPanel12);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel48.Location = new System.Drawing.Point(0, 539);
+            this.panel48.Location = new System.Drawing.Point(0, 540);
             this.panel48.Margin = new System.Windows.Forms.Padding(2);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(1116, 32);
+            this.panel48.Size = new System.Drawing.Size(1181, 32);
             this.panel48.TabIndex = 1;
             // 
             // flowLayoutPanel12
@@ -2751,7 +2751,7 @@
             this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel12.TabIndex = 0;
             // 
             // label47
@@ -2807,14 +2807,14 @@
             this.panel49.Location = new System.Drawing.Point(0, 0);
             this.panel49.Margin = new System.Windows.Forms.Padding(2);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(1116, 72);
+            this.panel49.Size = new System.Drawing.Size(1181, 72);
             this.panel49.TabIndex = 0;
             // 
             // panel50
             // 
             this.panel50.Controls.Add(this.BT_KhachHang_TaoKhachHang);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel50.Location = new System.Drawing.Point(951, 0);
+            this.panel50.Location = new System.Drawing.Point(1016, 0);
             this.panel50.Margin = new System.Windows.Forms.Padding(2);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(165, 72);
@@ -2845,7 +2845,7 @@
             this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel13.TabIndex = 3;
             // 
             // panel51
@@ -2947,7 +2947,7 @@
             this.TP_DSPhieuThu.Location = new System.Drawing.Point(4, 24);
             this.TP_DSPhieuThu.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSPhieuThu.Name = "TP_DSPhieuThu";
-            this.TP_DSPhieuThu.Size = new System.Drawing.Size(1116, 571);
+            this.TP_DSPhieuThu.Size = new System.Drawing.Size(1181, 572);
             this.TP_DSPhieuThu.TabIndex = 9;
             this.TP_DSPhieuThu.Text = "DS Phiếu Thu";
             this.TP_DSPhieuThu.UseVisualStyleBackColor = true;
@@ -2971,7 +2971,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowTemplate.Height = 24;
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(1116, 467);
+            this.dataGridView7.Size = new System.Drawing.Size(1181, 468);
             this.dataGridView7.TabIndex = 2;
             // 
             // C_PhieuThuTien_MaPhieu
@@ -3019,10 +3019,10 @@
             this.panel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel53.Controls.Add(this.flowLayoutPanel14);
             this.panel53.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel53.Location = new System.Drawing.Point(0, 539);
+            this.panel53.Location = new System.Drawing.Point(0, 540);
             this.panel53.Margin = new System.Windows.Forms.Padding(2);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(1116, 32);
+            this.panel53.Size = new System.Drawing.Size(1181, 32);
             this.panel53.TabIndex = 1;
             // 
             // flowLayoutPanel14
@@ -3038,7 +3038,7 @@
             this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel14.TabIndex = 0;
             // 
             // label61
@@ -3116,14 +3116,14 @@
             this.panel55.Location = new System.Drawing.Point(0, 0);
             this.panel55.Margin = new System.Windows.Forms.Padding(2);
             this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(1116, 72);
+            this.panel55.Size = new System.Drawing.Size(1181, 72);
             this.panel55.TabIndex = 0;
             // 
             // panel56
             // 
             this.panel56.Controls.Add(this.BT_DSPhieuThu_TaoPhieuThu);
             this.panel56.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel56.Location = new System.Drawing.Point(951, 0);
+            this.panel56.Location = new System.Drawing.Point(1016, 0);
             this.panel56.Margin = new System.Windows.Forms.Padding(2);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(165, 72);
@@ -3155,7 +3155,7 @@
             this.flowLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel15.TabIndex = 3;
             // 
             // panel57
@@ -3291,7 +3291,7 @@
             this.TP_BaoCaoTon.Location = new System.Drawing.Point(4, 24);
             this.TP_BaoCaoTon.Margin = new System.Windows.Forms.Padding(2);
             this.TP_BaoCaoTon.Name = "TP_BaoCaoTon";
-            this.TP_BaoCaoTon.Size = new System.Drawing.Size(1116, 571);
+            this.TP_BaoCaoTon.Size = new System.Drawing.Size(1181, 572);
             this.TP_BaoCaoTon.TabIndex = 10;
             this.TP_BaoCaoTon.Text = "Báo Cáo Tồn";
             this.TP_BaoCaoTon.UseVisualStyleBackColor = true;
@@ -3312,7 +3312,7 @@
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.RowTemplate.Height = 24;
             this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView8.Size = new System.Drawing.Size(1116, 467);
+            this.dataGridView8.Size = new System.Drawing.Size(1181, 468);
             this.dataGridView8.TabIndex = 2;
             // 
             // C_BaoCaoTon_MaSach
@@ -3345,10 +3345,10 @@
             this.panel61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel61.Controls.Add(this.flowLayoutPanel16);
             this.panel61.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel61.Location = new System.Drawing.Point(0, 539);
+            this.panel61.Location = new System.Drawing.Point(0, 540);
             this.panel61.Margin = new System.Windows.Forms.Padding(2);
             this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(1116, 32);
+            this.panel61.Size = new System.Drawing.Size(1181, 32);
             this.panel61.TabIndex = 1;
             // 
             // flowLayoutPanel16
@@ -3360,7 +3360,7 @@
             this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
             this.flowLayoutPanel16.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel16.TabIndex = 0;
             // 
             // label74
@@ -3393,7 +3393,7 @@
             this.panel62.Location = new System.Drawing.Point(0, 0);
             this.panel62.Margin = new System.Windows.Forms.Padding(2);
             this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(1116, 72);
+            this.panel62.Size = new System.Drawing.Size(1181, 72);
             this.panel62.TabIndex = 0;
             // 
             // flowLayoutPanel17
@@ -3404,7 +3404,7 @@
             this.flowLayoutPanel17.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel17.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel17.TabIndex = 3;
             // 
             // panel64
@@ -3477,7 +3477,7 @@
             this.TP_BaoCaoNo.Location = new System.Drawing.Point(4, 24);
             this.TP_BaoCaoNo.Margin = new System.Windows.Forms.Padding(2);
             this.TP_BaoCaoNo.Name = "TP_BaoCaoNo";
-            this.TP_BaoCaoNo.Size = new System.Drawing.Size(1116, 571);
+            this.TP_BaoCaoNo.Size = new System.Drawing.Size(1181, 572);
             this.TP_BaoCaoNo.TabIndex = 11;
             this.TP_BaoCaoNo.Text = "Báo cáo nợ";
             this.TP_BaoCaoNo.UseVisualStyleBackColor = true;
@@ -3498,7 +3498,7 @@
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.RowTemplate.Height = 24;
             this.dataGridView9.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView9.Size = new System.Drawing.Size(1116, 467);
+            this.dataGridView9.Size = new System.Drawing.Size(1181, 468);
             this.dataGridView9.TabIndex = 2;
             // 
             // C_BaoCaoNo_MaKhachHang
@@ -3531,10 +3531,10 @@
             this.panel63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel63.Controls.Add(this.flowLayoutPanel18);
             this.panel63.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel63.Location = new System.Drawing.Point(0, 539);
+            this.panel63.Location = new System.Drawing.Point(0, 540);
             this.panel63.Margin = new System.Windows.Forms.Padding(2);
             this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(1116, 32);
+            this.panel63.Size = new System.Drawing.Size(1181, 32);
             this.panel63.TabIndex = 1;
             // 
             // flowLayoutPanel18
@@ -3546,7 +3546,7 @@
             this.flowLayoutPanel18.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel18.Name = "flowLayoutPanel18";
             this.flowLayoutPanel18.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(1116, 32);
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(1181, 32);
             this.flowLayoutPanel18.TabIndex = 0;
             // 
             // label76
@@ -3579,7 +3579,7 @@
             this.panel66.Location = new System.Drawing.Point(0, 0);
             this.panel66.Margin = new System.Windows.Forms.Padding(2);
             this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(1116, 72);
+            this.panel66.Size = new System.Drawing.Size(1181, 72);
             this.panel66.TabIndex = 0;
             // 
             // flowLayoutPanel19
@@ -3590,7 +3590,7 @@
             this.flowLayoutPanel19.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(1116, 72);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(1181, 72);
             this.flowLayoutPanel19.TabIndex = 3;
             // 
             // panel67
@@ -3796,7 +3796,7 @@
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.TP_TraCuuSach.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_DSSach)).EndInit();
             this.panel29.ResumeLayout(false);
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
@@ -3992,7 +3992,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TabPage TP_TraCuuSach;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView DGV_DSSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_KhoSach_MaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_KhoSach_TenSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_KhoSach_TacGia;

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObject", "DataT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{27958CBD-B17C-4368-A23F-0D912E3EDB57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1C85E216-087C-47D0-9250-3B5C92A1F4A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{27958CBD-B17C-4368-A23F-0D912E3EDB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27958CBD-B17C-4368-A23F-0D912E3EDB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27958CBD-B17C-4368-A23F-0D912E3EDB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C85E216-087C-47D0-9250-3B5C92A1F4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C85E216-087C-47D0-9250-3B5C92A1F4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C85E216-087C-47D0-9250-3B5C92A1F4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C85E216-087C-47D0-9250-3B5C92A1F4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

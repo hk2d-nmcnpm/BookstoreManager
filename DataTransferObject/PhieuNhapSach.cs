@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class PhieuNhapSach
+    public class PhieuNhapSach
     {
         public string MaPhieuNhapSach { get; set; }
-        public string NgayNhap { get; set; }
+        public DateTime NgayNhap { get; set; }
         public string MaNhanVien { get; set; }
         public PhieuNhapSach() { }
-        public PhieuNhapSach(string maPNS, string ngayNhap,string maNV)
+        public PhieuNhapSach(string maPNS, DateTime ngayNhap,string maNV)
         {
             MaPhieuNhapSach = maPNS;
             NgayNhap = ngayNhap;

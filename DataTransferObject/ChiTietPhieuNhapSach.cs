@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class ChiTietPhieuNhapSach
+    public class ChiTietPhieuNhapSach
     {
         public string MaChiTietPhieuNhapSach { get; set; }
         public string MaPhieuNhapSach { get; set; }
         public string MaSach { get; set; }
         public int SoLuongNhap { get; set; }
-        public int DonGiaNhap { get; set; }
+        public decimal DonGiaNhap { get; set; }
         public ChiTietPhieuNhapSach() { }
-        public ChiTietPhieuNhapSach(string maCTPNS,string maPhieuNhapSach,string maSach, int slNhap, int donGiaNhap)
+        public ChiTietPhieuNhapSach(string maCTPNS,string maPhieuNhapSach,string maSach, int slNhap, decimal donGiaNhap)
         {
             MaChiTietPhieuNhapSach = maCTPNS;
             MaPhieuNhapSach = maPhieuNhapSach;

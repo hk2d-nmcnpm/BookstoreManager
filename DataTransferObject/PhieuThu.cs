@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class PhieuThu
+    public class PhieuThu
     {
         public string MaPhieuThu { get; set; }
         public string MaKhachHang { get; set; }
         public string MaNhanVien { get; set; }
-        public string NgayThu { get; set; }
-        public float SoTienThu { get; set; }
+        public DateTime NgayThu { get; set; }
+        public decimal SoTienThu { get; set; }
         public PhieuThu() { }
-        public PhieuThu(string maPT,string maKH, string maNV,string ngayThu, float soTien)
+        public PhieuThu(string maPT,string maKH, string maNV,DateTime ngayThu, decimal soTien)
         {
             MaPhieuThu = maPT;
             MaKhachHang = maKH;

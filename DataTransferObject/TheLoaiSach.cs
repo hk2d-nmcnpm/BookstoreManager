@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class TheLoaiSach
+    public class TheLoaiSach
     {
         public string MaTheLoai { get; set; }
         public string TenTheLoai { get; set; }
