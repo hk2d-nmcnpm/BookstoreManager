@@ -50,9 +50,9 @@ namespace BusinessLogicLayer
             else
                 return false;                 
         }
-        public bool DeleteSach(string masach)
-        {
-            return objSach.DeleteRow(masach);
-        }
+        //public bool DeleteSach(string masach)
+        //{
+        //    return objSach.DeleteRow(masach);
+        //}
     }
 }

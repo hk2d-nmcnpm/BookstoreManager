@@ -92,7 +92,7 @@ namespace BookstoreManager
         private void BT_AnHienMenu_Click(object sender, EventArgs e)
         {
             const int _distance = 60;
-            if(_anThanhMenu == false)
+            if (_anThanhMenu == false)
             {
                 MainSplitContainer.SplitterDistance = _distance;
                 BT_AnHienMenu.Text = "Hiện";
@@ -117,8 +117,24 @@ namespace BookstoreManager
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
-            if(loginForm.ShowDialog() != DialogResult.OK)
+            if (loginForm.ShowDialog() != DialogResult.OK)
                 Close();
+            Load_DSHoaDon();
+        }
+
+        //private void MainTab_Selected(object sender, TabControlEventArgs e)
+        //{
+        //    switch (e.TabPage.Name)
+        //    {
+        //        case "TP_DSHoaDon":
+        //            Load_DSHoaDon();
+        //            break;
+
+        //    }
+        //}
+        public void Load_DSHoaDon()
+        {
+
         }
     }
 }
