@@ -15,7 +15,7 @@ namespace DataAccessLayer
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                SqlCommand command = new SqlCommand("DELETE FROM Sach WHERE MaHoaDon = @mahoadon",_connection);
+                SqlCommand command = new SqlCommand("DELETE FROM HoaDon WHERE MaHoaDon = @mahoadon",_connection);
                 command.Parameters.Add("@mahoadon", SqlDbType.Char).Value = maHoaDon;
                 command.ExecuteNonQuery();
                 _connection.Close();
@@ -50,7 +50,7 @@ namespace DataAccessLayer
                     hoaDon.GiamGia = (decimal)reader["GiamGia"];
                     reader.Close();
                 }
-    
+                return hoaDon;
             }
             catch (Exception ex)
             {
@@ -106,6 +106,38 @@ namespace DataAccessLayer
             }
             return null;
         }
+        public DataTable GetResultTable()
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "select hd.MaHoaDon\n"
+                           + "	  ,hd.NgayHoaDon as NgayBan\n"
+                           + "	  ,kh.HoTenKH as KhachHang\n"
+                           + "	  ,nv.TenNhanVien as NguoiBan\n"
+                           + "	  ,tmp.TongTien\n"
+                           + "	  ,tmp.TongTien - hd.TienKhachDua as TienNo\n"
+                           + "from HoaDon hd\n"
+                           + "inner join NhanVien nv on hd.MaNhanVien = nv.MaNhanVien\n"
+                           + "inner join KhachHang kh on hd.MaKhachHang = kh.MaKhachHang\n"
+                           + "inner join (select MaHoaDon,sum(DonGiaBan * SoLuongBan) as TongTien from ChiTietHoaDon\n"
+                           + "		    group by MaHoaDon) tmp on tmp.MaHoaDon = hd.MaHoaDon\n"
+                           + "order by hd.MaHoaDon asc";
+                SqlCommand command = new SqlCommand(sql, _connection);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                _connection.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
 
         public DataTable GetAllRows()
         {
@@ -143,10 +175,10 @@ namespace DataAccessLayer
                        + "           ,[TienKhachDua])\n"
                        + "     VALUES\n"
                        + "           (@MaHoaDon\n"
-                       + "           ,@MaKhachHang,\n"
-                       + "           ,@MaNhanVien,\n"
-                       + "           ,@NgayHoaDon,\n"
-                       + "           ,@GiamGia,\n"
+                       + "           ,@MaKhachHang\n"
+                       + "           ,@MaNhanVien\n"
+                       + "           ,@NgayHoaDon\n"
+                       + "           ,@GiamGia\n"
                        + "           ,@TienKhachDua)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;
@@ -184,7 +216,7 @@ namespace DataAccessLayer
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
-                cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.MaNhanVien;
+                cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.NgayHoaDon;
                 cmd.Parameters.Add("@GiamGia", SqlDbType.Money).Value = obj.GiamGia;
                 cmd.Parameters.Add("@TienKhachDua", SqlDbType.Money).Value = obj.TienKhachDua;
                 cmd.ExecuteNonQuery();

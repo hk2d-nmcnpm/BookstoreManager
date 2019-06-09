@@ -18,16 +18,30 @@ namespace BusinessLogicLayer
             if (!objPhieuNhap.IsRowExists(pn.MaPhieuNhapSach))
                 return objPhieuNhap.AddRow(pn);
             else
-                return false;
+                return UpdatePhieuNhap(pn);
         }
         public bool DeletePhieuNhap(string maphieunhap)
         {
+            ChiTietPhieuNhapSachBus ctb = new ChiTietPhieuNhapSachBus();
+            foreach (string ct in ctb.GetMaCTPNList(maphieunhap))
+            {
+                if (ctb.DeleteChiTietPN(ct))
+                    Console.WriteLine("Delete: {0}", ct);
+            }
             return objPhieuNhap.DeleteRow(maphieunhap);
         }
         public bool UpdatePhieuNhap(PhieuNhapSach pn)
         {
-            if (objPhieuNhap.IsRowExists(pn.MaPhieuNhapSach) && objNV.IsRowExists(pn.MaNhanVien))
+            if (objPhieuNhap.IsRowExists(pn.MaPhieuNhapSach))
+            {
+                ChiTietPhieuNhapSachBus ctb = new ChiTietPhieuNhapSachBus();
+                foreach (string ct in ctb.GetMaCTPNList(pn.MaPhieuNhapSach))
+                {
+                    if (ctb.DeleteChiTietPN(ct))
+                        Console.WriteLine("Delete: {0}", ct);
+                }
                 return objPhieuNhap.UpdateRow(pn);
+            }
             else
                 return false;
         }
@@ -42,6 +56,10 @@ namespace BusinessLogicLayer
         public DataTable GetPhieuNhapByTop(int number)
         {
             return objPhieuNhap.GetRows(number);
+        }
+        public DataTable GetDisplayTable()
+        {
+            return objPhieuNhap.GetDisplayTable();
         }
     }
 }

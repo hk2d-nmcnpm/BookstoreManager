@@ -19,19 +19,22 @@ namespace DataAccessLayer
                            + "           ,[MaKhachHang]\n"
                            + "           ,[MaNhanVien]\n"
                            + "           ,[NgayThu]\n"
-                           + "           ,[SoTienThu])\n"
+                           + "           ,[SoTienThu]\n"
+                           + "           ,[LyDoThu])\n"
                            + "     VALUES\n"
                            + "           (@MaPhieuThu\n"
                            + "           ,@MaKhachHang\n"
                            + "           ,@MaNhanVien\n"
                            + "           ,@NgayThu\n"
-                           + "           ,@SoTienThu)";
+                           + "           ,@SoTienThu\n"
+                           + "           ,@LyDoThu)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaPhieuThu", SqlDbType.Char).Value = obj.MaPhieuThu;
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayThu", SqlDbType.Date).Value = obj.NgayThu;
                 cmd.Parameters.Add("@SoTienThu", SqlDbType.Money).Value = obj.SoTienThu;
+                cmd.Parameters.Add("@LyDoThu", SqlDbType.NChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -82,6 +85,7 @@ namespace DataAccessLayer
                     obj.MaKhachHang = reader["MaKhachHang"].ToString();
                     obj.NgayThu = (DateTime)reader["NgayThu"];
                     obj.SoTienThu = (decimal)reader["SoTienThu"];
+                    obj.LyDoThu = reader["LyDoThu"] as string;
                     reader.Close();
                 }
 
@@ -136,6 +140,31 @@ namespace DataAccessLayer
             }
             return null;
         }
+        public DataTable GetDisplayTable()
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "select pt.MaPhieuThu, kh.HoTenKH,kh.DiaChi, kh.SoDienThoai, kh.Email, pt.NgayThu, pt.SoTienThu, nv.TenNhanVien, pt.LyDoThu\n"
+                           + "from PhieuThu pt\n"
+                           + "inner join KhachHang kh on pt.MaKhachHang = kh.MaKhachHang\n"
+                           + "inner join NhanVien nv on pt.MaNhanVien = nv.MaNhanVien\n"
+                           + "order by pt.MaPhieuThu asc";
+                SqlCommand command = new SqlCommand(sql, _connection);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                _connection.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
         public bool UpdateRow(PhieuThu obj)
         {
             try
@@ -147,6 +176,7 @@ namespace DataAccessLayer
                            + "      ,[MaNhanVien] = @MaNhanVien\n"
                            + "      ,[NgayThu] = @NgayThu\n"
                            + "      ,[SoTienThu] = @SoTienThu\n"
+                           + "      ,[LyDoThu] = @LyDoThu\n"
                            + " WHERE [MaPhieuThu] = @MaPhieuThu";
                 var cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaPhieuThu", SqlDbType.Char).Value = obj.MaPhieuThu;
@@ -154,6 +184,7 @@ namespace DataAccessLayer
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayThu", SqlDbType.Date).Value = obj.NgayThu;
                 cmd.Parameters.Add("@SoTienThu", SqlDbType.Money).Value = obj.SoTienThu;
+                cmd.Parameters.Add("@LyDoThu", SqlDbType.NChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;

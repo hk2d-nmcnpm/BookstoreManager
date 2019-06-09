@@ -17,16 +17,31 @@ namespace BusinessLogicLayer
             if (!objHoaDon.IsRowExists(hd.MaHoaDon))
                 return objHoaDon.AddRow(hd);
             else
-                return false;
+                return UpdateHoaDon(hd);
         }
         public bool DeleteHoaDon(string mahoadon)
         {
+            ChiTietHoaDonBus ctb = new ChiTietHoaDonBus();
+            foreach(string ct in ctb.GetMaCTHoaDonList(mahoadon))
+            {
+                if (ctb.DeleteChiTietHD(ct))
+                    Console.WriteLine("Delete: {0}",ct);
+            }
             return objHoaDon.DeleteRow(mahoadon);
         }
         public bool UpdateHoaDon(HoaDon hd)
         {
             if (objHoaDon.IsRowExists(hd.MaHoaDon))
+            {
+                ChiTietHoaDonBus ctb = new ChiTietHoaDonBus();
+                foreach (string ct in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
+                {
+                    if (ctb.DeleteChiTietHD(ct))
+                        Console.WriteLine("Delete: {0}", ct);
+                }
                 return objHoaDon.UpdateRow(hd);
+            }
+
             else
                 return false;
                 
@@ -42,6 +57,10 @@ namespace BusinessLogicLayer
         public DataTable GetHoaDonByTop(int number)
         {
             return objHoaDon.GetRows(number);
+        }
+        public DataTable GetResultTable()
+        {
+            return objHoaDon.GetResultTable();
         }
     }
 }

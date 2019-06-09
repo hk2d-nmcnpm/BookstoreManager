@@ -15,5 +15,15 @@ namespace BookstoreManager
         {
             InitializeComponent();
         }
+
+        private void BT_Luu_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void BT_Huy_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }

@@ -32,6 +32,10 @@ namespace BusinessLogicLayer
                 return false;
 
         }
+        public List<string> GetMaCTPNList(string maPN)
+        {
+            return objCTPN.GetMaCTPNList(maPN);
+        }
         public DataTable GetChiTietPN()
         {
             return objCTPN.GetAllRows();

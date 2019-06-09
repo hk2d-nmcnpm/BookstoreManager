@@ -9,14 +9,16 @@ namespace DataTransferObject
         public string MaNhanVien { get; set; }
         public DateTime NgayThu { get; set; }
         public decimal SoTienThu { get; set; }
+        public string LyDoThu { get; set; }
         public PhieuThu() { }
-        public PhieuThu(string maPT,string maKH, string maNV,DateTime ngayThu, decimal soTien)
+        public PhieuThu(string maPT,string maKH, string maNV,DateTime ngayThu, decimal soTien, string lyDo)
         {
             MaPhieuThu = maPT;
             MaKhachHang = maKH;
             MaNhanVien = maNV;
             NgayThu = ngayThu;
             SoTienThu = soTien;
+            LyDoThu = lyDo;
         }
     }
 }

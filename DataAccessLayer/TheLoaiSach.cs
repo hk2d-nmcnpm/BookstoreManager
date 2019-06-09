@@ -20,7 +20,7 @@ namespace DataAccessLayer
                 const string cmdText = "INSERT INTO TheLoaiSach VALUES (@MaTheLoai,@TenTheLoai)";
                 var command = new SqlCommand(cmdText, _connection);
                 command.Parameters.Add("@MaTheLoai", SqlDbType.Char).Value = theLoai.MaTheLoai;
-                command.Parameters.Add("@TenTheLoai", SqlDbType.NChar).Value = theLoai.TenTheLoai;
+                command.Parameters.Add("@TenTheLoai", SqlDbType.NVarChar).Value = theLoai.TenTheLoai;
                 command.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -42,7 +42,7 @@ namespace DataAccessLayer
                 const string cmdText = "UPDATE TheLoaiSach SET TenTheLoai = @TenTheLoai WHERE MaTheLoai = @MaTheLoai";
                 var command = new SqlCommand(cmdText, _connection);
                 command.Parameters.Add("@MaTheLoai", SqlDbType.Char).Value = theLoai.MaTheLoai;
-                command.Parameters.Add("@TenTheLoai", SqlDbType.NChar).Value = theLoai.TenTheLoai;
+                command.Parameters.Add("@TenTheLoai", SqlDbType.NVarChar).Value = theLoai.TenTheLoai;
                 command.ExecuteNonQuery();
                 _connection.Close();
                 return true;

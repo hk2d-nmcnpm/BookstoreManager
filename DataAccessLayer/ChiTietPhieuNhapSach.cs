@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using DataTransferObject;
 using System.Data;
+using System.Collections.Generic;
 
 namespace DataAccessLayer
 {
@@ -63,6 +64,31 @@ namespace DataAccessLayer
             }
             return false;
         }
+        public List<string> GetMaCTPNList(string maPN)
+        {
+            try
+            {
+                var list = new List<string>();
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "SELECT [MaChiTietPhieuNhapSach]\n"
+                           + "FROM [dbo].[ChiTietPhieuNhapSach]\n"
+                           + "WHERE [MaPhieuNhapSach] = @mapn";
+                SqlCommand command = new SqlCommand(sql, _connection);
+                command.Parameters.Add("@mapn", SqlDbType.Char).Value = maPN;
+                using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.HasRows)
+                        while (reader.Read())
+                            list.Add(reader["MaChiTietPhieuNhapSach"].ToString());
+                return list;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
         public ChiTietPhieuNhapSach GetRow(string maCTPNS)
         {
             try
@@ -84,7 +110,7 @@ namespace DataAccessLayer
                     obj.DonGiaNhap = (decimal)reader["DonGiaNhap"];
                     reader.Close();
                 }
-
+                return obj;
             }
             catch (Exception ex)
             {

@@ -77,7 +77,7 @@ namespace DataAccessLayer
                     obj.NgayNhap = (DateTime)reader["NgayNhap"];
                     reader.Close();
                 }
-
+                return obj;
             }
             catch (Exception ex)
             {
@@ -116,6 +116,32 @@ namespace DataAccessLayer
                     _connection.Open();
 
                 SqlCommand command = new SqlCommand("SELECT * FROM PhieuNhapSach ORDER BY MaPhieuNhapSach ASC", _connection);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                _connection.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public DataTable GetDisplayTable()
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "select pn.MaPhieuNhapSach, pn.NgayNhap, nv.TenNhanVien, tmp.TongSoLuong, tmp.TongTien \n"
+                           + "from PhieuNhapSach pn\n"
+                           + "inner join NhanVien nv on pn.MaNhanVien = nv.MaNhanVien\n"
+                           + "inner join (select MaPhieuNhapSach, sum(SoLuongNhap) as TongSoLuong, sum(SoLuongNhap * DonGiaNhap) as TongTien\n"
+                           + "		    from ChiTietPhieuNhapSach\n"
+                           + "			group by MaPhieuNhapSach) tmp on tmp.MaPhieuNhapSach = pn.MaPhieuNhapSach";
+                SqlCommand command = new SqlCommand(sql, _connection);
                 SqlDataAdapter da = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

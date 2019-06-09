@@ -20,21 +20,27 @@ namespace DataAccessLayer
                            + "           ,[SoDienThoai]\n"
                            + "           ,[DiaChi]\n"
                            + "           ,[Email]\n"
-                           + "           ,[SoTienNo])\n"
+                           + "           ,[SoTienNo]\n"
+                           + "           ,[TongTien]\n"
+                           + "           ,[NgayMuaCuoi])\n"
                            + "     VALUES\n"
                            + "           (@MaKhachHang\n"
                            + "           ,@HoTenKH\n"
                            + "           ,@SoDienThoai\n"
                            + "           ,@DiaChi\n"
                            + "           ,@Email\n"
-                           + "           ,@SoTienNo)";
+                           + "           ,@SoTienNo\n"
+                           + "           ,@TongTien\n"
+                           + "           ,@NgayMuaCuoi)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
-                cmd.Parameters.Add("@HoTenKH", SqlDbType.NChar).Value = obj.HoTenKH;
+                cmd.Parameters.Add("@HoTenKH", SqlDbType.NVarChar).Value = obj.HoTenKH;
                 cmd.Parameters.Add("@SoDienThoai", SqlDbType.Char).Value = obj.SoDienThoai ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = obj.DiaChi ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@Email", SqlDbType.NChar).Value = obj.Email ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@SoTienNo", SqlDbType.Money).Value = obj.SoTienNo;
+                cmd.Parameters.Add("@TongTien", SqlDbType.Money).Value = obj.TongTien;
+                cmd.Parameters.Add("@NgayMuaCuoi", SqlDbType.Date).Value = obj.NgayMuaCuoi;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -86,6 +92,8 @@ namespace DataAccessLayer
                     obj.DiaChi = reader["DiaChi"].ToString();
                     obj.Email = reader["Email"].ToString();
                     obj.SoTienNo = (decimal)reader["SoTienNo"];
+                    obj.TongTien = (decimal)reader["TongTien"];
+                    obj.NgayMuaCuoi = (DateTime)reader["NgayMuaCuoi"];
                     reader.Close();
                 }
 
@@ -152,14 +160,18 @@ namespace DataAccessLayer
                            + "      ,[DiaChi] = @DiaChi\n"
                            + "      ,[Email] = @Email\n"
                            + "      ,[SoTienNo] = @SoTienNo\n"
+                           + "      ,[TongTien] = @TongTien\n"
+                           + "      ,[NgayMuaCuoi] = @NgayMuaCuoi\n"
                            + " WHERE [MaKhachHang] = @MaKhachHang";
                 var cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
-                cmd.Parameters.Add("@HoTenKH", SqlDbType.NChar).Value = obj.HoTenKH;
+                cmd.Parameters.Add("@HoTenKH", SqlDbType.NVarChar).Value = obj.HoTenKH;
                 cmd.Parameters.Add("@SoDienThoai", SqlDbType.Char).Value = obj.SoDienThoai ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = obj.DiaChi ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@Email", SqlDbType.NChar).Value = obj.Email ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@SoTienNo", SqlDbType.Money).Value = obj.SoTienNo;
+                cmd.Parameters.Add("@TongTien", SqlDbType.Money).Value = obj.TongTien;
+                cmd.Parameters.Add("@NgayMuaCuoi", SqlDbType.Date).Value = obj.NgayMuaCuoi;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;

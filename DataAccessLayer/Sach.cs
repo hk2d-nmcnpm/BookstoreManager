@@ -50,7 +50,7 @@ namespace DataAccessLayer
                     sach.TacGia = reader["TacGia"].ToString();
                     sach.MoTa = reader["MoTa"].ToString();
                     sach.SoLuongTon = (int)reader["SoLuongTon"];
-                    sach.AnhBia = (byte[])reader["AnhBia"];
+                    sach.AnhBia = reader["AnhBia"] is DBNull ? null: (byte[])reader["AnhBia"];
                     sach.DonGia = (decimal)reader["DonGia"];
                     sach.MaTheLoai = reader["MaTheLoai"].ToString();
                     sach.NamXuatBan = (int)reader["NamXuatBan"];
@@ -65,7 +65,7 @@ namespace DataAccessLayer
                 _connection.Close();
                 Console.WriteLine(ex.Message);
             }
-            return null;
+            return sach;
         }
         public DataTable GetRows(int number)
         {

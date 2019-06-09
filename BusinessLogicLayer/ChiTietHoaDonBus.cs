@@ -22,6 +22,10 @@ namespace BusinessLogicLayer
             else
                 return false;
         }
+        public List<string> GetMaCTHoaDonList(string maHoaDon)
+        {
+            return objCTHD.GetMaCTHoaDonList(maHoaDon);
+        }
         public bool DeleteChiTietHD(string macthd)
         {
             return objCTHD.DeleteRow(macthd);

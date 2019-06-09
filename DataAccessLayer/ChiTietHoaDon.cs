@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using DataTransferObject;
 using System.Data;
+using System.Collections.Generic;
 
 namespace DataAccessLayer
 {
@@ -84,7 +85,32 @@ namespace DataAccessLayer
                     obj.DonGiaBan = (decimal)reader["DonGiaBan"];
                     reader.Close();
                 }
-
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public List<string> GetMaCTHoaDonList(string maHoaDon)
+        {
+            try
+            {
+                var list = new List<string>();
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "SELECT [MaChiTietHoaDon]\n"
+                           + "FROM [dbo].[ChiTietHoaDon]\n"
+                           + "WHERE [MaHoaDon] = @mahd";
+                SqlCommand command = new SqlCommand(sql, _connection);
+                command.Parameters.Add("@mahd", SqlDbType.Char).Value = maHoaDon;
+                using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.HasRows)
+                        while(reader.Read())
+                            list.Add(reader["MaChiTietHoaDon"].ToString());
+                return list;
             }
             catch (Exception ex)
             {

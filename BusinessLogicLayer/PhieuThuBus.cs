@@ -48,5 +48,9 @@ namespace BusinessLogicLayer
         {
             return 0;
         }
+        public DataTable GetDisplayTable()
+        {
+            return objPhieuThu.GetDisplayTable();
+        }
     }
 }

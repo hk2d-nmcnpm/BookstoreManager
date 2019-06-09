@@ -122,7 +122,7 @@ namespace DataAccessLayer
                        + "           ,@MatKhau)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
-                cmd.Parameters.Add("@TenNhanVien", SqlDbType.NChar).Value = obj.TenNhanVien;
+                cmd.Parameters.Add("@TenNhanVien", SqlDbType.NVarChar).Value = obj.TenNhanVien;
                 cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = obj.NgaySinh;
                 cmd.Parameters.Add("@ChucVu", SqlDbType.TinyInt).Value = obj.ChucVu;
                 cmd.Parameters.Add("@MatKhau", SqlDbType.Char).Value = obj.MatKhau;
@@ -152,7 +152,7 @@ namespace DataAccessLayer
                            + " WHERE [MaNhanVien] = @MaNhanVien";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
-                cmd.Parameters.Add("@TenNhanVien", SqlDbType.NChar).Value = obj.TenNhanVien;
+                cmd.Parameters.Add("@TenNhanVien", SqlDbType.NVarChar).Value = obj.TenNhanVien;
                 cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = obj.NgaySinh;
                 cmd.Parameters.Add("@ChucVu", SqlDbType.TinyInt).Value = obj.ChucVu;
                 cmd.Parameters.Add("@MatKhau", SqlDbType.Char).Value = obj.MatKhau;

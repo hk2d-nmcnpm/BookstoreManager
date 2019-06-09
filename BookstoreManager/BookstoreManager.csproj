@@ -168,6 +168,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_Books.ico" />
+    <None Include="Resources\clear_filters_20px.png" />
+    <None Include="Resources\view_details_20px.png" />
+    <None Include="Resources\synchronize_20px.png" />
+    <None Include="Resources\available_updates_20px.png" />
+    <None Include="Resources\edit_property_20px.png" />
+    <None Include="Resources\delete_property_20px.png" />
+    <None Include="Resources\add_property_20px.png" />
+    <None Include="Resources\select_all_20px.png" />
+    <None Include="Resources\delete_16px3.png" />
+    <None Include="Resources\delete_16px2.png" />
+    <None Include="Resources\delete_16px1.png" />
+    <None Include="Resources\view_16px.png" />
+    <None Include="Resources\edit_16px.png" />
+    <None Include="Resources\delete_16px.png" />
     <None Include="Resources\literature_32px1.png" />
   </ItemGroup>
   <ItemGroup>
