@@ -192,5 +192,36 @@ namespace DataAccessLayer
             }
             return result;
         }
+        public bool Kiemtrataikhoan(string MaNhanVien, string MatKhau)
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+
+                string query = string.Format("select * from NhanVien where MaNhanVien='{0}' and MatKhau='{1}'", MaNhanVien, MatKhau);
+
+                SqlCommand cmd = new SqlCommand(query, _connection);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dr.Close();
+                    _connection.Close();
+                    return true;
+                }
+                else
+                {
+                    dr.Close();
+                    _connection.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + "   fjghfg");
+                _connection.Close();
+            }
+            return false;
+        }
     }
 }

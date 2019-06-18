@@ -42,5 +42,9 @@ namespace BusinessLogicLayer
             else
                 return false;
         }
+        public bool Kiemtrataikhoan(string MaNhanVien, string MatKhau)
+        {
+            return objNhanVien.Kiemtrataikhoan(MaNhanVien, MatKhau);
+        }
     }
 }

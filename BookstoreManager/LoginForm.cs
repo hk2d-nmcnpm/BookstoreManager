@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,17 @@ namespace BookstoreManager
 
         private void BT_Login_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            string TenDangNhap = TB_TenDangNhap.Text;
+            string MatKhau = TB_MatKhau.Text;
+            NhanVienBus nvbus = new NhanVienBus();
+            if (nvbus.Kiemtrataikhoan(TenDangNhap, MatKhau))
+            {
+                MessageBox.Show("Đã đăng nhập thành công");
+                DialogResult = DialogResult.OK;
+            }
+
+            else
+                MessageBox.Show("Vui lòng xem lại user và password");
         }
     }
 }

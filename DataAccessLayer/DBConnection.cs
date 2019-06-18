@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     public class DBConnection
     {
-        const string connectionString = "Data Source=DESKTOP-9EOMK9V;Initial Catalog=bookstore-manager;Integrated Security=True";
+        const string connectionString = "Data Source=DESKTOP-6L0PUJ0;Initial Catalog=bookstore-manager2;Integrated Security=True";
         protected SqlConnection _connection;
         public DBConnection()
         {

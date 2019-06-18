@@ -440,6 +440,7 @@ namespace BookstoreManager
             LoginForm loginForm = new LoginForm();
             if (loginForm.ShowDialog() != DialogResult.OK)
                 Close();
+            else
             DongBo(sender, new EventArgs());
         }
         #region Sync
@@ -852,6 +853,14 @@ namespace BookstoreManager
             }
             PhieuNhapSach_TinhTien();
             MainTab.SelectedIndex = 4;
+        }
+
+        private void KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

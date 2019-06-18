@@ -35,5 +35,29 @@ namespace BookstoreManager
             else
                 MessageBox.Show("Vui lòng cung cấp đầy đủ thông tin", "Không thể lưu lại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void TB_DonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TB_SoTrang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TB_NamXuatBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
