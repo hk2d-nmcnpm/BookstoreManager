@@ -88,7 +88,7 @@ namespace DataAccessLayer
                     obj.LyDoThu = reader["LyDoThu"] as string;
                     reader.Close();
                 }
-
+                return obj;
             }
             catch (Exception ex)
             {

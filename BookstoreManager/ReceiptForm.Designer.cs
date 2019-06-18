@@ -62,9 +62,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(341, 394);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -74,7 +74,7 @@
             // 
             this.TB_MaPhieu.Enabled = false;
             this.TB_MaPhieu.Location = new System.Drawing.Point(8, 45);
-            this.TB_MaPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_MaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.TB_MaPhieu.Name = "TB_MaPhieu";
             this.TB_MaPhieu.Size = new System.Drawing.Size(326, 23);
             this.TB_MaPhieu.TabIndex = 16;
@@ -97,7 +97,7 @@
             this.CBB_NhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBB_NhanVien.FormattingEnabled = true;
             this.CBB_NhanVien.Location = new System.Drawing.Point(8, 148);
-            this.CBB_NhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBB_NhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.CBB_NhanVien.Name = "CBB_NhanVien";
             this.CBB_NhanVien.Size = new System.Drawing.Size(326, 25);
             this.CBB_NhanVien.TabIndex = 14;
@@ -118,7 +118,7 @@
             this.DTP_NgayThu.CustomFormat = "dd/MM/yyyy";
             this.DTP_NgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_NgayThu.Location = new System.Drawing.Point(8, 197);
-            this.DTP_NgayThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP_NgayThu.Margin = new System.Windows.Forms.Padding(2);
             this.DTP_NgayThu.Name = "DTP_NgayThu";
             this.DTP_NgayThu.Size = new System.Drawing.Size(326, 23);
             this.DTP_NgayThu.TabIndex = 11;
@@ -137,7 +137,7 @@
             // TB_SoTienThu
             // 
             this.TB_SoTienThu.Location = new System.Drawing.Point(8, 250);
-            this.TB_SoTienThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_SoTienThu.Margin = new System.Windows.Forms.Padding(2);
             this.TB_SoTienThu.Name = "TB_SoTienThu";
             this.TB_SoTienThu.Size = new System.Drawing.Size(326, 23);
             this.TB_SoTienThu.TabIndex = 9;
@@ -174,7 +174,7 @@
             this.CBB_KhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBB_KhachHang.FormattingEnabled = true;
             this.CBB_KhachHang.Location = new System.Drawing.Point(8, 95);
-            this.CBB_KhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBB_KhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.CBB_KhachHang.Name = "CBB_KhachHang";
             this.CBB_KhachHang.Size = new System.Drawing.Size(326, 25);
             this.CBB_KhachHang.TabIndex = 3;
@@ -194,7 +194,7 @@
             // 
             this.BT_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Luu.Location = new System.Drawing.Point(290, 405);
-            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Luu.Name = "BT_Luu";
             this.BT_Luu.Size = new System.Drawing.Size(56, 28);
             this.BT_Luu.TabIndex = 1;
@@ -206,7 +206,7 @@
             // 
             this.BT_In.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_In.Location = new System.Drawing.Point(9, 405);
-            this.BT_In.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_In.Margin = new System.Windows.Forms.Padding(2);
             this.BT_In.Name = "BT_In";
             this.BT_In.Size = new System.Drawing.Size(64, 28);
             this.BT_In.TabIndex = 2;
@@ -217,7 +217,7 @@
             // 
             this.BT_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Huy.Location = new System.Drawing.Point(231, 405);
-            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Huy.Name = "BT_Huy";
             this.BT_Huy.Size = new System.Drawing.Size(55, 28);
             this.BT_Huy.TabIndex = 3;
@@ -228,7 +228,7 @@
             // TB_LyDoThu
             // 
             this.TB_LyDoThu.Location = new System.Drawing.Point(14, 310);
-            this.TB_LyDoThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_LyDoThu.Margin = new System.Windows.Forms.Padding(2);
             this.TB_LyDoThu.MaxLength = 200;
             this.TB_LyDoThu.Name = "TB_LyDoThu";
             this.TB_LyDoThu.Size = new System.Drawing.Size(329, 86);
@@ -246,7 +246,7 @@
             this.Controls.Add(this.BT_Luu);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ReceiptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -265,9 +265,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BT_Luu;
         private System.Windows.Forms.Button BT_In;
-        private System.Windows.Forms.Button BT_Huy;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.RichTextBox TB_LyDoThu;
         public System.Windows.Forms.ComboBox CBB_NhanVien;
@@ -275,5 +273,7 @@
         public System.Windows.Forms.TextBox TB_MaPhieu;
         public System.Windows.Forms.DateTimePicker DTP_NgayThu;
         public System.Windows.Forms.TextBox TB_SoTienThu;
+        public System.Windows.Forms.Button BT_Luu;
+        public System.Windows.Forms.Button BT_Huy;
     }
 }

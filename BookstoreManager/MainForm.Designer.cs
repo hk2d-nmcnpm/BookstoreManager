@@ -204,12 +204,12 @@
             this.C_DSPhieuNhapSach_TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSPhieuNhapSach_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Chontatca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_DSPN_Them = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPN_Xoa = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPN_Sua = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Chitiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.panel36 = new System.Windows.Forms.Panel();
@@ -253,10 +253,9 @@
             this.TB_PNS_MaPhieu = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PhieuNS_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton27 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PhieuNS_XoaMuc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
             this.panel43 = new System.Windows.Forms.Panel();
@@ -286,12 +285,12 @@
             this.C_DSKhachHang_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSKhachHang_TongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton31 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton35 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ThemMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_XoaMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ChinhSua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
             this.panel48 = new System.Windows.Forms.Panel();
@@ -325,12 +324,12 @@
             this.C_PhieuThuTien_NguoiThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_PhieuThuTien_LyDoThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton37 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PT_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton38 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton40 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PT_ThemMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT_XoaMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT_ChinhSua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT__ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
             this.panel53 = new System.Windows.Forms.Panel();
@@ -2532,12 +2531,12 @@
             this.toolStrip4.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton19,
+            this.TSB_DSPN_Chontatca,
             this.toolStripSeparator7,
             this.TSB_DSPN_Them,
             this.TSB_DSPN_Xoa,
             this.TSB_DSPN_Sua,
-            this.toolStripButton23,
+            this.TSB_DSPN_Chitiet,
             this.toolStripSeparator8,
             this.toolStripButton24});
             this.toolStrip4.Location = new System.Drawing.Point(0, 58);
@@ -2548,14 +2547,15 @@
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // toolStripButton19
+            // TSB_DSPN_Chontatca
             // 
-            this.toolStripButton19.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton19.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton19.Text = "Chọn tất cả";
+            this.TSB_DSPN_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_DSPN_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Chontatca.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Chontatca.Name = "TSB_DSPN_Chontatca";
+            this.TSB_DSPN_Chontatca.Size = new System.Drawing.Size(92, 24);
+            this.TSB_DSPN_Chontatca.Text = "Chọn tất cả";
+            this.TSB_DSPN_Chontatca.Click += new System.EventHandler(this.TSB_DSPN_Chontatca_Click);
             // 
             // toolStripSeparator7
             // 
@@ -2570,6 +2570,7 @@
             this.TSB_DSPN_Them.Name = "TSB_DSPN_Them";
             this.TSB_DSPN_Them.Size = new System.Drawing.Size(88, 24);
             this.TSB_DSPN_Them.Text = "Thêm mục";
+            this.TSB_DSPN_Them.Click += new System.EventHandler(this.TSB_DSPN_Them_Click);
             // 
             // TSB_DSPN_Xoa
             // 
@@ -2591,14 +2592,14 @@
             this.TSB_DSPN_Sua.Text = "Chỉnh sửa";
             this.TSB_DSPN_Sua.Click += new System.EventHandler(this.TSB_DSPN_Sua_Click);
             // 
-            // toolStripButton23
+            // TSB_DSPN_Chitiet
             // 
-            this.toolStripButton23.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton23.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton23.Name = "toolStripButton23";
-            this.toolStripButton23.Size = new System.Drawing.Size(69, 24);
-            this.toolStripButton23.Text = "Chi tiết";
+            this.TSB_DSPN_Chitiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSPN_Chitiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Chitiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Chitiet.Name = "TSB_DSPN_Chitiet";
+            this.TSB_DSPN_Chitiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSPN_Chitiet.Text = "Chi tiết";
             // 
             // toolStripSeparator8
             // 
@@ -3083,10 +3084,9 @@
             this.toolStrip5.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip5.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton25,
+            this.TSB_PhieuNS_ChonTatCa,
             this.toolStripSeparator9,
-            this.toolStripButton27,
-            this.toolStripButton28,
+            this.TSB_PhieuNS_XoaMuc,
             this.toolStripSeparator10,
             this.toolStripButton30});
             this.toolStrip5.Location = new System.Drawing.Point(0, 62);
@@ -3097,37 +3097,30 @@
             this.toolStrip5.TabIndex = 6;
             this.toolStrip5.Text = "toolStrip5";
             // 
-            // toolStripButton25
+            // TSB_PhieuNS_ChonTatCa
             // 
-            this.toolStripButton25.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton25.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton25.Name = "toolStripButton25";
-            this.toolStripButton25.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton25.Text = "Chọn tất cả";
+            this.TSB_PhieuNS_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_PhieuNS_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PhieuNS_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PhieuNS_ChonTatCa.Name = "TSB_PhieuNS_ChonTatCa";
+            this.TSB_PhieuNS_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_PhieuNS_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_PhieuNS_ChonTatCa.Click += new System.EventHandler(this.TSB_PhieuNS_ChonTatCa_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton27
+            // TSB_PhieuNS_XoaMuc
             // 
-            this.toolStripButton27.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.toolStripButton27.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton27.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton27.Name = "toolStripButton27";
-            this.toolStripButton27.Size = new System.Drawing.Size(78, 24);
-            this.toolStripButton27.Text = "Xóa mục";
-            // 
-            // toolStripButton28
-            // 
-            this.toolStripButton28.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.toolStripButton28.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton28.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton28.Name = "toolStripButton28";
-            this.toolStripButton28.Size = new System.Drawing.Size(84, 24);
-            this.toolStripButton28.Text = "Chỉnh sửa";
+            this.TSB_PhieuNS_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_PhieuNS_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PhieuNS_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PhieuNS_XoaMuc.Name = "TSB_PhieuNS_XoaMuc";
+            this.TSB_PhieuNS_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_PhieuNS_XoaMuc.Text = "Xóa mục";
+            this.TSB_PhieuNS_XoaMuc.Click += new System.EventHandler(this.TSB_PhieuNS_XoaMuc_Click);
             // 
             // toolStripSeparator10
             // 
@@ -3369,6 +3362,7 @@
             this.DGV_DSKH.Margin = new System.Windows.Forms.Padding(2);
             this.DGV_DSKH.Name = "DGV_DSKH";
             this.DGV_DSKH.ReadOnly = true;
+            this.DGV_DSKH.RowHeadersVisible = false;
             this.DGV_DSKH.RowTemplate.Height = 24;
             this.DGV_DSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_DSKH.Size = new System.Drawing.Size(825, 410);
@@ -3427,12 +3421,12 @@
             this.toolStrip6.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip6.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton31,
+            this.TSB_KH_ChonTatCa,
             this.toolStripSeparator11,
-            this.toolStripButton32,
-            this.toolStripButton33,
-            this.toolStripButton34,
-            this.toolStripButton35,
+            this.TSB_KH_ThemMuc,
+            this.TSB_KH_XoaMuc,
+            this.TSB_KH_ChinhSua,
+            this.TSB_KH_ChiTiet,
             this.toolStripSeparator12,
             this.toolStripButton36});
             this.toolStrip6.Location = new System.Drawing.Point(0, 58);
@@ -3443,55 +3437,60 @@
             this.toolStrip6.TabIndex = 6;
             this.toolStrip6.Text = "toolStrip6";
             // 
-            // toolStripButton31
+            // TSB_KH_ChonTatCa
             // 
-            this.toolStripButton31.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton31.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton31.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton31.Name = "toolStripButton31";
-            this.toolStripButton31.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton31.Text = "Chọn tất cả";
+            this.TSB_KH_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_KH_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChonTatCa.Name = "TSB_KH_ChonTatCa";
+            this.TSB_KH_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_KH_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_KH_ChonTatCa.Click += new System.EventHandler(this.TSB_KH_ChonTatCa_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton32
+            // TSB_KH_ThemMuc
             // 
-            this.toolStripButton32.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.toolStripButton32.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton32.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton32.Name = "toolStripButton32";
-            this.toolStripButton32.Size = new System.Drawing.Size(88, 24);
-            this.toolStripButton32.Text = "Thêm mục";
+            this.TSB_KH_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_KH_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ThemMuc.Name = "TSB_KH_ThemMuc";
+            this.TSB_KH_ThemMuc.Size = new System.Drawing.Size(88, 24);
+            this.TSB_KH_ThemMuc.Text = "Thêm mục";
+            this.TSB_KH_ThemMuc.Click += new System.EventHandler(this.TSB_KH_ThemMuc_Click);
             // 
-            // toolStripButton33
+            // TSB_KH_XoaMuc
             // 
-            this.toolStripButton33.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.toolStripButton33.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton33.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton33.Name = "toolStripButton33";
-            this.toolStripButton33.Size = new System.Drawing.Size(78, 24);
-            this.toolStripButton33.Text = "Xóa mục";
+            this.TSB_KH_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_KH_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_XoaMuc.Name = "TSB_KH_XoaMuc";
+            this.TSB_KH_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_KH_XoaMuc.Text = "Xóa mục";
+            this.TSB_KH_XoaMuc.Click += new System.EventHandler(this.TSB_KH_XoaMuc_Click);
             // 
-            // toolStripButton34
+            // TSB_KH_ChinhSua
             // 
-            this.toolStripButton34.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.toolStripButton34.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton34.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton34.Name = "toolStripButton34";
-            this.toolStripButton34.Size = new System.Drawing.Size(84, 24);
-            this.toolStripButton34.Text = "Chỉnh sửa";
+            this.TSB_KH_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_KH_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChinhSua.Name = "TSB_KH_ChinhSua";
+            this.TSB_KH_ChinhSua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_KH_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_KH_ChinhSua.Click += new System.EventHandler(this.TSB_KH_ChinhSua_Click);
             // 
-            // toolStripButton35
+            // TSB_KH_ChiTiet
             // 
-            this.toolStripButton35.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.toolStripButton35.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton35.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton35.Name = "toolStripButton35";
-            this.toolStripButton35.Size = new System.Drawing.Size(69, 24);
-            this.toolStripButton35.Text = "Chi tiết";
+            this.TSB_KH_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_KH_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChiTiet.Name = "TSB_KH_ChiTiet";
+            this.TSB_KH_ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_KH_ChiTiet.Text = "Chi tiết";
+            this.TSB_KH_ChiTiet.Click += new System.EventHandler(this.TSB_KH_ChiTiet_Click);
             // 
             // toolStripSeparator12
             // 
@@ -3825,12 +3824,12 @@
             this.toolStrip7.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip7.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton37,
+            this.TSB_PT_ChonTatCa,
             this.toolStripSeparator13,
-            this.toolStripButton38,
-            this.toolStripButton39,
-            this.toolStripButton40,
-            this.toolStripButton41,
+            this.TSB_PT_ThemMuc,
+            this.TSB_DSPT_XoaMuc,
+            this.TSB_DSPT_ChinhSua,
+            this.TSB_DSPT__ChiTiet,
             this.toolStripSeparator14,
             this.toolStripButton42});
             this.toolStrip7.Location = new System.Drawing.Point(0, 58);
@@ -3841,55 +3840,60 @@
             this.toolStrip7.TabIndex = 6;
             this.toolStrip7.Text = "toolStrip7";
             // 
-            // toolStripButton37
+            // TSB_PT_ChonTatCa
             // 
-            this.toolStripButton37.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton37.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton37.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton37.Name = "toolStripButton37";
-            this.toolStripButton37.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton37.Text = "Chọn tất cả";
+            this.TSB_PT_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_PT_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PT_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PT_ChonTatCa.Name = "TSB_PT_ChonTatCa";
+            this.TSB_PT_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_PT_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_PT_ChonTatCa.Click += new System.EventHandler(this.TSB_PT_ChonTatCa_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton38
+            // TSB_PT_ThemMuc
             // 
-            this.toolStripButton38.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.toolStripButton38.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton38.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton38.Name = "toolStripButton38";
-            this.toolStripButton38.Size = new System.Drawing.Size(88, 24);
-            this.toolStripButton38.Text = "Thêm mục";
+            this.TSB_PT_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_PT_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PT_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PT_ThemMuc.Name = "TSB_PT_ThemMuc";
+            this.TSB_PT_ThemMuc.Size = new System.Drawing.Size(88, 24);
+            this.TSB_PT_ThemMuc.Text = "Thêm mục";
+            this.TSB_PT_ThemMuc.Click += new System.EventHandler(this.TSB_PT_ThemMuc_Click);
             // 
-            // toolStripButton39
+            // TSB_DSPT_XoaMuc
             // 
-            this.toolStripButton39.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.toolStripButton39.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton39.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton39.Name = "toolStripButton39";
-            this.toolStripButton39.Size = new System.Drawing.Size(78, 24);
-            this.toolStripButton39.Text = "Xóa mục";
+            this.TSB_DSPT_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_DSPT_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT_XoaMuc.Name = "TSB_DSPT_XoaMuc";
+            this.TSB_DSPT_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_DSPT_XoaMuc.Text = "Xóa mục";
+            this.TSB_DSPT_XoaMuc.Click += new System.EventHandler(this.TSB_DSPT_XoaMuc_Click);
             // 
-            // toolStripButton40
+            // TSB_DSPT_ChinhSua
             // 
-            this.toolStripButton40.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.toolStripButton40.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton40.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton40.Name = "toolStripButton40";
-            this.toolStripButton40.Size = new System.Drawing.Size(84, 24);
-            this.toolStripButton40.Text = "Chỉnh sửa";
+            this.TSB_DSPT_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_DSPT_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT_ChinhSua.Name = "TSB_DSPT_ChinhSua";
+            this.TSB_DSPT_ChinhSua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_DSPT_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_DSPT_ChinhSua.Click += new System.EventHandler(this.TSB_DSPT_ChinhSua_Click);
             // 
-            // toolStripButton41
+            // TSB_DSPT__ChiTiet
             // 
-            this.toolStripButton41.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.toolStripButton41.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton41.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton41.Name = "toolStripButton41";
-            this.toolStripButton41.Size = new System.Drawing.Size(69, 24);
-            this.toolStripButton41.Text = "Chi tiết";
+            this.TSB_DSPT__ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSPT__ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT__ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT__ChiTiet.Name = "TSB_DSPT__ChiTiet";
+            this.TSB_DSPT__ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSPT__ChiTiet.Text = "Chi tiết";
+            this.TSB_DSPT__ChiTiet.Click += new System.EventHandler(this.TSB_DSPT__ChiTiet_Click);
             // 
             // toolStripSeparator14
             // 
@@ -5080,37 +5084,36 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStrip toolStrip4;
-        private System.Windows.Forms.ToolStripButton toolStripButton19;
+        private System.Windows.Forms.ToolStripButton TSB_DSPN_Chontatca;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Them;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Sua;
-        private System.Windows.Forms.ToolStripButton toolStripButton23;
+        private System.Windows.Forms.ToolStripButton TSB_DSPN_Chitiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton24;
         private System.Windows.Forms.ToolStrip toolStrip5;
-        private System.Windows.Forms.ToolStripButton toolStripButton25;
+        private System.Windows.Forms.ToolStripButton TSB_PhieuNS_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton27;
-        private System.Windows.Forms.ToolStripButton toolStripButton28;
+        private System.Windows.Forms.ToolStripButton TSB_PhieuNS_XoaMuc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton30;
         private System.Windows.Forms.ToolStrip toolStrip6;
-        private System.Windows.Forms.ToolStripButton toolStripButton31;
+        private System.Windows.Forms.ToolStripButton TSB_KH_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-        private System.Windows.Forms.ToolStripButton toolStripButton32;
-        private System.Windows.Forms.ToolStripButton toolStripButton33;
-        private System.Windows.Forms.ToolStripButton toolStripButton34;
-        private System.Windows.Forms.ToolStripButton toolStripButton35;
+        private System.Windows.Forms.ToolStripButton TSB_KH_ThemMuc;
+        private System.Windows.Forms.ToolStripButton TSB_KH_XoaMuc;
+        private System.Windows.Forms.ToolStripButton TSB_KH_ChinhSua;
+        private System.Windows.Forms.ToolStripButton TSB_KH_ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton toolStripButton36;
         private System.Windows.Forms.ToolStrip toolStrip7;
-        private System.Windows.Forms.ToolStripButton toolStripButton37;
+        private System.Windows.Forms.ToolStripButton TSB_PT_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripButton toolStripButton38;
-        private System.Windows.Forms.ToolStripButton toolStripButton39;
-        private System.Windows.Forms.ToolStripButton toolStripButton40;
-        private System.Windows.Forms.ToolStripButton toolStripButton41;
+        private System.Windows.Forms.ToolStripButton TSB_PT_ThemMuc;
+        private System.Windows.Forms.ToolStripButton TSB_DSPT_XoaMuc;
+        private System.Windows.Forms.ToolStripButton TSB_DSPT_ChinhSua;
+        private System.Windows.Forms.ToolStripButton TSB_DSPT__ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripButton toolStripButton42;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_XoaBoLoc;

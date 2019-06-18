@@ -96,7 +96,7 @@ namespace DataAccessLayer
                     obj.NgayMuaCuoi = (DateTime)reader["NgayMuaCuoi"];
                     reader.Close();
                 }
-
+                return obj;
             }
             catch (Exception ex)
             {

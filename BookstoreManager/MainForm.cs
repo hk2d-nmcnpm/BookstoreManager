@@ -15,6 +15,10 @@ namespace BookstoreManager
     {
         //field
         bool _anThanhMenu;
+
+        KhachHangBus khBus=new KhachHangBus();
+        PhieuThuBus phieuthuBus = new PhieuThuBus();
+
         DataTable dsSach;
         DataTable dsHoaDon;
         DataTable dsKhachHang;
@@ -24,6 +28,7 @@ namespace BookstoreManager
         DataTable baoCaoTon;
         DataTable dsTheLoaiSach;
         DataTable dsNhanVien;
+        
 
         public MainForm()
         {
@@ -855,12 +860,232 @@ namespace BookstoreManager
             MainTab.SelectedIndex = 4;
         }
 
-        private void KeyPress(object sender, KeyPressEventArgs e)
+        private new void KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void TSB_KH_ChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_DSKH.Rows)
+                row.Selected = true;
+        }
+
+        private void TSB_KH_XoaMuc_Click(object sender, EventArgs e)
+        {
+            var x = MessageBox.Show("Bạn có chắc chắn muốn xóa khỏi cơ sở dữ liệu?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (x == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in DGV_DSKH.SelectedRows)
+                {
+                    string maKH = row.Cells[0].Value.ToString();
+                    if (!khBus.DeleteKhachHang(maKH))
+                        MessageBox.Show("Vì lý do ràng buộc nên không thể xóa!");
+                    else
+                        DGV_DSKH.Rows.Remove(row);
+                }
+            }
+            else
+                return;
+        }
+
+        private void TSB_KH_ChinhSua_Click(object sender, EventArgs e)
+        {
+            CustomerForm form = new CustomerForm();
+
+            form.TB_MaKH.Text = DGV_DSKH.SelectedRows[0].Cells[0].Value.ToString();
+
+
+            KhachHang kh = khBus.GetKhachHangByMaKH(form.TB_MaKH.Text);
+
+            form.TB_HoTen.Text = kh.HoTenKH;
+            form.TB_SDT.Text = kh.SoDienThoai;
+            form.TB_DiaChi.Text = kh.DiaChi;
+            form.TB_Email.Text = kh.Email;
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                KhachHang kh2 = new KhachHang()
+                {
+                    MaKhachHang = kh.MaKhachHang,
+                    HoTenKH = form.TB_HoTen.Text,
+                    SoDienThoai = form.TB_SDT.Text,
+                    DiaChi = form.TB_DiaChi.Text,
+                    Email = form.TB_Email.Text,
+                    SoTienNo = kh.SoTienNo,
+                    TongTien = kh.TongTien,
+                    NgayMuaCuoi = DateTime.Now
+                };
+
+
+
+                if (khBus.UpdateKhachHang(kh2))
+                    MessageBox.Show("Khách hàng " + kh.MaKhachHang+"-"+kh.HoTenKH + " đã update thành công!");
+                else
+                    MessageBox.Show("Không thể cập nhật khách hàng", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
+        }
+
+        private void TSB_KH_ChiTiet_Click(object sender, EventArgs e)
+        {
+            if (DGV_DSKH.SelectedRows.Count > 0)
+            {
+                var khForm = new CustomerForm();
+                khForm.TB_MaKH.Text = DGV_DSKH.SelectedRows[0].Cells[0].Value.ToString();
+                khForm.TB_MaKH.Enabled = false;
+                khForm.TB_HoTen.Text = DGV_DSKH.SelectedRows[0].Cells[1].Value.ToString();
+                khForm.TB_HoTen.Enabled = false;
+                khForm.TB_SDT.Text = DGV_DSKH.SelectedRows[0].Cells[2].Value.ToString();
+                khForm.TB_SDT.Enabled = false;
+                khForm.TB_DiaChi.Text = DGV_DSKH.SelectedRows[0].Cells[3].Value.ToString();
+                khForm.TB_DiaChi.Enabled = false;
+                khForm.TB_Email.Text = DGV_DSKH.SelectedRows[0].Cells[4].Value.ToString();
+                khForm.TB_Email.Enabled = false;
+                khForm.BT_Huy.Hide();
+                khForm.BT_Luu.Hide();
+                khForm.ShowDialog();
+            }
+        }
+
+        private void TSB_KH_ThemMuc_Click(object sender, EventArgs e)
+        {
+            BT_DSKH_Them.PerformClick();
+        }
+
+        private void TSB_PT_ChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_DSPT.Rows)
+                row.Selected = true;
+        }
+
+        private void TSB_PT_ThemMuc_Click(object sender, EventArgs e)
+        {
+            BT_DSPhieuThu_TaoPhieuThu.PerformClick();
+        }
+
+        private void TSB_DSPT_XoaMuc_Click(object sender, EventArgs e)
+        {
+            var x = MessageBox.Show("Bạn có chắc chắn muốn xóa, sẽ bị biến mất vĩnh viễn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (x == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in DGV_DSPT.SelectedRows)
+                {
+                    string maPT = row.Cells[0].Value.ToString();
+                    phieuthuBus.DeletePhieuThu(maPT);
+                    DGV_DSPT.Rows.Remove(row);
+                }
+            }
+            else
+                return;
+        }
+
+        private void TSB_DSPT_ChinhSua_Click(object sender, EventArgs e)
+        {
+            ReceiptForm form = new ReceiptForm();
+
+
+            form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
+
+            PhieuThuBus ptb = new PhieuThuBus();
+
+            PhieuThu pt = ptb.GetPhieuThuByMa(form.TB_MaPhieu.Text.ToString());
+
+            form.CBB_KhachHang.DataSource = dsKhachHang;
+            form.CBB_KhachHang.DisplayMember = "HoTenKH";
+            form.CBB_KhachHang.ValueMember = "MaKhachHang";
+
+            form.CBB_NhanVien.DataSource = dsNhanVien;
+            form.CBB_NhanVien.DisplayMember = "TenNhanVien";
+            form.CBB_NhanVien.ValueMember = "MaNhanVien";
+
+            form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
+
+            form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
+
+            form.DTP_NgayThu.Value = Convert.ToDateTime(DGV_DSPT.SelectedRows[0].Cells[5].Value.ToString());
+
+            form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
+            form.TB_LyDoThu.Text = pt.LyDoThu;
+
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var pt2 = new PhieuThu()
+                {
+                    MaPhieuThu = pt.MaPhieuThu,
+                    MaKhachHang = form.CBB_KhachHang.SelectedValue.ToString(),
+                    MaNhanVien = form.CBB_NhanVien.SelectedValue.ToString(),
+                    NgayThu = Convert.ToDateTime(form.DTP_NgayThu.Value),
+                    SoTienThu = Convert.ToDecimal(form.TB_SoTienThu.Text.ToString()),
+                    LyDoThu = form.TB_LyDoThu.Text
+                };
+
+                if (ptb.UpdatePhieuThu(pt2))
+                    MessageBox.Show("Phiếu thu " + pt.MaPhieuThu + " đã update thành công!");
+                else
+                    MessageBox.Show("Không thể cập nhật phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
+        }
+
+        private void TSB_DSPT__ChiTiet_Click(object sender, EventArgs e)
+        {
+            ReceiptForm form = new ReceiptForm();
+            form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
+            form.Text = "Chi tiết";
+
+            form.CBB_KhachHang.DataSource = dsKhachHang;
+            form.CBB_KhachHang.DisplayMember = "HoTenKH";
+            form.CBB_KhachHang.ValueMember = "MaKhachHang";
+
+            form.CBB_NhanVien.DataSource = dsNhanVien;
+            form.CBB_NhanVien.DisplayMember = "TenNhanVien";
+            form.CBB_NhanVien.ValueMember = "MaNhanVien";
+
+
+            var pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text);
+            form.TB_MaPhieu.Enabled = false;
+            form.TB_MaPhieu.Text = pt.MaPhieuThu;
+            form.DTP_NgayThu.Enabled = false;
+            form.DTP_NgayThu.Value = pt.NgayThu;
+            form.TB_SoTienThu.Enabled = false;
+            form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
+            form.TB_LyDoThu.Enabled = false;
+            form.TB_LyDoThu.Text = pt.LyDoThu;
+            form.CBB_KhachHang.Enabled = false;
+            form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
+            form.CBB_NhanVien.Enabled = false;
+            form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
+            form.BT_Huy.Hide();
+            form.BT_Luu.Hide();
+            form.ShowDialog();
+        }
+
+        private void TSB_DSPN_Them_Click(object sender, EventArgs e)
+        {
+            BT_DSPhieuNhap_TaoPhieuNhap.PerformClick();
+        }
+
+        private void TSB_DSPN_Chontatca_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_DSPN.Rows)
+                row.Selected = true;
+        }
+
+        private void TSB_PhieuNS_ChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_PNS.Rows)
+                row.Selected = true;
+        }
+
+        private void TSB_PhieuNS_XoaMuc_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_PNS.SelectedRows)
+                DGV_PNS.Rows.Remove(row);
         }
     }
 }

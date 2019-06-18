@@ -58,9 +58,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(338, 292);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -69,7 +69,7 @@
             // TB_Email
             // 
             this.TB_Email.Location = new System.Drawing.Point(8, 259);
-            this.TB_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_Email.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Email.Name = "TB_Email";
             this.TB_Email.Size = new System.Drawing.Size(325, 23);
             this.TB_Email.TabIndex = 11;
@@ -77,7 +77,7 @@
             // TB_DiaChi
             // 
             this.TB_DiaChi.Location = new System.Drawing.Point(8, 204);
-            this.TB_DiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_DiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.TB_DiaChi.Name = "TB_DiaChi";
             this.TB_DiaChi.Size = new System.Drawing.Size(325, 23);
             this.TB_DiaChi.TabIndex = 10;
@@ -105,7 +105,7 @@
             // TB_SDT
             // 
             this.TB_SDT.Location = new System.Drawing.Point(8, 150);
-            this.TB_SDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_SDT.Margin = new System.Windows.Forms.Padding(2);
             this.TB_SDT.Name = "TB_SDT";
             this.TB_SDT.Size = new System.Drawing.Size(325, 23);
             this.TB_SDT.TabIndex = 5;
@@ -124,7 +124,7 @@
             // TB_HoTen
             // 
             this.TB_HoTen.Location = new System.Drawing.Point(8, 96);
-            this.TB_HoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_HoTen.Margin = new System.Windows.Forms.Padding(2);
             this.TB_HoTen.Name = "TB_HoTen";
             this.TB_HoTen.Size = new System.Drawing.Size(325, 23);
             this.TB_HoTen.TabIndex = 3;
@@ -143,7 +143,7 @@
             // 
             this.TB_MaKH.Enabled = false;
             this.TB_MaKH.Location = new System.Drawing.Point(8, 45);
-            this.TB_MaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_MaKH.Margin = new System.Windows.Forms.Padding(2);
             this.TB_MaKH.Name = "TB_MaKH";
             this.TB_MaKH.Size = new System.Drawing.Size(325, 23);
             this.TB_MaKH.TabIndex = 1;
@@ -161,7 +161,7 @@
             // BT_Luu
             // 
             this.BT_Luu.Location = new System.Drawing.Point(276, 307);
-            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Luu.Name = "BT_Luu";
             this.BT_Luu.Size = new System.Drawing.Size(64, 26);
             this.BT_Luu.TabIndex = 9;
@@ -172,7 +172,7 @@
             // BT_Huy
             // 
             this.BT_Huy.Location = new System.Drawing.Point(206, 307);
-            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Huy.Name = "BT_Huy";
             this.BT_Huy.Size = new System.Drawing.Size(66, 26);
             this.BT_Huy.TabIndex = 11;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.BT_Luu);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "CustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -207,13 +207,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BT_Luu;
-        private System.Windows.Forms.Button BT_Huy;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox TB_SDT;
         public System.Windows.Forms.TextBox TB_HoTen;
         public System.Windows.Forms.TextBox TB_MaKH;
         public System.Windows.Forms.TextBox TB_Email;
         public System.Windows.Forms.TextBox TB_DiaChi;
+        public System.Windows.Forms.Button BT_Luu;
+        public System.Windows.Forms.Button BT_Huy;
     }
 }
