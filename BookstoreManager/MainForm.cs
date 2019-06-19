@@ -18,7 +18,8 @@ namespace BookstoreManager
 
         KhachHangBus khBus=new KhachHangBus();
         PhieuThuBus phieuthuBus = new PhieuThuBus();
-
+        NhanVienBus nvBus = new NhanVienBus();
+        NhanVien loginnv;
         DataTable dsSach;
         DataTable dsHoaDon;
         DataTable dsKhachHang;
@@ -145,6 +146,12 @@ namespace BookstoreManager
             if (dsHoaDon.Rows.Count > 0)
                 last = int.Parse(dsHoaDon.AsEnumerable().Last()["MaHoaDon"].ToString());
             TB_HoaDon_MaHoaDon.Text = (last + 1).ToString("000000");
+            DGV_HoaDon.Rows.Clear();
+            CBB_HoaDon_KhachHang.Text = "";
+            CBB_HoaDon_NVBan.SelectedValue = loginnv.MaNhanVien;
+            TB_HoaDon_GiamGia.Text = decimal.Zero.ToString();
+            TB_HoaDon_KhachDua.Text = decimal.Zero.ToString();
+            HoaDon_TinhTien();
         }
         private void BT_TaoHoaDon_HuyDon_Click(object sender, EventArgs e)
         {
@@ -446,7 +453,12 @@ namespace BookstoreManager
             if (loginForm.ShowDialog() != DialogResult.OK)
                 Close();
             else
-            DongBo(sender, new EventArgs());
+            {
+                loginnv = nvBus.GetNhanVienByMa(loginForm.TB_TenDangNhap.Text.Trim());
+                LB_TenNV.Text = loginnv.TenNhanVien.Trim();
+                LB_ChucVu.Text = nvBus.ChucVu[loginnv.ChucVu];
+                DongBo(sender, new EventArgs());
+            }
         }
         #region Sync
         private void Load_DSHoaDon()

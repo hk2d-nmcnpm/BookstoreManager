@@ -45,11 +45,11 @@ namespace DataAccessLayer
                     obj.MaNhanVien = reader["MaNhanVien"].ToString();
                     obj.TenNhanVien = reader["TenNhanVien"].ToString();
                     obj.NgaySinh = (DateTime)reader["NgaySinh"];
-                    obj.ChucVu = (short)reader["ChucVu"];
+                    obj.ChucVu = (int)reader["ChucVu"];
                     obj.MatKhau = (string)reader["MatKhau"];
                     reader.Close();
                 }
-
+                return obj;
             }
             catch (Exception ex)
             {
@@ -192,36 +192,32 @@ namespace DataAccessLayer
             }
             return result;
         }
-        public bool Kiemtrataikhoan(string MaNhanVien, string MatKhau)
+        public bool CheckPassword(string manv, string mk)
         {
+            bool result = false;
             try
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                string query = string.Format("select * from NhanVien where MaNhanVien='{0}' and MatKhau='{1}'", MaNhanVien, MatKhau);
-
-                SqlCommand cmd = new SqlCommand(query, _connection);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    dr.Close();
-                    _connection.Close();
-                    return true;
-                }
-                else
-                {
-                    dr.Close();
-                    _connection.Close();
-                    return false;
-                }
+                string sql = "SELECT * FROM NhanVien WHERE MaNhanVien = @manhanvien AND MatKhau = @matkhau";
+                SqlCommand cmd = new SqlCommand(sql, _connection);
+                cmd.Parameters.Add("@manhanvien", SqlDbType.Char).Value = manv;
+                cmd.Parameters.Add("@matkhau", SqlDbType.Char).Value = mk;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
+                    result = true;
+                _connection.Close();
+                return result;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + "   fjghfg");
                 _connection.Close();
+                Console.WriteLine(ex.Message);
             }
-            return false;
+            return result;
         }
     }
 }

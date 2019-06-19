@@ -19,17 +19,16 @@ namespace BookstoreManager
 
         private void BT_Login_Click(object sender, EventArgs e)
         {
-            string TenDangNhap = TB_TenDangNhap.Text;
-            string MatKhau = TB_MatKhau.Text;
+            var manv = TB_TenDangNhap.Text;
+            var mk = TB_MatKhau.Text;
             NhanVienBus nvbus = new NhanVienBus();
-            if (nvbus.Kiemtrataikhoan(TenDangNhap, MatKhau))
+            if (nvbus.KiemTraTaiKhoan(manv, mk))
             {
                 MessageBox.Show("Đã đăng nhập thành công");
                 DialogResult = DialogResult.OK;
             }
-
             else
-                MessageBox.Show("Vui lòng xem lại user và password");
+                MessageBox.Show("Vui lòng kiểm tra lại mã nhân viên và mật khẩu");
         }
     }
 }

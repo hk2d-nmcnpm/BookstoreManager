@@ -12,6 +12,11 @@ namespace BusinessLogicLayer
     public class NhanVienBus
     {
         NhanVienTable objNhanVien = new NhanVienTable();
+        public Dictionary<int, string> ChucVu { get; } = new Dictionary<int, string>()
+        {
+            [1] = "Quản trị viên",
+            [2] = "Nhân Viên",
+        };
         public DataTable GetNhanVien()
         {
             return objNhanVien.GetAllRows();
@@ -42,9 +47,9 @@ namespace BusinessLogicLayer
             else
                 return false;
         }
-        public bool Kiemtrataikhoan(string MaNhanVien, string MatKhau)
+        public bool KiemTraTaiKhoan(string manv, string mk)
         {
-            return objNhanVien.Kiemtrataikhoan(MaNhanVien, MatKhau);
+            return objNhanVien.IsRowExists(manv) && objNhanVien.CheckPassword(manv, mk);
         }
     }
 }

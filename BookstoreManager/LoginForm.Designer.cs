@@ -70,7 +70,7 @@
             this.BookstoreName.Location = new System.Drawing.Point(159, 19);
             this.BookstoreName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookstoreName.Name = "BookstoreName";
-            this.BookstoreName.Size = new System.Drawing.Size(97, 24);
+            this.BookstoreName.Size = new System.Drawing.Size(125, 30);
             this.BookstoreName.TabIndex = 0;
             this.BookstoreName.Text = "Bookstore";
             // 
@@ -93,7 +93,7 @@
             this.TB_TenDangNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_TenDangNhap.Location = new System.Drawing.Point(29, 152);
             this.TB_TenDangNhap.Name = "TB_TenDangNhap";
-            this.TB_TenDangNhap.Size = new System.Drawing.Size(337, 29);
+            this.TB_TenDangNhap.Size = new System.Drawing.Size(337, 34);
             this.TB_TenDangNhap.TabIndex = 3;
             this.TB_TenDangNhap.Text = "000001";
             // 
@@ -104,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(25, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 19);
+            this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã nhân viên:";
             // 
@@ -115,7 +115,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(25, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 19);
+            this.label2.Size = new System.Drawing.Size(91, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -125,7 +125,7 @@
             this.TB_MatKhau.Location = new System.Drawing.Point(29, 254);
             this.TB_MatKhau.Name = "TB_MatKhau";
             this.TB_MatKhau.PasswordChar = '●';
-            this.TB_MatKhau.Size = new System.Drawing.Size(337, 29);
+            this.TB_MatKhau.Size = new System.Drawing.Size(337, 34);
             this.TB_MatKhau.TabIndex = 5;
             this.TB_MatKhau.Text = "abcabc";
             // 
@@ -135,14 +135,14 @@
             this.Link_QuenMatKhau.LinkColor = System.Drawing.Color.White;
             this.Link_QuenMatKhau.Location = new System.Drawing.Point(96, 400);
             this.Link_QuenMatKhau.Name = "Link_QuenMatKhau";
-            this.Link_QuenMatKhau.Size = new System.Drawing.Size(175, 19);
+            this.Link_QuenMatKhau.Size = new System.Drawing.Size(217, 23);
             this.Link_QuenMatKhau.TabIndex = 7;
             this.Link_QuenMatKhau.TabStop = true;
             this.Link_QuenMatKhau.Text = "Quên mật khẩu đăng nhập";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(199)))));
             this.ClientSize = new System.Drawing.Size(397, 447);
@@ -174,11 +174,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label BookstoreName;
         private System.Windows.Forms.Button BT_Login;
-        private System.Windows.Forms.TextBox TB_TenDangNhap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_MatKhau;
         private System.Windows.Forms.LinkLabel Link_QuenMatKhau;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.TextBox TB_TenDangNhap;
     }
 }

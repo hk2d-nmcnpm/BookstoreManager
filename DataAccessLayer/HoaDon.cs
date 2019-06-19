@@ -117,7 +117,7 @@ namespace DataAccessLayer
                            + "	  ,kh.HoTenKH as KhachHang\n"
                            + "	  ,nv.TenNhanVien as NguoiBan\n"
                            + "	  ,tmp.TongTien\n"
-                           + "	  ,tmp.TongTien - hd.TienKhachDua as TienNo\n"
+                           + "	  ,tmp.TongTien - hd.TienKhachDua - hd.GiamGia as TienNo\n"
                            + "from HoaDon hd\n"
                            + "inner join NhanVien nv on hd.MaNhanVien = nv.MaNhanVien\n"
                            + "inner join KhachHang kh on hd.MaKhachHang = kh.MaKhachHang\n"
