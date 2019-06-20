@@ -727,26 +727,52 @@ namespace BookstoreManager
             CBB_DSSach_TheLoai.DataSource = dsTheLoaiSach;
             CBB_DSSach_TheLoai.DisplayMember = "TenTheLoai";
             CBB_DSSach_TheLoai.ValueMember = "MaTheLoai";
-            DGV_DSSach.Rows.Clear();
-            var tb = from record in dsSach.AsEnumerable()
-                     where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
-                     && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
-                     && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
-                     && record["MaTheLoai"].ToString() == CBB_DSSach_TheLoai.SelectedValue.ToString()
-                     select record;
-            LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
-            LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
-            if (tb.Count() != 0)
-                foreach (DataRow row in tb.CopyToDataTable().Rows)
-                {
-                    var maSach = row["MaSach"].ToString();
-                    var tenSach = row["TenSach"].ToString();
-                    var tacGia = row["TacGia"].ToString();
-                    var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
-                    var soLuong = (int)row["SoLuongTon"];
-                    var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
-                    DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
-                }
+            if(CBB_DSSach_TheLoai.SelectedValue.ToString().Trim()!="00000")
+            {
+                DGV_DSSach.Rows.Clear();
+                var tb = from record in dsSach.AsEnumerable()
+                         where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
+                         && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
+                         && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
+                         && record["MaTheLoai"].ToString() == CBB_DSSach_TheLoai.SelectedValue.ToString()
+                         select record;
+                LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
+                LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
+                if (tb.Count() != 0)
+                    foreach (DataRow row in tb.CopyToDataTable().Rows)
+                    {
+                        var maSach = row["MaSach"].ToString();
+                        var tenSach = row["TenSach"].ToString();
+                        var tacGia = row["TacGia"].ToString();
+                        var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
+                        var soLuong = (int)row["SoLuongTon"];
+                        var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
+                        DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
+                    }
+            }
+            else
+            {
+                DGV_DSSach.Rows.Clear();
+                var tb = from record in dsSach.AsEnumerable()
+                         where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
+                         && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
+                         && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
+                         select record;
+                LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
+                LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
+                if (tb.Count() != 0)
+                    foreach (DataRow row in tb.CopyToDataTable().Rows)
+                    {
+                        var maSach = row["MaSach"].ToString();
+                        var tenSach = row["TenSach"].ToString();
+                        var tacGia = row["TacGia"].ToString();
+                        var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
+                        var soLuong = (int)row["SoLuongTon"];
+                        var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
+                        DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
+                    }
+            }
+            
         }
         #endregion
 
