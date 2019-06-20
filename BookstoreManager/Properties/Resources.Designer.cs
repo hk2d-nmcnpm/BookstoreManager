@@ -243,6 +243,16 @@ namespace BookstoreManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap employee_card_filled_32px {
+            get {
+                object obj = ResourceManager.GetObject("employee_card_filled_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap graph_report_filled_32px {
             get {
                 object obj = ResourceManager.GetObject("graph_report_filled_32px", resourceCulture);

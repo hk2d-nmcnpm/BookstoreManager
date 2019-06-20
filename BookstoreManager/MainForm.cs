@@ -440,6 +440,7 @@ namespace BookstoreManager
             dsPhieuThu = new PhieuThuBus().GetDisplayTable();
             dsPhieuNhap = new PhieuNhapSachBus().GetDisplayTable();
             dsNhanVien = new NhanVienBus().GetNhanVien();
+            AssignComboBoxValue();
             Load_DSHoaDon();
             Load_DSKhachHang();
             Load_DSPhieuThu();
@@ -447,6 +448,7 @@ namespace BookstoreManager
             //baoCaoTon = new BaoCaoTonBus().GetBCTon();
             //Load_BaoCaoTon();
             Load_DSSach();
+            Load_DSNhanVien();
 
             this.Cursor = Cursors.Arrow;
         }
@@ -775,7 +777,57 @@ namespace BookstoreManager
             }
             
         }
+        private void Load_DSNhanVien()
+        {
+            DGV_DSNV.Rows.Clear();
+            EnumerableRowCollection<DataRow> tb = dsNhanVien.AsEnumerable();
+            if ((int)CBB_DSNV_Loc_ChucVu.SelectedValue == -1)
+            {
+                tb = from record in dsNhanVien.AsEnumerable()
+                     where record["MaNhanVien"].ToString().ToUpper().Contains(TB_DSNV_Loc_MaNV.Text.ToUpper())
+                     && record["TenNhanVien"].ToString().ToUpper().Contains(TB_DSNV_Loc_TenNV.Text.ToUpper())
+                     select record;
+            }
+            else
+                tb = from record in dsNhanVien.AsEnumerable()
+                     where record["MaNhanVien"].ToString().ToUpper().Contains(TB_DSNV_Loc_MaNV.Text.ToUpper())
+                     && record["TenNhanVien"].ToString().ToUpper().Contains(TB_DSNV_Loc_TenNV.Text.ToUpper())
+                     && (int)record["ChucVu"] == (int)CBB_DSNV_Loc_ChucVu.SelectedValue
+                     select record;
+
+            LB_DSNV_SoNhanVien.Text = dsNhanVien.Rows.Count.ToString();
+            if (tb.Count() != 0)
+                foreach (DataRow row in tb.CopyToDataTable().Rows)
+                {
+                    DGV_DSNV.Rows.Add(
+                        row["MaNhanVien"],
+                        row["TenNhanVien"],
+                        row["NgaySinh"],
+                        nvBus.ChucVu[(int)row["ChucVu"]],
+                        row["MatKhau"]
+                        );
+                }
+        }
         #endregion
+        private void AssignComboBoxValue()
+        {
+            ////Lọc thể loại sách
+            //var dstl = dsTheLoaiSach.Copy();
+            //var r = dstl.NewRow();
+            //r["MaTheLoai"] = "00000";
+            //r["TenTheLoai"] = "Tất cả";
+            //dstl.Rows.InsertAt(r, 0);
+            //CBB_DSSach_TheLoai.DataSource = dstl;
+            //CBB_DSSach_TheLoai.DisplayMember = "TenTheLoai";
+            //CBB_DSSach_TheLoai.ValueMember = "MaTheLoai";
+
+            //Lọc chức vụ nhân viên
+            var chucvu = nvBus.ChucVu.ToList();
+            chucvu.Insert(0, new KeyValuePair<int, string>(-1, "Tất cả"));
+            CBB_DSNV_Loc_ChucVu.DataSource = new BindingSource(chucvu, null);
+            CBB_DSNV_Loc_ChucVu.DisplayMember = "Value";
+            CBB_DSNV_Loc_ChucVu.ValueMember = "Key";
+        }
 
         private Dictionary<string, string> GetTenSachDictionary()
         {
@@ -1386,6 +1438,31 @@ namespace BookstoreManager
             }
             else
                 MessageBox.Show("Không có data", "Warning", MessageBoxButtons.OK);
+        }
+
+        private void CBB_DSNV_Loc_ChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_DSNhanVien();
+        }
+
+        private void TB_DSNV_Loc_TenNV_TextChanged(object sender, EventArgs e)
+        {
+            Load_DSNhanVien();
+        }
+
+        private void TB_DSNV_Loc_MaNV_TextChanged(object sender, EventArgs e)
+        {
+            Load_DSNhanVien();
+        }
+
+        private void panel69_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void MN_NhanVien_Click(object sender, EventArgs e)
+        {
+            MainTab.SelectedTab = TP_DSNhanVien;
+            LB_TieuDe.Text = "Danh sách nhân viên";
         }
     }
 }
