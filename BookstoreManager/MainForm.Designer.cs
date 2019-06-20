@@ -118,7 +118,7 @@
             this.CBB_HoaDon_KhachHang = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.DTP_HoaDon_NgayBan = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
             this.TB_HoaDon_MaHoaDon = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
@@ -449,7 +449,7 @@
             this.QD_TB_Ton = new System.Windows.Forms.TextBox();
             this.QD_TB_Nhap = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -1690,18 +1690,18 @@
             this.DTP_HoaDon_NgayBan.Size = new System.Drawing.Size(244, 27);
             this.DTP_HoaDon_NgayBan.TabIndex = 2;
             // 
-            // label24
+            // label99
             // 
-            this.label24.AutoSize = true;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(6, 77);
-            this.label24.Margin = new System.Windows.Forms.Padding(0);
-            this.label24.Name = "label24";
-            this.label24.Padding = new System.Windows.Forms.Padding(0, 2, 2, 2);
-            this.label24.Size = new System.Drawing.Size(75, 24);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Ngày bán";
+            this.label99.AutoSize = true;
+            this.label99.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label99.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.Location = new System.Drawing.Point(6, 77);
+            this.label99.Margin = new System.Windows.Forms.Padding(0);
+            this.label99.Name = "label24";
+            this.label99.Padding = new System.Windows.Forms.Padding(0, 2, 2, 2);
+            this.label99.Size = new System.Drawing.Size(75, 24);
+            this.label99.TabIndex = 1;
+            this.label99.Text = "Ngày bán";
             // 
             // TB_HoaDon_MaHoaDon
             // 
@@ -4342,7 +4342,7 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.label20);
+            this.flowLayoutPanel4.Controls.Add(this.label24);
             this.flowLayoutPanel4.Controls.Add(this.LB_DSNV_SoNhanVien);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
@@ -4352,16 +4352,16 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(1099, 32);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
-            // label20
+            // label24
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(4, 4);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(150, 20);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Tổng số nhân viên:";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(4, 4);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(150, 20);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Tổng số nhân viên:";
             // 
             // LB_DSNV_SoNhanVien
             // 
@@ -5901,7 +5901,7 @@
         private System.Windows.Forms.TextBox QD_TB_Ton;
         private System.Windows.Forms.TextBox QD_TB_Nhap;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label99;
     }
 }
 
