@@ -42,7 +42,11 @@ namespace BookstoreManager
         DataTable dsBaoCaoNoMonth;
         DataTable dsBaoCaoNoAll;
 
-
+        int soluongnhaptoithieu = 150;
+        int soluongtonmaxchophepnhap = 300;
+        decimal tiennomax = 20000;
+        int tonminsaukhiban = 20;
+        bool apdungqd4 = true;
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> nam = new List<int>() { 2017, 2018, 2019 };
@@ -95,7 +99,8 @@ namespace BookstoreManager
         {
             ReceiptForm form = new ReceiptForm();
             int last_id = 0;
-            if (dsPhieuNhap.Rows.Count > 0)
+            dsPhieuThu = phieuthuBus.GetDisplayTable();
+            if (dsPhieuThu.Rows.Count > 0)
                 last_id = int.Parse(dsPhieuThu.AsEnumerable().Last()["MaPhieuThu"].ToString());
             form.TB_MaPhieu.Text = (last_id + 1).ToString("000000");
             form.CBB_KhachHang.DataSource = new BindingSource(GetKhachHangDictionary(), null);
@@ -104,7 +109,7 @@ namespace BookstoreManager
             form.CBB_NhanVien.DataSource = new BindingSource(GetNhanVienDictionary(), null);
             form.CBB_NhanVien.DisplayMember = "Value";
             form.CBB_NhanVien.ValueMember = "Key";
-            if(form.ShowDialog() == DialogResult.OK)
+            if (form.ShowDialog() == DialogResult.OK)
             {
                 var pt = new PhieuThu()
                 {
@@ -121,8 +126,8 @@ namespace BookstoreManager
                 kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
                 khBus.UpdateKhachHang(kh);
 
-               
-                if (phieuthuBus.AddPhieuThu(pt))
+                PhieuThuBus ptb = new PhieuThuBus();
+                if (ptb.AddPhieuThu(pt))
                     Console.WriteLine("A receiption has been added");
                 else
                     MessageBox.Show("Không thể tạo phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -163,6 +168,11 @@ namespace BookstoreManager
         {
             MainTab.SelectedTab = TP_DSKhachHang;
             LB_TieuDe.Text = "Danh sách khách hàng";
+        }
+        private void MN_QuyDinh_Click(object sender,EventArgs e)
+        {
+            MainTab.SelectedTab = TP_QuyDinh;
+            LB_TieuDe.Text = "Quy định";
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
         {
@@ -449,6 +459,13 @@ namespace BookstoreManager
             //Load_BaoCaoTon();
             Load_DSSach();
             Load_DSNhanVien();
+
+
+            soluongnhaptoithieu = int.Parse(QD_TB_Nhap.Text);
+            soluongtonmaxchophepnhap = int.Parse(QD_TB_Ton.Text);
+            tiennomax = decimal.Parse(QD_TB_TienNo.Text);
+            tonminsaukhiban = int.Parse(QD_TB_ToiThieu.Text);
+            apdungqd4 = QD_CKB.Checked;
 
             this.Cursor = Cursors.Arrow;
         }
@@ -1100,12 +1117,20 @@ namespace BookstoreManager
             var x = MessageBox.Show("Bạn có chắc chắn muốn xóa, sẽ bị biến mất vĩnh viễn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (x == DialogResult.Yes)
             {
+                
                 foreach (DataGridViewRow row in DGV_DSPT.SelectedRows)
                 {
                     string maPT = row.Cells[0].Value.ToString();
+
+                    PhieuThu pt = phieuthuBus.GetPhieuThuByMa(maPT);
+                    
+                    KhachHang kh = khBus.GetKhachHangByMaKH(pt.MaKhachHang);
+                    kh.SoTienNo += decimal.Parse(row.Cells[6].Value.ToString());
+                    khBus.UpdateKhachHang(kh);
                     phieuthuBus.DeletePhieuThu(maPT);
                     DGV_DSPT.Rows.Remove(row);
                 }
+                DongBo(sender, e);
             }
             else
                 return;
@@ -1118,9 +1143,9 @@ namespace BookstoreManager
 
             form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
 
-            PhieuThuBus ptb = new PhieuThuBus();
+            
 
-            PhieuThu pt = ptb.GetPhieuThuByMa(form.TB_MaPhieu.Text.ToString());
+            PhieuThu pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text.ToString());
 
             form.CBB_KhachHang.DataSource = dsKhachHang;
             form.CBB_KhachHang.DisplayMember = "HoTenKH";
@@ -1152,7 +1177,9 @@ namespace BookstoreManager
                     LyDoThu = form.TB_LyDoThu.Text
                 };
 
-                if (ptb.UpdatePhieuThu(pt2))
+                
+
+                if (phieuthuBus.UpdatePhieuThu(pt2))
                     MessageBox.Show("Phiếu thu " + pt.MaPhieuThu + " đã update thành công!");
                 else
                     MessageBox.Show("Không thể cập nhật phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1463,6 +1490,16 @@ namespace BookstoreManager
         {
             MainTab.SelectedTab = TP_DSNhanVien;
             LB_TieuDe.Text = "Danh sách nhân viên";
+        }
+
+        private void QD_BTN_ChinhSua_Click(object sender, EventArgs e)
+        {
+            QD_TB_Nhap.Enabled = true;
+            QD_TB_Ton.Enabled = true;
+            QD_TB_ToiThieu.Enabled = true;
+            QD_TB_TienNo.Enabled = true;
+            QD_BTN_Luu.Enabled = true;
+            QD_CKB.Enabled = true;
         }
     }
 }

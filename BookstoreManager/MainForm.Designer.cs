@@ -435,6 +435,21 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.TP_QuyDinh = new System.Windows.Forms.TabPage();
+            this.QD_BTN_Luu = new System.Windows.Forms.Button();
+            this.QD_BTN_ChinhSua = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.QD_TB_ToiThieu = new System.Windows.Forms.TextBox();
+            this.QD_TB_TienNo = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.QD_CKB = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.QD_TB_Ton = new System.Windows.Forms.TextBox();
+            this.QD_TB_Nhap = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -564,6 +579,10 @@
             this.panel76.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel71.SuspendLayout();
+            this.TP_QuyDinh.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.TP_DSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DSNV)).BeginInit();
             this.toolStrip8.SuspendLayout();
@@ -817,6 +836,7 @@
             this.panel69.Size = new System.Drawing.Size(258, 58);
             this.panel69.TabIndex = 6;
             this.panel69.Paint += new System.Windows.Forms.PaintEventHandler(this.panel69_Paint);
+            this.panel69.Click += new System.EventHandler(this.MN_QuyDinh_Click);
             // 
             // label82
             // 
@@ -829,6 +849,20 @@
             this.label82.Size = new System.Drawing.Size(83, 23);
             this.label82.TabIndex = 1;
             this.label82.Text = "Quy định";
+            this.label82.Click += new System.EventHandler(this.MN_QuyDinh_Click);
+            // 
+            // panel70
+            // 
+            this.panel70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel70.BackgroundImage = global::BookstoreManager.Properties.Resources.test_passed_filled_32px;
+            this.panel70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel70.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel70.Location = new System.Drawing.Point(0, 0);
+            this.panel70.Margin = new System.Windows.Forms.Padding(2);
+            this.panel70.Name = "panel70";
+            this.panel70.Size = new System.Drawing.Size(48, 46);
+            this.panel70.TabIndex = 0;
+            this.panel70.Click += new System.EventHandler(this.MN_QuyDinh_Click);
             // 
             // PN_BanQuyen
             // 
@@ -928,6 +962,7 @@
             this.MainTab.Controls.Add(this.TP_DSPhieuThu);
             this.MainTab.Controls.Add(this.TP_BaoCaoTon);
             this.MainTab.Controls.Add(this.TP_BaoCaoNo);
+            this.MainTab.Controls.Add(this.TP_QuyDinh);
             this.MainTab.Controls.Add(this.TP_DSNhanVien);
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 20);
@@ -5045,6 +5080,170 @@
             this.toolStripButton10.Size = new System.Drawing.Size(92, 24);
             this.toolStripButton10.Text = "Đồng bộ";
             // 
+            // TP_QuyDinh
+            // 
+            this.TP_QuyDinh.Controls.Add(this.QD_BTN_Luu);
+            this.TP_QuyDinh.Controls.Add(this.QD_BTN_ChinhSua);
+            this.TP_QuyDinh.Controls.Add(this.groupBox6);
+            this.TP_QuyDinh.Controls.Add(this.groupBox7);
+            this.TP_QuyDinh.Controls.Add(this.groupBox5);
+            this.TP_QuyDinh.Location = new System.Drawing.Point(4, 24);
+            this.TP_QuyDinh.Name = "TP_QuyDinh";
+            this.TP_QuyDinh.Padding = new System.Windows.Forms.Padding(3);
+            this.TP_QuyDinh.Size = new System.Drawing.Size(825, 524);
+            this.TP_QuyDinh.TabIndex = 12;
+            this.TP_QuyDinh.Text = "Quy định";
+            this.TP_QuyDinh.UseVisualStyleBackColor = true;
+            // 
+            // QD_BTN_Luu
+            // 
+            this.QD_BTN_Luu.Enabled = false;
+            this.QD_BTN_Luu.Location = new System.Drawing.Point(419, 455);
+            this.QD_BTN_Luu.Name = "QD_BTN_Luu";
+            this.QD_BTN_Luu.Size = new System.Drawing.Size(86, 33);
+            this.QD_BTN_Luu.TabIndex = 8;
+            this.QD_BTN_Luu.Text = "Lưu";
+            this.QD_BTN_Luu.UseVisualStyleBackColor = true;
+            // 
+            // QD_BTN_ChinhSua
+            // 
+            this.QD_BTN_ChinhSua.Location = new System.Drawing.Point(252, 455);
+            this.QD_BTN_ChinhSua.Name = "QD_BTN_ChinhSua";
+            this.QD_BTN_ChinhSua.Size = new System.Drawing.Size(93, 33);
+            this.QD_BTN_ChinhSua.TabIndex = 7;
+            this.QD_BTN_ChinhSua.Text = "Chỉnh sửa";
+            this.QD_BTN_ChinhSua.UseVisualStyleBackColor = true;
+            this.QD_BTN_ChinhSua.Click += new System.EventHandler(this.QD_BTN_ChinhSua_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.QD_TB_ToiThieu);
+            this.groupBox6.Controls.Add(this.QD_TB_TienNo);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Location = new System.Drawing.Point(196, 157);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(433, 116);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Quy định 2";
+            // 
+            // QD_TB_ToiThieu
+            // 
+            this.QD_TB_ToiThieu.Enabled = false;
+            this.QD_TB_ToiThieu.Location = new System.Drawing.Point(281, 63);
+            this.QD_TB_ToiThieu.Name = "QD_TB_ToiThieu";
+            this.QD_TB_ToiThieu.Size = new System.Drawing.Size(100, 20);
+            this.QD_TB_ToiThieu.TabIndex = 4;
+            this.QD_TB_ToiThieu.Text = "20";
+            this.QD_TB_ToiThieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.QD_TB_ToiThieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            // 
+            // QD_TB_TienNo
+            // 
+            this.QD_TB_TienNo.Enabled = false;
+            this.QD_TB_TienNo.Location = new System.Drawing.Point(281, 22);
+            this.QD_TB_TienNo.Name = "QD_TB_TienNo";
+            this.QD_TB_TienNo.Size = new System.Drawing.Size(100, 20);
+            this.QD_TB_TienNo.TabIndex = 3;
+            this.QD_TB_TienNo.Text = "20000";
+            this.QD_TB_TienNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.QD_TB_TienNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(16, 70);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(148, 13);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "Số lượng tồn tối thiểu sau bán";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 33);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(133, 13);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "Số tiền nợ cho phép tối đa";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.QD_CKB);
+            this.groupBox7.Location = new System.Drawing.Point(196, 313);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(433, 105);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Quy định 3";
+            // 
+            // QD_CKB
+            // 
+            this.QD_CKB.AutoSize = true;
+            this.QD_CKB.Checked = true;
+            this.QD_CKB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.QD_CKB.Enabled = false;
+            this.QD_CKB.Location = new System.Drawing.Point(71, 54);
+            this.QD_CKB.Name = "QD_CKB";
+            this.QD_CKB.Size = new System.Drawing.Size(259, 17);
+            this.QD_CKB.TabIndex = 0;
+            this.QD_CKB.Text = "Số tiền thu không được phép vượt quá số tiền nợ";
+            this.QD_CKB.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.QD_TB_Ton);
+            this.groupBox5.Controls.Add(this.QD_TB_Nhap);
+            this.groupBox5.Controls.Add(this.label21);
+            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Location = new System.Drawing.Point(196, 17);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(433, 112);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Quy định 1";
+            // 
+            // QD_TB_Ton
+            // 
+            this.QD_TB_Ton.Enabled = false;
+            this.QD_TB_Ton.Location = new System.Drawing.Point(281, 74);
+            this.QD_TB_Ton.Name = "QD_TB_Ton";
+            this.QD_TB_Ton.Size = new System.Drawing.Size(100, 20);
+            this.QD_TB_Ton.TabIndex = 3;
+            this.QD_TB_Ton.Text = "300";
+            this.QD_TB_Ton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.QD_TB_Ton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            // 
+            // QD_TB_Nhap
+            // 
+            this.QD_TB_Nhap.Enabled = false;
+            this.QD_TB_Nhap.Location = new System.Drawing.Point(281, 26);
+            this.QD_TB_Nhap.Name = "QD_TB_Nhap";
+            this.QD_TB_Nhap.Size = new System.Drawing.Size(100, 20);
+            this.QD_TB_Nhap.TabIndex = 2;
+            this.QD_TB_Nhap.Text = "150";
+            this.QD_TB_Nhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.QD_TB_Nhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 81);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(172, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Số lượng tồn tối đa cho phép nhập";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(116, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Số lượng nhập tối thiểu";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -5270,6 +5469,13 @@
             this.panel85.PerformLayout();
             this.panel86.ResumeLayout(false);
             this.panel86.PerformLayout();
+            this.TP_QuyDinh.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5681,6 +5887,21 @@
         private System.Windows.Forms.Panel panel85;
         private System.Windows.Forms.ComboBox CBB_DSNV_Loc_ChucVu;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TabPage TP_QuyDinh;
+        private System.Windows.Forms.Button QD_BTN_Luu;
+        private System.Windows.Forms.Button QD_BTN_ChinhSua;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox QD_TB_ToiThieu;
+        private System.Windows.Forms.TextBox QD_TB_TienNo;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox QD_CKB;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox QD_TB_Ton;
+        private System.Windows.Forms.TextBox QD_TB_Nhap;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
     }
 }
 
