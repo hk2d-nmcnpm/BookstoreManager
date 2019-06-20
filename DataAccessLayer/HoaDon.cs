@@ -112,18 +112,17 @@ namespace DataAccessLayer
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
-                string sql = "select hd.MaHoaDon\n"
-                           + "	  ,hd.NgayHoaDon as NgayBan\n"
-                           + "	  ,kh.HoTenKH as KhachHang\n"
-                           + "	  ,nv.TenNhanVien as NguoiBan\n"
-                           + "	  ,tmp.TongTien\n"
-                           + "	  ,tmp.TongTien - hd.TienKhachDaTra - hd.GiamGia as TienNo\n"
-                           + "from HoaDon hd\n"
-                           + "inner join NhanVien nv on hd.MaNhanVien = nv.MaNhanVien\n"
-                           + "inner join KhachHang kh on hd.MaKhachHang = kh.MaKhachHang\n"
-                           + "inner join (select MaHoaDon,sum(DonGiaBan * SoLuongBan) as TongTien from ChiTietHoaDon\n"
-                           + "		    group by MaHoaDon) tmp on tmp.MaHoaDon = hd.MaHoaDon\n"
-                           + "order by hd.MaHoaDon asc";
+                string sql = @"select hd.MaHoaDon,hd.NgayHoaDon as NgayBan,kh.HoTenKH as KhachHang,nv.TenNhanVien as NguoiBan,tmp.TongTien
+, kh.SoTienNo as TienNo
+from HoaDon hd
+inner
+join NhanVien nv on hd.MaNhanVien = nv.MaNhanVien
+inner
+join KhachHang kh on hd.MaKhachHang = kh.MaKhachHang
+inner
+join (select MaHoaDon,sum(DonGiaBan * SoLuongBan) as TongTien from ChiTietHoaDon
+group by MaHoaDon) tmp on tmp.MaHoaDon = hd.MaHoaDon
+order by hd.MaHoaDon asc";
                 SqlCommand command = new SqlCommand(sql, _connection);
                 SqlDataAdapter da = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
