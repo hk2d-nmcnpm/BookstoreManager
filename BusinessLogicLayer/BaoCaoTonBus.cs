@@ -11,37 +11,34 @@ namespace BusinessLogicLayer
 {
     public class BaoCaoTonBus
     {
-        BaoCaoTonTable objBCT = new BaoCaoTonTable();
-        public bool AddBCTon(BaoCaoTon bct)
-        {
-            if (!objBCT.IsRowExists(bct.MaChiTietTon))
-                return objBCT.AddRow(bct);
-            else
-                return false;
-        }
-        public bool DeleteBCTon(string mabct)
-        {
-            return objBCT.DeleteRow(mabct);
-        }
-        public bool UpdateBCTon(BaoCaoTon bct)
-        {
-            if (objBCT.IsRowExists(bct.MaChiTietTon))
-                return objBCT.UpdateRow(bct);
-            else
-                return false;
+        BaoCaoTonTable objBCCT = new BaoCaoTonTable();
 
-        }
-        public DataTable GetBCTon()
+        public bool AddBaoCao(BaoCaoTon bct)
         {
-            return objBCT.GetAllRows();
+            return objBCCT.AddBaoCaoTon(bct);
         }
-        public BaoCaoTon GetBCTonByMa(string mabct)
+        public DataTable GetBaoCaoChiTiet(int thang, int nam)
         {
-            return objBCT.GetRow(mabct);
+            return objBCCT.ThongKeBaoCaoTon(thang, nam);
         }
-        public DataTable GetBCTonByTop(int number)
+        public DataTable GetAllRows()
         {
-            return objBCT.GetRows(number);
+            return objBCCT.GetAllRows();
+        }
+
+        public bool IsRowExists(int thang, int nam)
+        {
+            return objBCCT.IsRowExists(thang, nam);
+        }
+
+        public bool UpdateBaoCao(BaoCaoTon bct)
+        {
+            return objBCCT.UpdateBaoCao(bct);
+        }
+
+        public BaoCaoTon GetBaoCaoFromThangNam(int thang, int nam)
+        {
+            return objBCCT.GetBaoCaoFromThangNam(thang, nam);
         }
     }
 }

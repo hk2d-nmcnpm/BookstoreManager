@@ -8,25 +8,15 @@ namespace DataTransferObject
 {
     public class BaoCaoTon
     {
-        public string MaChiTietTon { get; set; }
+        public string MaBaoCaoTon { get; set; }
         public int Thang { get; set; }
         public int Nam { get; set; }
-        public string MaSach { get; set; }
-        public int TonDau { get; set; }
-        public int PhatSinh { get; set; }
-        public int TonCuoi { get; set; }
         public BaoCaoTon() { }
-        public BaoCaoTon(string maCTTon, int thang, int nam,string maSach, int tonDau, int phatSinh,int tonCuoi)
+        public BaoCaoTon(string maBCTon, int thang, int nam)
         {
-            MaChiTietTon = maCTTon;
+            MaBaoCaoTon = maBCTon;
             Thang = thang;
             Nam = nam;
-            MaSach = maSach;
-            TonDau = tonDau;
-            PhatSinh = phatSinh;
-            TonCuoi = tonCuoi;
         }
-
-
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaoCaoCongNo.cs" />
     <Compile Include="BaoCaoTon.cs" />
+    <Compile Include="ChiTietBaoCaoTon.cs" />
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="ChiTietPhieuNhapSach.cs" />
     <Compile Include="HoaDon.cs" />
