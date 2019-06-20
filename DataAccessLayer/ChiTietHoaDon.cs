@@ -238,5 +238,27 @@ namespace DataAccessLayer
             }
             return result;
         }
+
+        public DataTable GetDanhSachCTHD(string MaHoaDon)
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string sql = "select * from ChiTietHoaDon where MaHoaDon=@mahoadon";
+                SqlCommand cmd = new SqlCommand(sql, _connection);
+                cmd.Parameters.Add("@mahoadon", SqlDbType.Char).Value = MaHoaDon;
+                DataTable dt = new DataTable();
+                SqlDataAdapter sqa = new SqlDataAdapter(cmd);
+                sqa.Fill(dt);
+                _connection.Close();
+                return dt;
+            }
+            catch
+            {
+                _connection.Close();
+            }
+            return null;
+        }
     }
 }

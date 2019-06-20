@@ -254,5 +254,29 @@ order by hd.MaHoaDon asc";
             }
             return result;
         }
+        public string GetMaKH(string MaHD)
+        {
+            try
+            {
+                string ma = null;
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM HoaDon where MaHoaDon=@mahoadon", _connection);
+                command.Parameters.Add("@mahoadon", SqlDbType.Char).Value=MaHD;
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    ma = reader["MaKhachHang"].ToString();
+                }
+                _connection.Close();
+                return ma;
+            }
+            catch (Exception ex)
+            {
+                _connection.Close();
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
     }
 }

@@ -62,5 +62,9 @@ namespace BusinessLogicLayer
         {
             return objHoaDon.GetResultTable();
         }
+        public string GetMaKH(string MaHD)
+        {
+            return objHoaDon.GetMaKH(MaHD);
+        }
     }
 }

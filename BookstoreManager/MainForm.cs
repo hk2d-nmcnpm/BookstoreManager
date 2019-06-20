@@ -808,15 +808,19 @@ namespace BookstoreManager
         }
         private void HoaDon_TinhTien()
         {
-            decimal tongtien = 0;
-            foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+            try
             {
-                tongtien += (decimal)row.Cells[5].Value;
+                decimal tongtien = 0;
+                foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+                {
+                    tongtien += (decimal)row.Cells[5].Value;
+                }
+                TB_HoaDon_TongTien.Text = tongtien + " VND";
+                decimal tienphaitra = tongtien - decimal.Parse(TB_HoaDon_GiamGia.Text);
+                TB_HoaDon_TienPhaiTra.Text = tienphaitra + " VND";
+                TB_HoaDon_ConLai.Text = decimal.Parse(TB_HoaDon_KhachDua.Text) - tienphaitra + " VND";
             }
-            TB_HoaDon_TongTien.Text = tongtien + " VND";
-            decimal tienphaitra = tongtien - decimal.Parse(TB_HoaDon_GiamGia.Text);
-            TB_HoaDon_TienPhaiTra.Text = tienphaitra + " VND";
-            TB_HoaDon_ConLai.Text = decimal.Parse(TB_HoaDon_KhachDua.Text) - tienphaitra + " VND";
+            catch { }
         }
         private void PhieuNhapSach_TinhTien()
         {
@@ -837,46 +841,71 @@ namespace BookstoreManager
                 MessageBoxIcon.Warning);
             if(msb == DialogResult.Yes)
             {
-                var bus = new HoaDonBus();
+                
                 foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
-                    if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
+                {
+                    decimal sotien = decimal.Zero;//số tiền của mỗi hóa đơn
+                    //xóa từng chi tiết hóa đơn
+                    DataTable cthd = cthdBus.GetDanhSachCTHD(row.Cells[0].Value.ToString());
+                    foreach(DataRow dr in cthd.Rows)
+                    {
+                        sotien += decimal.Parse(dr["SoLuongBan"].ToString()) * (decimal.Parse(dr["DonGiaBan"].ToString()));
+                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                        sachBus.UpdateSach(sach);
+                        cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                    }
+                    
+                    KhachHang kh = khBus.GetKhachHangByMaKH(hdBus.GetMaKH(row.Cells[0].Value.ToString()));
+                    HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
+                    kh.SoTienNo -= (sotien - hd.TienKhachDaTra);
+                    khBus.UpdateKhachHang(kh);
+
+                    MessageBox.Show("ma kh: " + kh.MaKhachHang);
+                    if (!hdBus.DeleteHoaDon(row.Cells[0].Value.ToString()))
                         MessageBox.Show(
                             "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
                             "Không thể xóa",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
+                }
+                    
                 DongBo(sender, new EventArgs());
             }
         }
 
         private void TSB_DSHD_Sua_Click(object sender, EventArgs e)
         {
-            DGV_HoaDon.Rows.Clear();
-            var hdb = new HoaDonBus();
-            HoaDon hd = hdb.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
-            DTP_HoaDon_NgayBan.Value = hd.NgayHoaDon;
-            TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
-            CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
-            CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
-            TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
-            TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
-            var ctb = new ChiTietHoaDonBus();
-            foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
+            try
             {
-                var ct = ctb.GetChiTietHDByMa(s);
-                var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
-                var thanhTien = result.DonGia * ct.SoLuongBan;
-                DGV_HoaDon.Rows.Add(
-                    result.MaSach,
-                    result.TenSach,
-                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                    TB_HoaDon_SoLuong.Text,
-                    result.DonGia,
-                    thanhTien
-                    );
+                DGV_HoaDon.Rows.Clear();
+                var hdb = new HoaDonBus();
+                HoaDon hd = hdBus.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
+                DTP_HoaDon_NgayBan.Value = hd.NgayHoaDon;
+                TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
+                CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
+                CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
+                TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
+                TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
+               
+                foreach (string s in cthdBus.GetMaCTHoaDonList(hd.MaHoaDon))
+                {
+                    ChiTietHoaDon ct = cthdBus.GetChiTietHDByMa(s);
+                    Sach result = sachBus.GetSachByMaSach(ct.MaSach.Trim());
+                    decimal thanhTien = result.DonGia * ct.SoLuongBan;
+                    DGV_HoaDon.Rows.Add(
+                        result.MaSach,
+                        result.TenSach,
+                        new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                        TB_HoaDon_SoLuong.Text,
+                        result.DonGia,
+                        thanhTien
+                        );
+                }
+                HoaDon_TinhTien();
+                MainTab.SelectedIndex = 1;
             }
-            HoaDon_TinhTien();
-            MainTab.SelectedIndex = 1;
+            catch { }
         }
 
         private void toolStripButton16_Click(object sender, EventArgs e)

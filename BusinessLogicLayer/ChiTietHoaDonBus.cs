@@ -49,5 +49,9 @@ namespace BusinessLogicLayer
         {
             return objCTHD.GetRows(number);
         }
+        public DataTable GetDanhSachCTHD(string MaHoaDon)
+        {
+            return objCTHD.GetDanhSachCTHD(MaHoaDon);
+        }
     }
 }
