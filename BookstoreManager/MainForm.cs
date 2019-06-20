@@ -110,8 +110,14 @@ namespace BookstoreManager
                     SoTienThu = decimal.Parse(form.TB_SoTienThu.Text),
                     LyDoThu = form.TB_LyDoThu.Text,
                 };
-                PhieuThuBus ptb = new PhieuThuBus();
-                if (ptb.AddPhieuThu(pt))
+
+                KhachHang kh = new KhachHang();
+                kh = khBus.GetKhachHangByMaKH(form.CBB_KhachHang.SelectedValue.ToString());
+                kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+                khBus.UpdateKhachHang(kh);
+
+               
+                if (phieuthuBus.AddPhieuThu(pt))
                     Console.WriteLine("A receiption has been added");
                 else
                     MessageBox.Show("Không thể tạo phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -326,8 +332,16 @@ namespace BookstoreManager
         }
         private void BT_HoaDon_Luu_Click(object sender, EventArgs e)
         {
+            char[] abc = { ' ', 'V', 'N', 'D' };
+
             if (DGV_HoaDon.Rows.Count > 0)
             {
+                int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
+                decimal khachtra;
+                if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) < 0)//còn nợ
+                    khachtra = decimal.Parse(TB_HoaDon_KhachDua.Text.ToString().Trim(abc));
+                else khachtra = decimal.Parse(TB_HoaDon_TienPhaiTra.Text.ToString().Trim(abc));//trả hết ko nợ
+
                 //int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
                 HoaDon hd = new HoaDon()
                 {
@@ -336,7 +350,7 @@ namespace BookstoreManager
                     MaNhanVien = (string)CBB_HoaDon_NVBan.SelectedValue,
                     NgayHoaDon = DTP_HoaDon_NgayBan.Value,
                     GiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text),
-                    TienKhachDua = decimal.Parse(TB_HoaDon_KhachDua.Text)
+                    TienKhachDaTra = khachtra
                 };
 
                 if (hdBus.AddHoaDon(hd))
@@ -363,6 +377,18 @@ namespace BookstoreManager
                     }
                 }
 
+                decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
+                string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
+                KhachHang kh = khBus.GetKhachHangByMaKH(makh);
+                //update tiền nợ nếu khách hàng còn nợ
+                if (sono < 0)
+                {
+                    kh.SoTienNo -= sono;
+                    khBus.UpdateKhachHang(kh);
+                }
+
+                    MessageBox.Show("Lưu hóa đơn thành công!");
+
                 TB_HoaDon_SoLuong.Text = "1";
                 TB_HoaDon_GiamGia.Text = "0";
                 TB_HoaDon_KhachDua.Text = "0";
@@ -371,10 +397,10 @@ namespace BookstoreManager
                 TB_HoaDon_TongTien.Text = "0";
 
                 dsHoaDon = hdBus.GetResultTable();
-                int last = 0;
+               
                 if (dsHoaDon.Rows.Count > 0)
                     last = int.Parse(dsHoaDon.AsEnumerable().Last()["MaHoaDon"].ToString());
-                else last = 1;
+                else last = 0;
 
                 TB_HoaDon_MaHoaDon.Text = (last + 1).ToString("000000");
 
@@ -806,7 +832,7 @@ namespace BookstoreManager
             TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
             CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
             CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
-            TB_HoaDon_KhachDua.Text = hd.TienKhachDua.ToString();
+            TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
             TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
             var ctb = new ChiTietHoaDonBus();
             foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
@@ -1183,7 +1209,7 @@ namespace BookstoreManager
             {
                 string masach = CBB_HoaDon_MaSachTenSach.SelectedValue.ToString();
                 Sach sach = sachBus.GetSachByMaSach(masach);
-                if (int.Parse(TB_HoaDon_SoLuong.Text.ToString()) > sach.SoLuongTon)
+                if (int.Parse(TB_HoaDon_SoLuong.Text.ToString()) > sach.SoLuongTon && sach.SoLuongTon!=0)
                 {
                     MessageBox.Show("Số lượng sách mua không được vượt quá " + sach.SoLuongTon);
                     TB_HoaDon_SoLuong.Text = sach.SoLuongTon + "";
@@ -1191,7 +1217,7 @@ namespace BookstoreManager
                     
                 if (int.Parse(TB_HoaDon_SoLuong.Text.ToString()) == 0)
                 {
-                    MessageBox.Show("Không bán 0 quyển sách.");
+                    //MessageBox.Show("Không bán 0 quyển sách.");
                     TB_HoaDon_SoLuong.Text = 1 + "";
                 }           
             }

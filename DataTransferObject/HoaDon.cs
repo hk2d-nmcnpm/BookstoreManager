@@ -13,16 +13,16 @@ namespace DataTransferObject
         public string MaNhanVien { get; set; }
         public DateTime NgayHoaDon { get; set; }
         public decimal GiamGia { get; set; }
-        public decimal TienKhachDua { get; set; }
+        public decimal TienKhachDaTra { get; set; }
         public HoaDon () { }
-        public HoaDon(string maHD,string maKH, string maNV, DateTime ngayHD, decimal giamGia, decimal tienKhachDua)
+        public HoaDon(string maHD,string maKH, string maNV, DateTime ngayHD, decimal giamGia, decimal tienKhachDaTra)
         {
             MaHoaDon = maHD;
             MaKhachHang = maKH;
             MaNhanVien = maNV;
             NgayHoaDon = ngayHD;
             GiamGia = giamGia;
-            TienKhachDua = tienKhachDua;
+            TienKhachDaTra = tienKhachDaTra;
         }
 
     }

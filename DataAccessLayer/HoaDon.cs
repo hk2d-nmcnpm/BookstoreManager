@@ -46,7 +46,7 @@ namespace DataAccessLayer
                     hoaDon.MaKhachHang = reader["MaKhachHang"].ToString();
                     hoaDon.NgayHoaDon = (DateTime)reader["NgayHoaDon"];
                     hoaDon.MaNhanVien = reader["MaNhanVien"].ToString();
-                    hoaDon.TienKhachDua = (decimal)reader["TienKhachDua"];
+                    hoaDon.TienKhachDaTra = (decimal)reader["TienKhachDaTra"];
                     hoaDon.GiamGia = (decimal)reader["GiamGia"];
                     reader.Close();
                 }
@@ -117,7 +117,7 @@ namespace DataAccessLayer
                            + "	  ,kh.HoTenKH as KhachHang\n"
                            + "	  ,nv.TenNhanVien as NguoiBan\n"
                            + "	  ,tmp.TongTien\n"
-                           + "	  ,tmp.TongTien - hd.TienKhachDua - hd.GiamGia as TienNo\n"
+                           + "	  ,tmp.TongTien - hd.TienKhachDaTra - hd.GiamGia as TienNo\n"
                            + "from HoaDon hd\n"
                            + "inner join NhanVien nv on hd.MaNhanVien = nv.MaNhanVien\n"
                            + "inner join KhachHang kh on hd.MaKhachHang = kh.MaKhachHang\n"
@@ -172,21 +172,21 @@ namespace DataAccessLayer
                        + "           ,[MaNhanVien]\n"
                        + "           ,[NgayHoaDon]\n"
                        + "           ,[GiamGia]\n"
-                       + "           ,[TienKhachDua])\n"
+                       + "           ,[TienKhachDaTra])\n"
                        + "     VALUES\n"
                        + "           (@MaHoaDon\n"
                        + "           ,@MaKhachHang\n"
                        + "           ,@MaNhanVien\n"
                        + "           ,@NgayHoaDon\n"
                        + "           ,@GiamGia\n"
-                       + "           ,@TienKhachDua)";
+                       + "           ,@TienKhachDaTra)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.NgayHoaDon;
                 cmd.Parameters.Add("@GiamGia", SqlDbType.Money).Value = obj.GiamGia;
-                cmd.Parameters.Add("@TienKhachDua", SqlDbType.Money).Value = obj.TienKhachDua;
+                cmd.Parameters.Add("@TienKhachDaTra", SqlDbType.Money).Value = obj.TienKhachDaTra;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -218,7 +218,7 @@ namespace DataAccessLayer
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.NgayHoaDon;
                 cmd.Parameters.Add("@GiamGia", SqlDbType.Money).Value = obj.GiamGia;
-                cmd.Parameters.Add("@TienKhachDua", SqlDbType.Money).Value = obj.TienKhachDua;
+                cmd.Parameters.Add("@TienKhachDaTra", SqlDbType.Money).Value = obj.TienKhachDaTra;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
