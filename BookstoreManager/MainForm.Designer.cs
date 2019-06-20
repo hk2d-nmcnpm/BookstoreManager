@@ -75,11 +75,8 @@
             this.C_DSHoaDon_TienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSHoaDon_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.TSB_DSHD_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_DSHD_Them = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_Sua = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSHD_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_DSHD_DongBo = new System.Windows.Forms.ToolStripButton();
@@ -204,10 +201,8 @@
             this.C_DSPhieuNhapSach_TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSPhieuNhapSach_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.TSB_DSPN_Chontatca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_DSPN_Them = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPN_Xoa = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPN_Sua = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPN_Chitiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -373,6 +368,9 @@
             this.panel65 = new System.Windows.Forms.Panel();
             this.CBB_BCT_Nam = new System.Windows.Forms.ComboBox();
             this.label81 = new System.Windows.Forms.Label();
+            this.panel79 = new System.Windows.Forms.Panel();
+            this.BTN_BCT_Luu = new System.Windows.Forms.Button();
+            this.BTN_BCT_Lap = new System.Windows.Forms.Button();
             this.TP_BaoCaoNo = new System.Windows.Forms.TabPage();
             this.DGV_BCCN = new System.Windows.Forms.DataGridView();
             this.C_BaoCaoNo_MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -387,11 +385,14 @@
             this.panel66 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel67 = new System.Windows.Forms.Panel();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.CBB_BCN_Thang = new System.Windows.Forms.ComboBox();
             this.label78 = new System.Windows.Forms.Label();
             this.panel68 = new System.Windows.Forms.Panel();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.CBB_BCN_Nam = new System.Windows.Forms.ComboBox();
             this.label79 = new System.Windows.Forms.Label();
+            this.panel76 = new System.Windows.Forms.Panel();
+            this.BTN_BCN_Luu = new System.Windows.Forms.Button();
+            this.BTN_BCN_Lap = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel71 = new System.Windows.Forms.Panel();
             this.panel72 = new System.Windows.Forms.Panel();
@@ -399,12 +400,6 @@
             this.LB_TenNV = new System.Windows.Forms.Label();
             this.LB_TieuDe = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
-            this.panel76 = new System.Windows.Forms.Panel();
-            this.BTN_BCN_Lap = new System.Windows.Forms.Button();
-            this.BTN_BCN_Luu = new System.Windows.Forms.Button();
-            this.panel79 = new System.Windows.Forms.Panel();
-            this.BTN_BCT_Luu = new System.Windows.Forms.Button();
-            this.BTN_BCT_Lap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -522,6 +517,7 @@
             this.flowLayoutPanel17.SuspendLayout();
             this.panel64.SuspendLayout();
             this.panel65.SuspendLayout();
+            this.panel79.SuspendLayout();
             this.TP_BaoCaoNo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_BCCN)).BeginInit();
             this.panel63.SuspendLayout();
@@ -530,10 +526,9 @@
             this.flowLayoutPanel19.SuspendLayout();
             this.panel67.SuspendLayout();
             this.panel68.SuspendLayout();
+            this.panel76.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel71.SuspendLayout();
-            this.panel76.SuspendLayout();
-            this.panel79.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -1095,11 +1090,8 @@
             this.toolStrip2.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSB_DSHD_ChonTatCa,
             this.toolStripSeparator3,
             this.TSB_DSHD_Them,
-            this.TSB_DSHD_Xoa,
-            this.TSB_DSHD_Sua,
             this.TSB_DSHD_ChiTiet,
             this.toolStripSeparator4,
             this.TSB_DSHD_DongBo,
@@ -1112,16 +1104,6 @@
             this.toolStrip2.Size = new System.Drawing.Size(825, 30);
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // TSB_DSHD_ChonTatCa
-            // 
-            this.TSB_DSHD_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_DSHD_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_ChonTatCa.Name = "TSB_DSHD_ChonTatCa";
-            this.TSB_DSHD_ChonTatCa.Size = new System.Drawing.Size(92, 24);
-            this.TSB_DSHD_ChonTatCa.Text = "Chọn tất cả";
-            this.TSB_DSHD_ChonTatCa.Click += new System.EventHandler(this.TSB_DSHD_ChonTatCa_Click);
             // 
             // toolStripSeparator3
             // 
@@ -1137,26 +1119,6 @@
             this.TSB_DSHD_Them.Size = new System.Drawing.Size(88, 24);
             this.TSB_DSHD_Them.Text = "Thêm mục";
             this.TSB_DSHD_Them.Click += new System.EventHandler(this.BT_DSHoaDon_TaoHoaDon_Click);
-            // 
-            // TSB_DSHD_Xoa
-            // 
-            this.TSB_DSHD_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSHD_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_Xoa.Name = "TSB_DSHD_Xoa";
-            this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSHD_Xoa.Text = "Xóa mục";
-            this.TSB_DSHD_Xoa.Click += new System.EventHandler(this.TSB_DSHD_Xoa_Click);
-            // 
-            // TSB_DSHD_Sua
-            // 
-            this.TSB_DSHD_Sua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_DSHD_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_Sua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_Sua.Name = "TSB_DSHD_Sua";
-            this.TSB_DSHD_Sua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_DSHD_Sua.Text = "Chỉnh sửa";
-            this.TSB_DSHD_Sua.Click += new System.EventHandler(this.TSB_DSHD_Sua_Click);
             // 
             // TSB_DSHD_ChiTiet
             // 
@@ -2540,10 +2502,8 @@
             this.toolStrip4.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSB_DSPN_Chontatca,
             this.toolStripSeparator7,
             this.TSB_DSPN_Them,
-            this.TSB_DSPN_Xoa,
             this.TSB_DSPN_Sua,
             this.TSB_DSPN_Chitiet,
             this.toolStripSeparator8,
@@ -2555,16 +2515,6 @@
             this.toolStrip4.Size = new System.Drawing.Size(825, 30);
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
-            // 
-            // TSB_DSPN_Chontatca
-            // 
-            this.TSB_DSPN_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_DSPN_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Chontatca.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Chontatca.Name = "TSB_DSPN_Chontatca";
-            this.TSB_DSPN_Chontatca.Size = new System.Drawing.Size(92, 24);
-            this.TSB_DSPN_Chontatca.Text = "Chọn tất cả";
-            this.TSB_DSPN_Chontatca.Click += new System.EventHandler(this.TSB_DSPN_Chontatca_Click);
             // 
             // toolStripSeparator7
             // 
@@ -2580,16 +2530,6 @@
             this.TSB_DSPN_Them.Size = new System.Drawing.Size(88, 24);
             this.TSB_DSPN_Them.Text = "Thêm mục";
             this.TSB_DSPN_Them.Click += new System.EventHandler(this.TSB_DSPN_Them_Click);
-            // 
-            // TSB_DSPN_Xoa
-            // 
-            this.TSB_DSPN_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSPN_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Xoa.Name = "TSB_DSPN_Xoa";
-            this.TSB_DSPN_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSPN_Xoa.Text = "Xóa mục";
-            this.TSB_DSPN_Xoa.Click += new System.EventHandler(this.TSB_DSPN_Xoa_Click);
             // 
             // TSB_DSPN_Sua
             // 
@@ -4356,6 +4296,36 @@
             this.label81.TabIndex = 1;
             this.label81.Text = "Chọn Năm";
             // 
+            // panel79
+            // 
+            this.panel79.Controls.Add(this.BTN_BCT_Luu);
+            this.panel79.Controls.Add(this.BTN_BCT_Lap);
+            this.panel79.Location = new System.Drawing.Point(471, 3);
+            this.panel79.Name = "panel79";
+            this.panel79.Size = new System.Drawing.Size(335, 52);
+            this.panel79.TabIndex = 5;
+            // 
+            // BTN_BCT_Luu
+            // 
+            this.BTN_BCT_Luu.Enabled = false;
+            this.BTN_BCT_Luu.Location = new System.Drawing.Point(180, 5);
+            this.BTN_BCT_Luu.Name = "BTN_BCT_Luu";
+            this.BTN_BCT_Luu.Size = new System.Drawing.Size(98, 41);
+            this.BTN_BCT_Luu.TabIndex = 1;
+            this.BTN_BCT_Luu.Text = "Lưu báo cáo";
+            this.BTN_BCT_Luu.UseVisualStyleBackColor = true;
+            this.BTN_BCT_Luu.Click += new System.EventHandler(this.BTN_BCT_Luu_Click);
+            // 
+            // BTN_BCT_Lap
+            // 
+            this.BTN_BCT_Lap.Location = new System.Drawing.Point(50, 5);
+            this.BTN_BCT_Lap.Name = "BTN_BCT_Lap";
+            this.BTN_BCT_Lap.Size = new System.Drawing.Size(98, 41);
+            this.BTN_BCT_Lap.TabIndex = 0;
+            this.BTN_BCT_Lap.Text = "Lập báo cáo";
+            this.BTN_BCT_Lap.UseVisualStyleBackColor = true;
+            this.BTN_BCT_Lap.Click += new System.EventHandler(this.BTN_BCT_Lap_Click);
+            // 
             // TP_BaoCaoNo
             // 
             this.TP_BaoCaoNo.Controls.Add(this.DGV_BCCN);
@@ -4483,7 +4453,7 @@
             // 
             // panel67
             // 
-            this.panel67.Controls.Add(this.comboBox10);
+            this.panel67.Controls.Add(this.CBB_BCN_Thang);
             this.panel67.Controls.Add(this.label78);
             this.panel67.Location = new System.Drawing.Point(2, 2);
             this.panel67.Margin = new System.Windows.Forms.Padding(2);
@@ -4491,15 +4461,15 @@
             this.panel67.Size = new System.Drawing.Size(230, 54);
             this.panel67.TabIndex = 2;
             // 
-            // comboBox10
+            // CBB_BCN_Thang
             // 
-            this.comboBox10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(14, 25);
-            this.comboBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(214, 23);
-            this.comboBox10.TabIndex = 2;
+            this.CBB_BCN_Thang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBB_BCN_Thang.FormattingEnabled = true;
+            this.CBB_BCN_Thang.Location = new System.Drawing.Point(14, 25);
+            this.CBB_BCN_Thang.Margin = new System.Windows.Forms.Padding(2);
+            this.CBB_BCN_Thang.Name = "CBB_BCN_Thang";
+            this.CBB_BCN_Thang.Size = new System.Drawing.Size(214, 23);
+            this.CBB_BCN_Thang.TabIndex = 2;
             // 
             // label78
             // 
@@ -4514,7 +4484,7 @@
             // 
             // panel68
             // 
-            this.panel68.Controls.Add(this.comboBox11);
+            this.panel68.Controls.Add(this.CBB_BCN_Nam);
             this.panel68.Controls.Add(this.label79);
             this.panel68.Location = new System.Drawing.Point(236, 2);
             this.panel68.Margin = new System.Windows.Forms.Padding(2);
@@ -4522,15 +4492,15 @@
             this.panel68.Size = new System.Drawing.Size(230, 54);
             this.panel68.TabIndex = 3;
             // 
-            // comboBox11
+            // CBB_BCN_Nam
             // 
-            this.comboBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(14, 25);
-            this.comboBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(214, 23);
-            this.comboBox11.TabIndex = 2;
+            this.CBB_BCN_Nam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBB_BCN_Nam.FormattingEnabled = true;
+            this.CBB_BCN_Nam.Location = new System.Drawing.Point(14, 25);
+            this.CBB_BCN_Nam.Margin = new System.Windows.Forms.Padding(2);
+            this.CBB_BCN_Nam.Name = "CBB_BCN_Nam";
+            this.CBB_BCN_Nam.Size = new System.Drawing.Size(214, 23);
+            this.CBB_BCN_Nam.TabIndex = 2;
             // 
             // label79
             // 
@@ -4542,6 +4512,36 @@
             this.label79.Size = new System.Drawing.Size(65, 15);
             this.label79.TabIndex = 1;
             this.label79.Text = "Chọn Năm";
+            // 
+            // panel76
+            // 
+            this.panel76.Controls.Add(this.BTN_BCN_Luu);
+            this.panel76.Controls.Add(this.BTN_BCN_Lap);
+            this.panel76.Location = new System.Drawing.Point(471, 3);
+            this.panel76.Name = "panel76";
+            this.panel76.Size = new System.Drawing.Size(335, 52);
+            this.panel76.TabIndex = 4;
+            // 
+            // BTN_BCN_Luu
+            // 
+            this.BTN_BCN_Luu.Enabled = false;
+            this.BTN_BCN_Luu.Location = new System.Drawing.Point(180, 5);
+            this.BTN_BCN_Luu.Name = "BTN_BCN_Luu";
+            this.BTN_BCN_Luu.Size = new System.Drawing.Size(98, 41);
+            this.BTN_BCN_Luu.TabIndex = 1;
+            this.BTN_BCN_Luu.Text = "Lưu báo cáo";
+            this.BTN_BCN_Luu.UseVisualStyleBackColor = true;
+            this.BTN_BCN_Luu.Click += new System.EventHandler(this.BTN_BCN_Luu_Click);
+            // 
+            // BTN_BCN_Lap
+            // 
+            this.BTN_BCN_Lap.Location = new System.Drawing.Point(50, 5);
+            this.BTN_BCN_Lap.Name = "BTN_BCN_Lap";
+            this.BTN_BCN_Lap.Size = new System.Drawing.Size(98, 41);
+            this.BTN_BCN_Lap.TabIndex = 0;
+            this.BTN_BCN_Lap.Text = "Lập báo cáo";
+            this.BTN_BCN_Lap.UseVisualStyleBackColor = true;
+            this.BTN_BCN_Lap.Click += new System.EventHandler(this.BTN_BCN_Lap_Click);
             // 
             // panel3
             // 
@@ -4610,64 +4610,6 @@
             this.LB_TieuDe.Size = new System.Drawing.Size(165, 20);
             this.LB_TieuDe.TabIndex = 0;
             this.LB_TieuDe.Text = "Danh sách hóa đơn";
-            // 
-            // panel76
-            // 
-            this.panel76.Controls.Add(this.BTN_BCN_Luu);
-            this.panel76.Controls.Add(this.BTN_BCN_Lap);
-            this.panel76.Location = new System.Drawing.Point(471, 3);
-            this.panel76.Name = "panel76";
-            this.panel76.Size = new System.Drawing.Size(335, 52);
-            this.panel76.TabIndex = 4;
-            // 
-            // BTN_BCN_Lap
-            // 
-            this.BTN_BCN_Lap.Location = new System.Drawing.Point(50, 5);
-            this.BTN_BCN_Lap.Name = "BTN_BCN_Lap";
-            this.BTN_BCN_Lap.Size = new System.Drawing.Size(98, 41);
-            this.BTN_BCN_Lap.TabIndex = 0;
-            this.BTN_BCN_Lap.Text = "Lập báo cáo";
-            this.BTN_BCN_Lap.UseVisualStyleBackColor = true;
-            // 
-            // BTN_BCN_Luu
-            // 
-            this.BTN_BCN_Luu.Enabled = false;
-            this.BTN_BCN_Luu.Location = new System.Drawing.Point(180, 5);
-            this.BTN_BCN_Luu.Name = "BTN_BCN_Luu";
-            this.BTN_BCN_Luu.Size = new System.Drawing.Size(98, 41);
-            this.BTN_BCN_Luu.TabIndex = 1;
-            this.BTN_BCN_Luu.Text = "Lưu báo cáo";
-            this.BTN_BCN_Luu.UseVisualStyleBackColor = true;
-            // 
-            // panel79
-            // 
-            this.panel79.Controls.Add(this.BTN_BCT_Luu);
-            this.panel79.Controls.Add(this.BTN_BCT_Lap);
-            this.panel79.Location = new System.Drawing.Point(471, 3);
-            this.panel79.Name = "panel79";
-            this.panel79.Size = new System.Drawing.Size(335, 52);
-            this.panel79.TabIndex = 5;
-            // 
-            // BTN_BCT_Luu
-            // 
-            this.BTN_BCT_Luu.Enabled = false;
-            this.BTN_BCT_Luu.Location = new System.Drawing.Point(180, 5);
-            this.BTN_BCT_Luu.Name = "BTN_BCT_Luu";
-            this.BTN_BCT_Luu.Size = new System.Drawing.Size(98, 41);
-            this.BTN_BCT_Luu.TabIndex = 1;
-            this.BTN_BCT_Luu.Text = "Lưu báo cáo";
-            this.BTN_BCT_Luu.UseVisualStyleBackColor = true;
-            this.BTN_BCT_Luu.Click += new System.EventHandler(this.BTN_BCT_Luu_Click);
-            // 
-            // BTN_BCT_Lap
-            // 
-            this.BTN_BCT_Lap.Location = new System.Drawing.Point(50, 5);
-            this.BTN_BCT_Lap.Name = "BTN_BCT_Lap";
-            this.BTN_BCT_Lap.Size = new System.Drawing.Size(98, 41);
-            this.BTN_BCT_Lap.TabIndex = 0;
-            this.BTN_BCT_Lap.Text = "Lập báo cáo";
-            this.BTN_BCT_Lap.UseVisualStyleBackColor = true;
-            this.BTN_BCT_Lap.Click += new System.EventHandler(this.BTN_BCT_Lap_Click);
             // 
             // MainForm
             // 
@@ -4858,6 +4800,7 @@
             this.panel64.PerformLayout();
             this.panel65.ResumeLayout(false);
             this.panel65.PerformLayout();
+            this.panel79.ResumeLayout(false);
             this.TP_BaoCaoNo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_BCCN)).EndInit();
             this.panel63.ResumeLayout(false);
@@ -4869,12 +4812,11 @@
             this.panel67.PerformLayout();
             this.panel68.ResumeLayout(false);
             this.panel68.PerformLayout();
+            this.panel76.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel71.ResumeLayout(false);
             this.panel71.PerformLayout();
-            this.panel76.ResumeLayout(false);
-            this.panel79.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5099,10 +5041,10 @@
         private System.Windows.Forms.Panel panel66;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
         private System.Windows.Forms.Panel panel67;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox CBB_BCN_Thang;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Panel panel68;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox CBB_BCN_Nam;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Panel panel69;
         private System.Windows.Forms.Label label82;
@@ -5133,11 +5075,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C_DSHoaDon_TienNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_DSHoaDon_TrangThai;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton TSB_DSHD_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_Them;
-        private System.Windows.Forms.ToolStripButton TSB_DSHD_Xoa;
-        private System.Windows.Forms.ToolStripButton TSB_DSHD_Sua;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_DongBo;
@@ -5151,16 +5090,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton TSB_DSSach_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSSach_Sua;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStrip toolStrip4;
-        private System.Windows.Forms.ToolStripButton TSB_DSPN_Chontatca;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Them;
-        private System.Windows.Forms.ToolStripButton TSB_DSPN_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Sua;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Chitiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
@@ -5256,6 +5192,7 @@
         private System.Windows.Forms.Panel panel79;
         private System.Windows.Forms.Button BTN_BCT_Luu;
         private System.Windows.Forms.Button BTN_BCT_Lap;
+        private System.Windows.Forms.ToolStripButton TSB_DSSach_Xoa;
     }
 }
 

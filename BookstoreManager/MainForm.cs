@@ -26,6 +26,8 @@ namespace BookstoreManager
         ChiTietPhieuNhapSachBus ctpnBus = new ChiTietPhieuNhapSachBus();
         BaoCaoTonBus bctBus = new BaoCaoTonBus();
         ChiTietBaoCaoTonBUS ctbctBus = new ChiTietBaoCaoTonBUS();
+        ChiTietBaoCaoCongNoBUS ctbccnBus = new ChiTietBaoCaoCongNoBUS();
+        BaoCaoCongNoBus bccnBus = new BaoCaoCongNoBus();
 
         NhanVien loginnv;
         DataTable dsSach;
@@ -33,12 +35,13 @@ namespace BookstoreManager
         DataTable dsKhachHang;
         DataTable dsPhieuThu;
         DataTable dsPhieuNhap;
-        DataTable baoCaoCongNo;
-        DataTable baoCaoTon;
         DataTable dsTheLoaiSach;
         DataTable dsNhanVien;
         DataTable dsBaoCaoTonMonth;
         DataTable dsBaoCaoTonAll;
+        DataTable dsBaoCaoNoMonth;
+        DataTable dsBaoCaoNoAll;
+
 
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -51,6 +54,8 @@ namespace BookstoreManager
             _anThanhMenu = false;
             CBB_BCT_Nam.DataSource = nam;
             CBB_BCT_Thang.DataSource = thang;
+            CBB_BCN_Nam.DataSource = nam;
+            CBB_BCN_Thang.DataSource = thang;
         }
         private void BT_KhoSach_ThemSach_Click(object sender, EventArgs e)
         {
@@ -245,13 +250,7 @@ namespace BookstoreManager
                 _anThanhMenu = false;
             }
         }
-        private void TSB_DSHD_ChonTatCa_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in DGV_DSHoaDon.Rows)
-            {
-                row.Selected = true;
-            }
-        }
+        
         private void TB_DSHD_Loc_MaHoaDon_TextChanged(object sender, EventArgs e)
         {
             Load_DSHoaDon();
@@ -509,12 +508,14 @@ namespace BookstoreManager
                             DonGiaNhap = Convert.ToDecimal(row.Cells[5].Value),
                             SoLuongNhap = Convert.ToInt32(row.Cells[4].Value)
                         };
-                        if (!ctpnBus.AddChiTietPN(ct))
-                            Console.WriteLine("Error");
-                        //cập nhật số lượng tồn của sách
+
+                        //cập nhật số lượng tồn của, giá bán của sách trong database
                         Sach sach = sachBus.GetSachByMaSach(row.Cells[0].Value.ToString());
                         sach.SoLuongTon += int.Parse(row.Cells[4].Value.ToString());
+                        sach.DonGia = ct.DonGiaNhap + ct.DonGiaNhap / 20;
                         sachBus.UpdateSach(sach);
+                        if (!ctpnBus.AddChiTietPN(ct))
+                            Console.WriteLine("Error");                        
                     }
                 }
 
@@ -828,56 +829,9 @@ namespace BookstoreManager
             TB_PNS_TongTien.Text = tongtien + " VND";
         }
 
-        private void TSB_DSHD_Xoa_Click(object sender, EventArgs e)
-        {
-            var msb = MessageBox
-                .Show("Bạn có thực sự muốn xóa (những) hóa đơn này",
-                "Cảnh báo",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if(msb == DialogResult.Yes)
-            {
-                var bus = new HoaDonBus();
-                foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
-                    if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
-                        MessageBox.Show(
-                            "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
-                            "Không thể xóa",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                DongBo(sender, new EventArgs());
-            }
-        }
+        
 
-        private void TSB_DSHD_Sua_Click(object sender, EventArgs e)
-        {
-            DGV_HoaDon.Rows.Clear();
-            var hdb = new HoaDonBus();
-            HoaDon hd = hdb.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
-            DTP_HoaDon_NgayBan.Value = hd.NgayHoaDon;
-            TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
-            CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
-            CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
-            TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
-            TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
-            var ctb = new ChiTietHoaDonBus();
-            foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
-            {
-                var ct = ctb.GetChiTietHDByMa(s);
-                var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
-                var thanhTien = result.DonGia * ct.SoLuongBan;
-                DGV_HoaDon.Rows.Add(
-                    result.MaSach,
-                    result.TenSach,
-                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                    TB_HoaDon_SoLuong.Text,
-                    result.DonGia,
-                    thanhTien
-                    );
-            }
-            HoaDon_TinhTien();
-            MainTab.SelectedIndex = 1;
-        }
+        
 
         private void toolStripButton16_Click(object sender, EventArgs e)
         {
@@ -952,26 +906,7 @@ namespace BookstoreManager
             }
         }
 
-        private void TSB_DSPN_Xoa_Click(object sender, EventArgs e)
-        {
-            var msb = MessageBox
-                .Show("Bạn có thực sự muốn xóa (những) phiếu nhập sách này?",
-                "Cảnh báo",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if (msb == DialogResult.Yes)
-            {
-                var bus = new PhieuNhapSachBus();
-                foreach (DataGridViewRow row in DGV_DSPN.SelectedRows)
-                    if (!bus.DeletePhieuNhap(row.Cells[0].Value.ToString()))
-                        MessageBox.Show(
-                            "Không thể xóa phiếu " + row.Cells[0].Value.ToString().Trim() + ".\nVui lòng kiểm tra lại thông tin.",
-                            "Không thể xóa",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                DongBo(sender, new EventArgs());
-            }
-        }
+        
 
         private void TSB_DSPN_Sua_Click(object sender, EventArgs e)
         {
@@ -1211,11 +1146,7 @@ namespace BookstoreManager
             BT_DSPhieuNhap_TaoPhieuNhap.PerformClick();
         }
 
-        private void TSB_DSPN_Chontatca_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in DGV_DSPN.Rows)
-                row.Selected = true;
-        }
+        
 
         private void TSB_PhieuNS_ChonTatCa_Click(object sender, EventArgs e)
         {
@@ -1347,6 +1278,109 @@ namespace BookstoreManager
                             PhatSinh = Convert.ToInt32(row["PhatSinh"].ToString())
                         };
                         ctbctBus.AddChiTietBaoCao(ctbct);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Không có data", "Warning", MessageBoxButtons.OK);
+        }
+
+        private void BTN_BCN_Lap_Click(object sender, EventArgs e)
+        {
+            BTN_BCN_Luu.Enabled = true;
+
+
+            int thang = int.Parse(CBB_BCN_Thang.SelectedValue.ToString());
+            int nam = int.Parse(CBB_BCN_Nam.SelectedValue.ToString());
+
+            dsBaoCaoNoMonth = bccnBus.GetBaoCaoChiTiet(thang, nam);
+            dsBaoCaoNoAll = bccnBus.GetAllRows();
+
+            DGV_BCCN.Rows.Clear();
+
+            if (dsBaoCaoNoMonth.Rows.Count == 0)
+            {
+                MessageBox.Show("Tháng này không có trong cơ sở dữ liệu");
+                return;
+            }
+
+
+
+            //MessageBox.Show("gfghh : " + dsBaoCaoTonMonth.Rows.Count);
+            foreach (DataRow row in dsBaoCaoNoMonth.Rows)
+            {
+                string makh = row["MaKhachHang"].ToString();
+                string tenkh = row["HoTenKH"].ToString();
+                decimal nodau = decimal.Parse(row["NoDau"].ToString());
+                decimal phatsinh = decimal.Parse(row["PhatSinh"].ToString());
+                decimal nocuoi = decimal.Parse(row["NoCuoi"].ToString());
+                DGV_BCCN.Rows.Add(makh, tenkh, nodau, phatsinh, nocuoi);
+            }
+        }
+
+        private void BTN_BCN_Luu_Click(object sender, EventArgs e)
+        {
+            if (DGV_BCCN.Rows.Count > 0 && DGV_BCCN.Rows[0].Cells[0].Value != null)
+            {
+                int last = 0;
+                if (dsBaoCaoNoAll.AsEnumerable() != null && dsBaoCaoNoAll.AsEnumerable().Any())
+                    last = int.Parse(dsBaoCaoNoAll.AsEnumerable().Last()["MaBaoCaoCongNo"].ToString()) + 1;
+                else
+                    last = 1;
+
+                BaoCaoCongNo bccn = new BaoCaoCongNo()
+                {
+                    MaBaoCaoCongNo = last.ToString("000000"),
+                    Thang = int.Parse(CBB_BCN_Thang.SelectedValue.ToString()),
+                    Nam = int.Parse(CBB_BCN_Nam.SelectedValue.ToString())
+                };
+
+
+                if (bccnBus.IsRowExists(bccn.Thang, bccn.Nam))
+                {
+                    bccn = bccnBus.GetBaoCaoFromThangNam(bccn.Thang, bccn.Nam);//có thể khác id
+                    MessageBox.Show("Đã có trong database, sẽ cập nhật!  " + bccn.MaBaoCaoCongNo);
+                    //bccnBus.UpdateBaoCao(bccn);
+
+                    ctbccnBus.DeleteAll(bccn.MaBaoCaoCongNo);
+
+                    int count = 0;
+                    foreach (DataRow row in dsBaoCaoNoMonth.Rows)
+                    {
+                        count++;
+                        //MessageBox.Show(dsBaoCaoTonMonth.Rows.Count + "");
+                        ChiTietBaoCaoCongNo ctbccn = new ChiTietBaoCaoCongNo()
+                        {
+                            MaChiTietBaoCaoCongNo = bccn.MaBaoCaoCongNo.Trim() + count.ToString("0000"),
+                            MaBaoCaoCongNo = bccn.MaBaoCaoCongNo,
+                            MaKhachHang = row["MaKhachHang"].ToString(),
+                            NoDau = Convert.ToDecimal(row["NoDau"].ToString()),
+                            NoCuoi = Convert.ToDecimal(row["NoCuoi"].ToString()),
+                            PhatSinh = Convert.ToDecimal(row["PhatSinh"].ToString())
+                        };
+                        ctbccnBus.AddChiTietBaoCao(ctbccn);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sẽ thêm mới tháng này!");
+                    bccnBus.AddBaoCao(bccn);
+
+                    int count = 0;
+                    foreach (DataRow row in dsBaoCaoNoMonth.Rows)
+                    {
+                        count++;
+                        //Console.WriteLine("Phát sinh: {0} ", row.Cells[4].Value.ToString());
+                        ChiTietBaoCaoCongNo ctbccn = new ChiTietBaoCaoCongNo()
+                        {
+                            MaChiTietBaoCaoCongNo = bccn.MaBaoCaoCongNo + count.ToString("0000"),
+                            MaBaoCaoCongNo = bccn.MaBaoCaoCongNo,
+                            MaKhachHang = row["MaKhachHang"].ToString(),
+                            NoDau = Convert.ToDecimal(row["NoDau"].ToString()),
+                            NoCuoi = Convert.ToDecimal(row["NoCuoi"].ToString()),
+                            PhatSinh = Convert.ToDecimal(row["PhatSinh"].ToString())
+                        };
+                        ctbccnBus.AddChiTietBaoCao(ctbccn);
                     }
                 }
             }

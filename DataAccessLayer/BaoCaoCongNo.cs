@@ -8,36 +8,18 @@ namespace DataAccessLayer
     public class BaoCaoCongNoTable:DBConnection
     {
         public BaoCaoCongNoTable() : base() { }
-        public bool AddRow(BaoCaoCongNo obj)
+
+        public bool AddBaoCaoCongNo(BaoCaoCongNo bccn)
         {
             try
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
-                string sql = "INSERT INTO [dbo].[BaoCaoCongNo]\n"
-                           + "           ([MaChiTietCongNo]\n"
-                           + "           ,[Thang]\n"
-                           + "           ,[Nam]\n"
-                           + "           ,[MaKhachHang]\n"
-                           + "           ,[NoDau]\n"
-                           + "           ,[NoPhatSinh]\n"
-                           + "           ,[NoCuoi])\n"
-                           + "     VALUES\n"
-                           + "           (@MaChiTietCongNo\n"
-                           + "           ,@Thang\n"
-                           + "           ,@Nam\n"
-                           + "           ,@MaKhachHang\n"
-                           + "           ,@NoDau\n"
-                           + "           ,@NoPhatSinh\n"
-                           + "           ,@NoCuoi)";
+                string sql = "insert into BaoCaoCongNo values(@MaBaoCao,@Thang,@Nam)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
-                cmd.Parameters.Add("@MaChiTietCongNo", SqlDbType.Char).Value = obj.MaChiTietCongNo;
-                cmd.Parameters.Add("@Thang", SqlDbType.Int).Value = obj.Thang;
-                cmd.Parameters.Add("@Nam", SqlDbType.Int).Value = obj.Nam;
-                cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
-                cmd.Parameters.Add("@NoDau", SqlDbType.Money).Value = obj.NoDau;
-                cmd.Parameters.Add("@NoPhatSinh", SqlDbType.Money).Value = obj.NoPhatSinh;
-                cmd.Parameters.Add("@NoCuoi", SqlDbType.Money).Value = obj.NoCuoi;
+                cmd.Parameters.Add("@MaBaoCao", SqlDbType.Char).Value = bccn.MaBaoCaoCongNo;
+                cmd.Parameters.Add("@Thang", SqlDbType.Int).Value = bccn.Thang;
+                cmd.Parameters.Add("@Nam", SqlDbType.Int).Value = bccn.Nam;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -49,103 +31,8 @@ namespace DataAccessLayer
             }
             return false;
         }
-        public bool DeleteRow(string maCTCongNo)
-        {
-            try
-            {
-                if (_connection.State != ConnectionState.Open)
-                    _connection.Open();
 
-                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[BaoCaoCongNo] WHERE MaChiTietCongNo = @mactcongno", _connection);
-                command.Parameters.Add("@mactcongno", SqlDbType.Char).Value = maCTCongNo;
-                command.ExecuteNonQuery();
-                _connection.Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _connection.Close();
-                Console.WriteLine(ex.Message);
-            }
-            return false;
-        }
-        public BaoCaoCongNo GetRow(string maCTCongNo)
-        {
-            try
-            {
-                var obj = new BaoCaoCongNo();
-                if (_connection.State != ConnectionState.Open)
-                    _connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[BaoCaoCongNo] WHERE MaChiTietCongNo = @mactcongno", _connection);
-                command.Parameters.Add("@mactcongno", SqlDbType.Char).Value = maCTCongNo;
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    obj.MaChiTietCongNo = reader["MaChiTietCongNo"].ToString();
-                    obj.MaKhachHang = reader["MaKhachHang"].ToString();
-                    obj.Nam = (int)reader["Nam"];
-                    obj.NoPhatSinh = (decimal)reader["NoPhatSinh"];
-                    obj.Thang = (int)reader["Thang"];
-                    obj.NoDau = (decimal)reader["NoDau"];
-                    obj.NoCuoi = (decimal)reader["NoCuoi"];
-                    reader.Close();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                _connection.Close();
-                Console.WriteLine(ex.Message);
-            }
-            return null;
-        }
-        public DataTable GetRows(int number)
-        {
-            try
-            {
-                if (_connection.State != ConnectionState.Open)
-                    _connection.Open();
-
-                SqlCommand command = new SqlCommand("SELECT TOP (@number) * FROM [dbo].[BaoCaoCongNo] ORDER BY MaChiTietCongNo ASC", _connection);
-                command.Parameters.Add("@number", SqlDbType.Int).Value = number;
-                SqlDataAdapter da = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                _connection.Close();
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                _connection.Close();
-                Console.WriteLine(ex.Message);
-            }
-            return null;
-        }
-        public DataTable GetRowsByThang(int thang, int nam)
-        {
-            try
-            {
-                if (_connection.State != ConnectionState.Open)
-                    _connection.Open();
-
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[BaoCaoCongNo] WHERE Nam = @nam AND Thang = @thang ORDER BY MaChiTietCongNo ASC", _connection);
-                command.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
-                command.Parameters.Add("@nam", SqlDbType.Int).Value = nam;
-                SqlDataAdapter da = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                _connection.Close();
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                _connection.Close();
-                Console.WriteLine(ex.Message);
-            }
-            return null;
-        }
         public DataTable GetAllRows()
         {
             try
@@ -153,42 +40,150 @@ namespace DataAccessLayer
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[BaoCaoCongNo] ORDER BY MaChiTietCongNo ASC", _connection);
-                SqlDataAdapter da = new SqlDataAdapter(command);
+                string sql = "select * from BaoCaoCongNo";
+                SqlCommand cmd = new SqlCommand(sql, _connection);
+                SqlDataAdapter sqadt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                sqadt.Fill(dt);
                 _connection.Close();
                 return dt;
             }
             catch (Exception ex)
             {
-                _connection.Close();
                 Console.WriteLine(ex.Message);
+                _connection.Close();
             }
             return null;
         }
-        public bool UpdateRow(BaoCaoCongNo obj)
+
+        public DataTable ThongKeBaoCaoCongNo(int thang, int nam)
         {
             try
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
-                string sql = "UPDATE [dbo].[BaoCaoCongNo]\n"
-                           + "   SET [Thang] = @Thang\n"
-                           + "      ,[Nam] = @Nam\n"
-                           + "      ,[MaKhachHang] = @MaKhachHang\n"
-                           + "      ,[NoDau] = @NoDau\n"
-                           + "      ,[NoPhatSinh] = @NoPhatSinh\n"
-                           + "      ,[NoCuoi] = @NoCuoi\n"
-                           + " WHERE [MaChiTietCongNo] = @MaChiTietCongNo";
-                var cmd = new SqlCommand(sql, _connection);
-                cmd.Parameters.Add("@MaChiTietCongNo", SqlDbType.Char).Value = obj.MaChiTietCongNo;
-                cmd.Parameters.Add("@Thang", SqlDbType.Int).Value = obj.Thang;
-                cmd.Parameters.Add("@Nam", SqlDbType.Int).Value = obj.Nam;
-                cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
-                cmd.Parameters.Add("@NoDau", SqlDbType.Money).Value = obj.NoDau;
-                cmd.Parameters.Add("@NoPhatSinh", SqlDbType.Money).Value = obj.NoPhatSinh;
-                cmd.Parameters.Add("@NoCuoi", SqlDbType.Money).Value = obj.NoCuoi;
+
+                string sql = @"SELECT ThongKe.MaKhachHang, KhachHang.HoTenKH ,ThongKe.NoDau, ThongKe.PhatSinh, ThongKe.NoCuoi
+FROM
+(
+	SELECT TOP 100 PERCENT ISNULL(ThangTruoc.MaKhachHang, ThangNay.MaKhachHang) as MaKhachHang, ISNULL(ThangTruoc.TienPhatSinh,0) as NoDau, ISNULL(ThangNay.TienPhatSinh,0) as PhatSinh,
+	ISNULL(ThangTruoc.TienPhatSinh,0) + ISNULL(ThangNay.TienPhatSinh,0) as NoCuoi
+	 FROM 
+	 (
+		 SELECT ISNULL(CTMua.MaKhachHang,CTThu.MaKhachHang) as MaKhachHang, ISNULL(CTMua.TongThanhTien,0) - ISNULL(CTThu.TongTienThu,0)-SumDaTra as TienPhatSinh
+		 FROM
+		 (
+			SELECT HDThanhTien.MaKhachHang, SUM(HDThanhTien.ThanhTien) TongThanhTien,SUM(distinct TienKhachDaTra) as SumDaTra
+			FROM
+			(
+				SELECT MaKhachHang, SoLuongBan*DonGiaBan as ThanhTien, TienKhachDaTra
+				FROM CHITIETHOADON, HOADON
+				WHERE HOADON.MaHoaDon = CHITIETHOADON.MaHoaDon AND MONTH(HOADON.NgayHoaDon) = @thang AND YEAR(HOADON.NgayHoaDon) = @nam
+			) as HDThanhTien
+
+			GROUP BY HDThanhTien.MaKhachHang
+
+		 ) as CTMua
+		 FULL JOIN
+		 (
+			SELECT MaKhachHang, SUM(SoTienThu) as TongTienThu
+			FROM PHIEUTHU
+			WHERE MONTH(PhieuThu.NgayThu) = @thang AND YEAR(PhieuThu.NgayThu) = @nam
+			GROUP BY MaKhachHang
+		 ) as CTThu 
+		 ON CTMua.MaKhachHang = CTThu.MaKhachHang
+	 ) as ThangNay
+
+	 FULL JOIN
+
+	 (
+		 SELECT ISNULL(CTMua.MaKhachHang,CTThu.MaKhachHang) as MaKhachHang, ISNULL(CTMua.TongThanhTien,0) - ISNULL(CTThu.TongTienThu,0)-SumDaTra as TienPhatSinh
+		 FROM
+		 (
+			SELECT HDThanhTien.MaKhachHang, SUM(HDThanhTien.ThanhTien) as TongThanhTien,SUM(DISTINCT TienKhachDaTra) as sumdatra
+			FROM
+			(
+				SELECT MaKhachHang, SoLuongBan*DonGiaBan as ThanhTien,TienKhachDaTra
+				FROM ChiTietHoaDon, HoaDon
+				WHERE  HoaDon.MaHoaDon = ChiTietHoaDon.MaHoaDon AND
+				((YEAR(HoaDon.NgayHoaDon) < @nam) OR (YEAR(HoaDon.NgayHoaDon) = @nam	AND	MONTH(HoaDon.NgayHoaDon) <@thang))
+			) as HDThanhTien
+			GROUP BY HDThanhTien.MaKhachHang
+		 ) as CTMua
+		 FULL JOIN
+		 (
+			SELECT MaKhachHang, SUM(SoTienThu) as TongTienThu
+			FROM PhieuThu
+			WHERE  ((YEAR(PhieuThu.NgayThu) < @nam) OR (YEAR(PhieuThu.NgayThu) = @nam AND MONTH(PhieuThu.NgayThu) <@thang))
+			GROUP BY MaKhachHang
+		 ) as CTThu 
+		 ON CTMua.MaKhachHang = CTThu.MaKhachHang
+	 ) as ThangTruoc
+	  ON ThangNay.MaKhachHang = ThangTruoc.MaKhachHang
+
+ ) as ThongKe, KhachHang
+
+
+WHERE KhachHang.MaKhachHang = ThongKe.MaKhachHang
+ORDER BY KhachHang.MaKhachHang ASC";
+
+
+                SqlCommand cmd = new SqlCommand(sql, _connection);
+                cmd.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
+                cmd.Parameters.Add("@nam", SqlDbType.Int).Value = nam;
+                SqlDataAdapter sqdat = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sqdat.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                _connection.Close();
+            }
+            return null;
+        }
+
+        public bool IsRowExists(int thang, int nam)
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string query = "select * from BaoCaoCongNo where Thang=@thang and Nam=@nam";
+                SqlCommand cmd = new SqlCommand(query, _connection);
+                cmd.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
+                cmd.Parameters.Add("@nam", SqlDbType.Int).Value = nam;
+                SqlDataAdapter sqa = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                _connection.Close();
+                sqa.Fill(dt);
+                if (dt.Rows.Count > 0) return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                _connection.Close();
+            }
+            return false;
+        }
+
+        public bool UpdateBaoCao(BaoCaoCongNo bccn)
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+                string query = "update BaoCaoCongNo" +
+                    "set Thang=@Thang," +
+                    "Nam=@Nam" +
+                    "where MaBaoCaoCongNo=@MaBaoCaoCongNo";
+                SqlCommand cmd = new SqlCommand(query, _connection);
+                cmd.Parameters.Add("@MaBaoCaoCongNo", SqlDbType.Char).Value = bccn.MaBaoCaoCongNo;
+                cmd.Parameters.Add("@Thang", SqlDbType.Int).Value = bccn.Thang;
+                cmd.Parameters.Add("@Nam", SqlDbType.Int).Value = bccn.Nam;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -196,34 +191,40 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
                 _connection.Close();
-                Console.WriteLine(ex.Message);
             }
             return false;
         }
-        public bool IsRowExists(string id)
+
+        public BaoCaoCongNo GetBaoCaoFromThangNam(int thang, int nam)
         {
-            bool result = false;
+
             try
             {
+                var obj = new BaoCaoCongNo();
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[BaoCaoCongNo] WHERE MaChiTietCongNo = @id", _connection);
-                command.Parameters.Add("@id", SqlDbType.Char).Value = id;
-                SqlDataAdapter da = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count == 1)
-                    result = true;
+                SqlCommand command = new SqlCommand("SELECT * FROM BaoCaoCongNo WHERE Thang = @thang and Nam=@nam", _connection);
+                command.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
+                command.Parameters.Add("@nam", SqlDbType.Int).Value = nam;
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    obj.MaBaoCaoCongNo = reader["MaBaoCaoCongNo"].ToString();
+                    obj.Thang = int.Parse(reader["Thang"].ToString());
+                    obj.Nam = int.Parse(reader["Nam"].ToString());
+                    reader.Close();
+                }
                 _connection.Close();
-                return result;
+                return obj;
             }
-            catch (Exception ex)
+            catch
+            (Exception ex)
             {
                 _connection.Close();
-                Console.WriteLine(ex.Message);
             }
-            return result;
+            return null;
         }
     }
 }
