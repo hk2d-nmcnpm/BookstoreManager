@@ -979,30 +979,34 @@ namespace BookstoreManager
 
         private void TSB_DSPN_Sua_Click(object sender, EventArgs e)
         {
-            DGV_PNS.Rows.Clear();
-            var pnb = new PhieuNhapSachBus();
-            PhieuNhapSach pn = pnb.GetPhieuNhapByMa(DGV_DSPN.SelectedRows[0].Cells[0].Value.ToString());
-            DTP_PNS_NgayNhap.Value = pn.NgayNhap;
-            TB_PNS_MaPhieu.Text = pn.MaPhieuNhapSach;
-            CBB_PNS_NhanVien.SelectedValue = pn.MaNhanVien;
-            var ctb = new ChiTietPhieuNhapSachBus();
-            foreach (string s in ctb.GetMaCTPNList(pn.MaPhieuNhapSach))
+            try
             {
-                var ct = ctb.GetChiTietPNByMa(s);
-                var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
-                var thanhTien = ct.DonGiaNhap * ct.SoLuongNhap;
-                DGV_PNS.Rows.Add(
-                    result.MaSach,
-                    result.TenSach,
-                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                    result.TacGia,
-                    ct.SoLuongNhap.ToString(),
-                    ct.DonGiaNhap.ToString(),
-                    thanhTien
-                    );
+                DGV_PNS.Rows.Clear();
+                var pnb = new PhieuNhapSachBus();
+                PhieuNhapSach pn = pnb.GetPhieuNhapByMa(DGV_DSPN.SelectedRows[0].Cells[0].Value.ToString());
+                DTP_PNS_NgayNhap.Value = pn.NgayNhap;
+                TB_PNS_MaPhieu.Text = pn.MaPhieuNhapSach;
+                CBB_PNS_NhanVien.SelectedValue = pn.MaNhanVien;
+                var ctb = new ChiTietPhieuNhapSachBus();
+                foreach (string s in ctb.GetMaCTPNList(pn.MaPhieuNhapSach))
+                {
+                    var ct = ctb.GetChiTietPNByMa(s);
+                    var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
+                    var thanhTien = ct.DonGiaNhap * ct.SoLuongNhap;
+                    DGV_PNS.Rows.Add(
+                        result.MaSach,
+                        result.TenSach,
+                        new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                        result.TacGia,
+                        ct.SoLuongNhap.ToString(),
+                        ct.DonGiaNhap.ToString(),
+                        thanhTien
+                        );
+                }
+                PhieuNhapSach_TinhTien();
+                MainTab.SelectedIndex = 4;
             }
-            PhieuNhapSach_TinhTien();
-            MainTab.SelectedIndex = 4;
+            catch { }
         }
 
         private new void KeyPress(object sender, KeyPressEventArgs e)
@@ -1138,53 +1142,57 @@ namespace BookstoreManager
 
         private void TSB_DSPT_ChinhSua_Click(object sender, EventArgs e)
         {
-            ReceiptForm form = new ReceiptForm();
-
-
-            form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
-
-            
-
-            PhieuThu pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text.ToString());
-
-            form.CBB_KhachHang.DataSource = dsKhachHang;
-            form.CBB_KhachHang.DisplayMember = "HoTenKH";
-            form.CBB_KhachHang.ValueMember = "MaKhachHang";
-
-            form.CBB_NhanVien.DataSource = dsNhanVien;
-            form.CBB_NhanVien.DisplayMember = "TenNhanVien";
-            form.CBB_NhanVien.ValueMember = "MaNhanVien";
-
-            form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
-
-            form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
-
-            form.DTP_NgayThu.Value = Convert.ToDateTime(DGV_DSPT.SelectedRows[0].Cells[5].Value.ToString());
-
-            form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
-            form.TB_LyDoThu.Text = pt.LyDoThu;
-
-
-            if (form.ShowDialog() == DialogResult.OK)
+            try
             {
-                var pt2 = new PhieuThu()
+                ReceiptForm form = new ReceiptForm();
+
+
+                form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
+
+
+
+                PhieuThu pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text.ToString());
+
+                form.CBB_KhachHang.DataSource = dsKhachHang;
+                form.CBB_KhachHang.DisplayMember = "HoTenKH";
+                form.CBB_KhachHang.ValueMember = "MaKhachHang";
+
+                form.CBB_NhanVien.DataSource = dsNhanVien;
+                form.CBB_NhanVien.DisplayMember = "TenNhanVien";
+                form.CBB_NhanVien.ValueMember = "MaNhanVien";
+
+                form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
+
+                form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
+
+                form.DTP_NgayThu.Value = Convert.ToDateTime(DGV_DSPT.SelectedRows[0].Cells[5].Value.ToString());
+
+                form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
+                form.TB_LyDoThu.Text = pt.LyDoThu;
+
+
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    MaPhieuThu = pt.MaPhieuThu,
-                    MaKhachHang = form.CBB_KhachHang.SelectedValue.ToString(),
-                    MaNhanVien = form.CBB_NhanVien.SelectedValue.ToString(),
-                    NgayThu = Convert.ToDateTime(form.DTP_NgayThu.Value),
-                    SoTienThu = Convert.ToDecimal(form.TB_SoTienThu.Text.ToString()),
-                    LyDoThu = form.TB_LyDoThu.Text
-                };
+                    var pt2 = new PhieuThu()
+                    {
+                        MaPhieuThu = pt.MaPhieuThu,
+                        MaKhachHang = form.CBB_KhachHang.SelectedValue.ToString(),
+                        MaNhanVien = form.CBB_NhanVien.SelectedValue.ToString(),
+                        NgayThu = Convert.ToDateTime(form.DTP_NgayThu.Value),
+                        SoTienThu = Convert.ToDecimal(form.TB_SoTienThu.Text.ToString()),
+                        LyDoThu = form.TB_LyDoThu.Text
+                    };
 
-                
 
-                if (phieuthuBus.UpdatePhieuThu(pt2))
-                    MessageBox.Show("Phiếu thu " + pt.MaPhieuThu + " đã update thành công!");
-                else
-                    MessageBox.Show("Không thể cập nhật phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DongBo(sender, new EventArgs());
+
+                    if (phieuthuBus.UpdatePhieuThu(pt2))
+                        MessageBox.Show("Phiếu thu " + pt.MaPhieuThu + " đã update thành công!");
+                    else
+                        MessageBox.Show("Không thể cập nhật phiếu thu, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DongBo(sender, new EventArgs());
+                }
             }
+            catch { }
         }
 
         private void TSB_DSPT__ChiTiet_Click(object sender, EventArgs e)
@@ -1500,6 +1508,96 @@ namespace BookstoreManager
             QD_TB_TienNo.Enabled = true;
             QD_BTN_Luu.Enabled = true;
             QD_CKB.Enabled = true;
+        }
+
+        private void TSB_DSHD_Chontatca_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_DSHoaDon.Rows)
+            {
+                row.Selected = true;
+            }
+        }
+
+        private void TSB_DSHD_Xoa_Click(object sender, EventArgs e)
+        {
+            var msb = MessageBox
+                .Show("Bạn có thực sự muốn xóa (những) hóa đơn này",
+                "Cảnh báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (msb == DialogResult.Yes)
+            {
+                var bus = new HoaDonBus();
+                foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
+                    if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
+                        MessageBox.Show(
+                            "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
+                            "Không thể xóa",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
+        }
+
+        private void TSB_DSHD_ChinhSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DGV_HoaDon.Rows.Clear();
+                var hdb = new HoaDonBus();
+                HoaDon hd = hdb.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
+                DTP_HoaDon_NgayBan.Value = hd.NgayHoaDon;
+                TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
+                CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
+                CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
+                TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
+                TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
+                var ctb = new ChiTietHoaDonBus();
+                foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
+                {
+                    var ct = ctb.GetChiTietHDByMa(s);
+                    var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
+                    var thanhTien = result.DonGia * ct.SoLuongBan;
+                    DGV_HoaDon.Rows.Add(
+                        result.MaSach,
+                        result.TenSach,
+                        new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                        TB_HoaDon_SoLuong.Text,
+                        result.DonGia,
+                        thanhTien
+                        );
+                }
+                HoaDon_TinhTien();
+                MainTab.SelectedIndex = 1;
+            }
+            catch { }
+        }
+
+        private void TSB_DSPN_Chontatca_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DGV_DSPN.Rows)
+                row.Selected = true;
+        }
+
+        private void TSB_DSPN_Xoa_Click(object sender, EventArgs e)
+        {
+            var msb = MessageBox
+                .Show("Bạn có thực sự muốn xóa (những) phiếu nhập sách này?",
+                "Cảnh báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (msb == DialogResult.Yes)
+            {
+                var bus = new PhieuNhapSachBus();
+                foreach (DataGridViewRow row in DGV_DSPN.SelectedRows)
+                    if (!bus.DeletePhieuNhap(row.Cells[0].Value.ToString()))
+                        MessageBox.Show(
+                            "Không thể xóa phiếu " + row.Cells[0].Value.ToString().Trim() + ".\nVui lòng kiểm tra lại thông tin.",
+                            "Không thể xóa",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
         }
     }
 }
