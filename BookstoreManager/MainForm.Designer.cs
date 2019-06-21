@@ -436,6 +436,7 @@
             this.LB_TieuDe = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
+            this.BTN_BCT_Lap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -554,6 +555,7 @@
             this.flowLayoutPanel17.SuspendLayout();
             this.panel64.SuspendLayout();
             this.panel65.SuspendLayout();
+            this.panel79.SuspendLayout();
             this.TP_BaoCaoNo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_BCCN)).BeginInit();
             this.panel63.SuspendLayout();
@@ -4433,6 +4435,7 @@
             // 
             // panel79
             // 
+            this.panel79.Controls.Add(this.BTN_BCT_Lap);
             this.panel79.Location = new System.Drawing.Point(471, 3);
             this.panel79.Name = "panel79";
             this.panel79.Size = new System.Drawing.Size(335, 52);
@@ -5053,6 +5056,16 @@
             this.label99.TabIndex = 1;
             this.label99.Text = "Ngày bán";
             // 
+            // BTN_BCT_Lap
+            // 
+            this.BTN_BCT_Lap.Location = new System.Drawing.Point(59, 23);
+            this.BTN_BCT_Lap.Name = "BTN_BCT_Lap";
+            this.BTN_BCT_Lap.Size = new System.Drawing.Size(75, 23);
+            this.BTN_BCT_Lap.TabIndex = 0;
+            this.BTN_BCT_Lap.Text = "Lập";
+            this.BTN_BCT_Lap.UseVisualStyleBackColor = true;
+            this.BTN_BCT_Lap.Click += new System.EventHandler(this.BTN_BCT_Lap_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5244,6 +5257,7 @@
             this.panel64.PerformLayout();
             this.panel65.ResumeLayout(false);
             this.panel65.PerformLayout();
+            this.panel79.ResumeLayout(false);
             this.TP_BaoCaoNo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_BCCN)).EndInit();
             this.panel63.ResumeLayout(false);
@@ -5688,6 +5702,7 @@
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Chontatca;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Sua;
+        private System.Windows.Forms.Button BTN_BCT_Lap;
     }
 }
 

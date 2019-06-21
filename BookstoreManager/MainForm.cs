@@ -1575,5 +1575,39 @@ namespace BookstoreManager
             //}
             //catch { }
         }
+
+        private void BTN_BCT_Lap_Click(object sender, EventArgs e)
+        {
+            //BTN_BCT_Luu.Enabled = true;
+
+
+
+            int thang = int.Parse(CBB_BCT_Thang.SelectedValue.ToString());
+            int nam = int.Parse(CBB_BCT_Nam.SelectedValue.ToString());
+
+            dsBaoCaoTonMonth = bctBus.GetBaoCaoChiTiet(thang, nam);
+            dsBaoCaoTonAll = bctBus.GetAllRows();
+
+            DGV_BCT.Rows.Clear();
+
+            if (dsBaoCaoTonMonth.Rows.Count == 0)
+            {
+                MessageBox.Show("Tháng này không có trong cơ sở dữ liệu");
+                return;
+            }
+
+
+
+            //MessageBox.Show("gfghh : " + dsBaoCaoTonMonth.Rows.Count);
+            foreach (DataRow row in dsBaoCaoTonMonth.Rows)
+            {
+                string masach = row["MaSach"].ToString();
+                string tensach = row["TenSach"].ToString();
+                int tondau = int.Parse(row["TonDau"].ToString());
+                int phatsinh = int.Parse(row["PhatSinh"].ToString());
+                int toncuoi = int.Parse(row["TonCuoi"].ToString());
+                DGV_BCT.Rows.Add(masach, tensach, tondau, phatsinh, toncuoi);
+            }
+        }
     }
 }
