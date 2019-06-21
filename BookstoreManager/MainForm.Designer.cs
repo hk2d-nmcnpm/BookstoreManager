@@ -1892,6 +1892,7 @@
             // 
             this.DTP_HoaDon_NgayBan.CustomFormat = "dd/MM/yyyy";
             this.DTP_HoaDon_NgayBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DTP_HoaDon_NgayBan.Enabled = false;
             this.DTP_HoaDon_NgayBan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTP_HoaDon_NgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_HoaDon_NgayBan.Location = new System.Drawing.Point(5, 63);
@@ -3122,6 +3123,7 @@
             // 
             this.DTP_PNS_NgayNhap.CustomFormat = "dd/MM/yyyy";
             this.DTP_PNS_NgayNhap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DTP_PNS_NgayNhap.Enabled = false;
             this.DTP_PNS_NgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTP_PNS_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_PNS_NgayNhap.Location = new System.Drawing.Point(5, 79);

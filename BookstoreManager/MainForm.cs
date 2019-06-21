@@ -111,6 +111,7 @@ namespace BookstoreManager
             form.CBB_NhanVien.DataSource = new BindingSource(GetNhanVienDictionary(), null);
             form.CBB_NhanVien.DisplayMember = "Value";
             form.CBB_NhanVien.ValueMember = "Key";
+            form.DTP_NgayThu.Enabled = false;
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var pt = new PhieuThu()
@@ -388,6 +389,7 @@ namespace BookstoreManager
         {
             char[] abc = { ' ', 'V', 'N', 'D' };
 
+
             if (DGV_HoaDon.Rows.Count > 0)
             {
                 int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
@@ -582,6 +584,12 @@ namespace BookstoreManager
             if (dsPhieuNhap.Rows.Count > 0)
                 last = int.Parse(dsPhieuNhap.AsEnumerable().Last()["MaPhieuNhapSach"].ToString());
 
+            DateTime datetime=Convert.ToDateTime(DTP_PNS_NgayNhap.Value.ToString());
+            if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+            {
+                MessageBox.Show("Không được nhập tháng quá khứ");
+                return;
+            }
             if (DGV_PNS.Rows.Count > 0)
             {
                 PhieuNhapSach pn = new PhieuNhapSach()
@@ -1077,6 +1085,13 @@ namespace BookstoreManager
         {
             try
             {
+                DateTime datetime = Convert.ToDateTime(DGV_DSPN.SelectedRows[0].Cells[1].Value.ToString());
+                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không được sửa tháng quá khứ");
+                    return;
+                }
+                    
                 DGV_PNS.Rows.Clear();
                 var pnb = new PhieuNhapSachBus();
                 PhieuNhapSach pn = pnb.GetPhieuNhapByMa(DGV_DSPN.SelectedRows[0].Cells[0].Value.ToString());
@@ -1217,6 +1232,12 @@ namespace BookstoreManager
             var x = MessageBox.Show("Bạn có chắc chắn muốn xóa, sẽ bị biến mất vĩnh viễn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (x == DialogResult.Yes)
             {
+                DateTime datetime = Convert.ToDateTime(DGV_DSPT.SelectedRows[0].Cells[5].Value.ToString());
+                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không được xóa tháng quá khứ");
+                    return;
+                }
                 foreach (DataGridViewRow row in DGV_DSPT.SelectedRows)
                 {
                     string maPT = row.Cells[0].Value.ToString();
@@ -1259,7 +1280,7 @@ namespace BookstoreManager
                 form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
                 form.TB_LyDoThu.Text = pt.LyDoThu;
 
-
+                form.DTP_NgayThu.Enabled = false;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     var pt2 = new PhieuThu()
@@ -1384,6 +1405,12 @@ namespace BookstoreManager
                 MessageBoxIcon.Warning);
             if (msb == DialogResult.Yes)
             {
+                DateTime datetime = Convert.ToDateTime(DGV_DSHoaDon.SelectedRows[0].Cells[1].Value.ToString());
+                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không được xóa tháng quá khứ");
+                    return;
+                }
                 var bus = new HoaDonBus();
                 foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
                     if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
@@ -1445,9 +1472,14 @@ namespace BookstoreManager
                 MessageBoxIcon.Warning);
             if (msb == DialogResult.Yes)
             {
-                var bus = new PhieuNhapSachBus();
+                DateTime datetime = Convert.ToDateTime(DGV_DSPN.SelectedRows[0].Cells[1].Value.ToString());
+                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không được xóa tháng quá khứ");
+                    return;
+                }
                 foreach (DataGridViewRow row in DGV_DSPN.SelectedRows)
-                    if (!bus.DeletePhieuNhap(row.Cells[0].Value.ToString()))
+                    if (!pnBus.DeletePhieuNhap(row.Cells[0].Value.ToString()))
                         MessageBox.Show(
                             "Không thể xóa phiếu " + row.Cells[0].Value.ToString().Trim() + ".\nVui lòng kiểm tra lại thông tin.",
                             "Không thể xóa",
