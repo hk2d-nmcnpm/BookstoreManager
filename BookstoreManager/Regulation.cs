@@ -20,6 +20,7 @@ namespace BookstoreManager
 
         private void QD_BTN_ChinhSua_Click(object sender, EventArgs e)
         {
+            QD_BTN_ChinhSua.Enabled = false;
             QD_BTN_Luu.Enabled = true;
             QD_TB_Nhap.Enabled = true;
             QD_TB_TienNo.Enabled = true;
@@ -30,6 +31,7 @@ namespace BookstoreManager
 
         private void QD_BTN_Luu_Click(object sender, EventArgs e)
         {
+            QD_BTN_ChinhSua.Enabled = true;
             QD_BTN_Luu.Enabled = false;
             QD_TB_Nhap.Enabled = false;
             QD_TB_TienNo.Enabled = false;

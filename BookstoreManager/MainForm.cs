@@ -62,10 +62,6 @@ namespace BookstoreManager
             InitializeComponent();
             MainTab.ItemSize = new Size(0, 1);
             _anThanhMenu = false;
-            CBB_BCT_Nam.DataSource = nam;
-            CBB_BCT_Thang.DataSource = thang;
-            CBB_BCN_Nam.DataSource = nam;
-            CBB_BCN_Thang.DataSource = thang;
         }
         private void BT_KhoSach_ThemSach_Click(object sender, EventArgs e)
         {
@@ -205,7 +201,8 @@ namespace BookstoreManager
             regulationform.QD_TB_ToiThieu.Text = tonminsaukhiban.ToString();
             regulationform.QD_CKB.Checked = apdungqd4;
 
-            regulationform.ShowDialog();
+            var x=regulationform.ShowDialog();
+            if(regulationform.QD_BTN_ChinhSua.Enabled==true && regulationform.QD_BTN_Luu.Enabled==false)
             DongBo(sender, e);
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
@@ -509,13 +506,13 @@ namespace BookstoreManager
 
 
             //Get_DSTenTheLoai();
-            dsHoaDon = new HoaDonBus().GetResultTable();
-            dsSach = new SachBus().GetSach();
+            dsHoaDon = hdBus.GetResultTable();
+            dsSach = sachBus.GetSach();
             dsTheLoaiSach = new TheLoaiSachBus().GetTheLoai();
-            dsKhachHang = new KhachHangBus().GetKhachHang();
-            dsPhieuThu = new PhieuThuBus().GetDisplayTable();
-            dsPhieuNhap = new PhieuNhapSachBus().GetDisplayTable();
-            dsNhanVien = new NhanVienBus().GetNhanVien();
+            dsKhachHang = khBus.GetKhachHang();
+            dsPhieuThu = phieuthuBus.GetDisplayTable();
+            dsPhieuNhap = pnBus.GetDisplayTable();
+            dsNhanVien = nvBus.GetNhanVien();
             AssignComboBoxValue();
             Load_DSHoaDon();
             Load_DSKhachHang();
@@ -931,6 +928,10 @@ namespace BookstoreManager
             CBB_DSNV_Loc_ChucVu.DataSource = new BindingSource(chucvu, null);
             CBB_DSNV_Loc_ChucVu.DisplayMember = "Value";
             CBB_DSNV_Loc_ChucVu.ValueMember = "Key";
+            CBB_BCT_Nam.DataSource = nam;
+            CBB_BCT_Thang.DataSource = thang;
+            CBB_BCN_Nam.DataSource = nam;
+            CBB_BCN_Thang.DataSource = thang;
         }
 
         private Dictionary<string, string> GetTenSachDictionary()
@@ -1216,20 +1217,13 @@ namespace BookstoreManager
             var x = MessageBox.Show("Bạn có chắc chắn muốn xóa, sẽ bị biến mất vĩnh viễn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (x == DialogResult.Yes)
             {
-                
                 foreach (DataGridViewRow row in DGV_DSPT.SelectedRows)
                 {
                     string maPT = row.Cells[0].Value.ToString();
-
-                    PhieuThu pt = phieuthuBus.GetPhieuThuByMa(maPT);
-                    
-                    KhachHang kh = khBus.GetKhachHangByMaKH(pt.MaKhachHang);
-                    kh.SoTienNo += decimal.Parse(row.Cells[6].Value.ToString());
-                    khBus.UpdateKhachHang(kh);
                     phieuthuBus.DeletePhieuThu(maPT);
                     DGV_DSPT.Rows.Remove(row);
                 }
-                DongBo(sender, e);
+                DongBo(sender, new EventArgs());
             }
             else
                 return;

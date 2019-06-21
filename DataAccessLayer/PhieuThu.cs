@@ -172,12 +172,12 @@ namespace DataAccessLayer
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                PhieuThu pt = this.GetRow(obj.MaPhieuThu);
-                KhachHang kh = new KhachHangTable().GetRow(pt.MaKhachHang);
-                kh.SoTienNo += pt.SoTienThu;
-                kh.SoTienNo -= obj.SoTienThu;
-                Console.WriteLine("ma khach hang: " + kh.MaKhachHang+" "+kh.SoTienNo+" "+pt.SoTienThu);
-                new KhachHangTable().UpdateRow(kh);
+                //PhieuThu pt = this.GetRow(obj.MaPhieuThu);
+                //KhachHang kh = new KhachHangTable().GetRow(pt.MaKhachHang);
+                //kh.SoTienNo += pt.SoTienThu;
+                //kh.SoTienNo -= obj.SoTienThu;
+                //Console.WriteLine("ma khach hang: " + kh.MaKhachHang+" "+kh.SoTienNo+" "+pt.SoTienThu);
+                //new KhachHangTable().UpdateRow(kh);
 
                 string sql = "UPDATE [dbo].[PhieuThu]\n"
                            + "   SET [MaKhachHang] = @MaKhachHang\n"
