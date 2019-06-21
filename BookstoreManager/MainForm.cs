@@ -129,8 +129,27 @@ namespace BookstoreManager
 
                 KhachHang kh = new KhachHang();
                 kh = khBus.GetKhachHangByMaKH(form.CBB_KhachHang.SelectedValue.ToString());
-                kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+
+                if(apdungqd4==true)
+                {
+                    if (pt.SoTienThu > kh.SoTienNo)
+                    {
+                        MessageBox.Show("Số tiền thu vượt quá số tiền đang nợ: " + kh.SoTienNo+" VND");
+                        return;
+                    }        
+                    else
+                        kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+                }
+                else
+                {
+                    kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+                    if (kh.SoTienNo < 0) kh.SoTienNo = decimal.Zero;
+                }
+                    
+
                 khBus.UpdateKhachHang(kh);
+         
+                
 
                 PhieuThuBus ptb = new PhieuThuBus();
                 if (ptb.AddPhieuThu(pt))
@@ -1273,35 +1292,39 @@ namespace BookstoreManager
 
         private void TSB_DSPT__ChiTiet_Click(object sender, EventArgs e)
         {
-            ReceiptForm form = new ReceiptForm();
-            form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
-            form.Text = "Chi tiết";
+            try
+            {
+                ReceiptForm form = new ReceiptForm();
+                form.TB_MaPhieu.Text = DGV_DSPT.SelectedRows[0].Cells[0].Value.ToString();
+                form.Text = "Chi tiết";
 
-            form.CBB_KhachHang.DataSource = dsKhachHang;
-            form.CBB_KhachHang.DisplayMember = "HoTenKH";
-            form.CBB_KhachHang.ValueMember = "MaKhachHang";
+                form.CBB_KhachHang.DataSource = dsKhachHang;
+                form.CBB_KhachHang.DisplayMember = "HoTenKH";
+                form.CBB_KhachHang.ValueMember = "MaKhachHang";
 
-            form.CBB_NhanVien.DataSource = dsNhanVien;
-            form.CBB_NhanVien.DisplayMember = "TenNhanVien";
-            form.CBB_NhanVien.ValueMember = "MaNhanVien";
+                form.CBB_NhanVien.DataSource = dsNhanVien;
+                form.CBB_NhanVien.DisplayMember = "TenNhanVien";
+                form.CBB_NhanVien.ValueMember = "MaNhanVien";
 
 
-            var pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text);
-            form.TB_MaPhieu.Enabled = false;
-            form.TB_MaPhieu.Text = pt.MaPhieuThu;
-            form.DTP_NgayThu.Enabled = false;
-            form.DTP_NgayThu.Value = pt.NgayThu;
-            form.TB_SoTienThu.Enabled = false;
-            form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
-            form.TB_LyDoThu.Enabled = false;
-            form.TB_LyDoThu.Text = pt.LyDoThu;
-            form.CBB_KhachHang.Enabled = false;
-            form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
-            form.CBB_NhanVien.Enabled = false;
-            form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
-            form.BT_Huy.Hide();
-            form.BT_Luu.Hide();
-            form.ShowDialog();
+                var pt = phieuthuBus.GetPhieuThuByMa(form.TB_MaPhieu.Text);
+                form.TB_MaPhieu.Enabled = false;
+                form.TB_MaPhieu.Text = pt.MaPhieuThu;
+                form.DTP_NgayThu.Enabled = false;
+                form.DTP_NgayThu.Value = pt.NgayThu;
+                form.TB_SoTienThu.Enabled = false;
+                form.TB_SoTienThu.Text = pt.SoTienThu.ToString();
+                form.TB_LyDoThu.Enabled = false;
+                form.TB_LyDoThu.Text = pt.LyDoThu;
+                form.CBB_KhachHang.Enabled = false;
+                form.CBB_KhachHang.SelectedValue = pt.MaKhachHang;
+                form.CBB_NhanVien.Enabled = false;
+                form.CBB_NhanVien.SelectedValue = pt.MaNhanVien;
+                form.BT_Huy.Hide();
+                form.BT_Luu.Hide();
+                form.ShowDialog();
+            }
+            catch { }
         }
 
         private void TSB_DSPN_Them_Click(object sender, EventArgs e)
