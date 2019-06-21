@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.BookstoreName = new System.Windows.Forms.Label();
             this.BT_Login = new System.Windows.Forms.Button();
             this.TB_TenDangNhap = new System.Windows.Forms.TextBox();
@@ -38,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TB_MatKhau = new System.Windows.Forms.TextBox();
             this.Link_QuenMatKhau = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,15 +52,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 62);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px1;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(123, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(37, 31);
-            this.panel2.TabIndex = 8;
             // 
             // BookstoreName
             // 
@@ -140,10 +131,19 @@
             this.Link_QuenMatKhau.TabStop = true;
             this.Link_QuenMatKhau.Text = "Quên mật khẩu đăng nhập";
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(123, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(37, 31);
+            this.panel2.TabIndex = 8;
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(199)))));
             this.ClientSize = new System.Drawing.Size(397, 447);
             this.Controls.Add(this.Link_QuenMatKhau);

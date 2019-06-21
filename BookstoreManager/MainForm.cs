@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace BookstoreManager
@@ -819,7 +821,7 @@ namespace BookstoreManager
                     DGV_DSNV.Rows.Add(
                         row["MaNhanVien"],
                         row["TenNhanVien"],
-                        row["NgaySinh"],
+                        ((DateTime)row["NgaySinh"]).ToString("dd/MM/yyyy"),
                         nvBus.ChucVu[(int)row["ChucVu"]],
                         row["MatKhau"]
                         );
@@ -1598,6 +1600,58 @@ namespace BookstoreManager
                             MessageBoxIcon.Error);
                 DongBo(sender, new EventArgs());
             }
+        }
+
+        private void BT_DSNV_ThemNV_Click(object sender, EventArgs e)
+        {
+            EmployeeForm form = new EmployeeForm();
+            int last_id = 0;
+            if (dsNhanVien.Rows.Count > 0)
+                last_id = int.Parse(dsNhanVien.AsEnumerable().Last()["MaNhanVien"].ToString());
+            form.TB_MaNV.Text = (last_id + 1).ToString("000000");
+            form.CBB_ChucVu.DataSource = new BindingSource(nvBus.ChucVu, null);
+            form.CBB_ChucVu.DisplayMember = "Value";
+            form.CBB_ChucVu.ValueMember = "Key";
+            form.TB_MatKhau.Text = GeneratePassword(8);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var nv = new NhanVien()
+                {
+                    MaNhanVien = form.TB_MaNV.Text,
+                    TenNhanVien = form.TB_HoTen.Text,
+                    NgaySinh = form.DTP_NgaySinh.Value,
+                    ChucVu = (int)form.CBB_ChucVu.SelectedValue,
+                    MatKhau = CalculateMD5Hash(form.TB_MatKhau.Text)
+                };
+                if (nvBus.AddNhanVien(nv))
+                    Console.WriteLine("A employee has been added");
+                else
+                    MessageBox.Show("Không thể thêm nhân viên, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
+        }
+        public static string CalculateMD5Hash(string input)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
+        public static string GeneratePassword(int length)
+        {
+            var random = new Random();
+            string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            var result = new StringBuilder(length);
+            for (int i = 0; i < length; i++)
+            {
+                result.Append(characters[random.Next(characters.Length)]);
+            }
+            return result.ToString();
         }
     }
 }
