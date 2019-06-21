@@ -173,7 +173,7 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSSach_Xoa = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSSach_Sua = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSSach_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.panel29 = new System.Windows.Forms.Panel();
@@ -396,21 +396,6 @@
             this.CBB_BCN_Nam = new System.Windows.Forms.ComboBox();
             this.label79 = new System.Windows.Forms.Label();
             this.panel76 = new System.Windows.Forms.Panel();
-            this.TP_QuyDinh = new System.Windows.Forms.TabPage();
-            this.QD_BTN_Luu = new System.Windows.Forms.Button();
-            this.QD_BTN_ChinhSua = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.QD_TB_ToiThieu = new System.Windows.Forms.TextBox();
-            this.QD_TB_TienNo = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.QD_CKB = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.QD_TB_Ton = new System.Windows.Forms.TextBox();
-            this.QD_TB_Nhap = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.TP_DSNhanVien = new System.Windows.Forms.TabPage();
             this.DGV_DSNV = new System.Windows.Forms.DataGridView();
             this.C_DSNV_MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -577,10 +562,6 @@
             this.flowLayoutPanel19.SuspendLayout();
             this.panel67.SuspendLayout();
             this.panel68.SuspendLayout();
-            this.TP_QuyDinh.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.TP_DSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DSNV)).BeginInit();
             this.toolStrip8.SuspendLayout();
@@ -927,7 +908,6 @@
             this.panel69.Size = new System.Drawing.Size(206, 46);
             this.panel69.TabIndex = 6;
             this.panel69.Click += new System.EventHandler(this.MN_QuyDinh_Click);
-            this.panel69.Paint += new System.Windows.Forms.PaintEventHandler(this.panel69_Paint);
             // 
             // label82
             // 
@@ -1105,7 +1085,6 @@
             this.MainTab.Controls.Add(this.TP_DSPhieuThu);
             this.MainTab.Controls.Add(this.TP_BaoCaoTon);
             this.MainTab.Controls.Add(this.TP_BaoCaoNo);
-            this.MainTab.Controls.Add(this.TP_QuyDinh);
             this.MainTab.Controls.Add(this.TP_DSNhanVien);
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 20);
@@ -1664,7 +1643,7 @@
             this.groupBox2.Location = new System.Drawing.Point(2, 263);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox2.Size = new System.Drawing.Size(192, 173);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -1771,7 +1750,7 @@
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(192, 311);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -2241,7 +2220,7 @@
             this.toolStripButton2,
             this.TSB_DSSach_Xoa,
             this.TSB_DSSach_Sua,
-            this.toolStripButton5,
+            this.TSB_DSSach_ChiTiet,
             this.toolStripSeparator2,
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 58);
@@ -2295,14 +2274,15 @@
             this.TSB_DSSach_Sua.Text = "Chỉnh sửa";
             this.TSB_DSSach_Sua.Click += new System.EventHandler(this.TSB_DSSach_Sua_Click);
             // 
-            // toolStripButton5
+            // TSB_DSSach_ChiTiet
             // 
-            this.toolStripButton5.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(69, 24);
-            this.toolStripButton5.Text = "Chi tiết";
+            this.TSB_DSSach_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSSach_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSSach_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSSach_ChiTiet.Name = "TSB_DSSach_ChiTiet";
+            this.TSB_DSSach_ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSSach_ChiTiet.Text = "Chi tiết";
+            this.TSB_DSSach_ChiTiet.Click += new System.EventHandler(this.TSB_DSSach_ChiTiet_Click);
             // 
             // toolStripSeparator2
             // 
@@ -2573,7 +2553,7 @@
             this.TP_DSPhieuNhap.Location = new System.Drawing.Point(4, 24);
             this.TP_DSPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSPhieuNhap.Name = "TP_DSPhieuNhap";
-            this.TP_DSPhieuNhap.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSPhieuNhap.Size = new System.Drawing.Size(825, 524);
             this.TP_DSPhieuNhap.TabIndex = 6;
             this.TP_DSPhieuNhap.Text = "DS Phiếu Nhập Sách";
             this.TP_DSPhieuNhap.UseVisualStyleBackColor = true;
@@ -2597,7 +2577,7 @@
             this.DGV_DSPN.ReadOnly = true;
             this.DGV_DSPN.RowTemplate.Height = 24;
             this.DGV_DSPN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSPN.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSPN.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSPN.TabIndex = 2;
             // 
             // C_DSPhieuNhapSach_MaPhieu
@@ -2647,7 +2627,7 @@
             this.toolStrip4.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip4.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip4.Size = new System.Drawing.Size(825, 30);
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
             // 
@@ -2724,10 +2704,10 @@
             this.panel36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel36.Controls.Add(this.flowLayoutPanel8);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel36.Location = new System.Drawing.Point(0, 499);
+            this.panel36.Location = new System.Drawing.Point(0, 498);
             this.panel36.Margin = new System.Windows.Forms.Padding(2);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(878, 26);
+            this.panel36.Size = new System.Drawing.Size(825, 26);
             this.panel36.TabIndex = 1;
             // 
             // flowLayoutPanel8
@@ -2741,7 +2721,7 @@
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel8.TabIndex = 0;
             // 
             // label34
@@ -2797,14 +2777,14 @@
             this.panel37.Location = new System.Drawing.Point(0, 0);
             this.panel37.Margin = new System.Windows.Forms.Padding(2);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(878, 58);
+            this.panel37.Size = new System.Drawing.Size(825, 58);
             this.panel37.TabIndex = 0;
             // 
             // panel38
             // 
             this.panel38.Controls.Add(this.BT_DSPhieuNhap_TaoPhieuNhap);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel38.Location = new System.Drawing.Point(746, 0);
+            this.panel38.Location = new System.Drawing.Point(693, 0);
             this.panel38.Margin = new System.Windows.Forms.Padding(2);
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(132, 58);
@@ -2835,7 +2815,7 @@
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel9.TabIndex = 3;
             // 
             // panel39
@@ -2944,7 +2924,7 @@
             this.TP_TaoPhieuNhapSach.Location = new System.Drawing.Point(4, 24);
             this.TP_TaoPhieuNhapSach.Margin = new System.Windows.Forms.Padding(2);
             this.TP_TaoPhieuNhapSach.Name = "TP_TaoPhieuNhapSach";
-            this.TP_TaoPhieuNhapSach.Size = new System.Drawing.Size(878, 525);
+            this.TP_TaoPhieuNhapSach.Size = new System.Drawing.Size(825, 524);
             this.TP_TaoPhieuNhapSach.TabIndex = 7;
             this.TP_TaoPhieuNhapSach.Text = "Phiếu Nhập Sách";
             this.TP_TaoPhieuNhapSach.UseVisualStyleBackColor = true;
@@ -2963,8 +2943,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel25);
-            this.splitContainer2.Size = new System.Drawing.Size(878, 433);
-            this.splitContainer2.SplitterDistance = 664;
+            this.splitContainer2.Size = new System.Drawing.Size(825, 432);
+            this.splitContainer2.SplitterDistance = 623;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 7;
             // 
@@ -2990,7 +2970,7 @@
             this.DGV_PNS.ReadOnly = true;
             this.DGV_PNS.RowTemplate.Height = 24;
             this.DGV_PNS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_PNS.Size = new System.Drawing.Size(664, 433);
+            this.DGV_PNS.Size = new System.Drawing.Size(623, 432);
             this.DGV_PNS.TabIndex = 2;
             // 
             // C_PhieuNhapSach_MaSach
@@ -3046,7 +3026,7 @@
             this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Padding = new System.Windows.Forms.Padding(2);
-            this.panel25.Size = new System.Drawing.Size(211, 433);
+            this.panel25.Size = new System.Drawing.Size(199, 432);
             this.panel25.TabIndex = 0;
             // 
             // groupBox3
@@ -3055,11 +3035,11 @@
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(2, 350);
+            this.groupBox3.Location = new System.Drawing.Point(2, 349);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox3.Size = new System.Drawing.Size(205, 79);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox3.Size = new System.Drawing.Size(193, 79);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tính tiền";
@@ -3074,7 +3054,7 @@
             this.TB_PNS_TongTien.Margin = new System.Windows.Forms.Padding(0);
             this.TB_PNS_TongTien.Name = "TB_PNS_TongTien";
             this.TB_PNS_TongTien.ReadOnly = true;
-            this.TB_PNS_TongTien.Size = new System.Drawing.Size(193, 29);
+            this.TB_PNS_TongTien.Size = new System.Drawing.Size(181, 29);
             this.TB_PNS_TongTien.TabIndex = 8;
             this.TB_PNS_TongTien.Text = "0 VND";
             this.TB_PNS_TongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -3105,8 +3085,8 @@
             this.groupBox4.Location = new System.Drawing.Point(2, 2);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox4.Size = new System.Drawing.Size(205, 200);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox4.Size = new System.Drawing.Size(193, 200);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin phiếu nhập";
@@ -3121,7 +3101,7 @@
             this.CBB_PNS_NhanVien.Location = new System.Drawing.Point(5, 121);
             this.CBB_PNS_NhanVien.Margin = new System.Windows.Forms.Padding(0);
             this.CBB_PNS_NhanVien.Name = "CBB_PNS_NhanVien";
-            this.CBB_PNS_NhanVien.Size = new System.Drawing.Size(195, 23);
+            this.CBB_PNS_NhanVien.Size = new System.Drawing.Size(183, 23);
             this.CBB_PNS_NhanVien.TabIndex = 4;
             // 
             // label26
@@ -3146,7 +3126,7 @@
             this.DTP_PNS_NgayNhap.Location = new System.Drawing.Point(5, 79);
             this.DTP_PNS_NgayNhap.Margin = new System.Windows.Forms.Padding(0);
             this.DTP_PNS_NgayNhap.Name = "DTP_PNS_NgayNhap";
-            this.DTP_PNS_NgayNhap.Size = new System.Drawing.Size(195, 23);
+            this.DTP_PNS_NgayNhap.Size = new System.Drawing.Size(183, 23);
             this.DTP_PNS_NgayNhap.TabIndex = 2;
             // 
             // label31
@@ -3169,7 +3149,7 @@
             this.TB_PNS_MaPhieu.Location = new System.Drawing.Point(5, 37);
             this.TB_PNS_MaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.TB_PNS_MaPhieu.Name = "TB_PNS_MaPhieu";
-            this.TB_PNS_MaPhieu.Size = new System.Drawing.Size(195, 23);
+            this.TB_PNS_MaPhieu.Size = new System.Drawing.Size(183, 23);
             this.TB_PNS_MaPhieu.TabIndex = 6;
             // 
             // label19
@@ -3197,7 +3177,7 @@
             this.toolStrip5.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip5.Name = "toolStrip5";
             this.toolStrip5.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip5.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip5.Size = new System.Drawing.Size(825, 30);
             this.toolStrip5.TabIndex = 6;
             this.toolStrip5.Text = "toolStrip5";
             // 
@@ -3249,7 +3229,7 @@
             this.panel43.Location = new System.Drawing.Point(0, 0);
             this.panel43.Margin = new System.Windows.Forms.Padding(2);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(878, 62);
+            this.panel43.Size = new System.Drawing.Size(825, 62);
             this.panel43.TabIndex = 0;
             // 
             // panel44
@@ -3257,7 +3237,7 @@
             this.panel44.Controls.Add(this.BT_PNS_Huy);
             this.panel44.Controls.Add(this.BT_PNS_Luu);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel44.Location = new System.Drawing.Point(704, 0);
+            this.panel44.Location = new System.Drawing.Point(651, 0);
             this.panel44.Margin = new System.Windows.Forms.Padding(2);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(174, 62);
@@ -3305,7 +3285,7 @@
             this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(878, 62);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(825, 62);
             this.flowLayoutPanel11.TabIndex = 3;
             // 
             // panel45
@@ -3410,7 +3390,7 @@
             // panel42
             // 
             this.panel42.Controls.Add(this.BT_PNS_Them);
-            this.panel42.Location = new System.Drawing.Point(775, 2);
+            this.panel42.Location = new System.Drawing.Point(2, 62);
             this.panel42.Margin = new System.Windows.Forms.Padding(2);
             this.panel42.Name = "panel42";
             this.panel42.Size = new System.Drawing.Size(94, 56);
@@ -3441,7 +3421,7 @@
             this.TP_DSKhachHang.Location = new System.Drawing.Point(4, 24);
             this.TP_DSKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSKhachHang.Name = "TP_DSKhachHang";
-            this.TP_DSKhachHang.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSKhachHang.Size = new System.Drawing.Size(825, 524);
             this.TP_DSKhachHang.TabIndex = 8;
             this.TP_DSKhachHang.Text = "Khách Hàng";
             this.TP_DSKhachHang.UseVisualStyleBackColor = true;
@@ -3469,7 +3449,7 @@
             this.DGV_DSKH.ReadOnly = true;
             this.DGV_DSKH.RowTemplate.Height = 24;
             this.DGV_DSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSKH.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSKH.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSKH.TabIndex = 2;
             // 
             // C_DSKhachHang_MaKhachHang
@@ -3537,7 +3517,7 @@
             this.toolStrip6.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip6.Name = "toolStrip6";
             this.toolStrip6.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip6.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip6.Size = new System.Drawing.Size(825, 30);
             this.toolStrip6.TabIndex = 6;
             this.toolStrip6.Text = "toolStrip6";
             // 
@@ -3615,10 +3595,10 @@
             this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel48.Controls.Add(this.flowLayoutPanel12);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel48.Location = new System.Drawing.Point(0, 499);
+            this.panel48.Location = new System.Drawing.Point(0, 498);
             this.panel48.Margin = new System.Windows.Forms.Padding(2);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(878, 26);
+            this.panel48.Size = new System.Drawing.Size(825, 26);
             this.panel48.TabIndex = 1;
             // 
             // flowLayoutPanel12
@@ -3632,7 +3612,7 @@
             this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel12.TabIndex = 0;
             // 
             // label47
@@ -3688,14 +3668,14 @@
             this.panel49.Location = new System.Drawing.Point(0, 0);
             this.panel49.Margin = new System.Windows.Forms.Padding(2);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(878, 58);
+            this.panel49.Size = new System.Drawing.Size(825, 58);
             this.panel49.TabIndex = 0;
             // 
             // panel50
             // 
             this.panel50.Controls.Add(this.BT_DSKH_Them);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel50.Location = new System.Drawing.Point(746, 0);
+            this.panel50.Location = new System.Drawing.Point(693, 0);
             this.panel50.Margin = new System.Windows.Forms.Padding(2);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(132, 58);
@@ -3726,7 +3706,7 @@
             this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel13.TabIndex = 3;
             // 
             // panel51
@@ -3838,7 +3818,7 @@
             this.TP_DSPhieuThu.Location = new System.Drawing.Point(4, 24);
             this.TP_DSPhieuThu.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSPhieuThu.Name = "TP_DSPhieuThu";
-            this.TP_DSPhieuThu.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSPhieuThu.Size = new System.Drawing.Size(825, 524);
             this.TP_DSPhieuThu.TabIndex = 9;
             this.TP_DSPhieuThu.Text = "DS Phiếu Thu";
             this.TP_DSPhieuThu.UseVisualStyleBackColor = true;
@@ -3866,7 +3846,7 @@
             this.DGV_DSPT.ReadOnly = true;
             this.DGV_DSPT.RowTemplate.Height = 24;
             this.DGV_DSPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSPT.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSPT.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSPT.TabIndex = 2;
             // 
             // C_PhieuThuTien_MaPhieu
@@ -3940,7 +3920,7 @@
             this.toolStrip7.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip7.Name = "toolStrip7";
             this.toolStrip7.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip7.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip7.Size = new System.Drawing.Size(825, 30);
             this.toolStrip7.TabIndex = 6;
             this.toolStrip7.Text = "toolStrip7";
             // 
@@ -4018,10 +3998,10 @@
             this.panel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel53.Controls.Add(this.flowLayoutPanel14);
             this.panel53.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel53.Location = new System.Drawing.Point(0, 499);
+            this.panel53.Location = new System.Drawing.Point(0, 498);
             this.panel53.Margin = new System.Windows.Forms.Padding(2);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(878, 26);
+            this.panel53.Size = new System.Drawing.Size(825, 26);
             this.panel53.TabIndex = 1;
             // 
             // flowLayoutPanel14
@@ -4035,7 +4015,7 @@
             this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel14.TabIndex = 0;
             // 
             // label61
@@ -4091,14 +4071,14 @@
             this.panel55.Location = new System.Drawing.Point(0, 0);
             this.panel55.Margin = new System.Windows.Forms.Padding(2);
             this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(878, 58);
+            this.panel55.Size = new System.Drawing.Size(825, 58);
             this.panel55.TabIndex = 0;
             // 
             // panel56
             // 
             this.panel56.Controls.Add(this.BT_DSPhieuThu_TaoPhieuThu);
             this.panel56.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel56.Location = new System.Drawing.Point(746, 0);
+            this.panel56.Location = new System.Drawing.Point(693, 0);
             this.panel56.Margin = new System.Windows.Forms.Padding(2);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(132, 58);
@@ -4130,7 +4110,7 @@
             this.flowLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel15.TabIndex = 3;
             // 
             // panel57
@@ -4652,188 +4632,6 @@
             this.panel76.Size = new System.Drawing.Size(335, 52);
             this.panel76.TabIndex = 4;
             // 
-            // TP_QuyDinh
-            // 
-            this.TP_QuyDinh.Controls.Add(this.QD_BTN_Luu);
-            this.TP_QuyDinh.Controls.Add(this.QD_BTN_ChinhSua);
-            this.TP_QuyDinh.Controls.Add(this.groupBox6);
-            this.TP_QuyDinh.Controls.Add(this.groupBox7);
-            this.TP_QuyDinh.Controls.Add(this.groupBox5);
-            this.TP_QuyDinh.Location = new System.Drawing.Point(4, 24);
-            this.TP_QuyDinh.Margin = new System.Windows.Forms.Padding(2);
-            this.TP_QuyDinh.Name = "TP_QuyDinh";
-            this.TP_QuyDinh.Padding = new System.Windows.Forms.Padding(2);
-            this.TP_QuyDinh.Size = new System.Drawing.Size(878, 525);
-            this.TP_QuyDinh.TabIndex = 12;
-            this.TP_QuyDinh.Text = "Quy định";
-            this.TP_QuyDinh.UseVisualStyleBackColor = true;
-            // 
-            // QD_BTN_Luu
-            // 
-            this.QD_BTN_Luu.Enabled = false;
-            this.QD_BTN_Luu.Location = new System.Drawing.Point(335, 364);
-            this.QD_BTN_Luu.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_BTN_Luu.Name = "QD_BTN_Luu";
-            this.QD_BTN_Luu.Size = new System.Drawing.Size(69, 26);
-            this.QD_BTN_Luu.TabIndex = 8;
-            this.QD_BTN_Luu.Text = "Lưu";
-            this.QD_BTN_Luu.UseVisualStyleBackColor = true;
-            // 
-            // QD_BTN_ChinhSua
-            // 
-            this.QD_BTN_ChinhSua.Location = new System.Drawing.Point(202, 364);
-            this.QD_BTN_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_BTN_ChinhSua.Name = "QD_BTN_ChinhSua";
-            this.QD_BTN_ChinhSua.Size = new System.Drawing.Size(74, 26);
-            this.QD_BTN_ChinhSua.TabIndex = 7;
-            this.QD_BTN_ChinhSua.Text = "Chỉnh sửa";
-            this.QD_BTN_ChinhSua.UseVisualStyleBackColor = true;
-            this.QD_BTN_ChinhSua.Click += new System.EventHandler(this.QD_BTN_ChinhSua_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.QD_TB_ToiThieu);
-            this.groupBox6.Controls.Add(this.QD_TB_TienNo);
-            this.groupBox6.Controls.Add(this.label33);
-            this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Location = new System.Drawing.Point(157, 126);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(346, 93);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Quy định 2";
-            // 
-            // QD_TB_ToiThieu
-            // 
-            this.QD_TB_ToiThieu.Enabled = false;
-            this.QD_TB_ToiThieu.Location = new System.Drawing.Point(225, 50);
-            this.QD_TB_ToiThieu.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_TB_ToiThieu.Name = "QD_TB_ToiThieu";
-            this.QD_TB_ToiThieu.Size = new System.Drawing.Size(81, 20);
-            this.QD_TB_ToiThieu.TabIndex = 4;
-            this.QD_TB_ToiThieu.Text = "20";
-            this.QD_TB_ToiThieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.QD_TB_ToiThieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
-            // 
-            // QD_TB_TienNo
-            // 
-            this.QD_TB_TienNo.Enabled = false;
-            this.QD_TB_TienNo.Location = new System.Drawing.Point(225, 18);
-            this.QD_TB_TienNo.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_TB_TienNo.Name = "QD_TB_TienNo";
-            this.QD_TB_TienNo.Size = new System.Drawing.Size(81, 20);
-            this.QD_TB_TienNo.TabIndex = 3;
-            this.QD_TB_TienNo.Text = "20000";
-            this.QD_TB_TienNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.QD_TB_TienNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(13, 56);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(148, 13);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "Số lượng tồn tối thiểu sau bán";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(13, 26);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(133, 13);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "Số tiền nợ cho phép tối đa";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.QD_CKB);
-            this.groupBox7.Location = new System.Drawing.Point(157, 250);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Size = new System.Drawing.Size(346, 84);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Quy định 3";
-            // 
-            // QD_CKB
-            // 
-            this.QD_CKB.AutoSize = true;
-            this.QD_CKB.Checked = true;
-            this.QD_CKB.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.QD_CKB.Enabled = false;
-            this.QD_CKB.Location = new System.Drawing.Point(57, 43);
-            this.QD_CKB.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_CKB.Name = "QD_CKB";
-            this.QD_CKB.Size = new System.Drawing.Size(259, 17);
-            this.QD_CKB.TabIndex = 0;
-            this.QD_CKB.Text = "Số tiền thu không được phép vượt quá số tiền nợ";
-            this.QD_CKB.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.QD_TB_Ton);
-            this.groupBox5.Controls.Add(this.QD_TB_Nhap);
-            this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Location = new System.Drawing.Point(157, 14);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(346, 90);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Quy định 1";
-            // 
-            // QD_TB_Ton
-            // 
-            this.QD_TB_Ton.Enabled = false;
-            this.QD_TB_Ton.Location = new System.Drawing.Point(225, 59);
-            this.QD_TB_Ton.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_TB_Ton.Name = "QD_TB_Ton";
-            this.QD_TB_Ton.Size = new System.Drawing.Size(81, 20);
-            this.QD_TB_Ton.TabIndex = 3;
-            this.QD_TB_Ton.Text = "300";
-            this.QD_TB_Ton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.QD_TB_Ton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
-            // 
-            // QD_TB_Nhap
-            // 
-            this.QD_TB_Nhap.Enabled = false;
-            this.QD_TB_Nhap.Location = new System.Drawing.Point(225, 21);
-            this.QD_TB_Nhap.Margin = new System.Windows.Forms.Padding(2);
-            this.QD_TB_Nhap.Name = "QD_TB_Nhap";
-            this.QD_TB_Nhap.Size = new System.Drawing.Size(81, 20);
-            this.QD_TB_Nhap.TabIndex = 2;
-            this.QD_TB_Nhap.Text = "150";
-            this.QD_TB_Nhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.QD_TB_Nhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(13, 65);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(172, 13);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Số lượng tồn tối đa cho phép nhập";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 26);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(116, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Số lượng nhập tối thiểu";
-            // 
             // TP_DSNhanVien
             // 
             this.TP_DSNhanVien.Controls.Add(this.DGV_DSNV);
@@ -4843,7 +4641,7 @@
             this.TP_DSNhanVien.Location = new System.Drawing.Point(4, 24);
             this.TP_DSNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSNhanVien.Name = "TP_DSNhanVien";
-            this.TP_DSNhanVien.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSNhanVien.Size = new System.Drawing.Size(825, 524);
             this.TP_DSNhanVien.TabIndex = 13;
             this.TP_DSNhanVien.Text = "Nhân Viên";
             this.TP_DSNhanVien.UseVisualStyleBackColor = true;
@@ -4868,7 +4666,7 @@
             this.DGV_DSNV.ReadOnly = true;
             this.DGV_DSNV.RowTemplate.Height = 24;
             this.DGV_DSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSNV.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSNV.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSNV.TabIndex = 2;
             // 
             // C_DSNV_MaNV
@@ -4917,7 +4715,7 @@
             this.toolStrip8.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip8.Name = "toolStrip8";
             this.toolStrip8.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip8.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip8.Size = new System.Drawing.Size(825, 30);
             this.toolStrip8.TabIndex = 6;
             this.toolStrip8.Text = "toolStrip8";
             // 
@@ -4984,10 +4782,10 @@
             this.panel80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel80.Controls.Add(this.flowLayoutPanel4);
             this.panel80.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel80.Location = new System.Drawing.Point(0, 499);
+            this.panel80.Location = new System.Drawing.Point(0, 498);
             this.panel80.Margin = new System.Windows.Forms.Padding(2);
             this.panel80.Name = "panel80";
-            this.panel80.Size = new System.Drawing.Size(878, 26);
+            this.panel80.Size = new System.Drawing.Size(825, 26);
             this.panel80.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -4999,7 +4797,7 @@
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // label24
@@ -5033,14 +4831,14 @@
             this.panel81.Location = new System.Drawing.Point(0, 0);
             this.panel81.Margin = new System.Windows.Forms.Padding(2);
             this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(878, 58);
+            this.panel81.Size = new System.Drawing.Size(825, 58);
             this.panel81.TabIndex = 0;
             // 
             // panel82
             // 
             this.panel82.Controls.Add(this.BT_DSNV_ThemNV);
             this.panel82.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel82.Location = new System.Drawing.Point(746, 0);
+            this.panel82.Location = new System.Drawing.Point(693, 0);
             this.panel82.Margin = new System.Windows.Forms.Padding(2);
             this.panel82.Name = "panel82";
             this.panel82.Size = new System.Drawing.Size(132, 58);
@@ -5071,7 +4869,7 @@
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel10.TabIndex = 3;
             // 
             // panel83
@@ -5457,13 +5255,6 @@
             this.panel67.PerformLayout();
             this.panel68.ResumeLayout(false);
             this.panel68.PerformLayout();
-            this.TP_QuyDinh.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.TP_DSNhanVien.ResumeLayout(false);
             this.TP_DSNhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DSNV)).EndInit();
@@ -5759,7 +5550,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton TSB_DSSach_Sua;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton TSB_DSSach_ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStrip toolStrip4;
@@ -5876,7 +5667,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label LB_DSNV_SoNhanVien;
         private System.Windows.Forms.Panel panel81;
         private System.Windows.Forms.Panel panel82;
@@ -5891,20 +5681,6 @@
         private System.Windows.Forms.Panel panel85;
         private System.Windows.Forms.ComboBox CBB_DSNV_Loc_ChucVu;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TabPage TP_QuyDinh;
-        private System.Windows.Forms.Button QD_BTN_Luu;
-        private System.Windows.Forms.Button QD_BTN_ChinhSua;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox QD_TB_ToiThieu;
-        private System.Windows.Forms.TextBox QD_TB_TienNo;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox QD_CKB;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox QD_TB_Ton;
-        private System.Windows.Forms.TextBox QD_TB_Nhap;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_Chontatca;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_Xoa;

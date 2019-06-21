@@ -59,5 +59,22 @@ namespace BookstoreManager
                 e.Handled = true;
             }
         }
+
+        private void BT_ThemAnhBia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "*|*.png|*|*.jpg|*|*.bmp";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = ofd.FileName.ToString();
+                    Image img = new Bitmap(filePath);
+                    PTB_AnhBia.Image = img;
+                }
+
+            }
+            catch { }
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace BookstoreManager
         ChiTietBaoCaoTonBUS ctbctBus = new ChiTietBaoCaoTonBUS();
         ChiTietBaoCaoCongNoBUS ctbccnBus = new ChiTietBaoCaoCongNoBUS();
         BaoCaoCongNoBus bccnBus = new BaoCaoCongNoBus();
+        ThamSoBus thamsoBus = new ThamSoBus();
 
         NhanVien loginnv;
         DataTable dsSach;
@@ -43,12 +44,15 @@ namespace BookstoreManager
         DataTable dsBaoCaoTonAll;
         DataTable dsBaoCaoNoMonth;
         DataTable dsBaoCaoNoAll;
+        DataTable dsThamSo;
 
-        int soluongnhaptoithieu = 150;
-        int soluongtonmaxchophepnhap = 300;
-        decimal tiennomax = 20000;
-        int tonminsaukhiban = 20;
-        bool apdungqd4 = true;
+        int soluongnhaptoithieu;
+        int soluongtonmaxchophepnhap;
+        decimal tiennomax;
+        int tonminsaukhiban;
+        bool apdungqd4;
+
+       
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> nam = new List<int>() { 2017, 2018, 2019 };
@@ -173,8 +177,17 @@ namespace BookstoreManager
         }
         private void MN_QuyDinh_Click(object sender,EventArgs e)
         {
-            MainTab.SelectedTab = TP_QuyDinh;
-            LB_TieuDe.Text = "Quy định";
+            DongBo(sender, e);
+            Regulation regulationform = new Regulation();
+
+            regulationform.QD_TB_Nhap.Text = soluongnhaptoithieu.ToString();
+            regulationform.QD_TB_Ton.Text = soluongtonmaxchophepnhap.ToString();
+            regulationform.QD_TB_TienNo.Text = tiennomax.ToString();
+            regulationform.QD_TB_ToiThieu.Text = tonminsaukhiban.ToString();
+            regulationform.QD_CKB.Checked = apdungqd4;
+
+            regulationform.ShowDialog();
+            DongBo(sender, e);
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
         {
@@ -461,16 +474,23 @@ namespace BookstoreManager
             //Load_BaoCaoTon();
             Load_DSSach();
             Load_DSNhanVien();
+            Load_DSQuyDinh();
 
-
-            soluongnhaptoithieu = int.Parse(QD_TB_Nhap.Text);
-            soluongtonmaxchophepnhap = int.Parse(QD_TB_Ton.Text);
-            tiennomax = decimal.Parse(QD_TB_TienNo.Text);
-            tonminsaukhiban = int.Parse(QD_TB_ToiThieu.Text);
-            apdungqd4 = QD_CKB.Checked;
+            
 
             this.Cursor = Cursors.Arrow;
         }
+
+        private void Load_DSQuyDinh()
+        {
+            dsThamSo = thamsoBus.GetThamSo();
+            soluongnhaptoithieu = int.Parse(dsThamSo.Rows[0]["GiaTri"].ToString());
+            soluongtonmaxchophepnhap = int.Parse(dsThamSo.Rows[1]["GiaTri"].ToString());
+            tiennomax = decimal.Parse(dsThamSo.Rows[3]["GiaTri"].ToString());
+            tonminsaukhiban = int.Parse(dsThamSo.Rows[2]["GiaTri"].ToString());
+            apdungqd4 = int.Parse(dsThamSo.Rows[4]["GiaTri"].ToString()) == 1 ? true : false;      
+        }
+
         private byte[] ConvertImageToByteArray(Image imageToConvert, ImageFormat formatOfImage)
         {
             byte[] Ret;
@@ -1295,25 +1315,14 @@ namespace BookstoreManager
             Load_DSNhanVien();
         }
 
-        private void panel69_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
         private void MN_NhanVien_Click(object sender, EventArgs e)
         {
             MainTab.SelectedTab = TP_DSNhanVien;
             LB_TieuDe.Text = "Danh sách nhân viên";
         }
 
-        private void QD_BTN_ChinhSua_Click(object sender, EventArgs e)
-        {
-            QD_TB_Nhap.Enabled = true;
-            QD_TB_Ton.Enabled = true;
-            QD_TB_ToiThieu.Enabled = true;
-            QD_TB_TienNo.Enabled = true;
-            QD_BTN_Luu.Enabled = true;
-            QD_CKB.Enabled = true;
-        }
+        
 
         private void TSB_DSHD_Chontatca_Click(object sender, EventArgs e)
         {
@@ -1455,6 +1464,55 @@ namespace BookstoreManager
                 result.Append(characters[random.Next(characters.Length)]);
             }
             return result.ToString();
+        }
+
+        private void TSB_DSSach_ChiTiet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BookDetailsForm form = new BookDetailsForm();
+
+                form.TB_MaSoSach.Text = DGV_DSSach.SelectedRows[0].Cells[0].Value.ToString();
+
+                Sach sach = new Sach();
+                sach = sachBus.GetSachByMaSach(form.TB_MaSoSach.Text);
+
+                form.CBB_TheLoai.DataSource = dsTheLoaiSach;
+                form.CBB_TheLoai.DisplayMember = "TenTheLoai";
+                form.CBB_TheLoai.ValueMember = "MaTheLoai";
+
+                form.Text = "Chi tiết";
+                form.TB_DonGia.Enabled = false;
+                form.TB_DonGia.Text = sach.DonGia.ToString();
+                form.TB_MaSoSach.Enabled = false;
+                form.TB_MaSoSach.Text = sach.MaSach;
+                form.TB_MoTa.Enabled = false;
+                form.TB_MoTa.Text = sach.MoTa;
+                form.TB_NamXuatBan.Enabled = false;
+                form.TB_NamXuatBan.Text = sach.NamXuatBan.ToString();
+                form.TB_NhaXuatBan.Enabled = false;
+                form.TB_NhaXuatBan.Text = sach.NhaXuatBan;
+                form.TB_TenSach.Enabled = false;
+                form.TB_TenSach.Text = sach.TenSach;
+                form.TB_TacGia.Enabled = false;
+                form.TB_TacGia.Text = sach.TacGia;
+                form.TB_SoTrang.Enabled = false;
+                form.TB_SoTrang.Text = sach.SoTrang.ToString();
+                form.BT_Huy.Hide();
+                form.BT_Luu.Hide();
+                form.BT_ThemAnhBia.Hide();
+
+                form.CBB_TheLoai.Enabled = false;
+                form.CBB_TheLoai.SelectedValue = sach.MaTheLoai;
+
+                if (sach.AnhBia != null)
+                    using (MemoryStream ms = new MemoryStream(sach.AnhBia))
+                    {
+                        form.PTB_AnhBia.Image = System.Drawing.Image.FromStream(ms, true);
+                    }
+                form.ShowDialog();
+            }
+            catch { }
         }
     }
 }
