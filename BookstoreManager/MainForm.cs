@@ -880,15 +880,19 @@ namespace BookstoreManager
         }
         private void HoaDon_TinhTien()
         {
-            decimal tongtien = 0;
-            foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+            try
             {
-                tongtien += (decimal)row.Cells[5].Value;
+                decimal tongtien = 0;
+                foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+                {
+                    tongtien += (decimal)row.Cells[5].Value;
+                }
+                TB_HoaDon_TongTien.Text = tongtien + " VND";
+                decimal tienphaitra = tongtien - decimal.Parse(TB_HoaDon_GiamGia.Text);
+                TB_HoaDon_TienPhaiTra.Text = tienphaitra + " VND";
+                TB_HoaDon_ConLai.Text = decimal.Parse(TB_HoaDon_KhachDua.Text) - tienphaitra + " VND";
             }
-            TB_HoaDon_TongTien.Text = tongtien + " VND";
-            decimal tienphaitra = tongtien - decimal.Parse(TB_HoaDon_GiamGia.Text);
-            TB_HoaDon_TienPhaiTra.Text = tienphaitra + " VND";
-            TB_HoaDon_ConLai.Text = decimal.Parse(TB_HoaDon_KhachDua.Text) - tienphaitra + " VND";
+            catch { }
         }
         private void PhieuNhapSach_TinhTien()
         {
@@ -932,49 +936,53 @@ namespace BookstoreManager
 
         private void TSB_DSSach_Sua_Click(object sender, EventArgs e)
         {
-            BookDetailsForm form = new BookDetailsForm();
-            form.TB_MaSoSach.Text = DGV_DSSach.SelectedRows[0].Cells[0].Value.ToString();
-            form.CBB_TheLoai.DataSource = dsTheLoaiSach;
-            form.CBB_TheLoai.DisplayMember = "TenTheLoai";
-            form.CBB_TheLoai.ValueMember = "MaTheLoai";
-            SachBus sb = new SachBus();
-            var sach = sb.GetSachByMaSach(form.TB_MaSoSach.Text);
-            form.CBB_TheLoai.SelectedValue = sach.MaTheLoai;
-            if(sach.AnhBia != null)
-                using (MemoryStream ms = new MemoryStream(sach.AnhBia))
-                {
-                    form.PTB_AnhBia.Image = Image.FromStream(ms,true);
-                }
-            form.TB_DonGia.Text = sach.DonGia.ToString();
-            form.TB_MoTa.Text = sach.MoTa.Trim();
-            form.TB_NamXuatBan.Text = sach.NamXuatBan.ToString();
-            form.TB_NhaXuatBan.Text = sach.NhaXuatBan.Trim();
-            form.TB_SoTrang.Text = sach.SoTrang.ToString();
-            form.TB_TacGia.Text = sach.TacGia.Trim();
-            form.TB_TenSach.Text = sach.TenSach.Trim();
-            form.CBB_TheLoai.ValueMember = "MaTheLoai";
-            if (form.ShowDialog() == DialogResult.OK)
+            try
             {
-                var sach2 = new Sach()
+                BookDetailsForm form = new BookDetailsForm();
+                form.TB_MaSoSach.Text = DGV_DSSach.SelectedRows[0].Cells[0].Value.ToString();
+                form.CBB_TheLoai.DataSource = dsTheLoaiSach;
+                form.CBB_TheLoai.DisplayMember = "TenTheLoai";
+                form.CBB_TheLoai.ValueMember = "MaTheLoai";
+                SachBus sb = new SachBus();
+                var sach = sb.GetSachByMaSach(form.TB_MaSoSach.Text);
+                form.CBB_TheLoai.SelectedValue = sach.MaTheLoai;
+                if (sach.AnhBia != null)
+                    using (MemoryStream ms = new MemoryStream(sach.AnhBia))
+                    {
+                        form.PTB_AnhBia.Image = Image.FromStream(ms, true);
+                    }
+                form.TB_DonGia.Text = sach.DonGia.ToString();
+                form.TB_MoTa.Text = sach.MoTa.Trim();
+                form.TB_NamXuatBan.Text = sach.NamXuatBan.ToString();
+                form.TB_NhaXuatBan.Text = sach.NhaXuatBan.Trim();
+                form.TB_SoTrang.Text = sach.SoTrang.ToString();
+                form.TB_TacGia.Text = sach.TacGia.Trim();
+                form.TB_TenSach.Text = sach.TenSach.Trim();
+                form.CBB_TheLoai.ValueMember = "MaTheLoai";
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    MaSach = sach.MaSach,
-                    TenSach = form.TB_TenSach.Text,
-                    DonGia = decimal.Parse(form.TB_DonGia.Text),
-                    TacGia = form.TB_TacGia.Text,
-                    MoTa = form.TB_MoTa.Text,
-                    SoTrang = int.Parse(form.TB_SoTrang.Text),
-                    MaTheLoai = form.CBB_TheLoai.SelectedValue.ToString(),
-                    AnhBia = form.PTB_AnhBia.Image is null ? null : ConvertImageToByteArray(form.PTB_AnhBia.Image, form.PTB_AnhBia.Image.RawFormat),
-                    NamXuatBan = int.Parse(form.TB_NamXuatBan.Text),
-                    NhaXuatBan = form.TB_NhaXuatBan.Text,
-                    SoLuongTon = sach.SoLuongTon
-                };
-                if (sb.UpdateSach(sach2))
-                    Console.WriteLine("A book has been updated");
-                else
-                    MessageBox.Show("Không thể thay đổi sách, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DongBo(sender, new EventArgs());
+                    var sach2 = new Sach()
+                    {
+                        MaSach = sach.MaSach,
+                        TenSach = form.TB_TenSach.Text,
+                        DonGia = decimal.Parse(form.TB_DonGia.Text),
+                        TacGia = form.TB_TacGia.Text,
+                        MoTa = form.TB_MoTa.Text,
+                        SoTrang = int.Parse(form.TB_SoTrang.Text),
+                        MaTheLoai = form.CBB_TheLoai.SelectedValue.ToString(),
+                        AnhBia = form.PTB_AnhBia.Image is null ? null : ConvertImageToByteArray(form.PTB_AnhBia.Image, form.PTB_AnhBia.Image.RawFormat),
+                        NamXuatBan = int.Parse(form.TB_NamXuatBan.Text),
+                        NhaXuatBan = form.TB_NhaXuatBan.Text,
+                        SoLuongTon = sach.SoLuongTon
+                    };
+                    if (sb.UpdateSach(sach2))
+                        Console.WriteLine("A book has been updated");
+                    else
+                        MessageBox.Show("Không thể thay đổi sách, vui lòng kiểm tra lại", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DongBo(sender, new EventArgs());
+                }
             }
+            catch { }
         }
 
         
@@ -1270,212 +1278,7 @@ namespace BookstoreManager
             catch { }
         }
 
-        private void BTN_BCT_Lap_Click(object sender, EventArgs e)
-        {
-            BTN_BCT_Luu.Enabled = true;
-
-
-
-            int thang = int.Parse(CBB_BCT_Thang.SelectedValue.ToString());
-            int nam = int.Parse(CBB_BCT_Nam.SelectedValue.ToString());
-
-            dsBaoCaoTonMonth = bctBus.GetBaoCaoChiTiet(thang, nam);
-            dsBaoCaoTonAll = bctBus.GetAllRows();
-
-            DGV_BCT.Rows.Clear();
-
-            if (dsBaoCaoTonMonth.Rows.Count == 0)
-            {
-                MessageBox.Show("Tháng này không có trong cơ sở dữ liệu");
-                return;
-            }
-
-
-
-            //MessageBox.Show("gfghh : " + dsBaoCaoTonMonth.Rows.Count);
-            foreach (DataRow row in dsBaoCaoTonMonth.Rows)
-            {
-                string masach = row["MaSach"].ToString();
-                string tensach = row["TenSach"].ToString();
-                int tondau = int.Parse(row["TonDau"].ToString());
-                int phatsinh = int.Parse(row["PhatSinh"].ToString());
-                int toncuoi = int.Parse(row["TonCuoi"].ToString());
-                DGV_BCT.Rows.Add(masach, tensach, tondau, phatsinh, toncuoi);
-            }
-        }
-
-        private void BTN_BCT_Luu_Click(object sender, EventArgs e)
-        {
-            if (DGV_BCT.Rows.Count > 0 && DGV_BCT.Rows[0].Cells[0].Value != null)
-            {
-                int last = 0;
-                if (dsBaoCaoTonAll.AsEnumerable() != null && dsBaoCaoTonAll.AsEnumerable().Any())
-                    last = int.Parse(dsBaoCaoTonAll.AsEnumerable().Last()["MaBaoCaoTon"].ToString()) + 1;
-                else
-                    last = 1;
-
-                BaoCaoTon bct = new BaoCaoTon()
-                {
-                    MaBaoCaoTon = last.ToString("000000"),
-                    Thang = int.Parse(CBB_BCT_Thang.SelectedValue.ToString()),
-                    Nam = int.Parse(CBB_BCT_Nam.SelectedValue.ToString())
-                };
-
-
-                if (bctBus.IsRowExists(bct.Thang, bct.Nam))
-                {
-                    bct = bctBus.GetBaoCaoFromThangNam(bct.Thang, bct.Nam);
-                    MessageBox.Show("Đã có trong database, sẽ cập nhật!  " + bct.MaBaoCaoTon);
-                    //bccnBus.UpdateBaoCao(bccn);
-
-                    ctbctBus.DeleteAll(bct.MaBaoCaoTon);
-
-                    int count = 0;
-                    foreach (DataRow row in dsBaoCaoTonMonth.Rows)
-                    {
-                        count++;
-                        //MessageBox.Show(dsBaoCaoTonMonth.Rows.Count + "");
-                        ChiTietBaoCaoTon ctbct = new ChiTietBaoCaoTon()
-                        {
-                            MaChiTietBaoCaoTon = bct.MaBaoCaoTon.Trim() + count.ToString("0000"),
-                            MaBaoCaoTon = bct.MaBaoCaoTon,
-                            MaSach = row["MaSach"].ToString(),
-                            TonDau = Convert.ToInt32(row["TonDau"].ToString()),
-                            TonCuoi = Convert.ToInt32(row["TonCuoi"].ToString()),
-                            PhatSinh = Convert.ToInt32(row["PhatSinh"].ToString())
-                        };
-                        ctbctBus.AddChiTietBaoCao(ctbct);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Sẽ thêm mới tháng này!");
-                    bctBus.AddBaoCao(bct);
-
-                    int count = 0;
-                    foreach (DataRow row in dsBaoCaoTonMonth.Rows)
-                    {
-                        count++;
-                        //Console.WriteLine("Phát sinh: {0} ", row.Cells[4].Value.ToString());
-                        ChiTietBaoCaoTon ctbct = new ChiTietBaoCaoTon()
-                        {
-                            MaChiTietBaoCaoTon = bct.MaBaoCaoTon + count.ToString("0000"),
-                            MaBaoCaoTon = bct.MaBaoCaoTon,
-                            MaSach = row["MaSach"].ToString(),
-                            TonDau = Convert.ToInt32(row["TonDau"].ToString()),
-                            TonCuoi = Convert.ToInt32(row["TonCuoi"].ToString()),
-                            PhatSinh = Convert.ToInt32(row["PhatSinh"].ToString())
-                        };
-                        ctbctBus.AddChiTietBaoCao(ctbct);
-                    }
-                }
-            }
-            else
-                MessageBox.Show("Không có data", "Warning", MessageBoxButtons.OK);
-        }
-
-        private void BTN_BCN_Lap_Click(object sender, EventArgs e)
-        {
-            BTN_BCN_Luu.Enabled = true;
-
-
-            int thang = int.Parse(CBB_BCN_Thang.SelectedValue.ToString());
-            int nam = int.Parse(CBB_BCN_Nam.SelectedValue.ToString());
-
-            dsBaoCaoNoMonth = bccnBus.GetBaoCaoChiTiet(thang, nam);
-            dsBaoCaoNoAll = bccnBus.GetAllRows();
-
-            DGV_BCCN.Rows.Clear();
-
-            if (dsBaoCaoNoMonth.Rows.Count == 0)
-            {
-                MessageBox.Show("Tháng này không có trong cơ sở dữ liệu");
-                return;
-            }
-
-
-
-            //MessageBox.Show("gfghh : " + dsBaoCaoTonMonth.Rows.Count);
-            foreach (DataRow row in dsBaoCaoNoMonth.Rows)
-            {
-                string makh = row["MaKhachHang"].ToString();
-                string tenkh = row["HoTenKH"].ToString();
-                decimal nodau = decimal.Parse(row["NoDau"].ToString());
-                decimal phatsinh = decimal.Parse(row["PhatSinh"].ToString());
-                decimal nocuoi = decimal.Parse(row["NoCuoi"].ToString());
-                DGV_BCCN.Rows.Add(makh, tenkh, nodau, phatsinh, nocuoi);
-            }
-        }
-
-        private void BTN_BCN_Luu_Click(object sender, EventArgs e)
-        {
-            if (DGV_BCCN.Rows.Count > 0 && DGV_BCCN.Rows[0].Cells[0].Value != null)
-            {
-                int last = 0;
-                if (dsBaoCaoNoAll.AsEnumerable() != null && dsBaoCaoNoAll.AsEnumerable().Any())
-                    last = int.Parse(dsBaoCaoNoAll.AsEnumerable().Last()["MaBaoCaoCongNo"].ToString()) + 1;
-                else
-                    last = 1;
-
-                BaoCaoCongNo bccn = new BaoCaoCongNo()
-                {
-                    MaBaoCaoCongNo = last.ToString("000000"),
-                    Thang = int.Parse(CBB_BCN_Thang.SelectedValue.ToString()),
-                    Nam = int.Parse(CBB_BCN_Nam.SelectedValue.ToString())
-                };
-
-
-                if (bccnBus.IsRowExists(bccn.Thang, bccn.Nam))
-                {
-                    bccn = bccnBus.GetBaoCaoFromThangNam(bccn.Thang, bccn.Nam);//có thể khác id
-                    MessageBox.Show("Đã có trong database, sẽ cập nhật!  " + bccn.MaBaoCaoCongNo);
-                    //bccnBus.UpdateBaoCao(bccn);
-
-                    ctbccnBus.DeleteAll(bccn.MaBaoCaoCongNo);
-
-                    int count = 0;
-                    foreach (DataRow row in dsBaoCaoNoMonth.Rows)
-                    {
-                        count++;
-                        //MessageBox.Show(dsBaoCaoTonMonth.Rows.Count + "");
-                        ChiTietBaoCaoCongNo ctbccn = new ChiTietBaoCaoCongNo()
-                        {
-                            MaChiTietBaoCaoCongNo = bccn.MaBaoCaoCongNo.Trim() + count.ToString("0000"),
-                            MaBaoCaoCongNo = bccn.MaBaoCaoCongNo,
-                            MaKhachHang = row["MaKhachHang"].ToString(),
-                            NoDau = Convert.ToDecimal(row["NoDau"].ToString()),
-                            NoCuoi = Convert.ToDecimal(row["NoCuoi"].ToString()),
-                            PhatSinh = Convert.ToDecimal(row["PhatSinh"].ToString())
-                        };
-                        ctbccnBus.AddChiTietBaoCao(ctbccn);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Sẽ thêm mới tháng này!");
-                    bccnBus.AddBaoCao(bccn);
-
-                    int count = 0;
-                    foreach (DataRow row in dsBaoCaoNoMonth.Rows)
-                    {
-                        count++;
-                        //Console.WriteLine("Phát sinh: {0} ", row.Cells[4].Value.ToString());
-                        ChiTietBaoCaoCongNo ctbccn = new ChiTietBaoCaoCongNo()
-                        {
-                            MaChiTietBaoCaoCongNo = bccn.MaBaoCaoCongNo + count.ToString("0000"),
-                            MaBaoCaoCongNo = bccn.MaBaoCaoCongNo,
-                            MaKhachHang = row["MaKhachHang"].ToString(),
-                            NoDau = Convert.ToDecimal(row["NoDau"].ToString()),
-                            NoCuoi = Convert.ToDecimal(row["NoCuoi"].ToString()),
-                            PhatSinh = Convert.ToDecimal(row["PhatSinh"].ToString())
-                        };
-                        ctbccnBus.AddChiTietBaoCao(ctbccn);
-                    }
-                }
-            }
-            else
-                MessageBox.Show("Không có data", "Warning", MessageBoxButtons.OK);
-        }
+        
 
         private void CBB_DSNV_Loc_ChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
