@@ -228,6 +228,7 @@ namespace BookstoreManager
         {
             MainTab.SelectedTab = TP_DSPhieuNhap;
             LB_TieuDe.Text = "Danh sách phiếu nhập sách";
+            DGV_PNS.Rows.Clear();
         }
         private void BT_KhachHang_TaoKhachHang_Click(object sender, EventArgs e)
         {
@@ -318,18 +319,31 @@ namespace BookstoreManager
         }
         private void BT_HoaDon_Them_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString());
-            var result = new SachBus().GetSachByMaSach(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString().Trim());
-            var thanhTien = result.DonGia * int.Parse(TB_HoaDon_SoLuong.Text);
-            DGV_HoaDon.Rows.Add(
-                result.MaSach,
-                result.TenSach,
-                new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                TB_HoaDon_SoLuong.Text,
-                result.DonGia,
-                thanhTien
-                );
-            HoaDon_TinhTien();
+            try
+            {
+                Console.WriteLine(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString());
+                var result = new SachBus().GetSachByMaSach(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString().Trim());
+                var thanhTien = result.DonGia * int.Parse(TB_HoaDon_SoLuong.Text);
+                DGV_HoaDon.Rows.Add(
+                    result.MaSach,
+                    result.TenSach,
+                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                    TB_HoaDon_SoLuong.Text,
+                    result.DonGia,
+                    thanhTien
+                    );
+                int temp = result.SoLuongTon;
+                foreach(DataGridViewRow row in DGV_HoaDon.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Trim() == result.MaSach.Trim())
+                        temp -= int.Parse(row.Cells[3].Value.ToString());
+                    if (temp < tonminsaukhiban)
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                }
+                
+                HoaDon_TinhTien();
+            }
+            catch { }
         }
         private void TB_HoaDon_GiamGia_TextChanged(object sender, EventArgs e)
         {
@@ -377,6 +391,32 @@ namespace BookstoreManager
                     TienKhachDaTra = khachtra
                 };
 
+
+                decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
+                string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
+                KhachHang kh = khBus.GetKhachHangByMaKH(makh);
+
+                if(kh.SoTienNo>tiennomax)
+                {
+                    MessageBox.Show("Không thể bán sách cho khách hàng này!");
+                    return;
+                }
+
+                foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+                {
+                    if (row.DefaultCellStyle.BackColor == Color.Red)
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại số lượng sách tồn!");
+                        return;
+                    }      
+                }
+                    //update tiền nợ nếu khách hàng còn nợ
+                    if (sono < 0)
+                {
+                    kh.SoTienNo -= sono;
+                    khBus.UpdateKhachHang(kh);
+                }
+
                 if (hdBus.AddHoaDon(hd))
                 {
                     ChiTietHoaDon ct;
@@ -401,15 +441,7 @@ namespace BookstoreManager
                     }
                 }
 
-                decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
-                string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
-                KhachHang kh = khBus.GetKhachHangByMaKH(makh);
-                //update tiền nợ nếu khách hàng còn nợ
-                if (sono < 0)
-                {
-                    kh.SoTienNo -= sono;
-                    khBus.UpdateKhachHang(kh);
-                }
+                
 
                     MessageBox.Show("Lưu hóa đơn thành công!");
 
@@ -433,7 +465,7 @@ namespace BookstoreManager
                 MessageBox.Show("Danh sách sách đang trống, vui lòng kiểm tra lại!");
 
             DGV_HoaDon.Rows.Clear();
-            Load_DSHoaDon();
+            DongBo(sender, e);
             
         }
         private void TB_DSSach_TacGia_TextChanged(object sender, EventArgs e)
@@ -507,19 +539,26 @@ namespace BookstoreManager
         }
         private void BT_PNS_Them_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(CBB_PNS_TenSach.SelectedValue.ToString());
-            var result = new SachBus().GetSachByMaSach(CBB_PNS_TenSach.SelectedValue.ToString().Trim());
-            var thanhTien = decimal.Parse(TB_PNS_DonGia.Text) * int.Parse(TB_PNS_SoLuong.Text);
-            DGV_PNS.Rows.Add(
-                result.MaSach,
-                result.TenSach,
-                new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                result.TacGia,
-                TB_PNS_SoLuong.Text,
-                TB_PNS_DonGia.Text,
-                thanhTien
-                );
-            PhieuNhapSach_TinhTien();
+            try
+            {
+                Console.WriteLine(CBB_PNS_TenSach.SelectedValue.ToString());
+                var result = new SachBus().GetSachByMaSach(CBB_PNS_TenSach.SelectedValue.ToString().Trim());
+                var thanhTien = decimal.Parse(TB_PNS_DonGia.Text) * int.Parse(TB_PNS_SoLuong.Text);
+                DGV_PNS.Rows.Add(
+                    result.MaSach,
+                    result.TenSach,
+                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                    result.TacGia,
+                    TB_PNS_SoLuong.Text,
+                    TB_PNS_DonGia.Text,
+                    thanhTien
+                    );
+                //MessageBox.Show("slton: " + result.SoLuongTon);
+                if (int.Parse(TB_PNS_SoLuong.Text) < soluongnhaptoithieu || result.SoLuongTon >= soluongtonmaxchophepnhap)
+                    DGV_PNS.Rows[DGV_PNS.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Red;
+                PhieuNhapSach_TinhTien();
+            }
+            catch { }
         }
         private void BT_PNS_Luu_Click(object sender, EventArgs e)
         {
@@ -536,7 +575,14 @@ namespace BookstoreManager
                     NgayNhap = (DateTime)DTP_PNS_NgayNhap.Value
                 };
 
-                if (pnBus.AddPhieuNhap(pn))
+                foreach (DataGridViewRow row in DGV_PNS.Rows)
+                    if(row.DefaultCellStyle.BackColor==Color.Red)
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại số lượng sách tối đa, tối thiểu nhập!");
+                        return;
+                    }
+
+                    if (pnBus.AddPhieuNhap(pn))
                 {
                     ChiTietPhieuNhapSach ct;
                     foreach (DataGridViewRow row in DGV_PNS.Rows)
@@ -1277,26 +1323,6 @@ namespace BookstoreManager
                 DGV_PNS.Rows.Remove(row);
         }
 
-        private void TB_HoaDon_SoLuong_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string masach = CBB_HoaDon_MaSachTenSach.SelectedValue.ToString();
-                Sach sach = sachBus.GetSachByMaSach(masach);
-                if (int.Parse(TB_HoaDon_SoLuong.Text.ToString()) > sach.SoLuongTon && sach.SoLuongTon!=0)
-                {
-                    MessageBox.Show("Số lượng sách mua không được vượt quá " + sach.SoLuongTon);
-                    TB_HoaDon_SoLuong.Text = sach.SoLuongTon + "";
-                }
-                    
-                if (int.Parse(TB_HoaDon_SoLuong.Text.ToString()) == 0)
-                {
-                    //MessageBox.Show("Không bán 0 quyển sách.");
-                    TB_HoaDon_SoLuong.Text = 1 + "";
-                }           
-            }
-            catch { }
-        }
 
         
 
@@ -1513,6 +1539,24 @@ namespace BookstoreManager
                 form.ShowDialog();
             }
             catch { }
+        }
+
+        private void TB_PNS_SoLuong_TextChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (int.Parse(TB_PNS_SoLuong.Text) < soluongnhaptoithieu)
+            //    {
+            //        MessageBox.Show("Số lượng sách nhập phải lớn hơn: " + soluongnhaptoithieu + " quyển.");
+            //        TB_PNS_SoLuong.Text = soluongnhaptoithieu.ToString();
+            //    }
+            //    if (int.Parse(TB_PNS_SoLuong.Text) > soluongtonmaxchophepnhap)
+            //    {
+            //        MessageBox.Show("Sách này số lương tồn vượt quá mức độ cho phép nhập: " + soluongtonmaxchophepnhap + " quyển.");
+            //        return;
+            //    }
+            //}
+            //catch { }
         }
     }
 }

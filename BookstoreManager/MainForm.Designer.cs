@@ -2110,7 +2110,6 @@
             this.TB_HoaDon_SoLuong.TabIndex = 3;
             this.TB_HoaDon_SoLuong.Text = "1";
             this.TB_HoaDon_SoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TB_HoaDon_SoLuong.TextChanged += new System.EventHandler(this.TB_HoaDon_SoLuong_TextChanged);
             this.TB_HoaDon_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // panel27
@@ -3341,6 +3340,7 @@
             this.TB_PNS_SoLuong.TabIndex = 3;
             this.TB_PNS_SoLuong.Text = "1";
             this.TB_PNS_SoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TB_PNS_SoLuong.TextChanged += new System.EventHandler(this.TB_PNS_SoLuong_TextChanged);
             this.TB_PNS_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // label55
