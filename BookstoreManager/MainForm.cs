@@ -456,14 +456,8 @@ namespace BookstoreManager
                             SoLuongBan = Convert.ToInt32(row.Cells[3].Value)
                         };
                         sotien += ct.SoLuongBan * ct.DonGiaBan;
-                   
-                        if(hd.TienKhachDaTra-sotien<=0)
-                        cus.SoTienNo += (sotien - hd.TienKhachDaTra);
-                        
-                        
 
-                        khBus.UpdateKhachHang(cus);
-
+                     
                         if (!cthdBus.AddChiTietHD(ct))
                             Console.WriteLine("Error");
 
@@ -473,6 +467,9 @@ namespace BookstoreManager
                         sachBus.UpdateSach(sach);
 
                     }
+                    if (hd.TienKhachDaTra - sotien <= 0)
+                        cus.SoTienNo += (sotien - hd.TienKhachDaTra);
+                    khBus.UpdateKhachHang(cus);
                 }
                 else
                     MessageBox.Show("jhfghdgghjgđm");
@@ -498,7 +495,11 @@ namespace BookstoreManager
 
             }
             else
+            {
                 MessageBox.Show("Danh sách sách đang trống, vui lòng kiểm tra lại!");
+                return;
+            }
+                
 
             DGV_HoaDon.Rows.Clear();
             DongBo(sender, e);
