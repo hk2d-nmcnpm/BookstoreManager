@@ -33,18 +33,33 @@ namespace BusinessLogicLayer
         {
             if (objHoaDon.IsRowExists(hd.MaHoaDon))
             {
+                var hdBus = new HoaDonBus();
                 ChiTietHoaDonBus ctb = new ChiTietHoaDonBus();
+
+                HoaDon hoaDon = hdBus.GetHoaDonByMa(hd.MaHoaDon);
+                decimal sotien = decimal.Zero;
+
                 foreach (string ct in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
                 {
+                    ChiTietHoaDon cthd = ctb.GetChiTietHDByMa(ct);
+                    sotien += cthd.SoLuongBan * cthd.DonGiaBan;
+                    Sach sach = new SachBus().GetSachByMaSach(cthd.MaSach);
+                    sach.SoLuongTon += cthd.SoLuongBan;
+                    new SachBus().UpdateSach(sach);
                     if (ctb.DeleteChiTietHD(ct))
                         Console.WriteLine("Delete: {0}", ct);
                 }
+
+                KhachHang kh = new KhachHangBus().GetKhachHangByMaKH(hoaDon.MaKhachHang);
+
+                kh.SoTienNo -= (sotien - hoaDon.TienKhachDaTra);
+                new KhachHangBus().UpdateKhachHang(kh);
                 return objHoaDon.UpdateRow(hd);
             }
 
             else
                 return false;
-                
+
         }
         public DataTable GetHoaDon()
         {

@@ -193,7 +193,7 @@ order by hd.MaHoaDon asc";
             catch (Exception ex)
             {
                 _connection.Close();
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message+"hoadon insert");
             }
             return false;
         }
@@ -209,7 +209,7 @@ order by hd.MaHoaDon asc";
                            + "      ,[MaNhanVien] = @MaNhanVien\n"
                            + "      ,[NgayHoaDon] = @NgayHoaDon\n"
                            + "      ,[GiamGia] = @GiamGia\n"
-                           + "      ,[TienKhachDua] = @TienKhachDua\n"
+                           + "      ,[TienKhachDaTra] = @TienKhachDaTra\n"
                            + " WHERE [MaHoaDon] = @MaHoaDon";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;

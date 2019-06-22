@@ -376,6 +376,7 @@
             this.CBB_BCT_Nam = new System.Windows.Forms.ComboBox();
             this.label81 = new System.Windows.Forms.Label();
             this.panel79 = new System.Windows.Forms.Panel();
+            this.BTN_BCT_Lap = new System.Windows.Forms.Button();
             this.TP_BaoCaoNo = new System.Windows.Forms.TabPage();
             this.DGV_BCCN = new System.Windows.Forms.DataGridView();
             this.C_BaoCaoNo_MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -436,7 +437,6 @@
             this.LB_TieuDe = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
-            this.BTN_BCT_Lap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -4443,6 +4443,16 @@
             this.panel79.Size = new System.Drawing.Size(335, 52);
             this.panel79.TabIndex = 5;
             // 
+            // BTN_BCT_Lap
+            // 
+            this.BTN_BCT_Lap.Location = new System.Drawing.Point(59, 23);
+            this.BTN_BCT_Lap.Name = "BTN_BCT_Lap";
+            this.BTN_BCT_Lap.Size = new System.Drawing.Size(75, 23);
+            this.BTN_BCT_Lap.TabIndex = 0;
+            this.BTN_BCT_Lap.Text = "Lập";
+            this.BTN_BCT_Lap.UseVisualStyleBackColor = true;
+            this.BTN_BCT_Lap.Click += new System.EventHandler(this.BTN_BCT_Lap_Click);
+            // 
             // TP_BaoCaoNo
             // 
             this.TP_BaoCaoNo.Controls.Add(this.DGV_BCCN);
@@ -5057,16 +5067,6 @@
             this.label99.Size = new System.Drawing.Size(75, 24);
             this.label99.TabIndex = 1;
             this.label99.Text = "Ngày bán";
-            // 
-            // BTN_BCT_Lap
-            // 
-            this.BTN_BCT_Lap.Location = new System.Drawing.Point(59, 23);
-            this.BTN_BCT_Lap.Name = "BTN_BCT_Lap";
-            this.BTN_BCT_Lap.Size = new System.Drawing.Size(75, 23);
-            this.BTN_BCT_Lap.TabIndex = 0;
-            this.BTN_BCT_Lap.Text = "Lập";
-            this.BTN_BCT_Lap.UseVisualStyleBackColor = true;
-            this.BTN_BCT_Lap.Click += new System.EventHandler(this.BTN_BCT_Lap_Click);
             // 
             // MainForm
             // 

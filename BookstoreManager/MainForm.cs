@@ -52,7 +52,7 @@ namespace BookstoreManager
         int tonminsaukhiban;
         bool apdungqd4;
 
-       
+        bool IsSuaHoaDon = false;
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> nam = new List<int>() { 2017, 2018, 2019 };
@@ -225,6 +225,7 @@ namespace BookstoreManager
         {
             MainTab.SelectedTab = TP_DSHoaDon;
             LB_TieuDe.Text = "Danh sách hóa đơn";
+            if (IsSuaHoaDon) IsSuaHoaDon = false;
         }
         private void BT_DSPhieuNhap_TaoPhieuNhap_Click(object sender, EventArgs e)
         {
@@ -398,7 +399,7 @@ namespace BookstoreManager
                     khachtra = decimal.Parse(TB_HoaDon_KhachDua.Text.ToString().Trim(abc));
                 else khachtra = decimal.Parse(TB_HoaDon_TienPhaiTra.Text.ToString().Trim(abc));//trả hết ko nợ
 
-                //int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
+                
                 HoaDon hd = new HoaDon()
                 {
                     MaHoaDon = TB_HoaDon_MaHoaDon.Text,
@@ -409,17 +410,22 @@ namespace BookstoreManager
                     TienKhachDaTra = khachtra
                 };
 
-
+                
+                
                 decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
                 string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
                 KhachHang kh = khBus.GetKhachHangByMaKH(makh);
+                
+                
 
-                if(kh.SoTienNo>tiennomax)
+
+                if(kh.SoTienNo>tiennomax && !IsSuaHoaDon)
                 {
                     MessageBox.Show("Không thể bán sách cho khách hàng này!");
                     return;
                 }
 
+                
                 foreach (DataGridViewRow row in DGV_HoaDon.Rows)
                 {
                     if (row.DefaultCellStyle.BackColor == Color.Red)
@@ -428,16 +434,17 @@ namespace BookstoreManager
                         return;
                     }      
                 }
-                    //update tiền nợ nếu khách hàng còn nợ
-                    if (sono < 0)
-                {
-                    kh.SoTienNo -= sono;
-                    khBus.UpdateKhachHang(kh);
-                }
+                 
+
+                if (IsSuaHoaDon) IsSuaHoaDon = false;
 
                 if (hdBus.AddHoaDon(hd))
                 {
+                    KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
+                    decimal sotien = 0;
+                    MessageBox.Show("hghgfhg");
                     ChiTietHoaDon ct;
+
                     foreach (DataGridViewRow row in DGV_HoaDon.Rows)
                     {
                         ct = new ChiTietHoaDon()
@@ -448,6 +455,15 @@ namespace BookstoreManager
                             DonGiaBan = Convert.ToDecimal(row.Cells[4].Value),
                             SoLuongBan = Convert.ToInt32(row.Cells[3].Value)
                         };
+                        sotien += ct.SoLuongBan * ct.DonGiaBan;
+                   
+                        if(hd.TienKhachDaTra-sotien<=0)
+                        cus.SoTienNo += (sotien - hd.TienKhachDaTra);
+                        
+                        
+
+                        khBus.UpdateKhachHang(cus);
+
                         if (!cthdBus.AddChiTietHD(ct))
                             Console.WriteLine("Error");
 
@@ -458,10 +474,12 @@ namespace BookstoreManager
 
                     }
                 }
+                else
+                    MessageBox.Show("jhfghdgghjgđm");
 
                 
 
-                    MessageBox.Show("Lưu hóa đơn thành công!");
+                MessageBox.Show("Lưu hóa đơn thành công!");
 
                 TB_HoaDon_SoLuong.Text = "1";
                 TB_HoaDon_GiamGia.Text = "0";
@@ -1427,6 +1445,13 @@ namespace BookstoreManager
         {
             try
             {
+                DateTime datetime = Convert.ToDateTime(DGV_DSHoaDon.SelectedRows[0].Cells[1].Value.ToString());
+                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không được sửa tháng quá khứ");
+                    return;
+                }
+                IsSuaHoaDon = true;
                 DGV_HoaDon.Rows.Clear();
                 var hdb = new HoaDonBus();
                 HoaDon hd = hdb.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
