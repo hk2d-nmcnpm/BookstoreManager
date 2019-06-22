@@ -39,6 +39,7 @@ namespace BusinessLogicLayer
                 HoaDon hoaDon = hdBus.GetHoaDonByMa(hd.MaHoaDon);
                 decimal sotien = decimal.Zero;
 
+                //tính tổng tiền của các chi tiết hóa đơn, số lượng tồn của mỗi sách ở mỗi chi tiết hóa đơn trước khi update
                 foreach (string ct in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
                 {
                     ChiTietHoaDon cthd = ctb.GetChiTietHDByMa(ct);
