@@ -398,10 +398,11 @@ namespace BookstoreManager
                 int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
                 decimal khachdatra;
                 if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) < 0)//còn nợ
-                    khachdatra = decimal.Parse(TB_HoaDon_KhachDua.Text.ToString().Trim(abc));
-                else khachdatra = decimal.Parse(TB_HoaDon_TienPhaiTra.Text.ToString().Trim(abc));//trả hết ko nợ
+                    khachdatra = decimal.Parse(TB_HoaDon_KhachDua.Text.ToString().Trim(abc));//đưa bao nhiêu lấy hết luôn
+                else
+                    khachdatra = decimal.Parse(TB_HoaDon_TienPhaiTra.Text.ToString().Trim(abc));//trả hết ko nợ, thối lại tiền
 
-                
+
                 HoaDon hd = new HoaDon()
                 {
                     MaHoaDon = TB_HoaDon_MaHoaDon.Text,
@@ -409,12 +410,13 @@ namespace BookstoreManager
                     MaNhanVien = (string)CBB_HoaDon_NVBan.SelectedValue,
                     NgayHoaDon = DTP_HoaDon_NgayBan.Value,
                     GiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text),
-                    TienKhachDaTra = khachdatra
+                    TienKhachDaTra = khachdatra,
+                    TienKhachDua = decimal.Parse(TB_HoaDon_KhachDua.Text)
                 };
 
                 
                 
-                decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
+                //decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
                 string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
                 KhachHang kh = khBus.GetKhachHangByMaKH(makh);
                 
@@ -440,10 +442,10 @@ namespace BookstoreManager
 
                 if (IsSuaHoaDon) IsSuaHoaDon = false;
 
-                if (hdBus.AddHoaDon(hd))
+                if (hdBus.AddHoaDon(hd))//xóa hết cthd
                 {
                     KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
-                    decimal sotien = 0;
+                    decimal sotien = decimal.Zero;
                     ChiTietHoaDon ct;
 
                     foreach (DataGridViewRow row in DGV_HoaDon.Rows)
@@ -457,7 +459,7 @@ namespace BookstoreManager
                             SoLuongBan = Convert.ToInt32(row.Cells[3].Value)
                         };
 
-                        sotien += ct.SoLuongBan * ct.DonGiaBan;
+                        sotien += ct.SoLuongBan * ct.DonGiaBan;//tổng tiền bán của hóa đơn này
 
                      
                         if (!cthdBus.AddChiTietHD(ct))
@@ -466,9 +468,10 @@ namespace BookstoreManager
                         Sach sach = sachBus.GetSachByMaSach(row.Cells[0].Value.ToString());
 
                         sach.SoLuongTon -= int.Parse(row.Cells[3].Value.ToString());
-                        sachBus.UpdateSach(sach);
+                        sachBus.UpdateSach(sach);//cập nhật số lượng tồn sách khi bị bán
 
                     }
+
                     //MessageBox.Show("khách nợ: " + cus.SoTienNo);
                     //tiền khách cần trả đã trừ giảm giá
                     if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) <= 0)
@@ -1464,7 +1467,7 @@ namespace BookstoreManager
                 TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
                 CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
                 CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
-                TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
+                TB_HoaDon_KhachDua.Text = hd.TienKhachDua.ToString();
                 TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
                 var ctb = new ChiTietHoaDonBus();
                 foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))

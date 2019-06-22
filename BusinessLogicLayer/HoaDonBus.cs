@@ -53,7 +53,7 @@ namespace BusinessLogicLayer
 
                 KhachHang kh = new KhachHangBus().GetKhachHangByMaKH(hoaDon.MaKhachHang);
 
-                kh.SoTienNo -= (sotien - hoaDon.TienKhachDaTra);
+                kh.SoTienNo -= (sotien - hoaDon.TienKhachDaTra-hoaDon.GiamGia);
                 new KhachHangBus().UpdateKhachHang(kh);
                 return objHoaDon.UpdateRow(hd);
             }

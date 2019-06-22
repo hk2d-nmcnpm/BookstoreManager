@@ -48,6 +48,7 @@ namespace DataAccessLayer
                     hoaDon.MaNhanVien = reader["MaNhanVien"].ToString();
                     hoaDon.TienKhachDaTra = (decimal)reader["TienKhachDaTra"];
                     hoaDon.GiamGia = (decimal)reader["GiamGia"];
+                    hoaDon.TienKhachDua = (decimal)reader["TienKhachDua"];
                     reader.Close();
                 }
                 return hoaDon;
@@ -171,14 +172,16 @@ order by hd.MaHoaDon asc";
                        + "           ,[MaNhanVien]\n"
                        + "           ,[NgayHoaDon]\n"
                        + "           ,[GiamGia]\n"
-                       + "           ,[TienKhachDaTra])\n"
+                       + "           ,[TienKhachDaTra]\n"
+                       + "           ,[TienKhachDua])\n"
                        + "     VALUES\n"
                        + "           (@MaHoaDon\n"
                        + "           ,@MaKhachHang\n"
                        + "           ,@MaNhanVien\n"
                        + "           ,@NgayHoaDon\n"
                        + "           ,@GiamGia\n"
-                       + "           ,@TienKhachDaTra)";
+                       + "           ,@TienKhachDaTra\n"
+                       + "           ,@TienKhachDua)";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
@@ -186,6 +189,7 @@ order by hd.MaHoaDon asc";
                 cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.NgayHoaDon;
                 cmd.Parameters.Add("@GiamGia", SqlDbType.Money).Value = obj.GiamGia;
                 cmd.Parameters.Add("@TienKhachDaTra", SqlDbType.Money).Value = obj.TienKhachDaTra;
+                cmd.Parameters.Add("@TienKhachDua", SqlDbType.Money).Value = obj.TienKhachDua;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -209,7 +213,8 @@ order by hd.MaHoaDon asc";
                            + "      ,[MaNhanVien] = @MaNhanVien\n"
                            + "      ,[NgayHoaDon] = @NgayHoaDon\n"
                            + "      ,[GiamGia] = @GiamGia\n"
-                           + "      ,[TienKhachDaTra] = @TienKhachDaTra\n"
+                           + "      ,[TienKhachDaTra] = @TienKhachDaTra\n" +
+                           "        ,[TienKhachDua] = @TienKhachDua\n"
                            + " WHERE [MaHoaDon] = @MaHoaDon";
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaHoaDon", SqlDbType.Char).Value = obj.MaHoaDon;
@@ -218,6 +223,7 @@ order by hd.MaHoaDon asc";
                 cmd.Parameters.Add("@NgayHoaDon", SqlDbType.Date).Value = obj.NgayHoaDon;
                 cmd.Parameters.Add("@GiamGia", SqlDbType.Money).Value = obj.GiamGia;
                 cmd.Parameters.Add("@TienKhachDaTra", SqlDbType.Money).Value = obj.TienKhachDaTra;
+                cmd.Parameters.Add("@TienKhachDua", SqlDbType.Money).Value = obj.TienKhachDua;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
