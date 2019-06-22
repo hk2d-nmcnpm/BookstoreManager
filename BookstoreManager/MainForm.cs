@@ -472,8 +472,7 @@ namespace BookstoreManager
 
                     }
 
-                    //MessageBox.Show("khách nợ: " + cus.SoTienNo);
-                    //tiền khách cần trả đã trừ giảm giá
+                   
                     if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) <= 0)
                         cus.SoTienNo -= decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
                     khBus.UpdateKhachHang(cus);
