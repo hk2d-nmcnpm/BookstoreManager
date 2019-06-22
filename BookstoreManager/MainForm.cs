@@ -1436,14 +1436,39 @@ namespace BookstoreManager
                     MessageBox.Show("Không được xóa tháng quá khứ");
                     return;
                 }
-                var bus = new HoaDonBus();
+                
                 foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
-                    if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
+                {
+                    decimal sotien = decimal.Zero;
+                    DataTable cthd = cthdBus.GetChiTietHD();
+                    var x = from xxx in cthd.AsEnumerable()
+                            where xxx["MaHoaDon"].ToString() == row.Cells[0].Value.ToString()
+                            select xxx;
+                    cthd = x.CopyToDataTable();
+
+                    foreach(DataRow dr in cthd.Rows)
+                    {
+                        sotien += decimal.Parse(dr["SoLuongBan"].ToString())*decimal.Parse(dr["DonGiaBan"].ToString());
+                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                        sachBus.UpdateSach(sach);
+                        cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                    }
+
+                    HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
+                    KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
+
+                    cus.SoTienNo -= (sotien - hd.TienKhachDaTra);
+                    khBus.UpdateKhachHang(cus);
+
+                    if (!hdBus.DeleteHoaDon(row.Cells[0].Value.ToString()))
                         MessageBox.Show(
                             "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
                             "Không thể xóa",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
+                }
+                    
                 DongBo(sender, new EventArgs());
             }
         }

@@ -21,12 +21,12 @@ namespace BusinessLogicLayer
         }
         public bool DeleteHoaDon(string mahoadon)
         {
-            ChiTietHoaDonBus ctb = new ChiTietHoaDonBus();
-            foreach(string ct in ctb.GetMaCTHoaDonList(mahoadon))
-            {
-                if (ctb.DeleteChiTietHD(ct))
-                    Console.WriteLine("Delete: {0}",ct);
-            }
+            //ChiTietHoaDonBus ctb = new ChiTietHoaDonBus();
+            //foreach(string ct in ctb.GetMaCTHoaDonList(mahoadon))
+            //{
+            //    if (ctb.DeleteChiTietHD(ct))
+            //        Console.WriteLine("Delete: {0}",ct);
+            //}
             return objHoaDon.DeleteRow(mahoadon);
         }
         public bool UpdateHoaDon(HoaDon hd)
