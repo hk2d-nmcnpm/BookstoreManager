@@ -1472,7 +1472,7 @@ namespace BookstoreManager
                         result.MaSach,
                         result.TenSach,
                         new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                        TB_HoaDon_SoLuong.Text,
+                        ct.SoLuongBan.ToString(),
                         result.DonGia,
                         thanhTien
                         );
