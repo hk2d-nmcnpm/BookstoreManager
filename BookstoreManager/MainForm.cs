@@ -1458,7 +1458,7 @@ namespace BookstoreManager
                     HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
                     KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
 
-                    cus.SoTienNo -= (sotien - hd.TienKhachDaTra);
+                    cus.SoTienNo -= (sotien - hd.TienKhachDaTra-hd.GiamGia);
                     khBus.UpdateKhachHang(cus);
 
                     if (!hdBus.DeleteHoaDon(row.Cells[0].Value.ToString()))
