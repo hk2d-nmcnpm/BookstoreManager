@@ -34,38 +34,28 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel73 = new System.Windows.Forms.Panel();
             this.label86 = new System.Windows.Forms.Label();
-            this.panel74 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.panel69 = new System.Windows.Forms.Panel();
             this.label82 = new System.Windows.Forms.Label();
-            this.panel70 = new System.Windows.Forms.Panel();
             this.panel86 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
-            this.panel87 = new System.Windows.Forms.Panel();
             this.PN_BanQuyen = new System.Windows.Forms.Panel();
             this.label87 = new System.Windows.Forms.Label();
             this.panel78 = new System.Windows.Forms.Panel();
             this.panel77 = new System.Windows.Forms.Panel();
             this.BT_AnHienMenu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel75 = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.Label();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.TP_DSHoaDon = new System.Windows.Forms.TabPage();
@@ -79,14 +69,7 @@
             this.C_DSHoaDon_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_DSHD_Chontatca = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_Them = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_ChinhSua = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_DSHD_DongBo = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSHD_XoaBoLoc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.panel21 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -135,17 +118,13 @@
             this.label25 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.CBB_HoaDon_KhachHang = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.DTP_HoaDon_NgayBan = new System.Windows.Forms.DateTimePicker();
             this.TB_HoaDon_MaHoaDon = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.TSB_HoaDon_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_HoaDon_Xoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.BT_TaoHoaDon_HuyDon = new System.Windows.Forms.Button();
@@ -158,7 +137,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.TB_HoaDon_SoLuong = new System.Windows.Forms.TextBox();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.BT_HoaDon_Them = new System.Windows.Forms.Button();
             this.TP_TraCuuSach = new System.Windows.Forms.TabPage();
             this.DGV_DSSach = new System.Windows.Forms.DataGridView();
             this.C_KhoSach_MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,14 +146,8 @@
             this.C_KhoSach_SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_KhoSach_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSSach_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSSach_Sua = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSSach_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.panel29 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label30 = new System.Windows.Forms.Label();
@@ -207,13 +179,7 @@
             this.C_DSPhieuNhapSach_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_DSPN_Chontatca = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPN_Them = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPN_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPN_Sua = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPN_Chitiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.panel36 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.label34 = new System.Windows.Forms.Label();
@@ -255,11 +221,8 @@
             this.TB_PNS_MaPhieu = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
-            this.TSB_PhieuNS_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_PhieuNS_XoaMuc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
             this.panel43 = new System.Windows.Forms.Panel();
             this.panel44 = new System.Windows.Forms.Panel();
             this.BT_PNS_Huy = new System.Windows.Forms.Button();
@@ -275,7 +238,6 @@
             this.label58 = new System.Windows.Forms.Label();
             this.TB_PNS_DonGia = new System.Windows.Forms.TextBox();
             this.panel42 = new System.Windows.Forms.Panel();
-            this.BT_PNS_Them = new System.Windows.Forms.Button();
             this.TP_DSKhachHang = new System.Windows.Forms.TabPage();
             this.DGV_DSKH = new System.Windows.Forms.DataGridView();
             this.C_DSKhachHang_MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -287,14 +249,8 @@
             this.C_DSKhachHang_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSKhachHang_TongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
-            this.TSB_KH_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_KH_ThemMuc = new System.Windows.Forms.ToolStripButton();
-            this.TSB_KH_XoaMuc = new System.Windows.Forms.ToolStripButton();
-            this.TSB_KH_ChinhSua = new System.Windows.Forms.ToolStripButton();
-            this.TSB_KH_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
             this.panel48 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.label47 = new System.Windows.Forms.Label();
@@ -326,14 +282,8 @@
             this.C_PhieuThuTien_NguoiThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_PhieuThuTien_LyDoThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
-            this.TSB_PT_ChonTatCa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.TSB_PT_ThemMuc = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPT_XoaMuc = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPT_ChinhSua = new System.Windows.Forms.ToolStripButton();
-            this.TSB_DSPT__ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
             this.panel53 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.label61 = new System.Windows.Forms.Label();
@@ -405,13 +355,8 @@
             this.C_DSNV_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_DSNV_MK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip8 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.panel80 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
@@ -437,6 +382,64 @@
             this.LB_TieuDe = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel89 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel74 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel70 = new System.Windows.Forms.Panel();
+            this.panel87 = new System.Windows.Forms.Panel();
+            this.panel88 = new System.Windows.Forms.Panel();
+            this.panel75 = new System.Windows.Forms.Panel();
+            this.TSB_DSHD_Chontatca = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_Them = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_ChinhSua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_ChiTiet = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_DongBo = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSHD_XoaBoLoc = new System.Windows.Forms.ToolStripButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.TSB_HoaDon_ChonTatCa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_HoaDon_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.BT_HoaDon_Them = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSSach_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSSach_Sua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSSach_ChiTiet = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Chontatca = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Them = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Sua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_Chitiet = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PhieuNS_ChonTatCa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PhieuNS_XoaMuc = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
+            this.BT_PNS_Them = new System.Windows.Forms.Button();
+            this.TSB_KH_ChonTatCa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ThemMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_XoaMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ChinhSua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_ChiTiet = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PT_ChonTatCa = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PT_ThemMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT_XoaMuc = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT_ChinhSua = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT__ChiTiet = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -577,6 +580,7 @@
             this.panel85.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel71.SuspendLayout();
+            this.panel89.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -615,6 +619,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel14);
             this.flowLayoutPanel1.Controls.Add(this.panel69);
             this.flowLayoutPanel1.Controls.Add(this.panel86);
+            this.flowLayoutPanel1.Controls.Add(this.panel89);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 47);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -648,20 +653,6 @@
             this.label1.Text = "Hóa đơn";
             this.label1.Click += new System.EventHandler(this.MN_HoaDon_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel5.BackgroundImage = global::BookstoreManager.Properties.Resources.bill_32px1;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(48, 46);
-            this.panel5.TabIndex = 0;
-            this.TT_Hint.SetToolTip(this.panel5, "Hóa đơn");
-            this.panel5.Click += new System.EventHandler(this.MN_HoaDon_Click);
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
@@ -687,19 +678,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tra cứu";
             this.label2.Click += new System.EventHandler(this.MN_TraCuu_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel7.BackgroundImage = global::BookstoreManager.Properties.Resources.Search_Database_32px;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(48, 46);
-            this.panel7.TabIndex = 0;
-            this.panel7.Click += new System.EventHandler(this.MN_TraCuu_Click);
             // 
             // panel8
             // 
@@ -727,19 +705,6 @@
             this.label3.Text = "Nhập sách";
             this.label3.Click += new System.EventHandler(this.MN_NhapSach_Click);
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel9.BackgroundImage = global::BookstoreManager.Properties.Resources.add_32px;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(48, 46);
-            this.panel9.TabIndex = 0;
-            this.panel9.Click += new System.EventHandler(this.MN_NhapSach_Click);
-            // 
             // panel73
             // 
             this.panel73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
@@ -765,19 +730,6 @@
             this.label86.TabIndex = 1;
             this.label86.Text = "Thu tiền";
             this.label86.Click += new System.EventHandler(this.MN_PhieuThu_Click);
-            // 
-            // panel74
-            // 
-            this.panel74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel74.BackgroundImage = global::BookstoreManager.Properties.Resources.money_bag_32px;
-            this.panel74.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel74.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel74.Location = new System.Drawing.Point(0, 0);
-            this.panel74.Margin = new System.Windows.Forms.Padding(2);
-            this.panel74.Name = "panel74";
-            this.panel74.Size = new System.Drawing.Size(48, 46);
-            this.panel74.TabIndex = 0;
-            this.panel74.Click += new System.EventHandler(this.MN_PhieuThu_Click);
             // 
             // panel10
             // 
@@ -805,19 +757,6 @@
             this.label4.Text = "Khách hàng";
             this.label4.Click += new System.EventHandler(this.MN_KhachHang_Click);
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel11.BackgroundImage = global::BookstoreManager.Properties.Resources.group_32px;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(48, 46);
-            this.panel11.TabIndex = 0;
-            this.panel11.Click += new System.EventHandler(this.MN_KhachHang_Click);
-            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
@@ -843,19 +782,6 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Báo cáo tồn";
             this.label5.Click += new System.EventHandler(this.MN_BaoCaoTon_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel13.BackgroundImage = global::BookstoreManager.Properties.Resources.graph_report_filled_32px;
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(48, 46);
-            this.panel13.TabIndex = 0;
-            this.panel13.Click += new System.EventHandler(this.MN_BaoCaoTon_Click);
             // 
             // panel14
             // 
@@ -884,19 +810,6 @@
             this.label6.Text = "Báo cáo nợ";
             this.label6.Click += new System.EventHandler(this.MN_BaoCaoNo_Click);
             // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel15.BackgroundImage = global::BookstoreManager.Properties.Resources.debt_32px;
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(48, 46);
-            this.panel15.TabIndex = 0;
-            this.panel15.Click += new System.EventHandler(this.MN_BaoCaoNo_Click);
-            // 
             // panel69
             // 
             this.panel69.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
@@ -924,19 +837,6 @@
             this.label82.Text = "Quy định";
             this.label82.Click += new System.EventHandler(this.MN_QuyDinh_Click);
             // 
-            // panel70
-            // 
-            this.panel70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel70.BackgroundImage = global::BookstoreManager.Properties.Resources.test_passed_filled_32px;
-            this.panel70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel70.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel70.Location = new System.Drawing.Point(0, 0);
-            this.panel70.Margin = new System.Windows.Forms.Padding(2);
-            this.panel70.Name = "panel70";
-            this.panel70.Size = new System.Drawing.Size(48, 46);
-            this.panel70.TabIndex = 0;
-            this.panel70.Click += new System.EventHandler(this.MN_QuyDinh_Click);
-            // 
             // panel86
             // 
             this.panel86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
@@ -962,20 +862,6 @@
             this.label42.TabIndex = 1;
             this.label42.Text = "Nhân viên";
             this.label42.Click += new System.EventHandler(this.MN_NhanVien_Click);
-            // 
-            // panel87
-            // 
-            this.panel87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
-            this.panel87.BackgroundImage = global::BookstoreManager.Properties.Resources.employee_card_filled_32px;
-            this.panel87.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel87.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel87.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel87.Location = new System.Drawing.Point(0, 0);
-            this.panel87.Margin = new System.Windows.Forms.Padding(2);
-            this.panel87.Name = "panel87";
-            this.panel87.Size = new System.Drawing.Size(48, 46);
-            this.panel87.TabIndex = 0;
-            this.panel87.Click += new System.EventHandler(this.MN_NhanVien_Click);
             // 
             // PN_BanQuyen
             // 
@@ -1050,18 +936,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 47);
             this.panel1.TabIndex = 0;
-            // 
-            // panel75
-            // 
-            this.panel75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(254)))));
-            this.panel75.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px;
-            this.panel75.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel75.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel75.Location = new System.Drawing.Point(0, 0);
-            this.panel75.Margin = new System.Windows.Forms.Padding(2);
-            this.panel75.Name = "panel75";
-            this.panel75.Size = new System.Drawing.Size(49, 47);
-            this.panel75.TabIndex = 1;
             // 
             // Logo
             // 
@@ -1208,77 +1082,10 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_DSHD_Chontatca
-            // 
-            this.TSB_DSHD_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_DSHD_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_Chontatca.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_Chontatca.Name = "TSB_DSHD_Chontatca";
-            this.TSB_DSHD_Chontatca.Size = new System.Drawing.Size(92, 24);
-            this.TSB_DSHD_Chontatca.Text = "Chọn tất cả";
-            this.TSB_DSHD_Chontatca.Click += new System.EventHandler(this.TSB_DSHD_Chontatca_Click);
-            // 
-            // TSB_DSHD_Them
-            // 
-            this.TSB_DSHD_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.TSB_DSHD_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_Them.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_Them.Name = "TSB_DSHD_Them";
-            this.TSB_DSHD_Them.Size = new System.Drawing.Size(88, 24);
-            this.TSB_DSHD_Them.Text = "Thêm mục";
-            this.TSB_DSHD_Them.Click += new System.EventHandler(this.BT_DSHoaDon_TaoHoaDon_Click);
-            // 
-            // TSB_DSHD_Xoa
-            // 
-            this.TSB_DSHD_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSHD_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_Xoa.Name = "TSB_DSHD_Xoa";
-            this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSHD_Xoa.Text = "Xóa mục";
-            this.TSB_DSHD_Xoa.Click += new System.EventHandler(this.TSB_DSHD_Xoa_Click);
-            // 
-            // TSB_DSHD_ChinhSua
-            // 
-            this.TSB_DSHD_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_DSHD_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_ChinhSua.Name = "TSB_DSHD_ChinhSua";
-            this.TSB_DSHD_ChinhSua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_DSHD_ChinhSua.Text = "Chỉnh sửa";
-            this.TSB_DSHD_ChinhSua.Click += new System.EventHandler(this.TSB_DSHD_ChinhSua_Click);
-            // 
-            // TSB_DSHD_ChiTiet
-            // 
-            this.TSB_DSHD_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.TSB_DSHD_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_ChiTiet.Name = "TSB_DSHD_ChiTiet";
-            this.TSB_DSHD_ChiTiet.Size = new System.Drawing.Size(69, 24);
-            this.TSB_DSHD_ChiTiet.Text = "Chi tiết";
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 30);
-            // 
-            // TSB_DSHD_DongBo
-            // 
-            this.TSB_DSHD_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.TSB_DSHD_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_DongBo.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSHD_DongBo.Name = "TSB_DSHD_DongBo";
-            this.TSB_DSHD_DongBo.Size = new System.Drawing.Size(77, 24);
-            this.TSB_DSHD_DongBo.Text = "Đồng bộ";
-            this.TSB_DSHD_DongBo.Click += new System.EventHandler(this.DongBo);
-            // 
-            // TSB_DSHD_XoaBoLoc
-            // 
-            this.TSB_DSHD_XoaBoLoc.Image = global::BookstoreManager.Properties.Resources.clear_filters_20px;
-            this.TSB_DSHD_XoaBoLoc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSHD_XoaBoLoc.Name = "TSB_DSHD_XoaBoLoc";
-            this.TSB_DSHD_XoaBoLoc.Size = new System.Drawing.Size(87, 27);
-            this.TSB_DSHD_XoaBoLoc.Text = "Xóa bộ lọc";
             // 
             // toolStripSeparator15
             // 
@@ -1861,20 +1668,6 @@
             this.CBB_HoaDon_KhachHang.Size = new System.Drawing.Size(153, 24);
             this.CBB_HoaDon_KhachHang.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.button1.Location = new System.Drawing.Point(153, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 22);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1943,44 +1736,15 @@
             this.toolStrip3.TabIndex = 4;
             this.toolStrip3.Text = "toolStrip3";
             // 
-            // TSB_HoaDon_ChonTatCa
-            // 
-            this.TSB_HoaDon_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_HoaDon_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_HoaDon_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_HoaDon_ChonTatCa.Name = "TSB_HoaDon_ChonTatCa";
-            this.TSB_HoaDon_ChonTatCa.Size = new System.Drawing.Size(92, 24);
-            this.TSB_HoaDon_ChonTatCa.Text = "Chọn tất cả";
-            this.TSB_HoaDon_ChonTatCa.Click += new System.EventHandler(this.TSB_HoaDon_ChonTatCa_Click);
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_HoaDon_Xoa
-            // 
-            this.TSB_HoaDon_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_HoaDon_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_HoaDon_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_HoaDon_Xoa.Name = "TSB_HoaDon_Xoa";
-            this.TSB_HoaDon_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_HoaDon_Xoa.Text = "Xóa mục";
-            this.TSB_HoaDon_Xoa.Click += new System.EventHandler(this.TSB_HoaDon_Xoa_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton18
-            // 
-            this.toolStripButton18.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton18.Text = "Đồng bộ";
             // 
             // panel23
             // 
@@ -2124,22 +1888,6 @@
             this.panel27.Size = new System.Drawing.Size(94, 51);
             this.panel27.TabIndex = 4;
             // 
-            // BT_HoaDon_Them
-            // 
-            this.BT_HoaDon_Them.BackColor = System.Drawing.Color.White;
-            this.BT_HoaDon_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_HoaDon_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.BT_HoaDon_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_HoaDon_Them.Location = new System.Drawing.Point(5, 21);
-            this.BT_HoaDon_Them.Margin = new System.Windows.Forms.Padding(2);
-            this.BT_HoaDon_Them.Name = "BT_HoaDon_Them";
-            this.BT_HoaDon_Them.Size = new System.Drawing.Size(86, 22);
-            this.BT_HoaDon_Them.TabIndex = 0;
-            this.BT_HoaDon_Them.Text = "Thêm mục";
-            this.BT_HoaDon_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BT_HoaDon_Them.UseVisualStyleBackColor = false;
-            this.BT_HoaDon_Them.Click += new System.EventHandler(this.BT_HoaDon_Them_Click);
-            // 
             // TP_TraCuuSach
             // 
             this.TP_TraCuuSach.Controls.Add(this.DGV_DSSach);
@@ -2233,72 +1981,15 @@
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton1.Text = "Chọn tất cả";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(88, 24);
-            this.toolStripButton2.Text = "Thêm mục";
-            // 
-            // TSB_DSSach_Xoa
-            // 
-            this.TSB_DSSach_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSSach_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSSach_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSSach_Xoa.Name = "TSB_DSSach_Xoa";
-            this.TSB_DSSach_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSSach_Xoa.Text = "Xóa mục";
-            this.TSB_DSSach_Xoa.Click += new System.EventHandler(this.TSB_DSSach_Xoa_Click);
-            // 
-            // TSB_DSSach_Sua
-            // 
-            this.TSB_DSSach_Sua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_DSSach_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSSach_Sua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSSach_Sua.Name = "TSB_DSSach_Sua";
-            this.TSB_DSSach_Sua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_DSSach_Sua.Text = "Chỉnh sửa";
-            this.TSB_DSSach_Sua.Click += new System.EventHandler(this.TSB_DSSach_Sua_Click);
-            // 
-            // TSB_DSSach_ChiTiet
-            // 
-            this.TSB_DSSach_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.TSB_DSSach_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSSach_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSSach_ChiTiet.Name = "TSB_DSSach_ChiTiet";
-            this.TSB_DSSach_ChiTiet.Size = new System.Drawing.Size(69, 24);
-            this.TSB_DSSach_ChiTiet.Text = "Chi tiết";
-            this.TSB_DSSach_ChiTiet.Click += new System.EventHandler(this.TSB_DSSach_ChiTiet_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton6.Text = "Đồng bộ";
             // 
             // panel29
             // 
@@ -2638,68 +2329,10 @@
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_DSPN_Chontatca
-            // 
-            this.TSB_DSPN_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_DSPN_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Chontatca.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Chontatca.Name = "TSB_DSPN_Chontatca";
-            this.TSB_DSPN_Chontatca.Size = new System.Drawing.Size(92, 24);
-            this.TSB_DSPN_Chontatca.Text = "Chọn tất cả";
-            this.TSB_DSPN_Chontatca.Click += new System.EventHandler(this.TSB_DSPN_Chontatca_Click);
-            // 
-            // TSB_DSPN_Them
-            // 
-            this.TSB_DSPN_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.TSB_DSPN_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Them.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Them.Name = "TSB_DSPN_Them";
-            this.TSB_DSPN_Them.Size = new System.Drawing.Size(88, 24);
-            this.TSB_DSPN_Them.Text = "Thêm mục";
-            this.TSB_DSPN_Them.Click += new System.EventHandler(this.TSB_DSPN_Them_Click);
-            // 
-            // TSB_DSPN_Xoa
-            // 
-            this.TSB_DSPN_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSPN_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Xoa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Xoa.Name = "TSB_DSPN_Xoa";
-            this.TSB_DSPN_Xoa.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSPN_Xoa.Text = "Xóa mục";
-            this.TSB_DSPN_Xoa.Click += new System.EventHandler(this.TSB_DSPN_Xoa_Click);
-            // 
-            // TSB_DSPN_Sua
-            // 
-            this.TSB_DSPN_Sua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_DSPN_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Sua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Sua.Name = "TSB_DSPN_Sua";
-            this.TSB_DSPN_Sua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_DSPN_Sua.Text = "Chỉnh sửa";
-            this.TSB_DSPN_Sua.Click += new System.EventHandler(this.TSB_DSPN_Sua_Click);
-            // 
-            // TSB_DSPN_Chitiet
-            // 
-            this.TSB_DSPN_Chitiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.TSB_DSPN_Chitiet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPN_Chitiet.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPN_Chitiet.Name = "TSB_DSPN_Chitiet";
-            this.TSB_DSPN_Chitiet.Size = new System.Drawing.Size(69, 24);
-            this.TSB_DSPN_Chitiet.Text = "Chi tiết";
-            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton24
-            // 
-            this.toolStripButton24.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton24.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton24.Text = "Đồng bộ";
             // 
             // panel36
             // 
@@ -3184,44 +2817,15 @@
             this.toolStrip5.TabIndex = 6;
             this.toolStrip5.Text = "toolStrip5";
             // 
-            // TSB_PhieuNS_ChonTatCa
-            // 
-            this.TSB_PhieuNS_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_PhieuNS_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_PhieuNS_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_PhieuNS_ChonTatCa.Name = "TSB_PhieuNS_ChonTatCa";
-            this.TSB_PhieuNS_ChonTatCa.Size = new System.Drawing.Size(92, 24);
-            this.TSB_PhieuNS_ChonTatCa.Text = "Chọn tất cả";
-            this.TSB_PhieuNS_ChonTatCa.Click += new System.EventHandler(this.TSB_PhieuNS_ChonTatCa_Click);
-            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_PhieuNS_XoaMuc
-            // 
-            this.TSB_PhieuNS_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_PhieuNS_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_PhieuNS_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_PhieuNS_XoaMuc.Name = "TSB_PhieuNS_XoaMuc";
-            this.TSB_PhieuNS_XoaMuc.Size = new System.Drawing.Size(78, 24);
-            this.TSB_PhieuNS_XoaMuc.Text = "Xóa mục";
-            this.TSB_PhieuNS_XoaMuc.Click += new System.EventHandler(this.TSB_PhieuNS_XoaMuc_Click);
-            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton30
-            // 
-            this.toolStripButton30.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton30.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton30.Name = "toolStripButton30";
-            this.toolStripButton30.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton30.Text = "Đồng bộ";
             // 
             // panel43
             // 
@@ -3400,22 +3004,6 @@
             this.panel42.Size = new System.Drawing.Size(94, 56);
             this.panel42.TabIndex = 5;
             // 
-            // BT_PNS_Them
-            // 
-            this.BT_PNS_Them.BackColor = System.Drawing.Color.White;
-            this.BT_PNS_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_PNS_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.BT_PNS_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_PNS_Them.Location = new System.Drawing.Point(4, 23);
-            this.BT_PNS_Them.Margin = new System.Windows.Forms.Padding(2);
-            this.BT_PNS_Them.Name = "BT_PNS_Them";
-            this.BT_PNS_Them.Size = new System.Drawing.Size(86, 22);
-            this.BT_PNS_Them.TabIndex = 0;
-            this.BT_PNS_Them.Text = "Thêm mục";
-            this.BT_PNS_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BT_PNS_Them.UseVisualStyleBackColor = false;
-            this.BT_PNS_Them.Click += new System.EventHandler(this.BT_PNS_Them_Click);
-            // 
             // TP_DSKhachHang
             // 
             this.TP_DSKhachHang.Controls.Add(this.DGV_DSKH);
@@ -3525,74 +3113,15 @@
             this.toolStrip6.TabIndex = 6;
             this.toolStrip6.Text = "toolStrip6";
             // 
-            // TSB_KH_ChonTatCa
-            // 
-            this.TSB_KH_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_KH_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_KH_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_KH_ChonTatCa.Name = "TSB_KH_ChonTatCa";
-            this.TSB_KH_ChonTatCa.Size = new System.Drawing.Size(92, 24);
-            this.TSB_KH_ChonTatCa.Text = "Chọn tất cả";
-            this.TSB_KH_ChonTatCa.Click += new System.EventHandler(this.TSB_KH_ChonTatCa_Click);
-            // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_KH_ThemMuc
-            // 
-            this.TSB_KH_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.TSB_KH_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_KH_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_KH_ThemMuc.Name = "TSB_KH_ThemMuc";
-            this.TSB_KH_ThemMuc.Size = new System.Drawing.Size(88, 24);
-            this.TSB_KH_ThemMuc.Text = "Thêm mục";
-            this.TSB_KH_ThemMuc.Click += new System.EventHandler(this.TSB_KH_ThemMuc_Click);
-            // 
-            // TSB_KH_XoaMuc
-            // 
-            this.TSB_KH_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_KH_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_KH_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_KH_XoaMuc.Name = "TSB_KH_XoaMuc";
-            this.TSB_KH_XoaMuc.Size = new System.Drawing.Size(78, 24);
-            this.TSB_KH_XoaMuc.Text = "Xóa mục";
-            this.TSB_KH_XoaMuc.Click += new System.EventHandler(this.TSB_KH_XoaMuc_Click);
-            // 
-            // TSB_KH_ChinhSua
-            // 
-            this.TSB_KH_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_KH_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_KH_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_KH_ChinhSua.Name = "TSB_KH_ChinhSua";
-            this.TSB_KH_ChinhSua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_KH_ChinhSua.Text = "Chỉnh sửa";
-            this.TSB_KH_ChinhSua.Click += new System.EventHandler(this.TSB_KH_ChinhSua_Click);
-            // 
-            // TSB_KH_ChiTiet
-            // 
-            this.TSB_KH_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.TSB_KH_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_KH_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_KH_ChiTiet.Name = "TSB_KH_ChiTiet";
-            this.TSB_KH_ChiTiet.Size = new System.Drawing.Size(69, 24);
-            this.TSB_KH_ChiTiet.Text = "Chi tiết";
-            this.TSB_KH_ChiTiet.Click += new System.EventHandler(this.TSB_KH_ChiTiet_Click);
-            // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton36
-            // 
-            this.toolStripButton36.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton36.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton36.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton36.Name = "toolStripButton36";
-            this.toolStripButton36.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton36.Text = "Đồng bộ";
             // 
             // panel48
             // 
@@ -3928,74 +3457,15 @@
             this.toolStrip7.TabIndex = 6;
             this.toolStrip7.Text = "toolStrip7";
             // 
-            // TSB_PT_ChonTatCa
-            // 
-            this.TSB_PT_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.TSB_PT_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_PT_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_PT_ChonTatCa.Name = "TSB_PT_ChonTatCa";
-            this.TSB_PT_ChonTatCa.Size = new System.Drawing.Size(92, 24);
-            this.TSB_PT_ChonTatCa.Text = "Chọn tất cả";
-            this.TSB_PT_ChonTatCa.Click += new System.EventHandler(this.TSB_PT_ChonTatCa_Click);
-            // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(6, 30);
             // 
-            // TSB_PT_ThemMuc
-            // 
-            this.TSB_PT_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.TSB_PT_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_PT_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_PT_ThemMuc.Name = "TSB_PT_ThemMuc";
-            this.TSB_PT_ThemMuc.Size = new System.Drawing.Size(88, 24);
-            this.TSB_PT_ThemMuc.Text = "Thêm mục";
-            this.TSB_PT_ThemMuc.Click += new System.EventHandler(this.TSB_PT_ThemMuc_Click);
-            // 
-            // TSB_DSPT_XoaMuc
-            // 
-            this.TSB_DSPT_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.TSB_DSPT_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPT_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPT_XoaMuc.Name = "TSB_DSPT_XoaMuc";
-            this.TSB_DSPT_XoaMuc.Size = new System.Drawing.Size(78, 24);
-            this.TSB_DSPT_XoaMuc.Text = "Xóa mục";
-            this.TSB_DSPT_XoaMuc.Click += new System.EventHandler(this.TSB_DSPT_XoaMuc_Click);
-            // 
-            // TSB_DSPT_ChinhSua
-            // 
-            this.TSB_DSPT_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.TSB_DSPT_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPT_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPT_ChinhSua.Name = "TSB_DSPT_ChinhSua";
-            this.TSB_DSPT_ChinhSua.Size = new System.Drawing.Size(84, 24);
-            this.TSB_DSPT_ChinhSua.Text = "Chỉnh sửa";
-            this.TSB_DSPT_ChinhSua.Click += new System.EventHandler(this.TSB_DSPT_ChinhSua_Click);
-            // 
-            // TSB_DSPT__ChiTiet
-            // 
-            this.TSB_DSPT__ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
-            this.TSB_DSPT__ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_DSPT__ChiTiet.Margin = new System.Windows.Forms.Padding(3);
-            this.TSB_DSPT__ChiTiet.Name = "TSB_DSPT__ChiTiet";
-            this.TSB_DSPT__ChiTiet.Size = new System.Drawing.Size(69, 24);
-            this.TSB_DSPT__ChiTiet.Text = "Chi tiết";
-            this.TSB_DSPT__ChiTiet.Click += new System.EventHandler(this.TSB_DSPT__ChiTiet_Click);
-            // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
             this.toolStripSeparator14.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton42
-            // 
-            this.toolStripButton42.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton42.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton42.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton42.Name = "toolStripButton42";
-            this.toolStripButton42.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton42.Text = "Đồng bộ";
             // 
             // panel53
             // 
@@ -4734,63 +4204,15 @@
             this.toolStrip8.TabIndex = 6;
             this.toolStrip8.Text = "toolStrip8";
             // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(92, 24);
-            this.toolStripButton3.Text = "Chọn tất cả";
-            // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
             this.toolStripSeparator16.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Enabled = false;
-            this.toolStripButton4.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(116, 24);
-            this.toolStripButton4.Text = "Thêm nhân viên";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.Enabled = false;
-            this.toolStripButton7.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(106, 24);
-            this.toolStripButton7.Text = "Xóa nhân viên";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Enabled = false;
-            this.toolStripButton8.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(84, 24);
-            this.toolStripButton8.Text = "Chỉnh sửa";
-            // 
             // toolStripSeparator17
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
             this.toolStripSeparator17.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton10.Text = "Đồng bộ";
             // 
             // panel80
             // 
@@ -5068,6 +4490,627 @@
             this.label99.TabIndex = 1;
             this.label99.Text = "Ngày bán";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(67, 14);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(56, 19);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Logout";
+            // 
+            // panel89
+            // 
+            this.panel89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
+            this.panel89.Controls.Add(this.label20);
+            this.panel89.Controls.Add(this.panel88);
+            this.panel89.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel89.Location = new System.Drawing.Point(1, 433);
+            this.panel89.Margin = new System.Windows.Forms.Padding(1);
+            this.panel89.Name = "panel89";
+            this.panel89.Size = new System.Drawing.Size(206, 46);
+            this.panel89.TabIndex = 10;
+            this.panel89.Click += new System.EventHandler(this.MN_LogOut_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel5.BackgroundImage = global::BookstoreManager.Properties.Resources.bill_32px1;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(48, 46);
+            this.panel5.TabIndex = 0;
+            this.TT_Hint.SetToolTip(this.panel5, "Hóa đơn");
+            this.panel5.Click += new System.EventHandler(this.MN_HoaDon_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel7.BackgroundImage = global::BookstoreManager.Properties.Resources.Search_Database_32px;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(48, 46);
+            this.panel7.TabIndex = 0;
+            this.panel7.Click += new System.EventHandler(this.MN_TraCuu_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel9.BackgroundImage = global::BookstoreManager.Properties.Resources.add_32px;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(48, 46);
+            this.panel9.TabIndex = 0;
+            this.panel9.Click += new System.EventHandler(this.MN_NhapSach_Click);
+            // 
+            // panel74
+            // 
+            this.panel74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel74.BackgroundImage = global::BookstoreManager.Properties.Resources.money_bag_32px;
+            this.panel74.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel74.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel74.Location = new System.Drawing.Point(0, 0);
+            this.panel74.Margin = new System.Windows.Forms.Padding(2);
+            this.panel74.Name = "panel74";
+            this.panel74.Size = new System.Drawing.Size(48, 46);
+            this.panel74.TabIndex = 0;
+            this.panel74.Click += new System.EventHandler(this.MN_PhieuThu_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel11.BackgroundImage = global::BookstoreManager.Properties.Resources.group_32px;
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(48, 46);
+            this.panel11.TabIndex = 0;
+            this.panel11.Click += new System.EventHandler(this.MN_KhachHang_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel13.BackgroundImage = global::BookstoreManager.Properties.Resources.graph_report_filled_32px;
+            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(48, 46);
+            this.panel13.TabIndex = 0;
+            this.panel13.Click += new System.EventHandler(this.MN_BaoCaoTon_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel15.BackgroundImage = global::BookstoreManager.Properties.Resources.debt_32px;
+            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(48, 46);
+            this.panel15.TabIndex = 0;
+            this.panel15.Click += new System.EventHandler(this.MN_BaoCaoNo_Click);
+            // 
+            // panel70
+            // 
+            this.panel70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel70.BackgroundImage = global::BookstoreManager.Properties.Resources.test_passed_filled_32px;
+            this.panel70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel70.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel70.Location = new System.Drawing.Point(0, 0);
+            this.panel70.Margin = new System.Windows.Forms.Padding(2);
+            this.panel70.Name = "panel70";
+            this.panel70.Size = new System.Drawing.Size(48, 46);
+            this.panel70.TabIndex = 0;
+            this.panel70.Click += new System.EventHandler(this.MN_QuyDinh_Click);
+            // 
+            // panel87
+            // 
+            this.panel87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel87.BackgroundImage = global::BookstoreManager.Properties.Resources.employee_card_filled_32px;
+            this.panel87.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel87.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel87.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel87.Location = new System.Drawing.Point(0, 0);
+            this.panel87.Margin = new System.Windows.Forms.Padding(2);
+            this.panel87.Name = "panel87";
+            this.panel87.Size = new System.Drawing.Size(48, 46);
+            this.panel87.TabIndex = 0;
+            this.panel87.Click += new System.EventHandler(this.MN_NhanVien_Click);
+            // 
+            // panel88
+            // 
+            this.panel88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
+            this.panel88.BackgroundImage = global::BookstoreManager.Properties.Resources.icons8_logout_rounded_down_32;
+            this.panel88.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel88.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel88.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel88.Location = new System.Drawing.Point(0, 0);
+            this.panel88.Margin = new System.Windows.Forms.Padding(2);
+            this.panel88.Name = "panel88";
+            this.panel88.Size = new System.Drawing.Size(48, 46);
+            this.panel88.TabIndex = 0;
+            // 
+            // panel75
+            // 
+            this.panel75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(254)))));
+            this.panel75.BackgroundImage = global::BookstoreManager.Properties.Resources.literature_32px;
+            this.panel75.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel75.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel75.Location = new System.Drawing.Point(0, 0);
+            this.panel75.Margin = new System.Windows.Forms.Padding(2);
+            this.panel75.Name = "panel75";
+            this.panel75.Size = new System.Drawing.Size(49, 47);
+            this.panel75.TabIndex = 1;
+            // 
+            // TSB_DSHD_Chontatca
+            // 
+            this.TSB_DSHD_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_DSHD_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_Chontatca.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_Chontatca.Name = "TSB_DSHD_Chontatca";
+            this.TSB_DSHD_Chontatca.Size = new System.Drawing.Size(92, 24);
+            this.TSB_DSHD_Chontatca.Text = "Chọn tất cả";
+            this.TSB_DSHD_Chontatca.Click += new System.EventHandler(this.TSB_DSHD_Chontatca_Click);
+            // 
+            // TSB_DSHD_Them
+            // 
+            this.TSB_DSHD_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_DSHD_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_Them.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_Them.Name = "TSB_DSHD_Them";
+            this.TSB_DSHD_Them.Size = new System.Drawing.Size(88, 24);
+            this.TSB_DSHD_Them.Text = "Thêm mục";
+            this.TSB_DSHD_Them.Click += new System.EventHandler(this.BT_DSHoaDon_TaoHoaDon_Click);
+            // 
+            // TSB_DSHD_Xoa
+            // 
+            this.TSB_DSHD_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_DSHD_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_Xoa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_Xoa.Name = "TSB_DSHD_Xoa";
+            this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(78, 24);
+            this.TSB_DSHD_Xoa.Text = "Xóa mục";
+            this.TSB_DSHD_Xoa.Click += new System.EventHandler(this.TSB_DSHD_Xoa_Click);
+            // 
+            // TSB_DSHD_ChinhSua
+            // 
+            this.TSB_DSHD_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_DSHD_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_ChinhSua.Name = "TSB_DSHD_ChinhSua";
+            this.TSB_DSHD_ChinhSua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_DSHD_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_DSHD_ChinhSua.Click += new System.EventHandler(this.TSB_DSHD_ChinhSua_Click);
+            // 
+            // TSB_DSHD_ChiTiet
+            // 
+            this.TSB_DSHD_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSHD_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_ChiTiet.Name = "TSB_DSHD_ChiTiet";
+            this.TSB_DSHD_ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSHD_ChiTiet.Text = "Chi tiết";
+            // 
+            // TSB_DSHD_DongBo
+            // 
+            this.TSB_DSHD_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_DSHD_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSHD_DongBo.Name = "TSB_DSHD_DongBo";
+            this.TSB_DSHD_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_DSHD_DongBo.Text = "Đồng bộ";
+            this.TSB_DSHD_DongBo.Click += new System.EventHandler(this.DongBo);
+            // 
+            // TSB_DSHD_XoaBoLoc
+            // 
+            this.TSB_DSHD_XoaBoLoc.Image = global::BookstoreManager.Properties.Resources.clear_filters_20px;
+            this.TSB_DSHD_XoaBoLoc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSHD_XoaBoLoc.Name = "TSB_DSHD_XoaBoLoc";
+            this.TSB_DSHD_XoaBoLoc.Size = new System.Drawing.Size(87, 27);
+            this.TSB_DSHD_XoaBoLoc.Text = "Xóa bộ lọc";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.button1.Location = new System.Drawing.Point(153, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 22);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // TSB_HoaDon_ChonTatCa
+            // 
+            this.TSB_HoaDon_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_HoaDon_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_HoaDon_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_HoaDon_ChonTatCa.Name = "TSB_HoaDon_ChonTatCa";
+            this.TSB_HoaDon_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_HoaDon_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_HoaDon_ChonTatCa.Click += new System.EventHandler(this.TSB_HoaDon_ChonTatCa_Click);
+            // 
+            // TSB_HoaDon_Xoa
+            // 
+            this.TSB_HoaDon_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_HoaDon_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_HoaDon_Xoa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_HoaDon_Xoa.Name = "TSB_HoaDon_Xoa";
+            this.TSB_HoaDon_Xoa.Size = new System.Drawing.Size(78, 24);
+            this.TSB_HoaDon_Xoa.Text = "Xóa mục";
+            this.TSB_HoaDon_Xoa.Click += new System.EventHandler(this.TSB_HoaDon_Xoa_Click);
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton18.Text = "Đồng bộ";
+            // 
+            // BT_HoaDon_Them
+            // 
+            this.BT_HoaDon_Them.BackColor = System.Drawing.Color.White;
+            this.BT_HoaDon_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_HoaDon_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.BT_HoaDon_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_HoaDon_Them.Location = new System.Drawing.Point(5, 21);
+            this.BT_HoaDon_Them.Margin = new System.Windows.Forms.Padding(2);
+            this.BT_HoaDon_Them.Name = "BT_HoaDon_Them";
+            this.BT_HoaDon_Them.Size = new System.Drawing.Size(86, 22);
+            this.BT_HoaDon_Them.TabIndex = 0;
+            this.BT_HoaDon_Them.Text = "Thêm mục";
+            this.BT_HoaDon_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_HoaDon_Them.UseVisualStyleBackColor = false;
+            this.BT_HoaDon_Them.Click += new System.EventHandler(this.BT_HoaDon_Them_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(92, 24);
+            this.toolStripButton1.Text = "Chọn tất cả";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(88, 24);
+            this.toolStripButton2.Text = "Thêm mục";
+            // 
+            // TSB_DSSach_Xoa
+            // 
+            this.TSB_DSSach_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_DSSach_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSSach_Xoa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSSach_Xoa.Name = "TSB_DSSach_Xoa";
+            this.TSB_DSSach_Xoa.Size = new System.Drawing.Size(78, 24);
+            this.TSB_DSSach_Xoa.Text = "Xóa mục";
+            this.TSB_DSSach_Xoa.Click += new System.EventHandler(this.TSB_DSSach_Xoa_Click);
+            // 
+            // TSB_DSSach_Sua
+            // 
+            this.TSB_DSSach_Sua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_DSSach_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSSach_Sua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSSach_Sua.Name = "TSB_DSSach_Sua";
+            this.TSB_DSSach_Sua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_DSSach_Sua.Text = "Chỉnh sửa";
+            this.TSB_DSSach_Sua.Click += new System.EventHandler(this.TSB_DSSach_Sua_Click);
+            // 
+            // TSB_DSSach_ChiTiet
+            // 
+            this.TSB_DSSach_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSSach_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSSach_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSSach_ChiTiet.Name = "TSB_DSSach_ChiTiet";
+            this.TSB_DSSach_ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSSach_ChiTiet.Text = "Chi tiết";
+            this.TSB_DSSach_ChiTiet.Click += new System.EventHandler(this.TSB_DSSach_ChiTiet_Click);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton6.Text = "Đồng bộ";
+            // 
+            // TSB_DSPN_Chontatca
+            // 
+            this.TSB_DSPN_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_DSPN_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Chontatca.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Chontatca.Name = "TSB_DSPN_Chontatca";
+            this.TSB_DSPN_Chontatca.Size = new System.Drawing.Size(92, 24);
+            this.TSB_DSPN_Chontatca.Text = "Chọn tất cả";
+            this.TSB_DSPN_Chontatca.Click += new System.EventHandler(this.TSB_DSPN_Chontatca_Click);
+            // 
+            // TSB_DSPN_Them
+            // 
+            this.TSB_DSPN_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_DSPN_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Them.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Them.Name = "TSB_DSPN_Them";
+            this.TSB_DSPN_Them.Size = new System.Drawing.Size(88, 24);
+            this.TSB_DSPN_Them.Text = "Thêm mục";
+            this.TSB_DSPN_Them.Click += new System.EventHandler(this.TSB_DSPN_Them_Click);
+            // 
+            // TSB_DSPN_Xoa
+            // 
+            this.TSB_DSPN_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_DSPN_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Xoa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Xoa.Name = "TSB_DSPN_Xoa";
+            this.TSB_DSPN_Xoa.Size = new System.Drawing.Size(78, 24);
+            this.TSB_DSPN_Xoa.Text = "Xóa mục";
+            this.TSB_DSPN_Xoa.Click += new System.EventHandler(this.TSB_DSPN_Xoa_Click);
+            // 
+            // TSB_DSPN_Sua
+            // 
+            this.TSB_DSPN_Sua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_DSPN_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Sua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Sua.Name = "TSB_DSPN_Sua";
+            this.TSB_DSPN_Sua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_DSPN_Sua.Text = "Chỉnh sửa";
+            this.TSB_DSPN_Sua.Click += new System.EventHandler(this.TSB_DSPN_Sua_Click);
+            // 
+            // TSB_DSPN_Chitiet
+            // 
+            this.TSB_DSPN_Chitiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSPN_Chitiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_Chitiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_Chitiet.Name = "TSB_DSPN_Chitiet";
+            this.TSB_DSPN_Chitiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSPN_Chitiet.Text = "Chi tiết";
+            // 
+            // toolStripButton24
+            // 
+            this.toolStripButton24.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton24.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton24.Name = "toolStripButton24";
+            this.toolStripButton24.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton24.Text = "Đồng bộ";
+            // 
+            // TSB_PhieuNS_ChonTatCa
+            // 
+            this.TSB_PhieuNS_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_PhieuNS_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PhieuNS_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PhieuNS_ChonTatCa.Name = "TSB_PhieuNS_ChonTatCa";
+            this.TSB_PhieuNS_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_PhieuNS_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_PhieuNS_ChonTatCa.Click += new System.EventHandler(this.TSB_PhieuNS_ChonTatCa_Click);
+            // 
+            // TSB_PhieuNS_XoaMuc
+            // 
+            this.TSB_PhieuNS_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_PhieuNS_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PhieuNS_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PhieuNS_XoaMuc.Name = "TSB_PhieuNS_XoaMuc";
+            this.TSB_PhieuNS_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_PhieuNS_XoaMuc.Text = "Xóa mục";
+            this.TSB_PhieuNS_XoaMuc.Click += new System.EventHandler(this.TSB_PhieuNS_XoaMuc_Click);
+            // 
+            // toolStripButton30
+            // 
+            this.toolStripButton30.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton30.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton30.Name = "toolStripButton30";
+            this.toolStripButton30.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton30.Text = "Đồng bộ";
+            // 
+            // BT_PNS_Them
+            // 
+            this.BT_PNS_Them.BackColor = System.Drawing.Color.White;
+            this.BT_PNS_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_PNS_Them.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.BT_PNS_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_PNS_Them.Location = new System.Drawing.Point(4, 23);
+            this.BT_PNS_Them.Margin = new System.Windows.Forms.Padding(2);
+            this.BT_PNS_Them.Name = "BT_PNS_Them";
+            this.BT_PNS_Them.Size = new System.Drawing.Size(86, 22);
+            this.BT_PNS_Them.TabIndex = 0;
+            this.BT_PNS_Them.Text = "Thêm mục";
+            this.BT_PNS_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_PNS_Them.UseVisualStyleBackColor = false;
+            this.BT_PNS_Them.Click += new System.EventHandler(this.BT_PNS_Them_Click);
+            // 
+            // TSB_KH_ChonTatCa
+            // 
+            this.TSB_KH_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_KH_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChonTatCa.Name = "TSB_KH_ChonTatCa";
+            this.TSB_KH_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_KH_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_KH_ChonTatCa.Click += new System.EventHandler(this.TSB_KH_ChonTatCa_Click);
+            // 
+            // TSB_KH_ThemMuc
+            // 
+            this.TSB_KH_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_KH_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ThemMuc.Name = "TSB_KH_ThemMuc";
+            this.TSB_KH_ThemMuc.Size = new System.Drawing.Size(88, 24);
+            this.TSB_KH_ThemMuc.Text = "Thêm mục";
+            this.TSB_KH_ThemMuc.Click += new System.EventHandler(this.TSB_KH_ThemMuc_Click);
+            // 
+            // TSB_KH_XoaMuc
+            // 
+            this.TSB_KH_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_KH_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_XoaMuc.Name = "TSB_KH_XoaMuc";
+            this.TSB_KH_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_KH_XoaMuc.Text = "Xóa mục";
+            this.TSB_KH_XoaMuc.Click += new System.EventHandler(this.TSB_KH_XoaMuc_Click);
+            // 
+            // TSB_KH_ChinhSua
+            // 
+            this.TSB_KH_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_KH_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChinhSua.Name = "TSB_KH_ChinhSua";
+            this.TSB_KH_ChinhSua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_KH_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_KH_ChinhSua.Click += new System.EventHandler(this.TSB_KH_ChinhSua_Click);
+            // 
+            // TSB_KH_ChiTiet
+            // 
+            this.TSB_KH_ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_KH_ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_ChiTiet.Name = "TSB_KH_ChiTiet";
+            this.TSB_KH_ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_KH_ChiTiet.Text = "Chi tiết";
+            this.TSB_KH_ChiTiet.Click += new System.EventHandler(this.TSB_KH_ChiTiet_Click);
+            // 
+            // toolStripButton36
+            // 
+            this.toolStripButton36.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton36.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton36.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton36.Name = "toolStripButton36";
+            this.toolStripButton36.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton36.Text = "Đồng bộ";
+            // 
+            // TSB_PT_ChonTatCa
+            // 
+            this.TSB_PT_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.TSB_PT_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PT_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PT_ChonTatCa.Name = "TSB_PT_ChonTatCa";
+            this.TSB_PT_ChonTatCa.Size = new System.Drawing.Size(92, 24);
+            this.TSB_PT_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_PT_ChonTatCa.Click += new System.EventHandler(this.TSB_PT_ChonTatCa_Click);
+            // 
+            // TSB_PT_ThemMuc
+            // 
+            this.TSB_PT_ThemMuc.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.TSB_PT_ThemMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PT_ThemMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PT_ThemMuc.Name = "TSB_PT_ThemMuc";
+            this.TSB_PT_ThemMuc.Size = new System.Drawing.Size(88, 24);
+            this.TSB_PT_ThemMuc.Text = "Thêm mục";
+            this.TSB_PT_ThemMuc.Click += new System.EventHandler(this.TSB_PT_ThemMuc_Click);
+            // 
+            // TSB_DSPT_XoaMuc
+            // 
+            this.TSB_DSPT_XoaMuc.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.TSB_DSPT_XoaMuc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT_XoaMuc.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT_XoaMuc.Name = "TSB_DSPT_XoaMuc";
+            this.TSB_DSPT_XoaMuc.Size = new System.Drawing.Size(78, 24);
+            this.TSB_DSPT_XoaMuc.Text = "Xóa mục";
+            this.TSB_DSPT_XoaMuc.Click += new System.EventHandler(this.TSB_DSPT_XoaMuc_Click);
+            // 
+            // TSB_DSPT_ChinhSua
+            // 
+            this.TSB_DSPT_ChinhSua.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.TSB_DSPT_ChinhSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT_ChinhSua.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT_ChinhSua.Name = "TSB_DSPT_ChinhSua";
+            this.TSB_DSPT_ChinhSua.Size = new System.Drawing.Size(84, 24);
+            this.TSB_DSPT_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_DSPT_ChinhSua.Click += new System.EventHandler(this.TSB_DSPT_ChinhSua_Click);
+            // 
+            // TSB_DSPT__ChiTiet
+            // 
+            this.TSB_DSPT__ChiTiet.Image = global::BookstoreManager.Properties.Resources.view_details_20px;
+            this.TSB_DSPT__ChiTiet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT__ChiTiet.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT__ChiTiet.Name = "TSB_DSPT__ChiTiet";
+            this.TSB_DSPT__ChiTiet.Size = new System.Drawing.Size(69, 24);
+            this.TSB_DSPT__ChiTiet.Text = "Chi tiết";
+            this.TSB_DSPT__ChiTiet.Click += new System.EventHandler(this.TSB_DSPT__ChiTiet_Click);
+            // 
+            // toolStripButton42
+            // 
+            this.toolStripButton42.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton42.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton42.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton42.Name = "toolStripButton42";
+            this.toolStripButton42.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton42.Text = "Đồng bộ";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(92, 24);
+            this.toolStripButton3.Text = "Chọn tất cả";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Enabled = false;
+            this.toolStripButton4.Image = global::BookstoreManager.Properties.Resources.add_property_20px;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(116, 24);
+            this.toolStripButton4.Text = "Thêm nhân viên";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Enabled = false;
+            this.toolStripButton7.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(106, 24);
+            this.toolStripButton7.Text = "Xóa nhân viên";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Enabled = false;
+            this.toolStripButton8.Image = global::BookstoreManager.Properties.Resources.edit_property_20px;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(84, 24);
+            this.toolStripButton8.Text = "Chỉnh sửa";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Margin = new System.Windows.Forms.Padding(3);
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton10.Text = "Đồng bộ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5292,6 +5335,8 @@
             this.panel3.PerformLayout();
             this.panel71.ResumeLayout(false);
             this.panel71.PerformLayout();
+            this.panel89.ResumeLayout(false);
+            this.panel89.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5705,6 +5750,9 @@
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Sua;
         private System.Windows.Forms.Button BTN_BCT_Lap;
+        private System.Windows.Forms.Panel panel89;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel88;
     }
 }
 

@@ -57,7 +57,7 @@ namespace BookstoreManager
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> nam = new List<int>() { 2017, 2018, 2019 };
-
+        LoginForm loginForm = new LoginForm();
         public MainForm()
         {
             InitializeComponent();
@@ -143,7 +143,8 @@ namespace BookstoreManager
                     kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
                     if (kh.SoTienNo < 0) kh.SoTienNo = decimal.Zero;
                 }
-                    
+
+                kh.TongTien+= decimal.Parse(form.TB_SoTienThu.Text);
 
                 khBus.UpdateKhachHang(kh);
          
@@ -194,7 +195,8 @@ namespace BookstoreManager
         }
         private void MN_QuyDinh_Click(object sender,EventArgs e)
         {
-            DongBo(sender, e);
+            //DongBo(sender, e);
+            Load_DSQuyDinh();
             Regulation regulationform = new Regulation();
 
             regulationform.QD_TB_Nhap.Text = soluongnhaptoithieu.ToString();
@@ -205,13 +207,18 @@ namespace BookstoreManager
 
             var x=regulationform.ShowDialog();
             if(regulationform.QD_BTN_ChinhSua.Enabled==true && regulationform.QD_BTN_Luu.Enabled==false)
-            DongBo(sender, e);
+            {
+                DongBo(sender, e);
+                //MessageBox.Show("Đã đồng bộ!");
+            }
+            
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
         {
             MainTab.SelectedTab = TP_TaoHoaDon;
             LB_TieuDe.Text = "Tạo hóa đơn";
             int last = 0;
+            IsSuaHoaDon = false;
             if (dsHoaDon.Rows.Count > 0)
                 last = int.Parse(dsHoaDon.AsEnumerable().Last()["MaHoaDon"].ToString());
             TB_HoaDon_MaHoaDon.Text = (last + 1).ToString("000000");
@@ -508,6 +515,7 @@ namespace BookstoreManager
                    
                     if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) <= 0)
                         cus.SoTienNo -= decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
+                    cus.TongTien += hd.TienKhachDaTra;
                     khBus.UpdateKhachHang(cus);
                 }
                 else
@@ -722,7 +730,7 @@ namespace BookstoreManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
+            
             if (loginForm.ShowDialog() != DialogResult.OK)
                 Close();
             else
@@ -1499,6 +1507,7 @@ namespace BookstoreManager
                         HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
                         KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
 
+                        cus.TongTien -= hd.TienKhachDaTra;
                         cus.SoTienNo -= (sotien - hd.TienKhachDaTra - hd.GiamGia);
                         khBus.UpdateKhachHang(cus);
 
@@ -1740,6 +1749,15 @@ namespace BookstoreManager
                 int toncuoi = int.Parse(row["TonCuoi"].ToString());
                 DGV_BCT.Rows.Add(masach, tensach, tondau, phatsinh, toncuoi);
             }
+        }
+
+        private void MN_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = loginForm.ShowDialog();
+            if (x == DialogResult.OK)
+                this.Show();
+            else this.Close();
         }
     }
 }

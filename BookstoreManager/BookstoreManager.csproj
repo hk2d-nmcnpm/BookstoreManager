@@ -186,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_Books.ico" />
+    <None Include="Resources\icons8_logout_rounded_down_32.png" />
     <None Include="Resources\employee_card_filled_32px.png" />
     <None Include="Resources\clear_filters_20px.png" />
     <None Include="Resources\view_details_20px.png" />

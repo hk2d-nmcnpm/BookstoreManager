@@ -121,9 +121,6 @@
   <data name="pie_chart_report_filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pie_chart_report_filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bill_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="view_details_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_details_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +144,9 @@
   </data>
   <data name="add_property_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_property_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employee_card_filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee_card_filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="literature_32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\literature_32px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +181,9 @@
   <data name="Search Database_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search Database_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete_16px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_16px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bill_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bill_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,10 +208,10 @@
   <data name="test_passed_filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test_passed_filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete_16px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_16px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee_card_filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee_card_filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_logout_rounded_down_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_logout_rounded_down_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

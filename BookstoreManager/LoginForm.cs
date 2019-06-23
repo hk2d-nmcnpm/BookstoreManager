@@ -25,6 +25,7 @@ namespace BookstoreManager
             {
                 MessageBox.Show("Đã đăng nhập thành công");
                 DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
                 MessageBox.Show("Vui lòng kiểm tra lại mã nhân viên và mật khẩu");
@@ -40,6 +41,11 @@ namespace BookstoreManager
                 sb.Append(hash[i].ToString("X2"));
             }
             return sb.ToString();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
