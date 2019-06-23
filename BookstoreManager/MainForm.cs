@@ -353,12 +353,28 @@ namespace BookstoreManager
                     thanhTien
                     );
                 int temp = result.SoLuongTon;
+                if(!IsSuaHoaDon)
                 foreach(DataGridViewRow row in DGV_HoaDon.Rows)
                 {
                     if (row.Cells[0].Value.ToString().Trim() == result.MaSach.Trim())
                         temp -= int.Parse(row.Cells[3].Value.ToString());
                     if (temp < tonminsaukhiban)
                         row.DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    var hd = hdBus.GetHoaDonByMa(TB_HoaDon_MaHoaDon.Text);
+                    var dscthd = cthdBus.GetChiTietHD();
+                    var x = from a in dscthd.AsEnumerable()
+                            where a["MaHoaDon"].ToString() == hd.MaHoaDon
+                            select a;
+                    dscthd = x.CopyToDataTable();
+                    foreach(DataRow dr in dscthd.Rows)
+                    {
+                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                        sachBus.UpdateSach(sach);
+                    }
                 }
                 
                 HoaDon_TinhTien();
@@ -1423,54 +1439,64 @@ namespace BookstoreManager
 
         private void TSB_DSHD_Xoa_Click(object sender, EventArgs e)
         {
-            var msb = MessageBox
+            try
+            {
+                if (DGV_DSHoaDon.Rows.Count < 1)
+                {
+                    MessageBox.Show("Không có hóa đơn để xóa");
+                    return;
+                }
+                    
+                var msb = MessageBox
                 .Show("Bạn có thực sự muốn xóa (những) hóa đơn này",
                 "Cảnh báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
-            if (msb == DialogResult.Yes)
-            {
-                DateTime datetime = Convert.ToDateTime(DGV_DSHoaDon.SelectedRows[0].Cells[1].Value.ToString());
-                if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
+                if (msb == DialogResult.Yes)
                 {
-                    MessageBox.Show("Không được xóa tháng quá khứ");
-                    return;
-                }
-                
-                foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
-                {
-                    decimal sotien = decimal.Zero;
-                    DataTable cthd = cthdBus.GetChiTietHD();
-                    var x = from xxx in cthd.AsEnumerable()
-                            where xxx["MaHoaDon"].ToString() == row.Cells[0].Value.ToString()
-                            select xxx;
-                    cthd = x.CopyToDataTable();
-
-                    foreach(DataRow dr in cthd.Rows)
+                    DateTime datetime = Convert.ToDateTime(DGV_DSHoaDon.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                    if (datetime.Month != DateTime.Now.Month && datetime.Year <= DateTime.Now.Year)
                     {
-                        sotien += decimal.Parse(dr["SoLuongBan"].ToString())*decimal.Parse(dr["DonGiaBan"].ToString());
-                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
-                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
-                        sachBus.UpdateSach(sach);
-                        cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                        MessageBox.Show("Không được xóa tháng quá khứ");
+                        return;
                     }
 
-                    HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
-                    KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
+                    foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
+                    {
+                        decimal sotien = decimal.Zero;
+                        DataTable cthd = cthdBus.GetChiTietHD();
+                        var x = from xxx in cthd.AsEnumerable()
+                                where xxx["MaHoaDon"].ToString() == row.Cells[0].Value.ToString()
+                                select xxx;
+                        cthd = x.CopyToDataTable();
 
-                    cus.SoTienNo -= (sotien - hd.TienKhachDaTra-hd.GiamGia);
-                    khBus.UpdateKhachHang(cus);
+                        foreach (DataRow dr in cthd.Rows)
+                        {
+                            sotien += decimal.Parse(dr["SoLuongBan"].ToString()) * decimal.Parse(dr["DonGiaBan"].ToString());
+                            Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                            sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                            sachBus.UpdateSach(sach);
+                            cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                        }
 
-                    if (!hdBus.DeleteHoaDon(row.Cells[0].Value.ToString()))
-                        MessageBox.Show(
-                            "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
-                            "Không thể xóa",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                        HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
+                        KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
+
+                        cus.SoTienNo -= (sotien - hd.TienKhachDaTra - hd.GiamGia);
+                        khBus.UpdateKhachHang(cus);
+
+                        if (!hdBus.DeleteHoaDon(row.Cells[0].Value.ToString()))
+                            MessageBox.Show(
+                                "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
+                                "Không thể xóa",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    }
+
+                    DongBo(sender, new EventArgs());
                 }
-                    
-                DongBo(sender, new EventArgs());
             }
+            catch { }
         }
 
         private void TSB_DSHD_ChinhSua_Click(object sender, EventArgs e)
