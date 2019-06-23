@@ -369,12 +369,29 @@ namespace BookstoreManager
                             where a["MaHoaDon"].ToString() == hd.MaHoaDon
                             select a;
                     dscthd = x.CopyToDataTable();
-                    foreach(DataRow dr in dscthd.Rows)
+                    
+                    //lấy số sách trong cthd cũ
+                    Sach book = result;
+                    foreach (DataRow dr in dscthd.Rows)
                     {
-                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
-                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
-                        sachBus.UpdateSach(sach);
+                        
+                        //kiểm tra từng dòng cthd tìm sách được thêm
+                        if(dr["MaSach"].ToString()==result.MaSach)
+                            
+                        book.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                        
+                        //sachBus.UpdateSach(sach);
                     }
+                    //cthd trên UI
+                    temp = book.SoLuongTon;
+                    foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+                    {
+                        if (row.Cells[0].Value.ToString().Trim() == result.MaSach.Trim())
+                            temp -= int.Parse(row.Cells[3].Value.ToString());
+                        if (temp < tonminsaukhiban)
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                    }
+                        
                 }
                 
                 HoaDon_TinhTien();
