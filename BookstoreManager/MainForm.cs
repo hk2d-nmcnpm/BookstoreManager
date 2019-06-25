@@ -48,14 +48,16 @@ namespace BookstoreManager
 
         int soluongnhaptoithieu;
         int soluongtonmaxchophepnhap;
-        decimal tiennomax;
         int tonminsaukhiban;
         bool apdungqd4;
+        public decimal TienNoToiDa { get; set; }
 
-       
+
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> nam = new List<int>() { 2017, 2018, 2019 };
+
+
 
         public MainForm()
         {
@@ -197,7 +199,7 @@ namespace BookstoreManager
 
             regulationform.QD_TB_Nhap.Text = soluongnhaptoithieu.ToString();
             regulationform.QD_TB_Ton.Text = soluongtonmaxchophepnhap.ToString();
-            regulationform.QD_TB_TienNo.Text = tiennomax.ToString();
+            regulationform.QD_TB_TienNo.Text = TienNoToiDa.ToString();
             regulationform.QD_TB_ToiThieu.Text = tonminsaukhiban.ToString();
             regulationform.QD_CKB.Checked = apdungqd4;
 
@@ -214,7 +216,7 @@ namespace BookstoreManager
                 last = int.Parse(dsHoaDon.AsEnumerable().Last()["MaHoaDon"].ToString());
             TB_HoaDon_MaHoaDon.Text = (last + 1).ToString("000000");
             DGV_HoaDon.Rows.Clear();
-            CBB_HoaDon_KhachHang.Text = "";
+            CBB_HoaDon_KhachHang.SelectedIndex = 0;
             CBB_HoaDon_NVBan.SelectedValue = loginnv.MaNhanVien;
             TB_HoaDon_GiamGia.Text = decimal.Zero.ToString();
             TB_HoaDon_KhachDua.Text = decimal.Zero.ToString();
@@ -337,26 +339,31 @@ namespace BookstoreManager
         {
             try
             {
-                Console.WriteLine(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString());
-                var result = new SachBus().GetSachByMaSach(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString().Trim());
-                var thanhTien = result.DonGia * int.Parse(TB_HoaDon_SoLuong.Text);
-                DGV_HoaDon.Rows.Add(
-                    result.MaSach,
-                    result.TenSach,
-                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                    TB_HoaDon_SoLuong.Text,
-                    result.DonGia,
+                Sach sach = new SachBus().GetSachByMaSach(CBB_HoaDon_MaSachTenSach.SelectedValue.ToString().Trim());
+                //Kiem tra trung lap
+                foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Trim() == sach.MaSach.Trim())
+                    {
+                        row.Cells[3].Value = int.Parse(TB_HoaDon_SoLuong.Text) + (int)row.Cells[3].Value;//cap nhat so luong
+                        row.Cells[5].Value = sach.DonGia * (int)row.Cells[3].Value;//cap nhat thanh tien
+                        if ((sach.SoLuongTon - (int)row.Cells[3].Value) < tonminsaukhiban)
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        HoaDon_TinhTien();
+                        return;
+                    }
+                }
+                decimal thanhTien = sach.DonGia * int.Parse(TB_HoaDon_SoLuong.Text);
+                int lastRow = DGV_HoaDon.Rows.Add(
+                    sach.MaSach,
+                    sach.TenSach,
+                    new TheLoaiSachBus().GetByMaTheLoai(sach.MaTheLoai).TenTheLoai,
+                    int.Parse(TB_HoaDon_SoLuong.Text),
+                    sach.DonGia,
                     thanhTien
                     );
-                int temp = result.SoLuongTon;
-                foreach(DataGridViewRow row in DGV_HoaDon.Rows)
-                {
-                    if (row.Cells[0].Value.ToString().Trim() == result.MaSach.Trim())
-                        temp -= int.Parse(row.Cells[3].Value.ToString());
-                    if (temp < tonminsaukhiban)
-                        row.DefaultCellStyle.BackColor = Color.Red;
-                }
-                
+                if((sach.SoLuongTon - (int)DGV_HoaDon.Rows[lastRow].Cells[3].Value) < tonminsaukhiban)
+                    DGV_HoaDon.Rows[lastRow].DefaultCellStyle.BackColor = Color.Red;
                 HoaDon_TinhTien();
             }
             catch { }
@@ -386,103 +393,90 @@ namespace BookstoreManager
         }
         private void BT_HoaDon_Luu_Click(object sender, EventArgs e)
         {
-            char[] abc = { ' ', 'V', 'N', 'D' };
-
-            if (DGV_HoaDon.Rows.Count > 0)
+            //Khong co chi tiet hoa don -> bo qua!
+            if (DGV_HoaDon.Rows.Count == 0) return;
+            if (CBB_HoaDon_KhachHang.Text == "")
             {
-                int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
-                decimal khachtra;
-                if (decimal.Parse(TB_HoaDon_ConLai.Text.ToString().Trim(abc)) < 0)//còn nợ
-                    khachtra = decimal.Parse(TB_HoaDon_KhachDua.Text.ToString().Trim(abc));
-                else khachtra = decimal.Parse(TB_HoaDon_TienPhaiTra.Text.ToString().Trim(abc));//trả hết ko nợ
-
-                //int last = int.Parse(TB_HoaDon_MaHoaDon.Text);
-                HoaDon hd = new HoaDon()
+                MessageBox.Show(
+                    "Thiếu thông tin khách hàng",
+                    "Không thể tạo hóa đơn",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            KhachHang kh = khBus.GetKhachHangByMaKH(CBB_HoaDon_KhachHang.SelectedValue.ToString());
+            //Khach hang no qua quy dinh -> bo qua!
+            if (kh.SoTienNo > TienNoToiDa)
+            {
+                MessageBox.Show(
+                    "Khách hàng này đã có số nợ nhiều hơn quy định. Không thể tiếp tục bán sách cho khách hàng này",
+                    "Không thể tạo hóa đơn",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            //Khong du sach cung cap
+            foreach (DataGridViewRow row in DGV_HoaDon.Rows)
+            {
+                if (row.DefaultCellStyle.BackColor == Color.Red)
                 {
-                    MaHoaDon = TB_HoaDon_MaHoaDon.Text,
-                    MaKhachHang = (string)CBB_HoaDon_KhachHang.SelectedValue,
-                    MaNhanVien = (string)CBB_HoaDon_NVBan.SelectedValue,
-                    NgayHoaDon = DTP_HoaDon_NgayBan.Value,
-                    GiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text),
-                    TienKhachDaTra = khachtra
-                };
-
-
-                decimal sono = Convert.ToDecimal(TB_HoaDon_ConLai.Text.ToString().Trim(abc));
-                string makh = CBB_HoaDon_KhachHang.SelectedValue.ToString();
-                KhachHang kh = khBus.GetKhachHangByMaKH(makh);
-
-                if(kh.SoTienNo>tiennomax)
-                {
-                    MessageBox.Show("Không thể bán sách cho khách hàng này!");
+                    MessageBox.Show(
+                        "Số lượng sách còn lại trong kho sách thấp hơn mức cho phép bán. Vui lòng kiểm tra lại",
+                        "Không thể tạo hóa đơn",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     return;
                 }
-
+            }
+            //Tinh tien
+            decimal tienKhachDua = decimal.Parse(TB_HoaDon_KhachDua.Text);
+            decimal tienGiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text);
+            decimal tongTien = HoaDon_TinhTien();
+            decimal tienPhaiTra = tongTien - tienGiamGia;
+            decimal tienConLai = tienKhachDua - tongTien;
+            //Tao hoa don
+            HoaDon hd = new HoaDon()
+            {
+                MaHoaDon = TB_HoaDon_MaHoaDon.Text,
+                MaKhachHang = (string)CBB_HoaDon_KhachHang.SelectedValue,
+                MaNhanVien = (string)CBB_HoaDon_NVBan.SelectedValue,
+                NgayHoaDon = DTP_HoaDon_NgayBan.Value,
+                GiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text),
+                TienKhachDaTra = (tienConLai < 0) ?  tienKhachDua : tienPhaiTra,
+            };
+            //Tinh tien no
+            if (tienConLai < 0)
+            {
+                kh.SoTienNo -= tienConLai;
+                khBus.UpdateKhachHang(kh);
+            }
+            //Them hoa don vao DB
+            if (hdBus.AddHoaDon(hd))
+            {
+                ChiTietHoaDon ct;
                 foreach (DataGridViewRow row in DGV_HoaDon.Rows)
                 {
-                    if (row.DefaultCellStyle.BackColor == Color.Red)
+                    ct = new ChiTietHoaDon()
                     {
-                        MessageBox.Show("Vui lòng kiểm tra lại số lượng sách tồn!");
-                        return;
-                    }      
+                        MaChiTietHoaDon = hd.MaHoaDon + row.Index.ToString("0000"),
+                        MaSach = row.Cells[0].Value.ToString(),
+                        MaHoaDon = hd.MaHoaDon,
+                        DonGiaBan = Convert.ToDecimal(row.Cells[4].Value),
+                        SoLuongBan = Convert.ToInt32(row.Cells[3].Value)
+                    };
+                    if (!cthdBus.AddChiTietHD(ct))
+                        Console.WriteLine("Error");
+
+                    Sach sach = sachBus.GetSachByMaSach(row.Cells[0].Value.ToString());
+
+                    sach.SoLuongTon -= int.Parse(row.Cells[3].Value.ToString());
+                    sachBus.UpdateSach(sach);
+
                 }
-                    //update tiền nợ nếu khách hàng còn nợ
-                    if (sono < 0)
-                {
-                    kh.SoTienNo -= sono;
-                    khBus.UpdateKhachHang(kh);
-                }
-
-                if (hdBus.AddHoaDon(hd))
-                {
-                    ChiTietHoaDon ct;
-                    foreach (DataGridViewRow row in DGV_HoaDon.Rows)
-                    {
-                        ct = new ChiTietHoaDon()
-                        {
-                            MaChiTietHoaDon = hd.MaHoaDon + row.Index.ToString("0000"),
-                            MaSach = row.Cells[0].Value.ToString(),
-                            MaHoaDon = hd.MaHoaDon,
-                            DonGiaBan = Convert.ToDecimal(row.Cells[4].Value),
-                            SoLuongBan = Convert.ToInt32(row.Cells[3].Value)
-                        };
-                        if (!cthdBus.AddChiTietHD(ct))
-                            Console.WriteLine("Error");
-
-                        Sach sach = sachBus.GetSachByMaSach(row.Cells[0].Value.ToString());
-
-                        sach.SoLuongTon -= int.Parse(row.Cells[3].Value.ToString());
-                        sachBus.UpdateSach(sach);
-
-                    }
-                }
-
-                
-
-                    MessageBox.Show("Lưu hóa đơn thành công!");
-
-                TB_HoaDon_SoLuong.Text = "1";
-                TB_HoaDon_GiamGia.Text = "0";
-                TB_HoaDon_KhachDua.Text = "0";
-                TB_HoaDon_ConLai.Text = "0";
-                TB_HoaDon_TienPhaiTra.Text = "0";
-                TB_HoaDon_TongTien.Text = "0";
-
-                dsHoaDon = hdBus.GetResultTable();
-               
-                if (dsHoaDon.Rows.Count > 0)
-                    last = int.Parse(dsHoaDon.AsEnumerable().Last()["MaHoaDon"].ToString());
-                else last = 0;
-
-                TB_HoaDon_MaHoaDon.Text = (last + 1).ToString("000000");
-
             }
-            else
-                MessageBox.Show("Danh sách sách đang trống, vui lòng kiểm tra lại!");
-
-            DGV_HoaDon.Rows.Clear();
+            //Cap nhat du lieu
             DongBo(sender, e);
-            
+            BT_DSHoaDon_TaoHoaDon_Click(sender, new EventArgs());
         }
         private void TB_DSSach_TacGia_TextChanged(object sender, EventArgs e)
         {
@@ -503,8 +497,6 @@ namespace BookstoreManager
         private void DongBo(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-
-
             //Get_DSTenTheLoai();
             dsHoaDon = hdBus.GetResultTable();
             dsSach = sachBus.GetSach();
@@ -531,12 +523,12 @@ namespace BookstoreManager
 
         private void Load_DSQuyDinh()
         {
-            dsThamSo = thamsoBus.GetThamSo();
-            soluongnhaptoithieu = int.Parse(dsThamSo.Rows[0]["GiaTri"].ToString());
-            soluongtonmaxchophepnhap = int.Parse(dsThamSo.Rows[1]["GiaTri"].ToString());
-            tiennomax = decimal.Parse(dsThamSo.Rows[3]["GiaTri"].ToString());
-            tonminsaukhiban = int.Parse(dsThamSo.Rows[2]["GiaTri"].ToString());
-            apdungqd4 = int.Parse(dsThamSo.Rows[4]["GiaTri"].ToString()) == 1 ? true : false;      
+            //dsThamSo = thamsoBus.GetThamSo();
+            //soluongnhaptoithieu = int.Parse(dsThamSo.Rows[0]["GiaTri"].ToString());
+            //soluongtonmaxchophepnhap = int.Parse(dsThamSo.Rows[1]["GiaTri"].ToString());
+            //tiennomax = decimal.Parse(dsThamSo.Rows[3]["GiaTri"].ToString());
+            //tonminsaukhiban = int.Parse(dsThamSo.Rows[2]["GiaTri"].ToString());
+            //apdungqd4 = int.Parse(dsThamSo.Rows[4]["GiaTri"].ToString()) == 1 ? true : false;      
         }
 
         private byte[] ConvertImageToByteArray(Image imageToConvert, ImageFormat formatOfImage)
@@ -964,7 +956,7 @@ namespace BookstoreManager
                          };
             return q.ToDictionary(t => t.Id, t => t.Item);
         }
-        private void HoaDon_TinhTien()
+        private decimal HoaDon_TinhTien()
         {
             try
             {
@@ -977,8 +969,13 @@ namespace BookstoreManager
                 decimal tienphaitra = tongtien - decimal.Parse(TB_HoaDon_GiamGia.Text);
                 TB_HoaDon_TienPhaiTra.Text = tienphaitra + " VND";
                 TB_HoaDon_ConLai.Text = decimal.Parse(TB_HoaDon_KhachDua.Text) - tienphaitra + " VND";
+                return tongtien;
             }
-            catch { }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return 0;
         }
         private void PhieuNhapSach_TinhTien()
         {
@@ -1419,7 +1416,7 @@ namespace BookstoreManager
                         result.MaSach,
                         result.TenSach,
                         new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                        TB_HoaDon_SoLuong.Text,
+                        int.Parse(TB_HoaDon_SoLuong.Text),
                         result.DonGia,
                         thanhTien
                         );
@@ -1574,6 +1571,11 @@ namespace BookstoreManager
             //    }
             //}
             //catch { }
+        }
+
+        private void BT_HoaDon_ThemKH_Click(object sender, EventArgs e)
+        {
+            BT_KhachHang_TaoKhachHang_Click(sender, e);
         }
     }
 }
