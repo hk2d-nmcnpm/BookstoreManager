@@ -126,7 +126,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.TB_HoaDon_TongTien = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GB_HoaDon_ChiTiet = new System.Windows.Forms.GroupBox();
             this.TB_HoaDon_KhachDua = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.TB_HoaDon_GiamGia = new System.Windows.Forms.TextBox();
@@ -147,10 +147,9 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
             this.BT_TaoHoaDon_HuyDon = new System.Windows.Forms.Button();
             this.BT_HoaDon_Luu = new System.Windows.Forms.Button();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.FL_HoaDon = new System.Windows.Forms.FlowLayoutPanel();
             this.panel26 = new System.Windows.Forms.Panel();
             this.CBB_HoaDon_MaSachTenSach = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -437,6 +436,8 @@
             this.label99 = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
             this.label20 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel28 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -475,12 +476,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_HoaDon)).BeginInit();
             this.panel33.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.GB_HoaDon_ChiTiet.SuspendLayout();
             this.panel24.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.panel23.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
+            this.FL_HoaDon.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -576,6 +576,8 @@
             this.panel85.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel71.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -1233,8 +1235,8 @@
             this.TSB_DSHD_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_DSHD_Xoa.Margin = new System.Windows.Forms.Padding(3);
             this.TSB_DSHD_Xoa.Name = "TSB_DSHD_Xoa";
-            this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(91, 24);
-            this.TSB_DSHD_Xoa.Text = "Xóa mục";
+            this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(89, 24);
+            this.TSB_DSHD_Xoa.Text = "Hủy đơn";
             this.TSB_DSHD_Xoa.Click += new System.EventHandler(this.TSB_DSHD_Xoa_Click);
             // 
             // TSB_DSHD_ChinhSua
@@ -1245,6 +1247,7 @@
             this.TSB_DSHD_ChinhSua.Name = "TSB_DSHD_ChinhSua";
             this.TSB_DSHD_ChinhSua.Size = new System.Drawing.Size(97, 24);
             this.TSB_DSHD_ChinhSua.Text = "Chỉnh sửa";
+            this.TSB_DSHD_ChinhSua.Visible = false;
             this.TSB_DSHD_ChinhSua.Click += new System.EventHandler(this.TSB_DSHD_ChinhSua_Click);
             // 
             // TSB_DSHD_ChiTiet
@@ -1255,6 +1258,7 @@
             this.TSB_DSHD_ChiTiet.Name = "TSB_DSHD_ChiTiet";
             this.TSB_DSHD_ChiTiet.Size = new System.Drawing.Size(80, 24);
             this.TSB_DSHD_ChiTiet.Text = "Chi tiết";
+            this.TSB_DSHD_ChiTiet.Click += new System.EventHandler(this.TSB_DSHD_ChiTiet_Click);
             // 
             // toolStripSeparator4
             // 
@@ -1621,7 +1625,7 @@
             this.panel33.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel33.Controls.Add(this.groupBox2);
-            this.panel33.Controls.Add(this.groupBox1);
+            this.panel33.Controls.Add(this.GB_HoaDon_ChiTiet);
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel33.Location = new System.Drawing.Point(0, 0);
             this.panel33.Margin = new System.Windows.Forms.Padding(2);
@@ -1732,30 +1736,30 @@
             this.label13.TabIndex = 5;
             this.label13.Text = "Tổng tiền";
             // 
-            // groupBox1
+            // GB_HoaDon_ChiTiet
             // 
-            this.groupBox1.Controls.Add(this.TB_HoaDon_KhachDua);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.TB_HoaDon_GiamGia);
-            this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.CBB_HoaDon_NVBan);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.panel24);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.DTP_HoaDon_NgayBan);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.TB_HoaDon_MaHoaDon);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(258, 389);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin hóa đơn";
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.TB_HoaDon_KhachDua);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label27);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.TB_HoaDon_GiamGia);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label29);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.CBB_HoaDon_NVBan);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label25);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.panel24);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label22);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.DTP_HoaDon_NgayBan);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label20);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.TB_HoaDon_MaHoaDon);
+            this.GB_HoaDon_ChiTiet.Controls.Add(this.label17);
+            this.GB_HoaDon_ChiTiet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GB_HoaDon_ChiTiet.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_HoaDon_ChiTiet.Location = new System.Drawing.Point(2, 2);
+            this.GB_HoaDon_ChiTiet.Margin = new System.Windows.Forms.Padding(0);
+            this.GB_HoaDon_ChiTiet.Name = "GB_HoaDon_ChiTiet";
+            this.GB_HoaDon_ChiTiet.Padding = new System.Windows.Forms.Padding(6);
+            this.GB_HoaDon_ChiTiet.Size = new System.Drawing.Size(258, 389);
+            this.GB_HoaDon_ChiTiet.TabIndex = 0;
+            this.GB_HoaDon_ChiTiet.TabStop = false;
+            this.GB_HoaDon_ChiTiet.Text = "Thông tin hóa đơn";
             // 
             // TB_HoaDon_KhachDua
             // 
@@ -1986,24 +1990,13 @@
             // 
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel23.Controls.Add(this.panel28);
-            this.panel23.Controls.Add(this.flowLayoutPanel5);
+            this.panel23.Controls.Add(this.FL_HoaDon);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1099, 68);
             this.panel23.TabIndex = 0;
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.BT_TaoHoaDon_HuyDon);
-            this.panel28.Controls.Add(this.BT_HoaDon_Luu);
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel28.Location = new System.Drawing.Point(881, 0);
-            this.panel28.Margin = new System.Windows.Forms.Padding(2);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(218, 68);
-            this.panel28.TabIndex = 5;
             // 
             // BT_TaoHoaDon_HuyDon
             // 
@@ -2012,12 +2005,12 @@
             this.BT_TaoHoaDon_HuyDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_TaoHoaDon_HuyDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_TaoHoaDon_HuyDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(179)))), ((int)(((byte)(229)))));
-            this.BT_TaoHoaDon_HuyDon.Location = new System.Drawing.Point(6, 18);
-            this.BT_TaoHoaDon_HuyDon.Margin = new System.Windows.Forms.Padding(2);
+            this.BT_TaoHoaDon_HuyDon.Location = new System.Drawing.Point(4, 15);
+            this.BT_TaoHoaDon_HuyDon.Margin = new System.Windows.Forms.Padding(2, 15, 10, 15);
             this.BT_TaoHoaDon_HuyDon.Name = "BT_TaoHoaDon_HuyDon";
             this.BT_TaoHoaDon_HuyDon.Size = new System.Drawing.Size(96, 38);
             this.BT_TaoHoaDon_HuyDon.TabIndex = 2;
-            this.BT_TaoHoaDon_HuyDon.Text = "Hủy đơn";
+            this.BT_TaoHoaDon_HuyDon.Text = "Hủy";
             this.BT_TaoHoaDon_HuyDon.UseVisualStyleBackColor = false;
             this.BT_TaoHoaDon_HuyDon.Click += new System.EventHandler(this.BT_TaoHoaDon_HuyDon_Click);
             // 
@@ -2028,8 +2021,8 @@
             this.BT_HoaDon_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_HoaDon_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_HoaDon_Luu.ForeColor = System.Drawing.Color.White;
-            this.BT_HoaDon_Luu.Location = new System.Drawing.Point(106, 18);
-            this.BT_HoaDon_Luu.Margin = new System.Windows.Forms.Padding(2);
+            this.BT_HoaDon_Luu.Location = new System.Drawing.Point(112, 15);
+            this.BT_HoaDon_Luu.Margin = new System.Windows.Forms.Padding(2, 15, 10, 15);
             this.BT_HoaDon_Luu.Name = "BT_HoaDon_Luu";
             this.BT_HoaDon_Luu.Size = new System.Drawing.Size(96, 38);
             this.BT_HoaDon_Luu.TabIndex = 0;
@@ -2037,17 +2030,17 @@
             this.BT_HoaDon_Luu.UseVisualStyleBackColor = false;
             this.BT_HoaDon_Luu.Click += new System.EventHandler(this.BT_HoaDon_Luu_Click);
             // 
-            // flowLayoutPanel5
+            // FL_HoaDon
             // 
-            this.flowLayoutPanel5.Controls.Add(this.panel26);
-            this.flowLayoutPanel5.Controls.Add(this.panel22);
-            this.flowLayoutPanel5.Controls.Add(this.panel27);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(1099, 68);
-            this.flowLayoutPanel5.TabIndex = 3;
+            this.FL_HoaDon.Controls.Add(this.panel26);
+            this.FL_HoaDon.Controls.Add(this.panel22);
+            this.FL_HoaDon.Controls.Add(this.panel27);
+            this.FL_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FL_HoaDon.Location = new System.Drawing.Point(0, 0);
+            this.FL_HoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.FL_HoaDon.Name = "FL_HoaDon";
+            this.FL_HoaDon.Size = new System.Drawing.Size(1099, 68);
+            this.FL_HoaDon.TabIndex = 3;
             // 
             // panel26
             // 
@@ -5070,6 +5063,27 @@
             this.label20.TabIndex = 8;
             this.label20.Text = "Ngày lập hóa đơn";
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.BT_HoaDon_Luu);
+            this.flowLayoutPanel5.Controls.Add(this.BT_TaoHoaDon_HuyDon);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(218, 68);
+            this.flowLayoutPanel5.TabIndex = 3;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.flowLayoutPanel5);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel28.Location = new System.Drawing.Point(881, 0);
+            this.panel28.Margin = new System.Windows.Forms.Padding(2);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(218, 68);
+            this.panel28.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -5141,14 +5155,13 @@
             this.panel33.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GB_HoaDon_ChiTiet.ResumeLayout(false);
+            this.GB_HoaDon_ChiTiet.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
             this.panel23.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.flowLayoutPanel5.ResumeLayout(false);
+            this.FL_HoaDon.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel22.ResumeLayout(false);
@@ -5293,6 +5306,8 @@
             this.panel3.PerformLayout();
             this.panel71.ResumeLayout(false);
             this.panel71.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5355,10 +5370,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C_HoaDon_DonGiaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_HoaDon_ThanhTien;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Button BT_TaoHoaDon_HuyDon;
         private System.Windows.Forms.Button BT_HoaDon_Luu;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel FL_HoaDon;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.DateTimePicker DTP_HoaDon_NgayBan;
         private System.Windows.Forms.ComboBox CBB_HoaDon_NVBan;
@@ -5611,7 +5625,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox TB_HoaDon_GiamGia;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GB_HoaDon_ChiTiet;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel27;
@@ -5706,6 +5720,8 @@
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Xoa;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Sua;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
     }
 }
 

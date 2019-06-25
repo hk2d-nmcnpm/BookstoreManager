@@ -209,6 +209,10 @@ namespace BookstoreManager
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
         {
+            GB_HoaDon_ChiTiet.Enabled = true;
+            TSB_HoaDon_Xoa.Enabled = true;
+            FL_HoaDon.Enabled = true;
+            BT_HoaDon_Luu.Visible = true;
             MainTab.SelectedTab = TP_TaoHoaDon;
             LB_TieuDe.Text = "Tạo hóa đơn";
             int last = 0;
@@ -1375,7 +1379,7 @@ namespace BookstoreManager
         private void TSB_DSHD_Xoa_Click(object sender, EventArgs e)
         {
             var msb = MessageBox
-                .Show("Bạn có thực sự muốn xóa (những) hóa đơn này",
+                .Show("Hủy đơn chỉ áp dụng cho trường hợp hóa đơn nhập sai.\nTất cả mặt hàng trong hóa đơn sẽ được khôi phục như ban đầu.",
                 "Cảnh báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -1385,8 +1389,8 @@ namespace BookstoreManager
                 foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
                     if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
                         MessageBox.Show(
-                            "Không thể xóa hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
-                            "Không thể xóa",
+                            "Không thể hủy hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
+                            "Không thể hủy",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 DongBo(sender, new EventArgs());
@@ -1576,6 +1580,44 @@ namespace BookstoreManager
         private void BT_HoaDon_ThemKH_Click(object sender, EventArgs e)
         {
             BT_KhachHang_TaoKhachHang_Click(sender, e);
+        }
+
+        private void TSB_DSHD_ChiTiet_Click(object sender, EventArgs e)
+        {
+            GB_HoaDon_ChiTiet.Enabled = false;
+            TSB_HoaDon_Xoa.Enabled = false;
+            FL_HoaDon.Enabled = false;
+            BT_HoaDon_Luu.Visible = false;
+            try
+            {
+                DGV_HoaDon.Rows.Clear();
+                var hdb = new HoaDonBus();
+                HoaDon hd = hdb.GetHoaDonByMa(DGV_DSHoaDon.SelectedRows[0].Cells[0].Value.ToString());
+                DTP_HoaDon_NgayBan.Value = hd.NgayHoaDon;
+                TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
+                CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
+                CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
+                TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
+                TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
+                var ctb = new ChiTietHoaDonBus();
+                foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
+                {
+                    var ct = ctb.GetChiTietHDByMa(s);
+                    var result = new SachBus().GetSachByMaSach(ct.MaSach.Trim());
+                    var thanhTien = result.DonGia * ct.SoLuongBan;
+                    DGV_HoaDon.Rows.Add(
+                        result.MaSach,
+                        result.TenSach,
+                        new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
+                        int.Parse(TB_HoaDon_SoLuong.Text),
+                        result.DonGia,
+                        thanhTien
+                        );
+                }
+                HoaDon_TinhTien();
+                MainTab.SelectedIndex = 1;
+            }
+            catch { }
         }
     }
 }
