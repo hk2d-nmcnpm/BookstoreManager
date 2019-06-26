@@ -51,7 +51,8 @@ namespace BookstoreManager
         int tonminsaukhiban;
         bool apdungqd4;
         public decimal TienNoToiDa { get; set; }
-
+        int _distance;
+        int _distance2;
 
 
         List<int> thang = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -63,7 +64,12 @@ namespace BookstoreManager
         {
             InitializeComponent();
             MainTab.ItemSize = new Size(0, 1);
+            _distance = panel75.Size.Width;
+            _distance2 = panel1.Size.Width;
             _anThanhMenu = false;
+            BT_AnHienMenu_Click(new object(), new EventArgs());
+            BT_AnHienMenu_Click(new object(), new EventArgs());
+
         }
         private void BT_KhoSach_ThemSach_Click(object sender, EventArgs e)
         {
@@ -209,6 +215,7 @@ namespace BookstoreManager
         }
         private void BT_DSHoaDon_TaoHoaDon_Click(object sender, EventArgs e)
         {
+
             GB_HoaDon_ChiTiet.Enabled = true;
             TSB_HoaDon_Xoa.Enabled = true;
             FL_HoaDon.Enabled = true;
@@ -282,19 +289,19 @@ namespace BookstoreManager
         }
         private void BT_AnHienMenu_Click(object sender, EventArgs e)
         {
-            const int _distance = 60;
+
             if (_anThanhMenu == false)
             {
                 MainSplitContainer.SplitterDistance = _distance;
                 BT_AnHienMenu.Text = "Hiện";
-                PN_BanQuyen.Size = new Size(_distance, 26);
+                PN_BanQuyen.Size = new Size(_distance, 20);
                 _anThanhMenu = true;
             }
             else
             {
-                MainSplitContainer.SplitterDistance = 260;
+                MainSplitContainer.SplitterDistance = _distance2;
                 BT_AnHienMenu.Text = "Ẩn";
-                PN_BanQuyen.Size = new Size(260, 50);
+                PN_BanQuyen.Size = new Size(_distance2, 40);
                 _anThanhMenu = false;
             }
         }
@@ -662,7 +669,15 @@ namespace BookstoreManager
                 loginnv = nvBus.GetNhanVienByMa(loginForm.TB_TenDangNhap.Text.Trim());
                 LB_TenNV.Text = loginnv.TenNhanVien.Trim();
                 LB_ChucVu.Text = nvBus.ChucVu[loginnv.ChucVu];
+                if(loginnv.ChucVu == 1)
+                {
+                    BT_DSNV_ThemNV.Enabled = true;
+                    TSB_DSNV_Them.Enabled = true;
+                    TSB_DSNV_Xoa.Enabled = true;
+                    TSB_DSNV_Sua.Enabled = true;
+                }
                 DongBo(sender, new EventArgs());
+                WindowState = FormWindowState.Maximized;
             }
         }
         #region Sync
@@ -1171,7 +1186,7 @@ namespace BookstoreManager
 
 
                 if (khBus.UpdateKhachHang(kh2))
-                    MessageBox.Show("Khách hàng " + kh.MaKhachHang+"-"+kh.HoTenKH + " đã update thành công!");
+                    MessageBox.Show("Khách hàng " + kh.MaKhachHang+"-"+kh.HoTenKH + " đã cập nhật thành công!", "Đã cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Không thể cập nhật khách hàng", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DongBo(sender, new EventArgs());
@@ -1866,6 +1881,78 @@ namespace BookstoreManager
                 MainTab.SelectedIndex = 4;
             }
             catch { }
+        }
+
+        private void TSB_HoaDon_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_DSSach_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_DSNV_Xoa_Click(object sender, EventArgs e)
+        {
+            var x = MessageBox.Show("Bạn có chắc chắn muốn xóa khỏi cơ sở dữ liệu?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (x == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in DGV_DSNV.SelectedRows)
+                {
+                    string maNv = row.Cells[0].Value.ToString();
+                    if (!nvBus.DeleteNhanVien(maNv))
+                        MessageBox.Show("Vì lý do ràng buộc nên không thể xóa!");
+                    else
+                        DGV_DSNV.Rows.Remove(row);
+                }
+            }
+            else
+                return;
+        }
+
+        private void TSB_DSNV_Sua_Click(object sender, EventArgs e)
+        {
+            EmployeeForm form = new EmployeeForm();
+
+            form.TB_MaNV.Text = DGV_DSNV.SelectedRows[0].Cells[0].Value.ToString();
+            form.CBB_ChucVu.DataSource = new BindingSource(nvBus.ChucVu, null);
+            form.CBB_ChucVu.DisplayMember = "Value";
+            form.CBB_ChucVu.ValueMember = "Key";
+            NhanVien nv = nvBus.GetNhanVienByMa(form.TB_MaNV.Text);
+
+            form.TB_MaNV.Text = nv.MaNhanVien;
+            form.DTP_NgaySinh.Value = nv.NgaySinh;
+            form.TB_HoTen.Text = nv.TenNhanVien;
+            form.CBB_ChucVu.SelectedValue = nv.ChucVu;
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                NhanVien nv2 = new NhanVien()
+                {
+                    MaNhanVien = nv.MaNhanVien,
+                    TenNhanVien = form.TB_HoTen.Text,
+                    NgaySinh = form.DTP_NgaySinh.Value,
+                    ChucVu = (int)form.CBB_ChucVu.SelectedValue,
+                    MatKhau = (form.TB_MatKhau.Text == "")? nv.MatKhau : CalculateMD5Hash(form.TB_MatKhau.Text)
+                };
+                if (nvBus.UpdateNhanVien(nv2))
+                    MessageBox.Show("Nhân viên " + nv.MaNhanVien + "-" + nv.TenNhanVien + " đã cập nhật thành công!", "Đã cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Không thể cập nhật khách hàng", "Không thực hiện được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DongBo(sender, new EventArgs());
+            }
+        }
+
+
+        private void MainSplitContainer_Panel1_MouseEnter(object sender, EventArgs e)
+        {
+            BT_AnHienMenu_Click(sender, e);
+        }
+
+        private void MainSplitContainer_Panel1_MouseLeave(object sender, EventArgs e)
+        {
+            BT_AnHienMenu_Click(sender, e);
         }
     }
 }

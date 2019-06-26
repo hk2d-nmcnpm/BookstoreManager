@@ -48,7 +48,7 @@ namespace DataAccessLayer
                     hoaDon.MaNhanVien = reader["MaNhanVien"].ToString();
                     hoaDon.TienKhachDaTra = (decimal)reader["TienKhachDaTra"];
                     hoaDon.GiamGia = (decimal)reader["GiamGia"];
-                    hoaDon.TienKhachDua = (decimal)reader["TienKhachDua"];
+                    hoaDon.TienKhachDua = (decimal)reader["TienKhachDaTra"];
                     reader.Close();
                 }
                 return hoaDon;

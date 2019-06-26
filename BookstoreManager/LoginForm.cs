@@ -21,11 +21,11 @@ namespace BookstoreManager
             NhanVienBus nvbus = new NhanVienBus();
             if (nvbus.KiemTraTaiKhoan(manv, mk))
             {
-                MessageBox.Show("Đã đăng nhập thành công");
+                MessageBox.Show("Đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
             }
             else
-                MessageBox.Show("Vui lòng kiểm tra lại mã nhân viên và mật khẩu");
+                MessageBox.Show("Vui lòng kiểm tra lại mã nhân viên và mật khẩu", "Không thể đăng nhập được", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public static string CalculateMD5Hash(string input)
         {
@@ -38,6 +38,11 @@ namespace BookstoreManager
                 sb.Append(hash[i].ToString("X2"));
             }
             return sb.ToString();
+        }
+
+        private void Link_QuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Vui lòng liên hệ quản trị viên để lấy lại mật khẩu", "Lấy lại mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -50,7 +50,7 @@
             // QD_BTN_Luu
             // 
             this.QD_BTN_Luu.Enabled = false;
-            this.QD_BTN_Luu.Location = new System.Drawing.Point(390, 367);
+            this.QD_BTN_Luu.Location = new System.Drawing.Point(288, 342);
             this.QD_BTN_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.QD_BTN_Luu.Name = "QD_BTN_Luu";
             this.QD_BTN_Luu.Size = new System.Drawing.Size(69, 26);
@@ -61,7 +61,7 @@
             // 
             // QD_BTN_ChinhSua
             // 
-            this.QD_BTN_ChinhSua.Location = new System.Drawing.Point(257, 367);
+            this.QD_BTN_ChinhSua.Location = new System.Drawing.Point(210, 342);
             this.QD_BTN_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.QD_BTN_ChinhSua.Name = "QD_BTN_ChinhSua";
             this.QD_BTN_ChinhSua.Size = new System.Drawing.Size(74, 26);
@@ -76,7 +76,7 @@
             this.groupBox6.Controls.Add(this.QD_TB_TienNo);
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Location = new System.Drawing.Point(212, 129);
+            this.groupBox6.Location = new System.Drawing.Point(11, 123);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
@@ -128,7 +128,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.QD_CKB);
-            this.groupBox7.Location = new System.Drawing.Point(212, 253);
+            this.groupBox7.Location = new System.Drawing.Point(11, 247);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
@@ -155,7 +155,7 @@
             this.groupBox5.Controls.Add(this.QD_TB_Nhap);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Location = new System.Drawing.Point(212, 17);
+            this.groupBox5.Location = new System.Drawing.Point(11, 11);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
@@ -208,12 +208,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 410);
+            this.ClientSize = new System.Drawing.Size(366, 374);
             this.Controls.Add(this.QD_BTN_Luu);
             this.Controls.Add(this.QD_BTN_ChinhSua);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Regulation";
             this.ShowIcon = false;
