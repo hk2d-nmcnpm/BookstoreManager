@@ -1,1 +1,1 @@
-SQLCMD -S localhost -E -i DBSACH-final.sql
+SQLCMD -S localhost -E -i script_bookstore.sql
