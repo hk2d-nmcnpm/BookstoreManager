@@ -34,7 +34,7 @@ namespace DataAccessLayer
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayThu", SqlDbType.Date).Value = obj.NgayThu;
                 cmd.Parameters.Add("@SoTienThu", SqlDbType.Money).Value = obj.SoTienThu;
-                cmd.Parameters.Add("@LyDoThu", SqlDbType.NChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@LyDoThu", SqlDbType.NVarChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;
@@ -192,7 +192,7 @@ namespace DataAccessLayer
                 cmd.Parameters.Add("@MaNhanVien", SqlDbType.Char).Value = obj.MaNhanVien;
                 cmd.Parameters.Add("@NgayThu", SqlDbType.Date).Value = obj.NgayThu;
                 cmd.Parameters.Add("@SoTienThu", SqlDbType.Money).Value = obj.SoTienThu;
-                cmd.Parameters.Add("@LyDoThu", SqlDbType.NChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@LyDoThu", SqlDbType.NVarChar).Value = obj.LyDoThu ?? (object)DBNull.Value;
                 cmd.ExecuteNonQuery();
                 _connection.Close();
                 return true;

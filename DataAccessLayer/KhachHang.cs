@@ -35,9 +35,9 @@ namespace DataAccessLayer
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
                 cmd.Parameters.Add("@HoTenKH", SqlDbType.NVarChar).Value = obj.HoTenKH;
-                cmd.Parameters.Add("@SoDienThoai", SqlDbType.Char).Value = obj.SoDienThoai ?? (object)DBNull.Value;
-                cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = obj.DiaChi ?? (object)DBNull.Value;
-                cmd.Parameters.Add("@Email", SqlDbType.NChar).Value = obj.Email ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@SoDienThoai", SqlDbType.VarChar).Value = obj.SoDienThoai ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = obj.DiaChi ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = obj.Email ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@SoTienNo", SqlDbType.Money).Value = obj.SoTienNo;
                 cmd.Parameters.Add("@TongTien", SqlDbType.Money).Value = obj.TongTien;
                 cmd.Parameters.Add("@NgayMuaCuoi", SqlDbType.Date).Value = obj.NgayMuaCuoi;
@@ -166,9 +166,9 @@ namespace DataAccessLayer
                 var cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add("@MaKhachHang", SqlDbType.Char).Value = obj.MaKhachHang;
                 cmd.Parameters.Add("@HoTenKH", SqlDbType.NVarChar).Value = obj.HoTenKH;
-                cmd.Parameters.Add("@SoDienThoai", SqlDbType.Char).Value = obj.SoDienThoai ?? (object)DBNull.Value;
-                cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = obj.DiaChi ?? (object)DBNull.Value;
-                cmd.Parameters.Add("@Email", SqlDbType.NChar).Value = obj.Email ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@SoDienThoai", SqlDbType.VarChar).Value = obj.SoDienThoai ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = obj.DiaChi ?? (object)DBNull.Value;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = obj.Email ?? (object)DBNull.Value;
                 cmd.Parameters.Add("@SoTienNo", SqlDbType.Money).Value = obj.SoTienNo;
                 cmd.Parameters.Add("@TongTien", SqlDbType.Money).Value = obj.TongTien;
                 cmd.Parameters.Add("@NgayMuaCuoi", SqlDbType.Date).Value = obj.NgayMuaCuoi;
