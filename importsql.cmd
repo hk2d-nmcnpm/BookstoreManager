@@ -1,0 +1,1 @@
+SQLCMD -S localhost -E -i DBSACH-final.sql

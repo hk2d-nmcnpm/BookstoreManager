@@ -1283,6 +1283,7 @@
             // 
             // TSB_DSHD_XoaBoLoc
             // 
+            this.TSB_DSHD_XoaBoLoc.Enabled = false;
             this.TSB_DSHD_XoaBoLoc.Image = global::BookstoreManager.Properties.Resources.clear_filters_20px;
             this.TSB_DSHD_XoaBoLoc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_DSHD_XoaBoLoc.Name = "TSB_DSHD_XoaBoLoc";
