@@ -73,9 +73,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(361, 282);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -84,7 +84,7 @@
             // TB_DonGia
             // 
             this.TB_DonGia.Location = new System.Drawing.Point(9, 252);
-            this.TB_DonGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_DonGia.Margin = new System.Windows.Forms.Padding(2);
             this.TB_DonGia.Name = "TB_DonGia";
             this.TB_DonGia.Size = new System.Drawing.Size(346, 23);
             this.TB_DonGia.TabIndex = 10;
@@ -107,7 +107,7 @@
             this.CBB_TheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBB_TheLoai.FormattingEnabled = true;
             this.CBB_TheLoai.Location = new System.Drawing.Point(9, 201);
-            this.CBB_TheLoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBB_TheLoai.Margin = new System.Windows.Forms.Padding(2);
             this.CBB_TheLoai.Name = "CBB_TheLoai";
             this.CBB_TheLoai.Size = new System.Drawing.Size(346, 25);
             this.CBB_TheLoai.TabIndex = 8;
@@ -125,7 +125,7 @@
             // TB_TacGia
             // 
             this.TB_TacGia.Location = new System.Drawing.Point(9, 148);
-            this.TB_TacGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_TacGia.Margin = new System.Windows.Forms.Padding(2);
             this.TB_TacGia.Name = "TB_TacGia";
             this.TB_TacGia.Size = new System.Drawing.Size(346, 23);
             this.TB_TacGia.TabIndex = 5;
@@ -143,7 +143,7 @@
             // TB_TenSach
             // 
             this.TB_TenSach.Location = new System.Drawing.Point(9, 94);
-            this.TB_TenSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_TenSach.Margin = new System.Windows.Forms.Padding(2);
             this.TB_TenSach.Name = "TB_TenSach";
             this.TB_TenSach.Size = new System.Drawing.Size(346, 23);
             this.TB_TenSach.TabIndex = 3;
@@ -162,7 +162,7 @@
             // 
             this.TB_MaSoSach.Enabled = false;
             this.TB_MaSoSach.Location = new System.Drawing.Point(9, 44);
-            this.TB_MaSoSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_MaSoSach.Margin = new System.Windows.Forms.Padding(2);
             this.TB_MaSoSach.Name = "TB_MaSoSach";
             this.TB_MaSoSach.Size = new System.Drawing.Size(346, 23);
             this.TB_MaSoSach.TabIndex = 1;
@@ -189,9 +189,9 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(387, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(361, 444);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -200,7 +200,7 @@
             // BT_ThemAnhBia
             // 
             this.BT_ThemAnhBia.Location = new System.Drawing.Point(130, 406);
-            this.BT_ThemAnhBia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_ThemAnhBia.Margin = new System.Windows.Forms.Padding(2);
             this.BT_ThemAnhBia.Name = "BT_ThemAnhBia";
             this.BT_ThemAnhBia.Size = new System.Drawing.Size(110, 26);
             this.BT_ThemAnhBia.TabIndex = 7;
@@ -213,7 +213,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.PTB_AnhBia);
             this.panel1.Location = new System.Drawing.Point(102, 190);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 200);
             this.panel1.TabIndex = 6;
@@ -222,16 +222,17 @@
             // 
             this.PTB_AnhBia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PTB_AnhBia.Location = new System.Drawing.Point(0, 0);
-            this.PTB_AnhBia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PTB_AnhBia.Margin = new System.Windows.Forms.Padding(2);
             this.PTB_AnhBia.Name = "PTB_AnhBia";
             this.PTB_AnhBia.Size = new System.Drawing.Size(158, 198);
+            this.PTB_AnhBia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTB_AnhBia.TabIndex = 0;
             this.PTB_AnhBia.TabStop = false;
             // 
             // TB_SoTrang
             // 
             this.TB_SoTrang.Location = new System.Drawing.Point(9, 142);
-            this.TB_SoTrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_SoTrang.Margin = new System.Windows.Forms.Padding(2);
             this.TB_SoTrang.Name = "TB_SoTrang";
             this.TB_SoTrang.Size = new System.Drawing.Size(346, 23);
             this.TB_SoTrang.TabIndex = 5;
@@ -250,7 +251,7 @@
             // TB_NhaXuatBan
             // 
             this.TB_NhaXuatBan.Location = new System.Drawing.Point(9, 94);
-            this.TB_NhaXuatBan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NhaXuatBan.Margin = new System.Windows.Forms.Padding(2);
             this.TB_NhaXuatBan.Name = "TB_NhaXuatBan";
             this.TB_NhaXuatBan.Size = new System.Drawing.Size(346, 23);
             this.TB_NhaXuatBan.TabIndex = 3;
@@ -268,7 +269,7 @@
             // TB_NamXuatBan
             // 
             this.TB_NamXuatBan.Location = new System.Drawing.Point(9, 44);
-            this.TB_NamXuatBan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NamXuatBan.Margin = new System.Windows.Forms.Padding(2);
             this.TB_NamXuatBan.Name = "TB_NamXuatBan";
             this.TB_NamXuatBan.Size = new System.Drawing.Size(346, 23);
             this.TB_NamXuatBan.TabIndex = 1;
@@ -299,7 +300,7 @@
             // 
             this.TB_MoTa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_MoTa.Location = new System.Drawing.Point(10, 322);
-            this.TB_MoTa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_MoTa.Margin = new System.Windows.Forms.Padding(2);
             this.TB_MoTa.Name = "TB_MoTa";
             this.TB_MoTa.Size = new System.Drawing.Size(362, 133);
             this.TB_MoTa.TabIndex = 7;
@@ -308,7 +309,7 @@
             // BT_Luu
             // 
             this.BT_Luu.Location = new System.Drawing.Point(655, 459);
-            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Luu.Name = "BT_Luu";
             this.BT_Luu.Size = new System.Drawing.Size(93, 26);
             this.BT_Luu.TabIndex = 9;
@@ -319,7 +320,7 @@
             // BT_Huy
             // 
             this.BT_Huy.Location = new System.Drawing.Point(556, 459);
-            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BT_Huy.Margin = new System.Windows.Forms.Padding(2);
             this.BT_Huy.Name = "BT_Huy";
             this.BT_Huy.Size = new System.Drawing.Size(93, 26);
             this.BT_Huy.TabIndex = 11;
@@ -339,7 +340,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "BookDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

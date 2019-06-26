@@ -14,8 +14,9 @@ namespace DataTransferObject
         public DateTime NgayHoaDon { get; set; }
         public decimal GiamGia { get; set; }
         public decimal TienKhachDaTra { get; set; }
+        public decimal TienKhachDua { get; set; }
         public HoaDon () { }
-        public HoaDon(string maHD,string maKH, string maNV, DateTime ngayHD, decimal giamGia, decimal tienKhachDaTra)
+        public HoaDon(string maHD,string maKH, string maNV, DateTime ngayHD, decimal giamGia, decimal tienKhachDaTra,decimal tienKhachDua)
         {
             MaHoaDon = maHD;
             MaKhachHang = maKH;
@@ -23,6 +24,7 @@ namespace DataTransferObject
             NgayHoaDon = ngayHD;
             GiamGia = giamGia;
             TienKhachDaTra = tienKhachDaTra;
+            TienKhachDua = tienKhachDua;
         }
 
     }

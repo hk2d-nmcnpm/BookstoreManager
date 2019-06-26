@@ -446,7 +446,8 @@ namespace BookstoreManager
                 MaNhanVien = (string)CBB_HoaDon_NVBan.SelectedValue,
                 NgayHoaDon = DTP_HoaDon_NgayBan.Value,
                 GiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text),
-                TienKhachDaTra = (tienConLai < 0) ?  tienKhachDua : tienPhaiTra
+                TienKhachDaTra = (tienConLai < 0) ? tienKhachDua : tienPhaiTra,
+                TienKhachDua = decimal.Parse(TB_HoaDon_KhachDua.Text)
             };
             kh.TongTien += hd.TienKhachDaTra;
             //Tinh tien no
@@ -1386,42 +1387,47 @@ namespace BookstoreManager
                 MessageBoxIcon.Warning);
             if (msb == DialogResult.Yes)
             {
-                var bus = new HoaDonBus();
-                foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
+                try
                 {
-                    //khi hủy đơn phải khôi phục lại số lượng tồn của sách và nợ của khách hàng
-                    decimal sotien = decimal.Zero;
-                    DataTable cthd = cthdBus.GetChiTietHD();
-                    var x = from xxx in cthd.AsEnumerable()
-                            where xxx["MaHoaDon"].ToString() == row.Cells[0].Value.ToString()
-                            select xxx;
-                    cthd = x.CopyToDataTable();
-
-                    foreach (DataRow dr in cthd.Rows)
+                    var bus = new HoaDonBus();
+                    foreach (DataGridViewRow row in DGV_DSHoaDon.SelectedRows)
                     {
-                        sotien += decimal.Parse(dr["SoLuongBan"].ToString()) * decimal.Parse(dr["DonGiaBan"].ToString());
-                        Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
-                        sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
-                        sachBus.UpdateSach(sach);
-                        cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                        //khi hủy đơn phải khôi phục lại số lượng tồn của sách và nợ của khách hàng
+                        decimal sotien = decimal.Zero;
+                        DataTable cthd = cthdBus.GetChiTietHD();
+                        var x = from xxx in cthd.AsEnumerable()
+                                where xxx["MaHoaDon"].ToString() == row.Cells[0].Value.ToString()
+                                select xxx;
+                        cthd = x.CopyToDataTable();
+
+                        foreach (DataRow dr in cthd.Rows)
+                        {
+                            sotien += decimal.Parse(dr["SoLuongBan"].ToString()) * decimal.Parse(dr["DonGiaBan"].ToString());
+                            Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                            sach.SoLuongTon += int.Parse(dr["SoLuongBan"].ToString());
+                            sachBus.UpdateSach(sach);
+                            cthdBus.DeleteChiTietHD(dr["MaChiTietHoaDon"].ToString());
+                        }
+
+                        HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
+                        KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
+
+                        cus.TongTien -= hd.TienKhachDaTra;
+                        cus.SoTienNo -= (sotien - hd.TienKhachDaTra - hd.GiamGia);
+                        khBus.UpdateKhachHang(cus);
+                        if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
+                            MessageBox.Show(
+                                "Không thể hủy hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
+                                "Không thể hủy",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                     }
 
-                    HoaDon hd = hdBus.GetHoaDonByMa(row.Cells[0].Value.ToString());
-                    KhachHang cus = khBus.GetKhachHangByMaKH(hd.MaKhachHang);
-
-                    cus.TongTien -= hd.TienKhachDaTra;
-                    cus.SoTienNo -= (sotien - hd.TienKhachDaTra - hd.GiamGia);
-                    khBus.UpdateKhachHang(cus);
-                    if (!bus.DeleteHoaDon(row.Cells[0].Value.ToString()))
-                        MessageBox.Show(
-                            "Không thể hủy hóa đơn " + row.Cells[0].Value.ToString() + " vui lòng kiểm tra lại",
-                            "Không thể hủy",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                    DongBo(sender, new EventArgs());
                 }
-                    
-                DongBo(sender, new EventArgs());
+                catch { }
             }
+                
         }
 
         private void TSB_DSHD_ChinhSua_Click(object sender, EventArgs e)
@@ -1557,7 +1563,7 @@ namespace BookstoreManager
                 form.TB_DonGia.Text = sach.DonGia.ToString();
                 form.TB_MaSoSach.Enabled = false;
                 form.TB_MaSoSach.Text = sach.MaSach;
-                form.TB_MoTa.Enabled = false;
+                form.TB_MoTa.ReadOnly = true;
                 form.TB_MoTa.Text = sach.MoTa;
                 form.TB_NamXuatBan.Enabled = false;
                 form.TB_NamXuatBan.Text = sach.NamXuatBan.ToString();
@@ -1608,7 +1614,7 @@ namespace BookstoreManager
                 TB_HoaDon_MaHoaDon.Text = hd.MaHoaDon;
                 CBB_HoaDon_KhachHang.SelectedValue = hd.MaKhachHang;
                 CBB_HoaDon_NVBan.SelectedValue = hd.MaNhanVien;
-                TB_HoaDon_KhachDua.Text = hd.TienKhachDaTra.ToString();
+                TB_HoaDon_KhachDua.Text = hd.TienKhachDua.ToString();
                 TB_HoaDon_GiamGia.Text = hd.GiamGia.ToString();
                 var ctb = new ChiTietHoaDonBus();
                 foreach (string s in ctb.GetMaCTHoaDonList(hd.MaHoaDon))
@@ -1795,8 +1801,30 @@ namespace BookstoreManager
             else
                 MessageBox.Show("Không có data để lưu!", "Warning", MessageBoxButtons.OK);
         }
-            
-            
-        
+
+        private void TSB_DSPN_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_PhieuNS_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_KH_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_DSPT_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_NV_DongBo_Click(object sender, EventArgs e)
+        {
+            DongBo(sender, new EventArgs());
+        }
     }
 }

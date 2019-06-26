@@ -215,7 +215,7 @@
             this.TSB_DSPN_Sua = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPN_Chitiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPN_DongBo = new System.Windows.Forms.ToolStripButton();
             this.panel36 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.label34 = new System.Windows.Forms.Label();
@@ -261,7 +261,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_PhieuNS_XoaMuc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_PhieuNS_DongBo = new System.Windows.Forms.ToolStripButton();
             this.panel43 = new System.Windows.Forms.Panel();
             this.panel44 = new System.Windows.Forms.Panel();
             this.BT_PNS_Huy = new System.Windows.Forms.Button();
@@ -296,7 +296,7 @@
             this.TSB_KH_ChinhSua = new System.Windows.Forms.ToolStripButton();
             this.TSB_KH_ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_KH_DongBo = new System.Windows.Forms.ToolStripButton();
             this.panel48 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.label47 = new System.Windows.Forms.Label();
@@ -335,7 +335,7 @@
             this.TSB_DSPT_ChinhSua = new System.Windows.Forms.ToolStripButton();
             this.TSB_DSPT__ChiTiet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_DSPT_DongBo = new System.Windows.Forms.ToolStripButton();
             this.panel53 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.label61 = new System.Windows.Forms.Label();
@@ -378,6 +378,8 @@
             this.CBB_BCT_Nam = new System.Windows.Forms.ComboBox();
             this.label81 = new System.Windows.Forms.Label();
             this.panel79 = new System.Windows.Forms.Panel();
+            this.BT_BCT_Luu = new System.Windows.Forms.Button();
+            this.BT_BCT_Lap = new System.Windows.Forms.Button();
             this.TP_BaoCaoNo = new System.Windows.Forms.TabPage();
             this.DGV_BCCN = new System.Windows.Forms.DataGridView();
             this.C_BaoCaoNo_MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -398,6 +400,8 @@
             this.CBB_BCCN_Nam = new System.Windows.Forms.ComboBox();
             this.label79 = new System.Windows.Forms.Label();
             this.panel76 = new System.Windows.Forms.Panel();
+            this.BT_BCCN_Luu = new System.Windows.Forms.Button();
+            this.BT_BCCN_Lap = new System.Windows.Forms.Button();
             this.TP_DSNhanVien = new System.Windows.Forms.TabPage();
             this.DGV_DSNV = new System.Windows.Forms.DataGridView();
             this.C_DSNV_MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -412,7 +416,7 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_NV_DongBo = new System.Windows.Forms.ToolStripButton();
             this.panel80 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
@@ -438,10 +442,6 @@
             this.LB_TieuDe = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.TT_Hint = new System.Windows.Forms.ToolTip(this.components);
-            this.BT_BCT_Lap = new System.Windows.Forms.Button();
-            this.BT_BCT_Luu = new System.Windows.Forms.Button();
-            this.BT_BCCN_Luu = new System.Windows.Forms.Button();
-            this.BT_BCCN_Lap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -1654,7 +1654,7 @@
             this.groupBox2.Location = new System.Drawing.Point(2, 263);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox2.Size = new System.Drawing.Size(193, 173);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -1762,7 +1762,7 @@
             this.GB_HoaDon_ChiTiet.Location = new System.Drawing.Point(2, 2);
             this.GB_HoaDon_ChiTiet.Margin = new System.Windows.Forms.Padding(0);
             this.GB_HoaDon_ChiTiet.Name = "GB_HoaDon_ChiTiet";
-            this.GB_HoaDon_ChiTiet.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GB_HoaDon_ChiTiet.Padding = new System.Windows.Forms.Padding(5);
             this.GB_HoaDon_ChiTiet.Size = new System.Drawing.Size(193, 311);
             this.GB_HoaDon_ChiTiet.TabIndex = 0;
             this.GB_HoaDon_ChiTiet.TabStop = false;
@@ -2036,7 +2036,7 @@
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(174, 54);
             this.flowLayoutPanel5.TabIndex = 3;
@@ -2660,7 +2660,7 @@
             this.TSB_DSPN_Sua,
             this.TSB_DSPN_Chitiet,
             this.toolStripSeparator8,
-            this.toolStripButton24});
+            this.TSB_DSPN_DongBo});
             this.toolStrip4.Location = new System.Drawing.Point(0, 58);
             this.toolStrip4.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip4.Name = "toolStrip4";
@@ -2676,12 +2676,14 @@
             // 
             // TSB_DSPN_Chontatca
             // 
+            this.TSB_DSPN_Chontatca.Enabled = false;
             this.TSB_DSPN_Chontatca.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
             this.TSB_DSPN_Chontatca.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_DSPN_Chontatca.Margin = new System.Windows.Forms.Padding(3);
             this.TSB_DSPN_Chontatca.Name = "TSB_DSPN_Chontatca";
             this.TSB_DSPN_Chontatca.Size = new System.Drawing.Size(92, 24);
             this.TSB_DSPN_Chontatca.Text = "Chọn tất cả";
+            this.TSB_DSPN_Chontatca.Visible = false;
             this.TSB_DSPN_Chontatca.Click += new System.EventHandler(this.TSB_DSPN_Chontatca_Click);
             // 
             // TSB_DSPN_Them
@@ -2732,14 +2734,15 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton24
+            // TSB_DSPN_DongBo
             // 
-            this.toolStripButton24.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton24.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton24.Text = "Đồng bộ";
+            this.TSB_DSPN_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_DSPN_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPN_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPN_DongBo.Name = "TSB_DSPN_DongBo";
+            this.TSB_DSPN_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_DSPN_DongBo.Text = "Đồng bộ";
+            this.TSB_DSPN_DongBo.Click += new System.EventHandler(this.TSB_DSPN_DongBo_Click);
             // 
             // panel36
             // 
@@ -3080,7 +3083,7 @@
             this.groupBox3.Location = new System.Drawing.Point(2, 349);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox3.Size = new System.Drawing.Size(194, 79);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -3127,7 +3130,7 @@
             this.groupBox4.Location = new System.Drawing.Point(2, 2);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox4.Size = new System.Drawing.Size(194, 200);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
@@ -3215,7 +3218,7 @@
             this.toolStripSeparator9,
             this.TSB_PhieuNS_XoaMuc,
             this.toolStripSeparator10,
-            this.toolStripButton30});
+            this.TSB_PhieuNS_DongBo});
             this.toolStrip5.Location = new System.Drawing.Point(0, 62);
             this.toolStrip5.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip5.Name = "toolStrip5";
@@ -3254,14 +3257,15 @@
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton30
+            // TSB_PhieuNS_DongBo
             // 
-            this.toolStripButton30.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton30.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton30.Name = "toolStripButton30";
-            this.toolStripButton30.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton30.Text = "Đồng bộ";
+            this.TSB_PhieuNS_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_PhieuNS_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_PhieuNS_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_PhieuNS_DongBo.Name = "TSB_PhieuNS_DongBo";
+            this.TSB_PhieuNS_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_PhieuNS_DongBo.Text = "Đồng bộ";
+            this.TSB_PhieuNS_DongBo.Click += new System.EventHandler(this.TSB_PhieuNS_DongBo_Click);
             // 
             // panel43
             // 
@@ -3464,7 +3468,7 @@
             this.TP_DSKhachHang.Location = new System.Drawing.Point(4, 24);
             this.TP_DSKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSKhachHang.Name = "TP_DSKhachHang";
-            this.TP_DSKhachHang.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSKhachHang.Size = new System.Drawing.Size(825, 524);
             this.TP_DSKhachHang.TabIndex = 8;
             this.TP_DSKhachHang.Text = "Khách Hàng";
             this.TP_DSKhachHang.UseVisualStyleBackColor = true;
@@ -3492,7 +3496,7 @@
             this.DGV_DSKH.ReadOnly = true;
             this.DGV_DSKH.RowTemplate.Height = 24;
             this.DGV_DSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSKH.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSKH.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSKH.TabIndex = 2;
             // 
             // C_DSKhachHang_MaKhachHang
@@ -3555,12 +3559,12 @@
             this.TSB_KH_ChinhSua,
             this.TSB_KH_ChiTiet,
             this.toolStripSeparator12,
-            this.toolStripButton36});
+            this.TSB_KH_DongBo});
             this.toolStrip6.Location = new System.Drawing.Point(0, 58);
             this.toolStrip6.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip6.Name = "toolStrip6";
             this.toolStrip6.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip6.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip6.Size = new System.Drawing.Size(825, 30);
             this.toolStrip6.TabIndex = 6;
             this.toolStrip6.Text = "toolStrip6";
             // 
@@ -3624,24 +3628,25 @@
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton36
+            // TSB_KH_DongBo
             // 
-            this.toolStripButton36.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton36.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton36.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton36.Name = "toolStripButton36";
-            this.toolStripButton36.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton36.Text = "Đồng bộ";
+            this.TSB_KH_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_KH_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_KH_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_KH_DongBo.Name = "TSB_KH_DongBo";
+            this.TSB_KH_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_KH_DongBo.Text = "Đồng bộ";
+            this.TSB_KH_DongBo.Click += new System.EventHandler(this.TSB_KH_DongBo_Click);
             // 
             // panel48
             // 
             this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel48.Controls.Add(this.flowLayoutPanel12);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel48.Location = new System.Drawing.Point(0, 499);
+            this.panel48.Location = new System.Drawing.Point(0, 498);
             this.panel48.Margin = new System.Windows.Forms.Padding(2);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(878, 26);
+            this.panel48.Size = new System.Drawing.Size(825, 26);
             this.panel48.TabIndex = 1;
             // 
             // flowLayoutPanel12
@@ -3655,7 +3660,7 @@
             this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel12.TabIndex = 0;
             // 
             // label47
@@ -3711,14 +3716,14 @@
             this.panel49.Location = new System.Drawing.Point(0, 0);
             this.panel49.Margin = new System.Windows.Forms.Padding(2);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(878, 58);
+            this.panel49.Size = new System.Drawing.Size(825, 58);
             this.panel49.TabIndex = 0;
             // 
             // panel50
             // 
             this.panel50.Controls.Add(this.BT_DSKH_Them);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel50.Location = new System.Drawing.Point(746, 0);
+            this.panel50.Location = new System.Drawing.Point(693, 0);
             this.panel50.Margin = new System.Windows.Forms.Padding(2);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(132, 58);
@@ -3749,7 +3754,7 @@
             this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel13.TabIndex = 3;
             // 
             // panel51
@@ -3958,7 +3963,7 @@
             this.TSB_DSPT_ChinhSua,
             this.TSB_DSPT__ChiTiet,
             this.toolStripSeparator14,
-            this.toolStripButton42});
+            this.TSB_DSPT_DongBo});
             this.toolStrip7.Location = new System.Drawing.Point(0, 58);
             this.toolStrip7.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip7.Name = "toolStrip7";
@@ -3969,12 +3974,14 @@
             // 
             // TSB_PT_ChonTatCa
             // 
+            this.TSB_PT_ChonTatCa.Enabled = false;
             this.TSB_PT_ChonTatCa.Image = global::BookstoreManager.Properties.Resources.select_all_20px;
             this.TSB_PT_ChonTatCa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_PT_ChonTatCa.Margin = new System.Windows.Forms.Padding(3);
             this.TSB_PT_ChonTatCa.Name = "TSB_PT_ChonTatCa";
             this.TSB_PT_ChonTatCa.Size = new System.Drawing.Size(92, 24);
             this.TSB_PT_ChonTatCa.Text = "Chọn tất cả";
+            this.TSB_PT_ChonTatCa.Visible = false;
             this.TSB_PT_ChonTatCa.Click += new System.EventHandler(this.TSB_PT_ChonTatCa_Click);
             // 
             // toolStripSeparator13
@@ -4031,14 +4038,15 @@
             this.toolStripSeparator14.Name = "toolStripSeparator14";
             this.toolStripSeparator14.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton42
+            // TSB_DSPT_DongBo
             // 
-            this.toolStripButton42.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton42.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton42.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton42.Name = "toolStripButton42";
-            this.toolStripButton42.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton42.Text = "Đồng bộ";
+            this.TSB_DSPT_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_DSPT_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_DSPT_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_DSPT_DongBo.Name = "TSB_DSPT_DongBo";
+            this.TSB_DSPT_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_DSPT_DongBo.Text = "Đồng bộ";
+            this.TSB_DSPT_DongBo.Click += new System.EventHandler(this.TSB_DSPT_DongBo_Click);
             // 
             // panel53
             // 
@@ -4494,6 +4502,27 @@
             this.panel79.Size = new System.Drawing.Size(335, 52);
             this.panel79.TabIndex = 5;
             // 
+            // BT_BCT_Luu
+            // 
+            this.BT_BCT_Luu.Enabled = false;
+            this.BT_BCT_Luu.Location = new System.Drawing.Point(175, 23);
+            this.BT_BCT_Luu.Name = "BT_BCT_Luu";
+            this.BT_BCT_Luu.Size = new System.Drawing.Size(103, 23);
+            this.BT_BCT_Luu.TabIndex = 1;
+            this.BT_BCT_Luu.Text = "Lưu  báo cáo";
+            this.BT_BCT_Luu.UseVisualStyleBackColor = true;
+            this.BT_BCT_Luu.Click += new System.EventHandler(this.BT_BCT_Luu_Click);
+            // 
+            // BT_BCT_Lap
+            // 
+            this.BT_BCT_Lap.Location = new System.Drawing.Point(53, 23);
+            this.BT_BCT_Lap.Name = "BT_BCT_Lap";
+            this.BT_BCT_Lap.Size = new System.Drawing.Size(88, 23);
+            this.BT_BCT_Lap.TabIndex = 0;
+            this.BT_BCT_Lap.Text = "Lập báo cáo";
+            this.BT_BCT_Lap.UseVisualStyleBackColor = true;
+            this.BT_BCT_Lap.Click += new System.EventHandler(this.BT_BCT_Lap_Click);
+            // 
             // TP_BaoCaoNo
             // 
             this.TP_BaoCaoNo.Controls.Add(this.DGV_BCCN);
@@ -4697,6 +4726,27 @@
             this.panel76.Size = new System.Drawing.Size(335, 52);
             this.panel76.TabIndex = 4;
             // 
+            // BT_BCCN_Luu
+            // 
+            this.BT_BCCN_Luu.Enabled = false;
+            this.BT_BCCN_Luu.Location = new System.Drawing.Point(177, 15);
+            this.BT_BCCN_Luu.Name = "BT_BCCN_Luu";
+            this.BT_BCCN_Luu.Size = new System.Drawing.Size(103, 23);
+            this.BT_BCCN_Luu.TabIndex = 3;
+            this.BT_BCCN_Luu.Text = "Lưu  báo cáo";
+            this.BT_BCCN_Luu.UseVisualStyleBackColor = true;
+            this.BT_BCCN_Luu.Click += new System.EventHandler(this.BT_BCCN_Luu_Click);
+            // 
+            // BT_BCCN_Lap
+            // 
+            this.BT_BCCN_Lap.Location = new System.Drawing.Point(55, 15);
+            this.BT_BCCN_Lap.Name = "BT_BCCN_Lap";
+            this.BT_BCCN_Lap.Size = new System.Drawing.Size(88, 23);
+            this.BT_BCCN_Lap.TabIndex = 2;
+            this.BT_BCCN_Lap.Text = "Lập báo cáo";
+            this.BT_BCCN_Lap.UseVisualStyleBackColor = true;
+            this.BT_BCCN_Lap.Click += new System.EventHandler(this.BT_BCCN_Lap_Click);
+            // 
             // TP_DSNhanVien
             // 
             this.TP_DSNhanVien.Controls.Add(this.DGV_DSNV);
@@ -4706,7 +4756,7 @@
             this.TP_DSNhanVien.Location = new System.Drawing.Point(4, 24);
             this.TP_DSNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSNhanVien.Name = "TP_DSNhanVien";
-            this.TP_DSNhanVien.Size = new System.Drawing.Size(878, 525);
+            this.TP_DSNhanVien.Size = new System.Drawing.Size(825, 524);
             this.TP_DSNhanVien.TabIndex = 13;
             this.TP_DSNhanVien.Text = "Nhân Viên";
             this.TP_DSNhanVien.UseVisualStyleBackColor = true;
@@ -4731,7 +4781,7 @@
             this.DGV_DSNV.ReadOnly = true;
             this.DGV_DSNV.RowTemplate.Height = 24;
             this.DGV_DSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSNV.Size = new System.Drawing.Size(878, 411);
+            this.DGV_DSNV.Size = new System.Drawing.Size(825, 410);
             this.DGV_DSNV.TabIndex = 2;
             // 
             // C_DSNV_MaNV
@@ -4775,12 +4825,12 @@
             this.toolStripButton7,
             this.toolStripButton8,
             this.toolStripSeparator17,
-            this.toolStripButton10});
+            this.TSB_NV_DongBo});
             this.toolStrip8.Location = new System.Drawing.Point(0, 58);
             this.toolStrip8.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip8.Name = "toolStrip8";
             this.toolStrip8.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip8.Size = new System.Drawing.Size(878, 30);
+            this.toolStrip8.Size = new System.Drawing.Size(825, 30);
             this.toolStrip8.TabIndex = 6;
             this.toolStrip8.Text = "toolStrip8";
             // 
@@ -4833,24 +4883,25 @@
             this.toolStripSeparator17.Name = "toolStripSeparator17";
             this.toolStripSeparator17.Size = new System.Drawing.Size(6, 30);
             // 
-            // toolStripButton10
+            // TSB_NV_DongBo
             // 
-            this.toolStripButton10.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Margin = new System.Windows.Forms.Padding(3);
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(77, 24);
-            this.toolStripButton10.Text = "Đồng bộ";
+            this.TSB_NV_DongBo.Image = global::BookstoreManager.Properties.Resources.synchronize_20px;
+            this.TSB_NV_DongBo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_NV_DongBo.Margin = new System.Windows.Forms.Padding(3);
+            this.TSB_NV_DongBo.Name = "TSB_NV_DongBo";
+            this.TSB_NV_DongBo.Size = new System.Drawing.Size(77, 24);
+            this.TSB_NV_DongBo.Text = "Đồng bộ";
+            this.TSB_NV_DongBo.Click += new System.EventHandler(this.TSB_NV_DongBo_Click);
             // 
             // panel80
             // 
             this.panel80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel80.Controls.Add(this.flowLayoutPanel4);
             this.panel80.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel80.Location = new System.Drawing.Point(0, 499);
+            this.panel80.Location = new System.Drawing.Point(0, 498);
             this.panel80.Margin = new System.Windows.Forms.Padding(2);
             this.panel80.Name = "panel80";
-            this.panel80.Size = new System.Drawing.Size(878, 26);
+            this.panel80.Size = new System.Drawing.Size(825, 26);
             this.panel80.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -4862,7 +4913,7 @@
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(878, 26);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(825, 26);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // label24
@@ -4896,14 +4947,14 @@
             this.panel81.Location = new System.Drawing.Point(0, 0);
             this.panel81.Margin = new System.Windows.Forms.Padding(2);
             this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(878, 58);
+            this.panel81.Size = new System.Drawing.Size(825, 58);
             this.panel81.TabIndex = 0;
             // 
             // panel82
             // 
             this.panel82.Controls.Add(this.BT_DSNV_ThemNV);
             this.panel82.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel82.Location = new System.Drawing.Point(746, 0);
+            this.panel82.Location = new System.Drawing.Point(693, 0);
             this.panel82.Margin = new System.Windows.Forms.Padding(2);
             this.panel82.Name = "panel82";
             this.panel82.Size = new System.Drawing.Size(132, 58);
@@ -4934,7 +4985,7 @@
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(878, 58);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(825, 58);
             this.flowLayoutPanel10.TabIndex = 3;
             // 
             // panel83
@@ -5117,48 +5168,6 @@
             this.label99.Size = new System.Drawing.Size(75, 24);
             this.label99.TabIndex = 1;
             this.label99.Text = "Ngày bán";
-            // 
-            // BT_BCT_Lap
-            // 
-            this.BT_BCT_Lap.Location = new System.Drawing.Point(53, 23);
-            this.BT_BCT_Lap.Name = "BT_BCT_Lap";
-            this.BT_BCT_Lap.Size = new System.Drawing.Size(88, 23);
-            this.BT_BCT_Lap.TabIndex = 0;
-            this.BT_BCT_Lap.Text = "Lập báo cáo";
-            this.BT_BCT_Lap.UseVisualStyleBackColor = true;
-            this.BT_BCT_Lap.Click += new System.EventHandler(this.BT_BCT_Lap_Click);
-            // 
-            // BT_BCT_Luu
-            // 
-            this.BT_BCT_Luu.Enabled = false;
-            this.BT_BCT_Luu.Location = new System.Drawing.Point(175, 23);
-            this.BT_BCT_Luu.Name = "BT_BCT_Luu";
-            this.BT_BCT_Luu.Size = new System.Drawing.Size(103, 23);
-            this.BT_BCT_Luu.TabIndex = 1;
-            this.BT_BCT_Luu.Text = "Lưu  báo cáo";
-            this.BT_BCT_Luu.UseVisualStyleBackColor = true;
-            this.BT_BCT_Luu.Click += new System.EventHandler(this.BT_BCT_Luu_Click);
-            // 
-            // BT_BCCN_Luu
-            // 
-            this.BT_BCCN_Luu.Enabled = false;
-            this.BT_BCCN_Luu.Location = new System.Drawing.Point(177, 15);
-            this.BT_BCCN_Luu.Name = "BT_BCCN_Luu";
-            this.BT_BCCN_Luu.Size = new System.Drawing.Size(103, 23);
-            this.BT_BCCN_Luu.TabIndex = 3;
-            this.BT_BCCN_Luu.Text = "Lưu  báo cáo";
-            this.BT_BCCN_Luu.UseVisualStyleBackColor = true;
-            this.BT_BCCN_Luu.Click += new System.EventHandler(this.BT_BCCN_Luu_Click);
-            // 
-            // BT_BCCN_Lap
-            // 
-            this.BT_BCCN_Lap.Location = new System.Drawing.Point(55, 15);
-            this.BT_BCCN_Lap.Name = "BT_BCCN_Lap";
-            this.BT_BCCN_Lap.Size = new System.Drawing.Size(88, 23);
-            this.BT_BCCN_Lap.TabIndex = 2;
-            this.BT_BCCN_Lap.Text = "Lập báo cáo";
-            this.BT_BCCN_Lap.UseVisualStyleBackColor = true;
-            this.BT_BCCN_Lap.Click += new System.EventHandler(this.BT_BCCN_Lap_Click);
             // 
             // MainForm
             // 
@@ -5667,13 +5676,13 @@
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Them;
         private System.Windows.Forms.ToolStripButton TSB_DSPN_Chitiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton24;
+        private System.Windows.Forms.ToolStripButton TSB_DSPN_DongBo;
         private System.Windows.Forms.ToolStrip toolStrip5;
         private System.Windows.Forms.ToolStripButton TSB_PhieuNS_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton TSB_PhieuNS_XoaMuc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-        private System.Windows.Forms.ToolStripButton toolStripButton30;
+        private System.Windows.Forms.ToolStripButton TSB_PhieuNS_DongBo;
         private System.Windows.Forms.ToolStrip toolStrip6;
         private System.Windows.Forms.ToolStripButton TSB_KH_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
@@ -5682,7 +5691,7 @@
         private System.Windows.Forms.ToolStripButton TSB_KH_ChinhSua;
         private System.Windows.Forms.ToolStripButton TSB_KH_ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripButton toolStripButton36;
+        private System.Windows.Forms.ToolStripButton TSB_KH_DongBo;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton TSB_PT_ChonTatCa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
@@ -5691,7 +5700,7 @@
         private System.Windows.Forms.ToolStripButton TSB_DSPT_ChinhSua;
         private System.Windows.Forms.ToolStripButton TSB_DSPT__ChiTiet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
-        private System.Windows.Forms.ToolStripButton toolStripButton42;
+        private System.Windows.Forms.ToolStripButton TSB_DSPT_DongBo;
         private System.Windows.Forms.ToolStripButton TSB_DSHD_XoaBoLoc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ComboBox CBB_HoaDon_MaSachTenSach;
@@ -5773,7 +5782,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripButton TSB_NV_DongBo;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label LB_DSNV_SoNhanVien;
