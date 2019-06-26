@@ -249,7 +249,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TB_PNS_TongTien = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.GB_PNS_Thongtin = new System.Windows.Forms.GroupBox();
             this.CBB_PNS_NhanVien = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.DTP_PNS_NgayNhap = new System.Windows.Forms.DateTimePicker();
@@ -266,7 +266,7 @@
             this.panel44 = new System.Windows.Forms.Panel();
             this.BT_PNS_Huy = new System.Windows.Forms.Button();
             this.BT_PNS_Luu = new System.Windows.Forms.Button();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.FL_PNS = new System.Windows.Forms.FlowLayoutPanel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.CBB_PNS_TenSach = new System.Windows.Forms.ComboBox();
             this.label53 = new System.Windows.Forms.Label();
@@ -521,11 +521,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_PNS)).BeginInit();
             this.panel25.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.GB_PNS_Thongtin.SuspendLayout();
             this.toolStrip5.SuspendLayout();
             this.panel43.SuspendLayout();
             this.panel44.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
+            this.FL_PNS.SuspendLayout();
             this.panel45.SuspendLayout();
             this.panel47.SuspendLayout();
             this.panel46.SuspendLayout();
@@ -1237,12 +1237,14 @@
             // 
             // TSB_DSHD_Xoa
             // 
+            this.TSB_DSHD_Xoa.Enabled = false;
             this.TSB_DSHD_Xoa.Image = global::BookstoreManager.Properties.Resources.delete_property_20px;
             this.TSB_DSHD_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_DSHD_Xoa.Margin = new System.Windows.Forms.Padding(3);
             this.TSB_DSHD_Xoa.Name = "TSB_DSHD_Xoa";
             this.TSB_DSHD_Xoa.Size = new System.Drawing.Size(77, 24);
             this.TSB_DSHD_Xoa.Text = "Hủy đơn";
+            this.TSB_DSHD_Xoa.Visible = false;
             this.TSB_DSHD_Xoa.Click += new System.EventHandler(this.TSB_DSHD_Xoa_Click);
             // 
             // TSB_DSHD_ChinhSua
@@ -2729,6 +2731,7 @@
             this.TSB_DSPN_Chitiet.Name = "TSB_DSPN_Chitiet";
             this.TSB_DSPN_Chitiet.Size = new System.Drawing.Size(69, 24);
             this.TSB_DSPN_Chitiet.Text = "Chi tiết";
+            this.TSB_DSPN_Chitiet.Click += new System.EventHandler(this.TSB_DSPN_Chitiet_Click);
             // 
             // toolStripSeparator8
             // 
@@ -3066,7 +3069,7 @@
             this.panel25.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel25.Controls.Add(this.groupBox3);
-            this.panel25.Controls.Add(this.groupBox4);
+            this.panel25.Controls.Add(this.GB_PNS_Thongtin);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Margin = new System.Windows.Forms.Padding(2);
@@ -3118,24 +3121,24 @@
             this.label18.TabIndex = 7;
             this.label18.Text = "Tổng tiền";
             // 
-            // groupBox4
+            // GB_PNS_Thongtin
             // 
-            this.groupBox4.Controls.Add(this.CBB_PNS_NhanVien);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Controls.Add(this.DTP_PNS_NgayNhap);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.TB_PNS_MaPhieu);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(2, 2);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox4.Size = new System.Drawing.Size(194, 200);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông tin phiếu nhập";
+            this.GB_PNS_Thongtin.Controls.Add(this.CBB_PNS_NhanVien);
+            this.GB_PNS_Thongtin.Controls.Add(this.label26);
+            this.GB_PNS_Thongtin.Controls.Add(this.DTP_PNS_NgayNhap);
+            this.GB_PNS_Thongtin.Controls.Add(this.label31);
+            this.GB_PNS_Thongtin.Controls.Add(this.TB_PNS_MaPhieu);
+            this.GB_PNS_Thongtin.Controls.Add(this.label19);
+            this.GB_PNS_Thongtin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GB_PNS_Thongtin.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_PNS_Thongtin.Location = new System.Drawing.Point(2, 2);
+            this.GB_PNS_Thongtin.Margin = new System.Windows.Forms.Padding(0);
+            this.GB_PNS_Thongtin.Name = "GB_PNS_Thongtin";
+            this.GB_PNS_Thongtin.Padding = new System.Windows.Forms.Padding(5);
+            this.GB_PNS_Thongtin.Size = new System.Drawing.Size(194, 200);
+            this.GB_PNS_Thongtin.TabIndex = 0;
+            this.GB_PNS_Thongtin.TabStop = false;
+            this.GB_PNS_Thongtin.Text = "Thông tin phiếu nhập";
             // 
             // CBB_PNS_NhanVien
             // 
@@ -3272,7 +3275,7 @@
             // 
             this.panel43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel43.Controls.Add(this.panel44);
-            this.panel43.Controls.Add(this.flowLayoutPanel11);
+            this.panel43.Controls.Add(this.FL_PNS);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel43.Location = new System.Drawing.Point(0, 0);
             this.panel43.Margin = new System.Windows.Forms.Padding(2);
@@ -3323,18 +3326,18 @@
             this.BT_PNS_Luu.UseVisualStyleBackColor = false;
             this.BT_PNS_Luu.Click += new System.EventHandler(this.BT_PNS_Luu_Click);
             // 
-            // flowLayoutPanel11
+            // FL_PNS
             // 
-            this.flowLayoutPanel11.Controls.Add(this.panel45);
-            this.flowLayoutPanel11.Controls.Add(this.panel47);
-            this.flowLayoutPanel11.Controls.Add(this.panel46);
-            this.flowLayoutPanel11.Controls.Add(this.panel42);
-            this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(825, 62);
-            this.flowLayoutPanel11.TabIndex = 3;
+            this.FL_PNS.Controls.Add(this.panel45);
+            this.FL_PNS.Controls.Add(this.panel47);
+            this.FL_PNS.Controls.Add(this.panel46);
+            this.FL_PNS.Controls.Add(this.panel42);
+            this.FL_PNS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FL_PNS.Location = new System.Drawing.Point(0, 0);
+            this.FL_PNS.Margin = new System.Windows.Forms.Padding(2);
+            this.FL_PNS.Name = "FL_PNS";
+            this.FL_PNS.Size = new System.Drawing.Size(825, 62);
+            this.FL_PNS.TabIndex = 3;
             // 
             // panel45
             // 
@@ -5301,13 +5304,13 @@
             this.panel25.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.GB_PNS_Thongtin.ResumeLayout(false);
+            this.GB_PNS_Thongtin.PerformLayout();
             this.toolStrip5.ResumeLayout(false);
             this.toolStrip5.PerformLayout();
             this.panel43.ResumeLayout(false);
             this.panel44.ResumeLayout(false);
-            this.flowLayoutPanel11.ResumeLayout(false);
+            this.FL_PNS.ResumeLayout(false);
             this.panel45.ResumeLayout(false);
             this.panel45.PerformLayout();
             this.panel47.ResumeLayout(false);
@@ -5525,7 +5528,7 @@
         private System.Windows.Forms.Panel panel44;
         private System.Windows.Forms.Button BT_PNS_Huy;
         private System.Windows.Forms.Button BT_PNS_Luu;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
+        private System.Windows.Forms.FlowLayoutPanel FL_PNS;
         private System.Windows.Forms.Panel panel45;
         private System.Windows.Forms.ComboBox CBB_PNS_TenSach;
         private System.Windows.Forms.Label label53;
@@ -5734,7 +5737,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TB_PNS_TongTien;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox GB_PNS_Thongtin;
         private System.Windows.Forms.ComboBox CBB_PNS_NhanVien;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.DateTimePicker DTP_PNS_NgayNhap;

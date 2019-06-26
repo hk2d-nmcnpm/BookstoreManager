@@ -716,7 +716,7 @@ namespace BookstoreManager
                      && ((DateTime)record["NgayNhap"]).Date >= DTP_DSPN_TuNgay.Value.Date
                      && ((DateTime)record["NgayNhap"]).Date <= DTP_DSPN_DenNgay.Value.Date
                      select record;
-            LB_DSPN_SoPhieu.Text = dsHoaDon.Rows.Count.ToString();
+            LB_DSPN_SoPhieu.Text = dsPhieuNhap.Rows.Count.ToString();
             LB_DSPN_TongTien.Text = (from x in dsPhieuNhap.AsEnumerable() select (decimal)x["TongTien"]).Sum() + " VND";
             if (tb.Count() != 0)
                 foreach (DataRow row in tb.CopyToDataTable().Rows)
@@ -784,7 +784,7 @@ namespace BookstoreManager
                          select record;
                     break;
             }
-            LB_DSKH_TongSoKH.Text = dsHoaDon.Rows.Count.ToString();
+            LB_DSKH_TongSoKH.Text = dsKhachHang.Rows.Count.ToString();
             LB_DSKH_SoKHNo.Text = (from x in tb where (decimal)x["SoTienNo"] > 0 select (decimal)x["TongTien"]).Count().ToString();
             if (tb.Count() != 0)
                 foreach (DataRow row in tb.CopyToDataTable().Rows)
@@ -1825,6 +1825,47 @@ namespace BookstoreManager
         private void TSB_NV_DongBo_Click(object sender, EventArgs e)
         {
             DongBo(sender, new EventArgs());
+        }
+
+        private void TSB_DSPN_Chitiet_Click(object sender, EventArgs e)
+        {
+            GB_PNS_Thongtin.Enabled = false;
+            BT_PNS_Luu.Visible = false;
+            try
+            {
+                DGV_PNS.Rows.Clear();
+                PhieuNhapSach pns = pnBus.GetPhieuNhapByMa(DGV_DSPN.SelectedRows[0].Cells[0].Value.ToString());
+                DTP_PNS_NgayNhap.Value = pns.NgayNhap;
+                TB_PNS_MaPhieu.Text = pns.MaPhieuNhapSach;
+                CBB_PNS_NhanVien.SelectedValue = pns.MaNhanVien;
+
+                DataTable ctpns = ctpnBus.GetChiTietPN();
+                var xxx = from x in ctpns.AsEnumerable()
+                          where x["MaPhieuNhapSach"].ToString()== pns.MaPhieuNhapSach
+                          select x;
+                ctpns = xxx.CopyToDataTable();
+                decimal tongtien = decimal.Zero;
+                foreach (DataRow dr in ctpns.Rows)
+                {
+                    Sach sach = sachBus.GetSachByMaSach(dr["MaSach"].ToString());
+                    var thanhTien = decimal.Parse(dr["DonGiaNhap"].ToString()) * int.Parse(dr["SoLuongNhap"].ToString());
+                    tongtien += thanhTien;
+                    DGV_PNS.Rows.Add(
+                        sach.MaSach,
+                        sach.TenSach,
+                        new TheLoaiSachBus().GetByMaTheLoai(sach.MaTheLoai).TenTheLoai,
+                        sach.TacGia,
+                        dr["SoLuongNhap"].ToString(),
+                        dr["DonGiaNhap"].ToString(),
+                        thanhTien.ToString()
+                        );
+                }
+                TSB_PhieuNS_XoaMuc.Enabled = false;
+                FL_PNS.Enabled = false;
+                TB_PNS_TongTien.Text = tongtien.ToString();
+                MainTab.SelectedIndex = 4;
+            }
+            catch { }
         }
     }
 }
