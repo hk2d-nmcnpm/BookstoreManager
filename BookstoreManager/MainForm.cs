@@ -371,6 +371,8 @@ namespace BookstoreManager
                         row.Cells[5].Value = sach.DonGia * (int)row.Cells[3].Value;//cap nhat thanh tien
                         if ((sach.SoLuongTon - (int)row.Cells[3].Value) < tonminsaukhiban)
                             row.DefaultCellStyle.BackColor = Color.Red;
+                        else
+                            row.DefaultCellStyle.BackColor = Color.White;
                         HoaDon_TinhTien();
                         return;
                     }
@@ -597,6 +599,8 @@ namespace BookstoreManager
                         row.Cells[6].Value = decimal.Parse(TB_PNS_DonGia.Text) * (int)row.Cells[4].Value;//cap nhat thanh tien
                         if ((int)row.Cells[4].Value < soluongnhaptoithieu || sach.SoLuongTon >= soluongtonmaxchophepnhap)
                             row.DefaultCellStyle.BackColor = Color.Red;
+                        else
+                            row.DefaultCellStyle.BackColor = Color.White;
                         PhieuNhapSach_TinhTien();
                         return;
                     }
