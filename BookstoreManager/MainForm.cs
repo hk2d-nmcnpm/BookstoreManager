@@ -68,7 +68,7 @@ namespace BookstoreManager
             _distance2 = panel1.Size.Width;
             _anThanhMenu = false;
             BT_AnHienMenu_Click(new object(), new EventArgs());
-            BT_AnHienMenu_Click(new object(), new EventArgs());
+            //BT_AnHienMenu_Click(new object(), new EventArgs());
 
         }
         private void BT_KhoSach_ThemSach_Click(object sender, EventArgs e)
@@ -78,7 +78,9 @@ namespace BookstoreManager
             if(dsSach.Rows.Count > 0)
                 last_book_id = int.Parse(dsSach.AsEnumerable().Last()["MaSach"].ToString());
             form.TB_MaSoSach.Text = (last_book_id+1).ToString("000000");
-            form.CBB_TheLoai.DataSource = dsTheLoaiSach;
+            var dstl = dsTheLoaiSach.Copy();
+            dstl.Rows.RemoveAt(0);
+            form.CBB_TheLoai.DataSource = dstl;
             form.CBB_TheLoai.DisplayMember = "TenTheLoai";
             form.CBB_TheLoai.ValueMember = "MaTheLoai";
             if(form.ShowDialog() == DialogResult.OK)
@@ -229,6 +231,7 @@ namespace BookstoreManager
             DGV_HoaDon.Rows.Clear();
             CBB_HoaDon_KhachHang.SelectedIndex = 0;
             CBB_HoaDon_NVBan.SelectedValue = loginnv.MaNhanVien;
+            TB_HoaDon_SoLuong.Text = "0";
             TB_HoaDon_GiamGia.Text = decimal.Zero.ToString();
             TB_HoaDon_KhachDua.Text = decimal.Zero.ToString();
             HoaDon_TinhTien();
@@ -243,7 +246,7 @@ namespace BookstoreManager
             MainTab.SelectedTab = TP_TaoPhieuNhapSach;
             LB_TieuDe.Text = "Tạo phiếu nhập sách";
 
-            dsPhieuNhap = new PhieuNhapSachBus().GetDisplayTable();
+            dsPhieuNhap = pnBus.GetDisplayTable();
 
             int last = 0;
             if (dsPhieuNhap.Rows.Count > 0)
@@ -251,6 +254,14 @@ namespace BookstoreManager
             else last = 0;
             Console.WriteLine("last hoa don 1 day {0}", last);
             TB_PNS_MaPhieu.Text = (last + 1).ToString("000000");
+            TB_PNS_SoLuong.Text = "0";
+            TB_PNS_DonGia.Text = "0";
+            CBB_PNS_NhanVien.SelectedValue = loginnv.MaNhanVien;
+            PhieuNhapSach_TinhTien();
+            GB_PNS_Thongtin.Enabled = true;
+            BT_PNS_Luu.Visible = true;
+            TSB_PhieuNS_XoaMuc.Enabled = true;
+            FL_PNS.Enabled = true;
 
         }
         private void BT_PhieuNhapSach_HuyPhieu_Click(object sender, EventArgs e)
@@ -376,6 +387,8 @@ namespace BookstoreManager
                 if((sach.SoLuongTon - (int)DGV_HoaDon.Rows[lastRow].Cells[3].Value) < tonminsaukhiban)
                     DGV_HoaDon.Rows[lastRow].DefaultCellStyle.BackColor = Color.Red;
                 HoaDon_TinhTien();
+                TB_HoaDon_SoLuong.Text = "0";
+                CBB_HoaDon_MaSachTenSach.SelectedIndex = 0;
             }
             catch { }
         }
@@ -485,7 +498,22 @@ namespace BookstoreManager
                     sachBus.UpdateSach(sach);
 
                 }
+                MessageBox.Show(
+                    "Đã lưu hóa đơn vào cơ sở dữ liệu.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show(
+                    "Lỗi khi lưu thông tin vào cơ sở dữ liệu. Vui lòng kiểm tra lại",
+                    "Không thực hiện được",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
             //Cap nhat du lieu
             DongBo(sender, e);
             BT_DSHoaDon_TaoHoaDon_Click(sender, new EventArgs());
@@ -508,7 +536,7 @@ namespace BookstoreManager
         }
         private void DongBo(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.WaitCursor;
             //Get_DSTenTheLoai();
             dsHoaDon = hdBus.GetResultTable();
             dsSach = sachBus.GetSach();
@@ -518,19 +546,14 @@ namespace BookstoreManager
             dsPhieuNhap = pnBus.GetDisplayTable();
             dsNhanVien = nvBus.GetNhanVien();
             AssignComboBoxValue();
+            Load_DSQuyDinh();
             Load_DSHoaDon();
             Load_DSKhachHang();
             Load_DSPhieuThu();
             Load_DSPhieuNhap();
-            //baoCaoTon = new BaoCaoTonBus().GetBCTon();
-            //Load_BaoCaoTon();
             Load_DSSach();
             Load_DSNhanVien();
-            Load_DSQuyDinh();
-
-            
-
-            this.Cursor = Cursors.Arrow;
+            Cursor = Cursors.Arrow;
         }
 
         private void Load_DSQuyDinh()
@@ -561,22 +584,39 @@ namespace BookstoreManager
         {
             try
             {
+
                 Console.WriteLine(CBB_PNS_TenSach.SelectedValue.ToString());
-                var result = new SachBus().GetSachByMaSach(CBB_PNS_TenSach.SelectedValue.ToString().Trim());
+                var sach = new SachBus().GetSachByMaSach(CBB_PNS_TenSach.SelectedValue.ToString().Trim());
+                //Kiem tra trung lap
+                foreach (DataGridViewRow row in DGV_PNS.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Trim() == sach.MaSach.Trim())
+                    {
+                        row.Cells[4].Value = int.Parse(TB_PNS_SoLuong.Text) + (int)row.Cells[4].Value;//cap nhat so luong
+                        row.Cells[5].Value = decimal.Parse(TB_PNS_DonGia.Text);
+                        row.Cells[6].Value = decimal.Parse(TB_PNS_DonGia.Text) * (int)row.Cells[4].Value;//cap nhat thanh tien
+                        if ((int)row.Cells[4].Value < soluongnhaptoithieu || sach.SoLuongTon >= soluongtonmaxchophepnhap)
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        PhieuNhapSach_TinhTien();
+                        return;
+                    }
+                }
                 var thanhTien = decimal.Parse(TB_PNS_DonGia.Text) * int.Parse(TB_PNS_SoLuong.Text);
                 DGV_PNS.Rows.Add(
-                    result.MaSach,
-                    result.TenSach,
-                    new TheLoaiSachBus().GetByMaTheLoai(result.MaTheLoai).TenTheLoai,
-                    result.TacGia,
-                    TB_PNS_SoLuong.Text,
-                    TB_PNS_DonGia.Text,
+                    sach.MaSach,
+                    sach.TenSach,
+                    new TheLoaiSachBus().GetByMaTheLoai(sach.MaTheLoai).TenTheLoai,
+                    sach.TacGia,
+                    int.Parse(TB_PNS_SoLuong.Text),
+                    decimal.Parse(TB_PNS_DonGia.Text),
                     thanhTien
                     );
                 //MessageBox.Show("slton: " + result.SoLuongTon);
-                if (int.Parse(TB_PNS_SoLuong.Text) < soluongnhaptoithieu || result.SoLuongTon >= soluongtonmaxchophepnhap)
+                if (int.Parse(TB_PNS_SoLuong.Text) < soluongnhaptoithieu || sach.SoLuongTon >= soluongtonmaxchophepnhap)
                     DGV_PNS.Rows[DGV_PNS.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Red;
                 PhieuNhapSach_TinhTien();
+                TB_PNS_SoLuong.Text = "0";
+                TB_PNS_DonGia.Text = "0";
             }
             catch { }
         }
@@ -598,11 +638,11 @@ namespace BookstoreManager
                 foreach (DataGridViewRow row in DGV_PNS.Rows)
                     if(row.DefaultCellStyle.BackColor==Color.Red)
                     {
-                        MessageBox.Show("Vui lòng kiểm tra lại số lượng sách tối đa, tối thiểu nhập!");
+                        MessageBox.Show("Vui lòng kiểm tra lại số lượng sách tối đa, tối thiểu nhập!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    if (pnBus.AddPhieuNhap(pn))
+                if (pnBus.AddPhieuNhap(pn))
                 {
                     ChiTietPhieuNhapSach ct;
                     foreach (DataGridViewRow row in DGV_PNS.Rows)
@@ -625,6 +665,15 @@ namespace BookstoreManager
                             Console.WriteLine("Error");                        
                     }
                 }
+                else
+                {
+                    MessageBox.Show(
+                        "Lỗi khi lưu thông tin vào cơ sở dữ liệu. Vui lòng kiểm tra lại",
+                        "Không thực hiện được",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
 
                 //tạo mã phiếu nhập mới khi đã nhập xong
                 dsPhieuNhap = pnBus.GetDisplayTable();
@@ -634,14 +683,13 @@ namespace BookstoreManager
                 TB_PNS_MaPhieu.Text = (last + 1).ToString("000000");
             }
             else
-                MessageBox.Show("Không được để trống, vui lòng kiểm tra lại!");
+                MessageBox.Show("Không được để trống, vui lòng kiểm tra lại!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             //nhập xong thì clear màn hình
             DGV_PNS.Rows.Clear();
             //Load_DSPhieuNhap();
             DongBo(sender, new EventArgs());
-            TB_PNS_SoLuong.Text = null;
-            TB_PNS_DonGia.Text = null;
+            BT_DSPhieuNhap_TaoPhieuNhap_Click(sender, new EventArgs());
 
         }
         private void DTP_DSPN_DenNgay_ValueChanged(object sender, EventArgs e)
@@ -844,52 +892,54 @@ namespace BookstoreManager
             CBB_DSSach_TheLoai.DataSource = dsTheLoaiSach;
             CBB_DSSach_TheLoai.DisplayMember = "TenTheLoai";
             CBB_DSSach_TheLoai.ValueMember = "MaTheLoai";
-            if(CBB_DSSach_TheLoai.SelectedValue.ToString().Trim()!="00000")
+            EnumerableRowCollection<DataRow> tb;
+            if (CBB_DSSach_TheLoai.SelectedValue.ToString().Trim() != "00000")
             {
                 DGV_DSSach.Rows.Clear();
-                var tb = from record in dsSach.AsEnumerable()
-                         where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
-                         && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
-                         && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
-                         && record["MaTheLoai"].ToString() == CBB_DSSach_TheLoai.SelectedValue.ToString()
-                         select record;
-                LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
-                LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
-                if (tb.Count() != 0)
-                    foreach (DataRow row in tb.CopyToDataTable().Rows)
-                    {
-                        var maSach = row["MaSach"].ToString();
-                        var tenSach = row["TenSach"].ToString();
-                        var tacGia = row["TacGia"].ToString();
-                        var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
-                        var soLuong = (int)row["SoLuongTon"];
-                        var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
-                        DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
-                    }
+                tb = from record in dsSach.AsEnumerable()
+                     where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
+                     && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
+                     && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
+                     && record["MaTheLoai"].ToString() == CBB_DSSach_TheLoai.SelectedValue.ToString()
+                     select record;
             }
             else
             {
                 DGV_DSSach.Rows.Clear();
-                var tb = from record in dsSach.AsEnumerable()
-                         where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
-                         && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
-                         && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
-                         select record;
-                LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
-                LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
-                if (tb.Count() != 0)
-                    foreach (DataRow row in tb.CopyToDataTable().Rows)
-                    {
-                        var maSach = row["MaSach"].ToString();
-                        var tenSach = row["TenSach"].ToString();
-                        var tacGia = row["TacGia"].ToString();
-                        var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
-                        var soLuong = (int)row["SoLuongTon"];
-                        var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
-                        DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
-                    }
+                tb = from record in dsSach.AsEnumerable()
+                     where record["MaSach"].ToString().ToUpper().Contains(TB_DSSach_MaSach.Text.ToUpper())
+                     && record["TenSach"].ToString().ToUpper().Contains(TB_DSSach_TenSach.Text.ToUpper())
+                     && record["TacGia"].ToString().ToUpper().Contains(TB_DSSach_TacGia.Text.ToUpper())
+                     select record;
             }
-            
+            LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
+            LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
+            if (tb.Count() != 0)
+                foreach (DataRow row in tb.CopyToDataTable().Rows)
+                {
+                    var maSach = row["MaSach"].ToString();
+                    var tenSach = row["TenSach"].ToString();
+                    var tacGia = row["TacGia"].ToString();
+                    var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
+                    var soLuong = (int)row["SoLuongTon"];
+                    var tinhTrang = soLuong >= tonminsaukhiban ? "Được phép bán" : "Không được bán";
+                    DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
+                }
+
+            //LB_DSSach_TongSoDauSach.Text = dsSach.Rows.Count.ToString();
+            //LB_DSSach_TongSoSach.Text = (from x in dsSach.AsEnumerable() select (int)x["SoLuongTon"]).Sum().ToString();
+            //if (tb.Count() != 0)
+            //    foreach (DataRow row in tb.CopyToDataTable().Rows)
+            //    {
+            //        var maSach = row["MaSach"].ToString();
+            //        var tenSach = row["TenSach"].ToString();
+            //        var tacGia = row["TacGia"].ToString();
+            //        var theLoai = new TheLoaiSachBus().GetByMaTheLoai(row["MaTheLoai"].ToString()).TenTheLoai;
+            //        var soLuong = (int)row["SoLuongTon"];
+            //        var tinhTrang = soLuong > 0 ? "Được phép bán" : "Không được bán";
+            //        DGV_DSSach.Rows.Add(maSach, tenSach, tacGia, theLoai, soLuong, tinhTrang);
+            //    }
+
         }
         private void Load_DSNhanVien()
         {
@@ -1953,6 +2003,22 @@ namespace BookstoreManager
         private void MainSplitContainer_Panel1_MouseLeave(object sender, EventArgs e)
         {
             BT_AnHienMenu_Click(sender, e);
+        }
+
+        private void TSB_DSSach_ChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in DGV_DSSach.Rows)
+            {
+                row.Selected = true;
+            }
+        }
+
+        private void TSB_DSNV_ChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in DGV_DSNV.Rows)
+            {
+                row.Selected = true;
+            }
         }
     }
 }
