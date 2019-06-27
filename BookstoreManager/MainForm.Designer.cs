@@ -666,6 +666,8 @@
             this.panel5.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel5, "Hóa đơn");
             this.panel5.Click += new System.EventHandler(this.MN_HoaDon_Click);
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel6
             // 
@@ -706,6 +708,8 @@
             this.panel7.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel7, "Tra cứu sách");
             this.panel7.Click += new System.EventHandler(this.MN_TraCuu_Click);
+            this.panel7.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel8
             // 
@@ -746,6 +750,8 @@
             this.panel9.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel9, "Nhập sách");
             this.panel9.Click += new System.EventHandler(this.MN_NhapSach_Click);
+            this.panel9.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel9.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel73
             // 
@@ -786,6 +792,8 @@
             this.panel74.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel74, "Thu tiền");
             this.panel74.Click += new System.EventHandler(this.MN_PhieuThu_Click);
+            this.panel74.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel74.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel10
             // 
@@ -826,6 +834,8 @@
             this.panel11.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel11, "Danh sách khách hàng");
             this.panel11.Click += new System.EventHandler(this.MN_KhachHang_Click);
+            this.panel11.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel11.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel12
             // 
@@ -866,6 +876,8 @@
             this.panel13.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel13, "Báo cáo tồn");
             this.panel13.Click += new System.EventHandler(this.MN_BaoCaoTon_Click);
+            this.panel13.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel13.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel14
             // 
@@ -907,6 +919,8 @@
             this.panel15.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel15, "Báo cáo nợ");
             this.panel15.Click += new System.EventHandler(this.MN_BaoCaoNo_Click);
+            this.panel15.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel15.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel69
             // 
@@ -948,6 +962,8 @@
             this.panel70.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel70, "Thiết lập quy định");
             this.panel70.Click += new System.EventHandler(this.MN_QuyDinh_Click);
+            this.panel70.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel70.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // panel86
             // 
@@ -989,6 +1005,8 @@
             this.panel87.TabIndex = 0;
             this.TT_Hint.SetToolTip(this.panel87, "Danh sách nhân viên");
             this.panel87.Click += new System.EventHandler(this.MN_NhanVien_Click);
+            this.panel87.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel87.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // PN_BanQuyen
             // 

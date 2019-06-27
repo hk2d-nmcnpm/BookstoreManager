@@ -2024,5 +2024,15 @@ namespace BookstoreManager
                 row.Selected = true;
             }
         }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            ((Panel)sender).BackColor = Color.FromArgb(1, 202, 254);
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            ((Panel)sender).BackColor = Color.FromArgb(2, 171, 210);
+        }
     }
 }
