@@ -459,7 +459,7 @@ namespace BookstoreManager
             decimal tienGiamGia = decimal.Parse(TB_HoaDon_GiamGia.Text);
             decimal tongTien = HoaDon_TinhTien();
             decimal tienPhaiTra = tongTien - tienGiamGia;
-            decimal tienConLai = tienKhachDua - tongTien;
+            decimal tienConLai = tienKhachDua - tienPhaiTra;
             //Tao hoa don
             HoaDon hd = new HoaDon()
             {
