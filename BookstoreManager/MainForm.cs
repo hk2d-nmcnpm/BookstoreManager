@@ -133,6 +133,13 @@ namespace BookstoreManager
                     LyDoThu = form.TB_LyDoThu.Text,
                 };
 
+                if (pt.SoTienThu <= 0)
+                {
+                    MessageBox.Show("Không thu giá trị tiền nhỏ hơn 0 VND");
+                    return;
+                }
+                    
+
                 KhachHang kh = new KhachHang();
                 kh = khBus.GetKhachHangByMaKH(form.CBB_KhachHang.SelectedValue.ToString());
 
@@ -470,6 +477,7 @@ namespace BookstoreManager
                 TienKhachDaTra = (tienConLai < 0) ? tienKhachDua : tienPhaiTra,
                 TienKhachDua = decimal.Parse(TB_HoaDon_KhachDua.Text)
             };
+            kh.NgayMuaCuoi = hd.NgayHoaDon;
             kh.TongTien += hd.TienKhachDaTra;
             //Tinh tien no
             if (tienConLai < 0)
