@@ -1682,7 +1682,7 @@
             this.groupBox2.Location = new System.Drawing.Point(2, 263);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox2.Size = new System.Drawing.Size(315, 173);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -1790,7 +1790,7 @@
             this.GB_HoaDon_ChiTiet.Location = new System.Drawing.Point(2, 2);
             this.GB_HoaDon_ChiTiet.Margin = new System.Windows.Forms.Padding(0);
             this.GB_HoaDon_ChiTiet.Name = "GB_HoaDon_ChiTiet";
-            this.GB_HoaDon_ChiTiet.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GB_HoaDon_ChiTiet.Padding = new System.Windows.Forms.Padding(5);
             this.GB_HoaDon_ChiTiet.Size = new System.Drawing.Size(315, 311);
             this.GB_HoaDon_ChiTiet.TabIndex = 0;
             this.GB_HoaDon_ChiTiet.TabStop = false;
@@ -3122,7 +3122,7 @@
             this.groupBox3.Location = new System.Drawing.Point(2, 353);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox3.Size = new System.Drawing.Size(283, 79);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -3169,7 +3169,7 @@
             this.GB_PNS_Thongtin.Location = new System.Drawing.Point(2, 2);
             this.GB_PNS_Thongtin.Margin = new System.Windows.Forms.Padding(0);
             this.GB_PNS_Thongtin.Name = "GB_PNS_Thongtin";
-            this.GB_PNS_Thongtin.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GB_PNS_Thongtin.Padding = new System.Windows.Forms.Padding(5);
             this.GB_PNS_Thongtin.Size = new System.Drawing.Size(283, 200);
             this.GB_PNS_Thongtin.TabIndex = 0;
             this.GB_PNS_Thongtin.TabStop = false;
@@ -3508,7 +3508,7 @@
             this.TP_DSKhachHang.Location = new System.Drawing.Point(4, 24);
             this.TP_DSKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSKhachHang.Name = "TP_DSKhachHang";
-            this.TP_DSKhachHang.Size = new System.Drawing.Size(1186, 525);
+            this.TP_DSKhachHang.Size = new System.Drawing.Size(1015, 524);
             this.TP_DSKhachHang.TabIndex = 8;
             this.TP_DSKhachHang.Text = "Khách Hàng";
             this.TP_DSKhachHang.UseVisualStyleBackColor = true;
@@ -3536,7 +3536,7 @@
             this.DGV_DSKH.ReadOnly = true;
             this.DGV_DSKH.RowTemplate.Height = 24;
             this.DGV_DSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSKH.Size = new System.Drawing.Size(1186, 411);
+            this.DGV_DSKH.Size = new System.Drawing.Size(1015, 410);
             this.DGV_DSKH.TabIndex = 2;
             // 
             // C_DSKhachHang_MaKhachHang
@@ -3604,7 +3604,7 @@
             this.toolStrip6.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip6.Name = "toolStrip6";
             this.toolStrip6.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip6.Size = new System.Drawing.Size(1186, 30);
+            this.toolStrip6.Size = new System.Drawing.Size(1015, 30);
             this.toolStrip6.TabIndex = 6;
             this.toolStrip6.Text = "toolStrip6";
             // 
@@ -3683,10 +3683,10 @@
             this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel48.Controls.Add(this.flowLayoutPanel12);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel48.Location = new System.Drawing.Point(0, 499);
+            this.panel48.Location = new System.Drawing.Point(0, 498);
             this.panel48.Margin = new System.Windows.Forms.Padding(2);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(1186, 26);
+            this.panel48.Size = new System.Drawing.Size(1015, 26);
             this.panel48.TabIndex = 1;
             // 
             // flowLayoutPanel12
@@ -3700,7 +3700,7 @@
             this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(1186, 26);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(1015, 26);
             this.flowLayoutPanel12.TabIndex = 0;
             // 
             // label47
@@ -3756,14 +3756,14 @@
             this.panel49.Location = new System.Drawing.Point(0, 0);
             this.panel49.Margin = new System.Windows.Forms.Padding(2);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(1186, 58);
+            this.panel49.Size = new System.Drawing.Size(1015, 58);
             this.panel49.TabIndex = 0;
             // 
             // panel50
             // 
             this.panel50.Controls.Add(this.BT_DSKH_Them);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel50.Location = new System.Drawing.Point(1046, 0);
+            this.panel50.Location = new System.Drawing.Point(875, 0);
             this.panel50.Margin = new System.Windows.Forms.Padding(2);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(140, 58);
@@ -3794,7 +3794,7 @@
             this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(1186, 58);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(1015, 58);
             this.flowLayoutPanel13.TabIndex = 3;
             // 
             // panel51
@@ -3906,7 +3906,7 @@
             this.TP_DSPhieuThu.Location = new System.Drawing.Point(4, 24);
             this.TP_DSPhieuThu.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSPhieuThu.Name = "TP_DSPhieuThu";
-            this.TP_DSPhieuThu.Size = new System.Drawing.Size(1186, 525);
+            this.TP_DSPhieuThu.Size = new System.Drawing.Size(1015, 524);
             this.TP_DSPhieuThu.TabIndex = 9;
             this.TP_DSPhieuThu.Text = "DS Phiếu Thu";
             this.TP_DSPhieuThu.UseVisualStyleBackColor = true;
@@ -3935,7 +3935,7 @@
             this.DGV_DSPT.ReadOnly = true;
             this.DGV_DSPT.RowTemplate.Height = 24;
             this.DGV_DSPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSPT.Size = new System.Drawing.Size(1186, 411);
+            this.DGV_DSPT.Size = new System.Drawing.Size(1015, 410);
             this.DGV_DSPT.TabIndex = 2;
             // 
             // C_PhieuThuTien_MaPhieu
@@ -4009,7 +4009,7 @@
             this.toolStrip7.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip7.Name = "toolStrip7";
             this.toolStrip7.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip7.Size = new System.Drawing.Size(1186, 30);
+            this.toolStrip7.Size = new System.Drawing.Size(1015, 30);
             this.toolStrip7.TabIndex = 6;
             this.toolStrip7.Text = "toolStrip7";
             // 
@@ -4095,10 +4095,10 @@
             this.panel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel53.Controls.Add(this.flowLayoutPanel14);
             this.panel53.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel53.Location = new System.Drawing.Point(0, 499);
+            this.panel53.Location = new System.Drawing.Point(0, 498);
             this.panel53.Margin = new System.Windows.Forms.Padding(2);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(1186, 26);
+            this.panel53.Size = new System.Drawing.Size(1015, 26);
             this.panel53.TabIndex = 1;
             // 
             // flowLayoutPanel14
@@ -4112,7 +4112,7 @@
             this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(1186, 26);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(1015, 26);
             this.flowLayoutPanel14.TabIndex = 0;
             // 
             // label61
@@ -4168,14 +4168,14 @@
             this.panel55.Location = new System.Drawing.Point(0, 0);
             this.panel55.Margin = new System.Windows.Forms.Padding(2);
             this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(1186, 58);
+            this.panel55.Size = new System.Drawing.Size(1015, 58);
             this.panel55.TabIndex = 0;
             // 
             // panel56
             // 
             this.panel56.Controls.Add(this.BT_DSPhieuThu_TaoPhieuThu);
             this.panel56.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel56.Location = new System.Drawing.Point(1054, 0);
+            this.panel56.Location = new System.Drawing.Point(883, 0);
             this.panel56.Margin = new System.Windows.Forms.Padding(2);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(132, 58);
@@ -4207,7 +4207,7 @@
             this.flowLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(1186, 58);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(1015, 58);
             this.flowLayoutPanel15.TabIndex = 3;
             // 
             // panel57
@@ -4347,7 +4347,7 @@
             this.TP_BaoCaoTon.Location = new System.Drawing.Point(4, 24);
             this.TP_BaoCaoTon.Margin = new System.Windows.Forms.Padding(2);
             this.TP_BaoCaoTon.Name = "TP_BaoCaoTon";
-            this.TP_BaoCaoTon.Size = new System.Drawing.Size(1186, 525);
+            this.TP_BaoCaoTon.Size = new System.Drawing.Size(1015, 524);
             this.TP_BaoCaoTon.TabIndex = 10;
             this.TP_BaoCaoTon.Text = "Báo Cáo Tồn";
             this.TP_BaoCaoTon.UseVisualStyleBackColor = true;
@@ -4373,7 +4373,7 @@
             this.DGV_BCT.RowHeadersVisible = false;
             this.DGV_BCT.RowTemplate.Height = 24;
             this.DGV_BCT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_BCT.Size = new System.Drawing.Size(1186, 441);
+            this.DGV_BCT.Size = new System.Drawing.Size(1015, 440);
             this.DGV_BCT.TabIndex = 2;
             // 
             // C_BaoCaoTon_MaSach
@@ -4411,10 +4411,10 @@
             this.panel61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel61.Controls.Add(this.flowLayoutPanel16);
             this.panel61.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel61.Location = new System.Drawing.Point(0, 499);
+            this.panel61.Location = new System.Drawing.Point(0, 498);
             this.panel61.Margin = new System.Windows.Forms.Padding(2);
             this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(1186, 26);
+            this.panel61.Size = new System.Drawing.Size(1015, 26);
             this.panel61.TabIndex = 1;
             // 
             // flowLayoutPanel16
@@ -4426,12 +4426,13 @@
             this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
             this.flowLayoutPanel16.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(1186, 26);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(1015, 26);
             this.flowLayoutPanel16.TabIndex = 0;
             // 
             // label74
             // 
             this.label74.AutoSize = true;
+            this.label74.Enabled = false;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.Location = new System.Drawing.Point(4, 4);
             this.label74.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -4439,10 +4440,12 @@
             this.label74.Size = new System.Drawing.Size(119, 17);
             this.label74.TabIndex = 2;
             this.label74.Text = "Tổng số báo cáo:";
+            this.label74.Visible = false;
             // 
             // label75
             // 
             this.label75.AutoSize = true;
+            this.label75.Enabled = false;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label75.Location = new System.Drawing.Point(123, 4);
             this.label75.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
@@ -4450,6 +4453,7 @@
             this.label75.Size = new System.Drawing.Size(17, 17);
             this.label75.TabIndex = 3;
             this.label75.Text = "0";
+            this.label75.Visible = false;
             // 
             // panel62
             // 
@@ -4459,7 +4463,7 @@
             this.panel62.Location = new System.Drawing.Point(0, 0);
             this.panel62.Margin = new System.Windows.Forms.Padding(2);
             this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(1186, 58);
+            this.panel62.Size = new System.Drawing.Size(1015, 58);
             this.panel62.TabIndex = 0;
             // 
             // flowLayoutPanel17
@@ -4471,7 +4475,7 @@
             this.flowLayoutPanel17.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel17.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(1186, 58);
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(1015, 58);
             this.flowLayoutPanel17.TabIndex = 3;
             // 
             // panel64
@@ -4578,7 +4582,7 @@
             this.TP_BaoCaoNo.Location = new System.Drawing.Point(4, 24);
             this.TP_BaoCaoNo.Margin = new System.Windows.Forms.Padding(2);
             this.TP_BaoCaoNo.Name = "TP_BaoCaoNo";
-            this.TP_BaoCaoNo.Size = new System.Drawing.Size(1186, 525);
+            this.TP_BaoCaoNo.Size = new System.Drawing.Size(1015, 524);
             this.TP_BaoCaoNo.TabIndex = 11;
             this.TP_BaoCaoNo.Text = "Báo cáo nợ";
             this.TP_BaoCaoNo.UseVisualStyleBackColor = true;
@@ -4604,7 +4608,7 @@
             this.DGV_BCCN.RowHeadersVisible = false;
             this.DGV_BCCN.RowTemplate.Height = 24;
             this.DGV_BCCN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_BCCN.Size = new System.Drawing.Size(1186, 441);
+            this.DGV_BCCN.Size = new System.Drawing.Size(1015, 440);
             this.DGV_BCCN.TabIndex = 2;
             // 
             // C_BaoCaoNo_MaKhachHang
@@ -4642,10 +4646,10 @@
             this.panel63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel63.Controls.Add(this.flowLayoutPanel18);
             this.panel63.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel63.Location = new System.Drawing.Point(0, 499);
+            this.panel63.Location = new System.Drawing.Point(0, 498);
             this.panel63.Margin = new System.Windows.Forms.Padding(2);
             this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(1186, 26);
+            this.panel63.Size = new System.Drawing.Size(1015, 26);
             this.panel63.TabIndex = 1;
             // 
             // flowLayoutPanel18
@@ -4657,12 +4661,13 @@
             this.flowLayoutPanel18.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel18.Name = "flowLayoutPanel18";
             this.flowLayoutPanel18.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(1186, 26);
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(1015, 26);
             this.flowLayoutPanel18.TabIndex = 0;
             // 
             // label76
             // 
             this.label76.AutoSize = true;
+            this.label76.Enabled = false;
             this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label76.Location = new System.Drawing.Point(4, 4);
             this.label76.Margin = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -4670,10 +4675,12 @@
             this.label76.Size = new System.Drawing.Size(119, 17);
             this.label76.TabIndex = 2;
             this.label76.Text = "Tổng số báo cáo:";
+            this.label76.Visible = false;
             // 
             // label77
             // 
             this.label77.AutoSize = true;
+            this.label77.Enabled = false;
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label77.Location = new System.Drawing.Point(123, 4);
             this.label77.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
@@ -4681,6 +4688,7 @@
             this.label77.Size = new System.Drawing.Size(17, 17);
             this.label77.TabIndex = 3;
             this.label77.Text = "0";
+            this.label77.Visible = false;
             // 
             // panel66
             // 
@@ -4690,7 +4698,7 @@
             this.panel66.Location = new System.Drawing.Point(0, 0);
             this.panel66.Margin = new System.Windows.Forms.Padding(2);
             this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(1186, 58);
+            this.panel66.Size = new System.Drawing.Size(1015, 58);
             this.panel66.TabIndex = 0;
             // 
             // flowLayoutPanel19
@@ -4702,7 +4710,7 @@
             this.flowLayoutPanel19.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(1186, 58);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(1015, 58);
             this.flowLayoutPanel19.TabIndex = 3;
             // 
             // panel67
@@ -4810,7 +4818,7 @@
             this.TP_DSNhanVien.Location = new System.Drawing.Point(4, 24);
             this.TP_DSNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.TP_DSNhanVien.Name = "TP_DSNhanVien";
-            this.TP_DSNhanVien.Size = new System.Drawing.Size(1186, 525);
+            this.TP_DSNhanVien.Size = new System.Drawing.Size(1015, 524);
             this.TP_DSNhanVien.TabIndex = 13;
             this.TP_DSNhanVien.Text = "Nhân Viên";
             this.TP_DSNhanVien.UseVisualStyleBackColor = true;
@@ -4835,7 +4843,7 @@
             this.DGV_DSNV.ReadOnly = true;
             this.DGV_DSNV.RowTemplate.Height = 24;
             this.DGV_DSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DSNV.Size = new System.Drawing.Size(1186, 411);
+            this.DGV_DSNV.Size = new System.Drawing.Size(1015, 410);
             this.DGV_DSNV.TabIndex = 2;
             // 
             // C_DSNV_MaNV
@@ -4884,7 +4892,7 @@
             this.toolStrip8.Margin = new System.Windows.Forms.Padding(2);
             this.toolStrip8.Name = "toolStrip8";
             this.toolStrip8.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip8.Size = new System.Drawing.Size(1186, 30);
+            this.toolStrip8.Size = new System.Drawing.Size(1015, 30);
             this.toolStrip8.TabIndex = 6;
             this.toolStrip8.Text = "toolStrip8";
             // 
@@ -4956,10 +4964,10 @@
             this.panel80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(236)))));
             this.panel80.Controls.Add(this.flowLayoutPanel4);
             this.panel80.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel80.Location = new System.Drawing.Point(0, 499);
+            this.panel80.Location = new System.Drawing.Point(0, 498);
             this.panel80.Margin = new System.Windows.Forms.Padding(2);
             this.panel80.Name = "panel80";
-            this.panel80.Size = new System.Drawing.Size(1186, 26);
+            this.panel80.Size = new System.Drawing.Size(1015, 26);
             this.panel80.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -4971,7 +4979,7 @@
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1186, 26);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1015, 26);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // label24
@@ -5005,14 +5013,14 @@
             this.panel81.Location = new System.Drawing.Point(0, 0);
             this.panel81.Margin = new System.Windows.Forms.Padding(2);
             this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(1186, 58);
+            this.panel81.Size = new System.Drawing.Size(1015, 58);
             this.panel81.TabIndex = 0;
             // 
             // panel82
             // 
             this.panel82.Controls.Add(this.BT_DSNV_ThemNV);
             this.panel82.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel82.Location = new System.Drawing.Point(1036, 0);
+            this.panel82.Location = new System.Drawing.Point(865, 0);
             this.panel82.Margin = new System.Windows.Forms.Padding(2);
             this.panel82.Name = "panel82";
             this.panel82.Size = new System.Drawing.Size(150, 58);
@@ -5044,7 +5052,7 @@
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(1186, 58);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(1015, 58);
             this.flowLayoutPanel10.TabIndex = 3;
             // 
             // panel83

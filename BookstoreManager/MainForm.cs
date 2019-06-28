@@ -140,18 +140,17 @@ namespace BookstoreManager
                 {
                     if (pt.SoTienThu > kh.SoTienNo)
                     {
-                        MessageBox.Show("Số tiền thu vượt quá số tiền đang nợ: " + kh.SoTienNo+" VND");
+                        MessageBox.Show("Số tiền thu vượt quá số tiền đang nợ: " + kh.SoTienNo + " VND");
                         return;
-                    }        
+                    }
                     else
-                        kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
-                }
-                else
-                {
-                    kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+                        kh.SoTienNo -= pt.SoTienThu;
                     if (kh.SoTienNo < 0) kh.SoTienNo = decimal.Zero;
                 }
-                    
+                else
+                    kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
+
+                kh.TongTien += pt.SoTienThu;
 
                 khBus.UpdateKhachHang(kh);
          
