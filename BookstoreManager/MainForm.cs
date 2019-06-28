@@ -145,7 +145,7 @@ namespace BookstoreManager
                     }
                     else
                         kh.SoTienNo -= pt.SoTienThu;
-                    if (kh.SoTienNo < 0) kh.SoTienNo = decimal.Zero;
+                    //if (kh.SoTienNo < 0) kh.SoTienNo = decimal.Zero;
                 }
                 else
                     kh.SoTienNo -= decimal.Parse(form.TB_SoTienThu.Text);
