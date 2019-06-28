@@ -193,13 +193,17 @@ namespace BookstoreManager
         }
         private void MN_BaoCaoTon_Click(object sender, EventArgs e)
         {
-            MainTab.SelectedTab = TP_BaoCaoTon;
-            LB_TieuDe.Text = "Báo cáo tồn";
+            //MainTab.SelectedTab = TP_BaoCaoTon;
+            //LB_TieuDe.Text = "Báo cáo tồn";
+            BaoCaoTonForm bctf = new BaoCaoTonForm();
+            bctf.ShowDialog();
         }
         private void MN_BaoCaoNo_Click(object sender, EventArgs e)
         {
-            MainTab.SelectedTab = TP_BaoCaoNo;
-            LB_TieuDe.Text = "Báo cáo nợ";
+            //MainTab.SelectedTab = TP_BaoCaoNo;
+            //LB_TieuDe.Text = "Báo cáo nợ";
+            BaoCaoNoForm bccnf = new BaoCaoNoForm();
+            bccnf.ShowDialog();
         }
         private void MN_KhachHang_Click(object sender, EventArgs e)
         {

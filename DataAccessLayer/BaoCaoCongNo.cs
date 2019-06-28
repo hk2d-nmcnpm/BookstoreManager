@@ -63,78 +63,15 @@ namespace DataAccessLayer
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                string sql = @"SELECT ThongKe.MaKhachHang, KhachHang.HoTenKH ,ThongKe.NoDau, ThongKe.PhatSinh, ThongKe.NoCuoi
-FROM
-(
-	SELECT TOP 100 PERCENT ISNULL(ThangTruoc.MaKhachHang, ThangNay.MaKhachHang) as MaKhachHang, ISNULL(ThangTruoc.TienPhatSinh,0) as NoDau, ISNULL(ThangNay.TienPhatSinh,0) as PhatSinh,
-	ISNULL(ThangTruoc.TienPhatSinh,0) + ISNULL(ThangNay.TienPhatSinh,0) as NoCuoi
-	 FROM 
-	 (
-		 SELECT ISNULL(CTMua.MaKhachHang,CTThu.MaKhachHang) as MaKhachHang, ISNULL(CTMua.TongThanhTien,0) - ISNULL(CTThu.TongTienThu,0)-SumDaTra as TienPhatSinh
-		 FROM
-		 (
-			SELECT HDThanhTien.MaKhachHang, SUM(HDThanhTien.ThanhTien) TongThanhTien,SUM(distinct TienKhachDaTra) as SumDaTra
-			FROM
-			(
-				SELECT MaKhachHang, SoLuongBan*DonGiaBan as ThanhTien, TienKhachDaTra
-				FROM CHITIETHOADON, HOADON
-				WHERE HOADON.MaHoaDon = CHITIETHOADON.MaHoaDon AND MONTH(HOADON.NgayHoaDon) = @thang AND YEAR(HOADON.NgayHoaDon) = @nam
-			) as HDThanhTien
-
-			GROUP BY HDThanhTien.MaKhachHang
-
-		 ) as CTMua
-		 FULL JOIN
-		 (
-			SELECT MaKhachHang, SUM(SoTienThu) as TongTienThu
-			FROM PHIEUTHU
-			WHERE MONTH(PhieuThu.NgayThu) = @thang AND YEAR(PhieuThu.NgayThu) = @nam
-			GROUP BY MaKhachHang
-		 ) as CTThu 
-		 ON CTMua.MaKhachHang = CTThu.MaKhachHang
-	 ) as ThangNay
-
-	 FULL JOIN
-
-	 (
-		 SELECT ISNULL(CTMua.MaKhachHang,CTThu.MaKhachHang) as MaKhachHang, ISNULL(CTMua.TongThanhTien,0) - ISNULL(CTThu.TongTienThu,0)-SumDaTra as TienPhatSinh
-		 FROM
-		 (
-			SELECT HDThanhTien.MaKhachHang, SUM(HDThanhTien.ThanhTien) as TongThanhTien,SUM(DISTINCT TienKhachDaTra) as sumdatra
-			FROM
-			(
-				SELECT MaKhachHang, SoLuongBan*DonGiaBan as ThanhTien,TienKhachDaTra
-				FROM ChiTietHoaDon, HoaDon
-				WHERE  HoaDon.MaHoaDon = ChiTietHoaDon.MaHoaDon AND
-				((YEAR(HoaDon.NgayHoaDon) < @nam) OR (YEAR(HoaDon.NgayHoaDon) = @nam	AND	MONTH(HoaDon.NgayHoaDon) <@thang))
-			) as HDThanhTien
-			GROUP BY HDThanhTien.MaKhachHang
-		 ) as CTMua
-		 FULL JOIN
-		 (
-			SELECT MaKhachHang, SUM(SoTienThu) as TongTienThu
-			FROM PhieuThu
-			WHERE  ((YEAR(PhieuThu.NgayThu) < @nam) OR (YEAR(PhieuThu.NgayThu) = @nam AND MONTH(PhieuThu.NgayThu) <@thang))
-			GROUP BY MaKhachHang
-		 ) as CTThu 
-		 ON CTMua.MaKhachHang = CTThu.MaKhachHang
-	 ) as ThangTruoc
-	  ON ThangNay.MaKhachHang = ThangTruoc.MaKhachHang
-
- ) as ThongKe, KhachHang
-
-
-WHERE KhachHang.MaKhachHang = ThongKe.MaKhachHang
-ORDER BY KhachHang.MaKhachHang ASC";
-
-
-                SqlCommand cmd = new SqlCommand(sql, _connection);
-                cmd.Parameters.Add("@thang", SqlDbType.Int).Value = thang;
-                cmd.Parameters.Add("@nam", SqlDbType.Int).Value = nam;
+                SqlCommand cmd = new SqlCommand("BaoCaoCongNoProc", _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Thang", SqlDbType.Int).Value = thang;
+                cmd.Parameters.Add("@Nam", SqlDbType.Int).Value = nam;
                 SqlDataAdapter sqdat = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sqdat.Fill(dt);
-                return dt;
+                DataTable ds = new DataTable();
+                sqdat.Fill(ds);
+                _connection.Close();
+                return ds;
             }
             catch (Exception ex)
             {
