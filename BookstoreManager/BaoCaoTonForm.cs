@@ -27,6 +27,12 @@ namespace BookstoreManager
             
             dt = new BaoCaoTonBus().GetBaoCaoChiTiet(thang, nam);
 
+            if(dt.Rows.Count<=0)
+            {
+                MessageBox.Show("Không có dữ liệu để lập báo cáo","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
             reportViewerTon.ProcessingMode = ProcessingMode.Local;
             reportViewerTon.LocalReport.ReportPath = "..\\..\\ReportTon.rdlc";
 
@@ -70,7 +76,7 @@ namespace BookstoreManager
 
                 if (bctBus.IsRowExists(bct.Thang, bct.Nam))
                 {
-                    MessageBox.Show("Đã có trong database, sẽ cập nhật!  " + bct.MaBaoCaoTon);
+                    MessageBox.Show("Báo cáo tháng này đã có trong database, sẽ cập nhật! ");
                     ctbctBus.DeleteAll(bct.MaBaoCaoTon);
                 }
                 else

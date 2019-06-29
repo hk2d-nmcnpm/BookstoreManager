@@ -27,6 +27,11 @@ namespace BookstoreManager
             int nam = int.Parse(CBB_Nam.SelectedValue.ToString());
 
             dt = new BaoCaoCongNoBus().GetBaoCaoChiTiet(thang, nam);
+            if(dt.Rows.Count<=0)
+            {
+                MessageBox.Show("Không có dữ liệu để lập báo cáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             reportViewerNo.ProcessingMode = ProcessingMode.Local;
             reportViewerNo.LocalReport.ReportPath = "..\\..\\ReportNo.rdlc";
@@ -53,11 +58,11 @@ namespace BookstoreManager
             if (dt.Rows.Count > 0 && dt.Rows[0]["MaKhachHang"].ToString() != null)
             {
                 int last = 0;
-                BaoCaoCongNoBus bctBus = new BaoCaoCongNoBus();
-                ChiTietBaoCaoCongNoBUS ctbctBus = new ChiTietBaoCaoCongNoBUS();
-                DataTable dsBaoCaoTonAll = bctBus.GetAllRows();
-                if (dsBaoCaoTonAll.AsEnumerable() != null && dsBaoCaoTonAll.AsEnumerable().Any())
-                    last = int.Parse(dsBaoCaoTonAll.AsEnumerable().Last()["MaBaoCaoCongNo"].ToString()) + 1;
+                BaoCaoCongNoBus bccnBus = new BaoCaoCongNoBus();
+                ChiTietBaoCaoCongNoBUS ctbccnBus = new ChiTietBaoCaoCongNoBUS();
+                DataTable dsBaoCaoCongNoAll = bccnBus.GetAllRows();
+                if (dsBaoCaoCongNoAll.AsEnumerable() != null && dsBaoCaoCongNoAll.AsEnumerable().Any())
+                    last = int.Parse(dsBaoCaoCongNoAll.AsEnumerable().Last()["MaBaoCaoCongNo"].ToString()) + 1;
                 else
                     last = 1;
 
@@ -69,22 +74,22 @@ namespace BookstoreManager
                 };
 
 
-                if (bctBus.IsRowExists(bccn.Thang, bccn.Nam))
+                if (bccnBus.IsRowExists(bccn.Thang, bccn.Nam))
                 {
-                    MessageBox.Show("Đã có trong database, sẽ cập nhật!  " + bccn.MaBaoCaoCongNo);
-                    ctbctBus.DeleteAll(bccn.MaBaoCaoCongNo);
+                    MessageBox.Show("Báo cáo tháng này đã có trong database, sẽ cập nhật! ");
+                    ctbccnBus.DeleteAll(bccn.MaBaoCaoCongNo);
                 }
                 else
                 {
                     MessageBox.Show("Sẽ thêm mới tháng này!");
-                    bctBus.AddBaoCao(bccn);
+                    bccnBus.AddBaoCao(bccn);
                 }
 
                 int count = 0;
                 foreach (DataRow row in dt.Rows)
                 {
                     count++;
-                    ChiTietBaoCaoCongNo ctbct = new ChiTietBaoCaoCongNo()
+                    ChiTietBaoCaoCongNo ctbccn = new ChiTietBaoCaoCongNo()
                     {
                         MaChiTietBaoCaoCongNo = bccn.MaBaoCaoCongNo.Trim() + count.ToString("0000"),
                         MaBaoCaoCongNo = bccn.MaBaoCaoCongNo,
@@ -93,7 +98,7 @@ namespace BookstoreManager
                         NoCuoi = Convert.ToDecimal(row["NoCuoi"].ToString()),
                         PhatSinh = Convert.ToDecimal(row["PhatSinh"].ToString())
                     };
-                    ctbctBus.AddChiTietBaoCao(ctbct);
+                    ctbccnBus.AddChiTietBaoCao(ctbccn);
                 }
             }
             else

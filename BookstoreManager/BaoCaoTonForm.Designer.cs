@@ -114,6 +114,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BaoCaoTonForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Báo cáo tồn";
             this.Load += new System.EventHandler(this.BaoCaoTonForm_Load);
             this.panel1.ResumeLayout(false);
